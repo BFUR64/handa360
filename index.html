@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Handa360 is a disaster-preparedness web app that creates tailored household action plans."
+  />
+  <title>Handa360</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="theme-matte">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark">H</div>
+        <div class="brand-text">
+          <h1>Handa360</h1>
+          <p>Preparedness made personal</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="mode-btn" id="modeToggle" type="button">Bright Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="panel active" id="panel-home">
+      <div class="panel-box hero-box">
+        <p class="eyebrow">MDRRMO Hackathon Project</p>
+        <h2 class="hero-title">Handa360</h2>
+        <p class="hero-description">
+          A web application that transforms general disaster-preparedness
+          instructions into a tailored set of actionable household steps.
+        </p>
+
+        <div class="hero-mini-info">
+          <span>4 Locations</span>
+          <span>4 Hazards</span>
+          <span>6 Special Needs</span>
+          <span>Offline Capable</span>
+        </div>
+
+        <div class="panel-actions center">
+          <button class="btn btn-primary" type="button" data-next="panel-about">Start</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-about">
+      <div class="panel-box">
+        <p class="eyebrow">About</p>
+        <h2>Why Handa360 exists</h2>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>What</h3>
+            <p>
+              Handa360 is a disaster-preparedness web app that generates
+              household-specific guidance using selected risk conditions.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Who</h3>
+            <p>
+              It is designed for families, caregivers, residents, and
+              communities needing easier and more relevant preparedness support.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Why</h3>
+            <p>
+              General advice is often too broad. Different households need
+              different actions depending on location, hazard, and special needs.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3>Goal</h3>
+            <p>
+              To provide clear, practical, and personalized disaster readiness
+              guidance in a lightweight offline-capable website.
+            </p>
+          </article>
+        </div>
+
+        <div class="panel-actions">
+          <button class="btn btn-secondary" type="button" data-prev="panel-home">Back</button>
+          <button class="btn btn-primary" type="button" data-next="panel-features">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-features">
+      <div class="panel-box">
+        <p class="eyebrow">System Flow</p>
+        <h2>How it works</h2>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">01</div>
+            <h3>Select Location</h3>
+            <p>Choose the type of area the household is in.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">02</div>
+            <h3>Select Hazard</h3>
+            <p>Choose the disaster risk to prepare for.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">03</div>
+            <h3>Add Special Needs</h3>
+            <p>Include members needing extra support.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">04</div>
+            <h3>Generate Plan</h3>
+            <p>Receive a customized preparedness output.</p>
+          </article>
+        </div>
+
+        <div class="panel-actions">
+          <button class="btn btn-secondary" type="button" data-prev="panel-about">Back</button>
+          <button class="btn btn-primary" type="button" data-next="panel-assessment">Start Assessment</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-assessment">
+  <div class="panel-box">
+    <p class="eyebrow">Assessment</p>
+    <h2>Build your preparedness profile</h2>
+
+    <div class="assessment-progress">
+      <div class="progress-step active" id="progress-location">1. Location</div>
+      <div class="progress-step" id="progress-hazard">2. Hazard</div>
+      <div class="progress-step" id="progress-needs">3. Special Needs</div>
+      <div class="progress-step" id="progress-review">4. Review</div>
+    </div>
+
+    <form id="assessmentForm" class="assessment-form">
+      <!-- STEP 1 -->
+      <div class="assessment-step active" id="step-location">
+        <h3 class="step-title">Choose Location</h3>
+        <div class="option-grid single-select" data-group="location">
+          <button type="button" class="option-button" data-value="coastal">Coastal Area</button>
+          <button type="button" class="option-button" data-value="lowland">Lowland / Flood-Prone Area</button>
+          <button type="button" class="option-button" data-value="upland">Upland / Landslide-Prone Area</button>
+          <button type="button" class="option-button" data-value="urban">Urban / Dense Residential Area</button>
+        </div>
+
+        <div class="panel-actions">
+          <button type="button" class="btn btn-secondary" data-prev="panel-features">Back</button>
+          <button type="button" class="btn btn-primary step-next" data-next-step="step-hazard">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="assessment-step" id="step-hazard">
+        <h3 class="step-title">Choose Hazard</h3>
+        <div class="option-grid single-select" data-group="hazard">
+          <button type="button" class="option-button" data-value="typhoon">Typhoon</button>
+          <button type="button" class="option-button" data-value="flood">Flood</button>
+          <button type="button" class="option-button" data-value="earthquake">Earthquake</button>
+          <button type="button" class="option-button" data-value="landslide">Landslide</button>
+        </div>
+
+        <div class="panel-actions">
+          <button type="button" class="btn btn-secondary step-back" data-prev-step="step-location">Back</button>
+          <button type="button" class="btn btn-primary step-next" data-next-step="step-needs">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="assessment-step" id="step-needs">
+        <h3 class="step-title">Select Special Needs</h3>
+        <p class="step-note">You may choose multiple.</p>
+
+        <div class="option-grid multi-select" data-group="specialNeeds">
+          <button type="button" class="option-button" data-value="infant">Infant / Toddler</button>
+          <button type="button" class="option-button" data-value="child">Child</button>
+          <button type="button" class="option-button" data-value="pregnant">Pregnant Person</button>
+          <button type="button" class="option-button" data-value="senior">Senior Citizen</button>
+          <button type="button" class="option-button" data-value="pwd">Person with Disability</button>
+          <button type="button" class="option-button" data-value="chronic-illness">Chronic Illness</button>
+        </div>
+
+        <div class="panel-actions">
+          <button type="button" class="btn btn-secondary step-back" data-prev-step="step-hazard">Back</button>
+          <button type="button" class="btn btn-primary" id="goToReview">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="assessment-step" id="step-review">
+        <h3 class="step-title">Review Selection</h3>
+
+        <div class="review-grid">
+          <div class="review-card">
+            <div class="review-top">
+              <h4>Location</h4>
+              <button type="button" class="review-edit" data-edit-step="step-location">Edit</button>
+            </div>
+            <p id="reviewLocation">Not selected</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-top">
+              <h4>Hazard</h4>
+              <button type="button" class="review-edit" data-edit-step="step-hazard">Edit</button>
+            </div>
+            <p id="reviewHazard">Not selected</p>
+          </div>
+
+          <div class="review-card review-card-wide">
+            <div class="review-top">
+              <h4>Special Needs</h4>
+              <button type="button" class="review-edit" data-edit-step="step-needs">Edit</button>
+            </div>
+            <p id="reviewNeeds">None selected</p>
+          </div>
+        </div>
+
+        <div class="panel-actions">
+          <button type="button" class="btn btn-secondary step-back" data-prev-step="step-needs">Back</button>
+          <button type="submit" class="btn btn-primary">Generate Plan</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+    <section class="panel" id="panel-results">
+      <div class="panel-box">
+        <p class="eyebrow">Output</p>
+        <h2>Your Preparedness Plan</h2>
+
+        <div class="results-grid" id="resultsContainer">
+          <article class="result-card">
+            <h3>Scenario Summary</h3>
+            <p>Your selected data will appear here.</p>
+          </article>
+
+          <article class="result-card">
+            <h3>Before / During / After</h3>
+            <p>Preparedness actions will appear here.</p>
+          </article>
+
+          <article class="result-card">
+            <h3>Emergency Kit</h3>
+            <p>Suggested go-bag contents will appear here.</p>
+          </article>
+
+          <article class="result-card">
+            <h3>Actions</h3>
+            <div class="result-actions">
+              <button class="btn btn-secondary" type="button">Print</button>
+              <button class="btn btn-secondary" type="button">Save</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="panel-actions">
+          <button type="button" class="btn btn-secondary" data-prev="panel-assessment">Back</button>
+          <button type="button" class="btn btn-primary" data-next="panel-home">Return Home</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  /* DARK MATTE BASE */
+  background: #2f343a;
+  color: #e5e7eb;
+}
+
+/* BRIGHT MODE */
+body.bright-mode {
+  background: #f3f5f7;
+  color: #111827;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(47, 52, 58, 0.85);
+  border-bottom: 1px solid #444b52;
+  backdrop-filter: blur(6px);
+}
+
+body.bright-mode .site-header {
+  background: rgba(243, 245, 247, 0.9);
+  border-bottom: 1px solid #d1d5db;
+}
+
+.header-inner {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  background: #111827;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.brand-text h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.brand-text p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* MODE BUTTON */
+.mode-btn {
+  padding: 8px 14px;
+  border: 1px solid #555c63;
+  background: #3a4046;
+  color: #e5e7eb;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+body.bright-mode .mode-btn {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+/* APP SHELL */
+.app-shell {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+/* PANELS */
+.panel {
+  display: none;
+  width: 100%;
+}
+
+.panel.active {
+  display: block;
+}
+
+/* MAIN BOX */
+.panel-box {
+  max-width: 900px;
+  margin: auto;
+
+  background: #3a4046;
+  border: 1px solid #50575e;
+  border-radius: 6px;
+
+  padding: 32px;
+}
+
+body.bright-mode .panel-box {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+/* HERO */
+.hero-box {
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: 48px;
+  margin: 0 0 10px;
+}
+
+.hero-description {
+  font-size: 17px;
+  color: #cbd5e1;
+  margin-bottom: 22px;
+}
+
+body.bright-mode .hero-description {
+  color: #374151;
+}
+
+/* MINI INFO */
+.hero-mini-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.hero-mini-info span {
+  background: #4a5158;
+  border: 1px solid #5c646c;
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+body.bright-mode .hero-mini-info span {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+}
+
+/* HEADINGS */
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.info-grid,
+.steps-grid,
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* CARDS */
+.info-card,
+.step-card,
+.result-card {
+  background: #454c53;
+  border: 1px solid #5a626a;
+  padding: 18px;
+  border-radius: 4px;
+}
+
+body.bright-mode .info-card,
+body.bright-mode .step-card,
+body.bright-mode .result-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.info-card p,
+.step-card p,
+.result-card p {
+  color: #cbd5e1;
+}
+
+body.bright-mode .info-card p,
+body.bright-mode .step-card p,
+body.bright-mode .result-card p {
+  color: #4b5563;
+}
+
+/* STEP NUMBER */
+.step-number {
+  width: 36px;
+  height: 36px;
+  background: #111827;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* FORM */
+.assessment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+label {
+  font-weight: bold;
+}
+
+select {
+  height: 46px;
+  padding: 0 10px;
+  border: 1px solid #5a626a;
+  background: #3a4046;
+  color: #e5e7eb;
+  border-radius: 3px;
+}
+
+body.bright-mode select {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+/* CHECKBOX */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.check-card {
+  background: #454c53;
+  border: 1px solid #5a626a;
+  padding: 12px;
+  border-radius: 4px;
+  display: flex;
+  gap: 8px;
+}
+
+body.bright-mode .check-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 10px 18px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #111827;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #000000;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #6b7280;
+  color: #e5e7eb;
+}
+
+body.bright-mode .btn-secondary {
+  color: #111827;
+}
+
+/* ACTIONS */
+.panel-actions,
+.result-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.panel-actions.center {
+  justify-content: center;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .info-grid,
+  .steps-grid,
+  .results-grid,
+  .form-grid,
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+}
+
+.assessment-progress {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.progress-step {
+  padding: 10px 12px;
+  background: #3f454c;
+  border: 1px solid #565d65;
+  color: #9ca3af;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.progress-step.active {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+  box-shadow: 0 0 0 1px #111827, 0 0 16px rgba(120, 160, 255, 0.22);
+}
+
+body.bright-mode .progress-step {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+}
+
+body.bright-mode .progress-step.active {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+.assessment-step {
+  display: none;
+}
+
+.assessment-step.active {
+  display: block;
+}
+
+.step-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.step-note {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #cbd5e1;
+}
+
+body.bright-mode .step-note {
+  color: #4b5563;
+}
+
+.option-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.option-grid.single-select {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.option-grid.multi-select {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.option-button {
+  min-height: 64px;
+  padding: 14px 16px;
+  background: #454c53;
+  border: 1px solid #5a626a;
+  color: #e5e7eb;
+  border-radius: 4px;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.option-button:hover {
+  border-color: #7a8490;
+  background: #4b535b;
+}
+
+.option-button.selected {
+  background: #111827;
+  border-color: #7aa2ff;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px #7aa2ff, 0 0 18px rgba(122, 162, 255, 0.28);
+}
+
+body.bright-mode .option-button {
+  background: #f8f9fb;
+  border: 1px solid #d1d5db;
+  color: #111827;
+}
+
+body.bright-mode .option-button:hover {
+  background: #eef2f7;
+}
+
+body.bright-mode .option-button.selected {
+  background: #111827;
+  color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6, 0 0 18px rgba(59, 130, 246, 0.2);
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.review-card {
+  background: #454c53;
+  border: 1px solid #5a626a;
+  border-radius: 4px;
+  padding: 18px;
+}
+
+.review-card-wide {
+  grid-column: 1 / -1;
+}
+
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.review-top h4 {
+  margin: 0;
+}
+
+.review-edit {
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid #6b7280;
+  color: #e5e7eb;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.review-edit:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+body.bright-mode .review-card {
+  background: #f8f9fb;
+  border: 1px solid #e5e7eb;
+}
+
+body.bright-mode .review-edit {
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+body.bright-mode .review-edit:hover {
+  background: #eef2f7;
+}
+
+@media (max-width: 800px) {
+  .assessment-progress,
+  .option-grid.single-select,
+  .option-grid.multi-select,
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
