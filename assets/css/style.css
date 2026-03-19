@@ -37,6 +37,7 @@ select {
 
   background: rgba(47, 52, 58, 0.85);
   border-bottom: 1px solid #444b52;
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 
@@ -60,7 +61,7 @@ body.bright-mode .site-header {
 }
 
 .brand-mark {
-  width: 36px;
+  width: 65px;
   height: 36px;
   background: #111827;
   color: white;
@@ -69,6 +70,11 @@ body.bright-mode .site-header {
   justify-content: center;
   font-weight: bold;
   border-radius: 4px;
+
+  img {
+    width: 200%;
+    height: 200%;
+  }
 }
 
 .brand-text h1 {
