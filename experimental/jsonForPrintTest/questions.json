@@ -1,0 +1,9 @@
+{
+  "questions" : [
+    {
+      "id" : "hazard",
+      "text" : "What's the hazard?",
+      "options" : [ "typhoon", "flood", "earthquake", "landslide" ]
+    }
+  ]
+}
