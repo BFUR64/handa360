@@ -79,12 +79,15 @@ function loadInstructionsToHTML(hazardType) {
     // `hazard` variable (see below).
 
     let output = document.getElementById("output");
-    let template = document.getElementById("checklist-template");
+    let checklistTemplate = document.getElementById("checklist-template");
+    let userHazardChoice = "flood"
 
     for (let action = 0; action < data.actions.length; action++) {
-        if (data.actions[action].condition.hazard === hazardType) {
+        let currentHazard = data.actions[action].condition.hazard;
+
+        if (currentHazard === userHazardChoice) {
             for (let instruction = 0; instruction < data.actions[action].instructions.length; instruction++) {
-                let clone = template.content.cloneNode(true);
+                let clone = checklistTemplate.content.cloneNode(true);
                 clone.querySelector("#checklist-item-text").innerText = data.actions[action].instructions[instruction];
                 output.appendChild(clone);
             }
