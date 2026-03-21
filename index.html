@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handa360</title>
+  <link rel="stylesheet" href="web/css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Handa360</h1>
+  </header>
+
+  <main>
+    <form id="assessmentForm">
+
+      <div class="question-block">
+        <p class="question-text">Where are you right now?</p>
+        <ul class="option-list">
+          <li>
+            <label>
+              <input type="radio" name="location" value="kalibo" />
+              Kalibo
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="location" value="malinao" />
+              Malinao
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="radio" name="location" value="iloilo" />
+              Iloilo
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="question-block">
+        <p class="question-text">What are you experiencing?</p>
+        <ul class="option-list">
+          <li>
+            <label>
+              <input type="checkbox" name="hazard" value="flooding" />
+              Flooding
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="hazard" value="earthquake" />
+              Earthquake
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="hazard" value="fire" />
+              Fire
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="hazard" value="typhoon" />
+              Typhoon
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-footer">
+        <p class="separator">. . . .</p>
+        <button type="submit" class="btn-submit">Submit</button>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>
