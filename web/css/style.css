@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #2f343a;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+header {
+  padding: 20px 32px;
+  border-bottom: 1px solid #444b52;
+  background: rgba(47, 52, 58, 0.9);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+main {
+  padding: 40px 32px;
+  max-width: 520px;
+}
+
+#assessmentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.question-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.question-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #e5e7eb;
+}
+
+.option-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option-list li label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+.option-list li label:hover {
+  color: #e5e7eb;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #7aa2ff;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.separator {
+  margin: 0 0 8px;
+  color: #555c63;
+  font-size: 16px;
+  letter-spacing: 4px;
+}
+
+.btn-submit {
+  display: inline-block;
+  padding: 10px 24px;
+  background: #111827;
+  color: #ffffff;
+  border: 1px solid #374151;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: #000000;
+}
