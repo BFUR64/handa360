@@ -74,18 +74,16 @@ function init() {
     // generate a dynamic list based on the `const data` object that relies on the
     // `hazard` variable (see below).
 
-    let hazard = "earthquake";
-
-    let div = document.getElementById("output");
+    let output = document.getElementById("output");
     let template = document.getElementById("checklist-template");
-    
-    let clone = template.content.cloneNode(true);
 
-    clone.querySelector("#checklist-item-text").innerText = "wdwadwadwadawd";
-
-    let clone2 = template.content.cloneNode(true);
-    clone2.querySelector("#checklist-item-text").innerText = "bruh";
-
-    div.appendChild(clone);
-    div.appendChild(clone2);
+    for (let action = 0; action < data.actions.length; action++) {
+        if (data.actions[action].condition.hazard === "flood") {
+            for (let instruction = 0; instruction < data.actions[action].instructions.length; instruction++) {
+                let clone = template.content.cloneNode(true);
+                clone.querySelector("#checklist-item-text").innerText = data.actions[action].instructions[instruction];
+                output.appendChild(clone);
+            }
+        }
+    }
 }
