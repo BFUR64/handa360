@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handa360</title>
     <style>
-        div {
+        #header {
             text-align: center;
             border: 1px solid black;
             border-radius: 10px;
@@ -15,20 +15,34 @@
         }
         .questionBoxes {
             text-align: left;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 1000px;
+            margin: 10px auto;
+        }
+        #output {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 1000px;
+            margin: 10px auto;            
         }
     </style>
 </head>
 
 <body>
-    <div>
+    <div id="header">
         <h1>Handa360</h1>
         <p>Handa360 is a web application that turns general disaster-preparedness instructions into a catered set of actionable items.</p>
     </div>
 
     <form id="queryForm">
-        <div class="questionBoxes">
+        <div class="questionBoxes" id="questionBox1">
             <h1>Question 1</h1>
             <p>Where are you right now?</p>
+            <script src="locationParser.js"></script>
+            <!--
             <label>
                 <input type="radio" name="question1" value="kalibo" required> Kalibo
             </label>
@@ -40,11 +54,14 @@
             <label>
                 <input type="radio" name="question1" value="iloilo"> Iloilo
             </label>
+            -->
         </div>
 
-        <div class="questionBoxes">
+        <div class="questionBoxes" id="questionBox2">
             <h1>Question 2</h1>
             <p>Where are you experiencing?</p>
+            <script src="hazardParser.js"></script>
+            <!--
             <label>
                 <input type="radio" name="question2" value="flooding" required> Flooding
             </label>
@@ -59,6 +76,7 @@
             <label>
                 <input type="radio" name="question2" value="typhoon"> Typhoon
             </label>
+            -->
         </div>
 
         <div class="questionBoxes">
@@ -66,7 +84,14 @@
         </div>
     </form>
 
-    <script src="script.js"></script>
+    <!-- Inside this div is where the template appears -->
+    <div id="output"></div>
 
+    <template id="checklist-template">
+        <label id="checklist-item-template">
+            <input type="checkbox" id="checklist-item-checkbox"> <div id="checklist-item-text"></div>
+        </label>
+    </template>
 </body>
+<script src="script.js"></script>
 </html>
