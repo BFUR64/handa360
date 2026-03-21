@@ -1,70 +1,72 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Handa360</title>
-        <style>
-            div {
-                text-align: center;
-                border: 1px solid black;
-                border-radius: 10px;
-                padding: 10px;
-                width: 1000px;
-                margin: 10px auto;
-            }
-            .questionBoxes {
-                text-align: left;
-            }
-        </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handa360</title>
+    <style>
+        div {
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 1000px;
+            margin: 10px auto;
+        }
+        .questionBoxes {
+            text-align: left;
+        }
+    </style>
+</head>
 
-    <body>
-        <div>
-            <h1>Handa360</h1>
-            <p>Handa360 is a web application that turns general disaster-preparedness instructions into a catered set of actionable items.</p>
+<body>
+    <div>
+        <h1>Handa360</h1>
+        <p>Handa360 is a web application that turns general disaster-preparedness instructions into a catered set of actionable items.</p>
+    </div>
+
+    <form id="queryForm">
+        <div class="questionBoxes">
+            <h1>Question 1</h1>
+            <p>Where are you right now?</p>
+            <label>
+                <input type="radio" name="question1" value="kalibo" required> Kalibo
+            </label>
+
+            <label>
+                <input type="radio" name="question1" value="malinao"> Malinao
+            </label>
+
+            <label>
+                <input type="radio" name="question1" value="iloilo"> Iloilo
+            </label>
         </div>
 
-        <form>
-            <div class="questionBoxes">
-                <h1>Question 1</h1>
-                <p>Where are you right now?</p>
-                <label>
-                    <input type="radio" name="firstAnswer"> Kalibo
-                </label>
+        <div class="questionBoxes">
+            <h1>Question 2</h1>
+            <p>Where are you experiencing?</p>
+            <label>
+                <input type="radio" name="question2" value="flooding" required> Flooding
+            </label>
 
-                <label>
-                    <input type="radio" name="firstAnswer"> Malinao
-                </label>
+            <label>
+                <input type="radio" name="question2" value="earthquake"> Earthquake
+            </label>
 
-                <label>
-                    <input type="radio" name="firstAnswer"> Iloilo
-                </label>
-            </div>
+            <label>
+                <input type="radio" name="question2" value="fire"> Fire
+            </label>
+            <label>
+                <input type="radio" name="question2" value="typhoon"> Typhoon
+            </label>
+        </div>
 
-            <div class="questionBoxes">
-                <h1>Question 1</h1>
-                <p>Where are you experiencing?</p>
-                <label>
-                    <input type="radio" name="secondAnswer"> Flooding
-                </label>
+        <div class="questionBoxes">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
 
-                <label>
-                    <input type="radio" name="secondAnswer"> Earthquake
-                </label>
+    <script src="script.js"></script>
 
-                <label>
-                    <input type="radio" name="secondAnswer"> Fire
-                </label>
-                <label>
-                    <input type="radio" name="secondAnswer"> Typhoon
-                </label>
-            </div>
-
-            <div class="questionBoxes">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-    </body>
+</body>
 </html>
