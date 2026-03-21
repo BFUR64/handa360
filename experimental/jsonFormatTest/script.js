@@ -80,12 +80,11 @@ function loadInstructionsToHTML(hazardType) {
 
     let output = document.getElementById("output");
     let checklistTemplate = document.getElementById("checklist-template");
-    let userHazardChoice = "flood"
 
     for (let action = 0; action < data.actions.length; action++) {
         let currentHazard = data.actions[action].condition.hazard;
 
-        if (currentHazard === userHazardChoice) {
+        if (currentHazard === hazardType) {
             for (let instruction = 0; instruction < data.actions[action].instructions.length; instruction++) {
                 let clone = checklistTemplate.content.cloneNode(true);
                 clone.querySelector("#checklist-item-text").innerText = data.actions[action].instructions[instruction];
