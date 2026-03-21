@@ -71,6 +71,10 @@ addEventListener("DOMContentLoaded", function() {
 });
 
 function init() {
+    loadInstructionsToHTML("flood");
+}
+
+function loadInstructionsToHTML(hazardType) {
     // generate a dynamic list based on the `const data` object that relies on the
     // `hazard` variable (see below).
 
@@ -78,7 +82,7 @@ function init() {
     let template = document.getElementById("checklist-template");
 
     for (let action = 0; action < data.actions.length; action++) {
-        if (data.actions[action].condition.hazard === "flood") {
+        if (data.actions[action].condition.hazard === hazardType) {
             for (let instruction = 0; instruction < data.actions[action].instructions.length; instruction++) {
                 let clone = template.content.cloneNode(true);
                 clone.querySelector("#checklist-item-text").innerText = data.actions[action].instructions[instruction];
