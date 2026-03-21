@@ -18,6 +18,7 @@
       <div class="question-block">
         <p class="question-text">Where are you right now?</p>
         <ul class="option-list">
+        <!-- Location Options in "RADIO" format
           <li>
             <label>
               <input type="radio" name="location" value="kalibo" />
@@ -36,8 +37,25 @@
               Iloilo
             </label>
           </li>
+        -->
+
+        <!-- Dropdown/Select format -->
+        <li>
+          <label for ="location-dropdown-province"> Province: </label>
+            <select id="location-dropdown-province" class="location-select" title="Select your location">
+              <option>Select your province</option>
+            </select>
+        </li>
+        <li>
+          <label for ="location-dropdown-municipality"> Municipality: </label>
+            <select id="location-dropdown-municipality" class="location-select" title="Select your location">
+              <option>Select your municipality</option>
+            </select>
+        </li>
+        <!-- -->
         </ul>
       </div>
+     
 
       <div class="question-block">
         <p class="question-text">What are you experiencing?</p>
