@@ -1,8 +1,9 @@
+/*
 const data = {
-    actions: [
+    "actions" : [
         {
-            condition: { hazard: "typhoon" },
-            instructions: [
+            "condition" : { "hazard" : "typhoon" },
+            "instructions" : [
                 "Get inside a strong building",
                 "Stay away from windows and glass",
                 "Move to safest area (interior room, lower floor not prone to flooding)",
@@ -11,8 +12,8 @@ const data = {
             ]
         },
         {
-            condition: { hazard: "flood" },
-            instructions: [
+            "condition" : { "hazard" : "flood" },
+            "instructions" : [
                 "Move to higher ground or upper floor",
                 "Stay away from rising water",
                 "Turn off electricity (if safe to do so)",
@@ -20,8 +21,8 @@ const data = {
             ]
         },
         {
-            condition: { hazard: "earthquake" },
-            instructions: [
+            "condition" : { "hazard" : "earthquake" },
+            "instructions" : [
                 "DROP to the ground",
                 "COVER under sturdy furniture",
                 "HOLD ON until shaking stops",
@@ -29,8 +30,8 @@ const data = {
             ]
         },
         {
-            condition: { hazard: "landslide" },
-            instructions: [
+            "condition" : { "hazard" : "landslide" },
+            "instructions" : [
                 "Move away from slopes and hillsides",
                 "Go to higher, stable ground",
                 "Stay alert for rumbling/cracking sounds"
@@ -38,36 +39,49 @@ const data = {
         }
     ],
 
-    locations: [
+    "locations" : [
         {
-            condition: { location: "kalibo" },
-            information: [
+            "condition" : { "location" : "kalibo" },
+            "information" : [
                 "Police - 09xxxx",
                 "Fire Station - 09xxxx",
                 "Emergency - 09xxxx"
             ]
         },
         {
-            condition: { location: "manila" },
-            information: [
+            "condition" : { "location" : "manila" },
+            "information" : [
                 "Police - 09xxxx",
                 "Fire Station - 09xxxx",
                 "Emergency - 09xxxx"
             ]
         },
         {
-            condition: { location: "iloilo" },
-            information: [
+            "condition" : { "location" : "iloilo" },
+            "information" : [
                 "Police - 09xxxx",
                 "Fire Station - 09xxxx",
                 "Emergency - 09xxxx"
             ]
         }
     ]
-};
+}
+*/
+
+/*  NOTE TO GROUPMATE: open this through localhost:8000
+    you can use python -m http.server 8000 in the terminal
+    or use embeded json data above and delete the fetch statement and 'let data = {},but the 'data.json' will not be used and it would just end in data duplication
+*/ 
+
+let data = {};
 
 addEventListener("DOMContentLoaded", function() {
-    init();
+    fetch('/data.json')
+        .then(response => response.json())
+        .then(jsonData => {
+            data = jsonData;
+            init();
+        });
 });
 
 function init() {
