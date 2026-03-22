@@ -9,66 +9,61 @@
 <body>
 
   <header>
-    <h1>Handa360</h1>
+    <img src="assets/logo/handa360-logo.png" alt="Handa360" class="header-logo" />
   </header>
 
   <main>
-    <form id="assessmentForm">
+    <form id="assessmentForm" action="#" method="get">
 
+      <!-- QUESTION 1: Location (single-select via radio) -->
       <div class="question-block">
         <p class="question-text">Where are you right now?</p>
-        <ul class="option-list">
+        <div class="option-grid single-select">
 
-          <li>
-            <label>
-              <input type="radio" name="location" value="kalibo" />
-              Kalibo
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="radio" name="location" value="malinao" />
-              Malinao
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="radio" name="location" value="iloilo" />
-              Iloilo
-            </label>
-          </li>
+          <label class="option-label">
+            <input type="radio" name="location" value="kalibo" />
+            <span class="option-button">Kalibo</span>
+          </label>
 
-        </ul>
+          <label class="option-label">
+            <input type="radio" name="location" value="malinao" />
+            <span class="option-button">Malinao</span>
+          </label>
+
+          <label class="option-label">
+            <input type="radio" name="location" value="iloilo" />
+            <span class="option-button">Iloilo</span>
+          </label>
+
+        </div>
       </div>
-     
+
+      <!-- QUESTION 2: Hazard (multi-select via checkbox) -->
       <div class="question-block">
         <p class="question-text">What are you experiencing?</p>
-        <ul class="option-list">
-          <li>
-            <label>
-              <input type="checkbox" name="hazard" value="flooding" />
-              Flooding
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="hazard" value="earthquake" />
-              Earthquake
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="hazard" value="fire" />
-              Fire
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" name="hazard" value="typhoon" />
-              Typhoon
-            </label>
-          </li>
-        </ul>
+        <div class="option-grid multi-select">
+
+          <label class="option-label">
+            <input type="checkbox" name="hazard" value="flooding" />
+            <span class="option-button">Flooding</span>
+          </label>
+
+          <label class="option-label">
+            <input type="checkbox" name="hazard" value="earthquake" />
+            <span class="option-button">Earthquake</span>
+          </label>
+
+          <label class="option-label">
+            <input type="checkbox" name="hazard" value="fire" />
+            <span class="option-button">Fire</span>
+          </label>
+
+          <label class="option-label">
+            <input type="checkbox" name="hazard" value="typhoon" />
+            <span class="option-button">Typhoon</span>
+          </label>
+
+        </div>
       </div>
 
       <div class="form-footer">
