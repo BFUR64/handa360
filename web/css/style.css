@@ -16,10 +16,10 @@ header {
   background: rgba(47, 52, 58, 0.9);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: bold;
+.header-logo {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 main {
@@ -33,6 +33,7 @@ main {
   gap: 32px;
 }
 
+/* QUESTION BLOCK */
 .question-block {
   display: flex;
   flex-direction: column;
@@ -46,36 +47,65 @@ main {
   color: #e5e7eb;
 }
 
-.option-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+/* OPTION GRIDS */
+.option-grid {
+  display: grid;
+  gap: 12px;
 }
 
-.option-list li label {
+.option-grid.single-select {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.option-grid.multi-select {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Hide the actual input — visuals come from the label */
+.option-label input[type="radio"],
+.option-label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* The visible button face */
+.option-label {
+  cursor: pointer;
+  display: block;
+}
+
+.option-button {
   display: flex;
   align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  color: #cbd5e1;
-  font-size: 15px;
-}
-
-.option-list li label:hover {
+  min-height: 56px;
+  padding: 14px 16px;
+  background: #454c53;
+  border: 1px solid #5a626a;
   color: #e5e7eb;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background 0.18s ease, border-color 0.18s ease;
+  user-select: none;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-  accent-color: #7aa2ff;
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
+.option-label:hover .option-button {
+  border-color: #7a8490;
+  background: #4b535b;
 }
 
+/* Selected state — triggered by :checked on the hidden input */
+.option-label input:checked + .option-button {
+  background: #111827;
+  border-color: #7aa2ff;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px #7aa2ff, 0 0 18px rgba(122, 162, 255, 0.28);
+}
+
+/* FOOTER */
 .separator {
   margin: 0 0 8px;
   color: #555c63;
@@ -97,4 +127,12 @@ input[type="checkbox"] {
 
 .btn-submit:hover {
   background: #000000;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .option-grid.single-select,
+  .option-grid.multi-select {
+    grid-template-columns: 1fr;
+  }
 }
