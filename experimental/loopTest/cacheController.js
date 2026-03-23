@@ -1,15 +1,18 @@
 import * as cachedData from "./cachedData";
 
-const QUESTIONS_URL = "questions.json";
-const DATA_URL = "data.json";
+const QUESTIONS_URL = "data/questions.json";
+const ACTIONS_URL = "data/actions.json";
+const LOCATIONS_URL = "data/locations.json";
 
-const LOCAL_QUESTIONS_KEY = "questions.json";
-const LOCAL_DATA_KEY = "data.json"
+const LOCAL_QUESTIONS_KEY = "questions";
+const LOCAL_ACTIONS_KEY = "actions";
+const LOCAL_LOCATIONS_KEY = "locations";
 
 function loadFromStorage() {
     try {
         loadQuestionsFromStorage();
-        loadDataFromStorage();
+        loadActionsFromStorage();
+        loadLocationsFromStorage();
     }
     catch (error) {
         console.warn("Local storage cache corrupted, skipping...", error.message);
@@ -24,21 +27,27 @@ function loadQuestionsFromStorage() {
     }
 }
 
-function loadDataFromStorage() {
-    let localData = localStorage.getItem(LOCAL_DATA_KEY);
+function loadActionsFromStorage() {
+    let localActions = localStorage.getItem(LOCAL_ACTIONS_KEY);
 
-    if (localData != null) {
-        localData = JSON.parse(localData);
+    if (localActions != null) {
+        cachedData.actions = JSON.parse(localActions);
+    }
+}
 
-        cachedData.actions = localData.actions;
-        cachedData.locations = localData.locations;
+function loadLocationsFromStorage() {
+    let localLocations = localStorage.getItem(LOCAL_LOCATIONS_KEY);
+
+    if (localLocations != null) {
+        cachedData.locations = JSON.parse(localLocations);
     }
 }
 
 async function syncFromRemote() {
     try {
         await syncQuestionsFromRemote();
-        await syncDataFromRemote();
+        await syncActionsFromRemote();
+        await syncLocationsFromRemote();
     }
     catch (error) {
         console.warn("Failed to load from remote, skipping...", error.message);
@@ -57,17 +66,26 @@ async function syncQuestionsFromRemote() {
     localStorage.setItem(LOCAL_QUESTIONS_KEY, JSON.stringify(cachedData.questions));
 }
 
-async function syncDataFromRemote() {
-    let response = await fetch(DATA_URL);
+async function syncActionsFromRemote() {
+    let response = await fetch(ACTIONS_URL);
 
     if (!response.ok) {
         throw new Error(`Server said: ${response.status} ${response.statusText}`);
     }
 
-    let remoteData = await response.json();
+    cachedData.actions = await response.json();
 
-    cachedData.actions = remoteData.actions;
-    cachedData.locations = remoteData.locations;
+    localStorage.setItem(LOCAL_ACTIONS_KEY, JSON.stringify(cachedData.actions));
+}
 
-    localStorage.setItem(LOCAL_DATA_KEY, JSON.stringify(remoteData));
+async function syncLocationsFromRemote() {
+    let response = await fetch(LOCATIONS_URL);
+
+    if (!response.ok) {
+        throw new Error(`Server said: ${response.status} ${response.statusText}`);
+    }
+
+    cachedData.locations = await response.json();
+
+    localStorage.setItem(LOCAL_LOCATIONS_KEY, JSON.stringify(cachedData.locations));
 }
