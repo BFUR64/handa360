@@ -1,4 +1,4 @@
-import * as cachedData from "./cachedData";
+import * as cachedData from "./cachedData.js";
 
 const QUESTIONS_URL = "data/questions.json";
 const ACTIONS_URL = "data/actions.json";
@@ -8,7 +8,7 @@ const LOCAL_QUESTIONS_KEY = "questions";
 const LOCAL_ACTIONS_KEY = "actions";
 const LOCAL_LOCATIONS_KEY = "locations";
 
-function loadFromStorage() {
+export function loadFromStorage() {
     try {
         loadQuestionsFromStorage();
         loadActionsFromStorage();
@@ -23,7 +23,7 @@ function loadQuestionsFromStorage() {
     let localQuestions = localStorage.getItem(LOCAL_QUESTIONS_KEY);
 
     if (localQuestions != null) {
-        cachedData.questions = JSON.parse(localQuestions);
+        cachedData.setQuestions(JSON.parse(localQuestions));
     }
 }
 
@@ -31,7 +31,7 @@ function loadActionsFromStorage() {
     let localActions = localStorage.getItem(LOCAL_ACTIONS_KEY);
 
     if (localActions != null) {
-        cachedData.actions = JSON.parse(localActions);
+        cachedData.setActions(JSON.parse(localActions));
     }
 }
 
@@ -39,11 +39,11 @@ function loadLocationsFromStorage() {
     let localLocations = localStorage.getItem(LOCAL_LOCATIONS_KEY);
 
     if (localLocations != null) {
-        cachedData.locations = JSON.parse(localLocations);
+        cachedData.setLocations(JSON.parse(localLocations));
     }
 }
 
-async function syncFromRemote() {
+export async function syncFromRemote() {
     try {
         await syncQuestionsFromRemote();
         await syncActionsFromRemote();
@@ -61,7 +61,7 @@ async function syncQuestionsFromRemote() {
         throw new Error(`Server said: ${response.status} ${response.statusText}`);
     }
 
-    cachedData.questions = await response.json();
+    cachedData.setQuestions(await response.json());
 
     localStorage.setItem(LOCAL_QUESTIONS_KEY, JSON.stringify(cachedData.questions));
 }
@@ -73,7 +73,7 @@ async function syncActionsFromRemote() {
         throw new Error(`Server said: ${response.status} ${response.statusText}`);
     }
 
-    cachedData.actions = await response.json();
+    cachedData.setActions(await response.json());
 
     localStorage.setItem(LOCAL_ACTIONS_KEY, JSON.stringify(cachedData.actions));
 }
@@ -85,7 +85,7 @@ async function syncLocationsFromRemote() {
         throw new Error(`Server said: ${response.status} ${response.statusText}`);
     }
 
-    cachedData.locations = await response.json();
+    cachedData.setLocations(await response.json());
 
     localStorage.setItem(LOCAL_LOCATIONS_KEY, JSON.stringify(cachedData.locations));
 }
