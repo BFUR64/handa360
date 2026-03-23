@@ -15,7 +15,11 @@ export function loadFromStorage() {
         loadItemFromStorage(LOCAL_LOCATIONS_KEY, cachedData.setLocations);
     }
     catch (error) {
-        console.warn("Local storage cache corrupted, skipping...", error.message);
+        console.warn("Local storage corrupted, wiping...", error.message);
+
+        localStorage.removeItem(LOCAL_QUESTIONS_KEY);
+        localStorage.removeItem(LOCAL_ACTIONS_KEY);
+        localStorage.removeItem(LOCAL_LOCATIONS_KEY);
     }
 }
 
