@@ -1,6 +1,21 @@
-export let questions;
-export let actions;
-export let locations;
+let questions = null;
+let actions = null;
+let locations = null;
+
+export function getQuestions() {
+    if (questions == null) return null;
+    return structuredClone(questions);
+}
+
+export function getActions() {
+    if (actions == null) return null;
+    return structuredClone(actions);
+}
+
+export function getLocations() {
+    if (locations == null) return null;
+    return structuredClone(locations);
+}
 
 export function setQuestions(data) {
     questions = data;
