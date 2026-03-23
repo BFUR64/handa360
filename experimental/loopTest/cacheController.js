@@ -48,7 +48,9 @@ async function syncFromUrl(url, setterFunction, key) {
         throw new Error(`Server said: ${response.status} ${response.statusText}`);
     }
 
-    setterFunction(await response.json());
+    let data = await response.json();
 
-    localStorage.setItem(key, JSON.stringify(target));
+    setterFunction(data);
+
+    localStorage.setItem(key, JSON.stringify(data));
 }
