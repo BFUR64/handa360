@@ -1,0 +1,26 @@
+[
+    {
+        "condition" : { "location" : "kalibo" },
+        "information" : [
+            "Police - 09xxxx",
+            "Fire Station - 09xxxx",
+            "Emergency - 09xxxx"
+        ]
+    },
+    {
+        "condition" : { "location" : "manila" },
+        "information" : [
+            "Police - 09xxxx",
+            "Fire Station - 09xxxx",
+            "Emergency - 09xxxx"
+        ]
+    },
+    {
+        "condition" : { "location" : "iloilo" },
+        "information" : [
+            "Police - 09xxxx",
+            "Fire Station - 09xxxx",
+            "Emergency - 09xxxx"
+        ]
+    }
+]
