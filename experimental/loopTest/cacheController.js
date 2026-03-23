@@ -34,11 +34,16 @@ export async function syncFromRemote() {
         syncFromUrl(LOCATIONS_URL, cachedData.setLocations, LOCAL_LOCATIONS_KEY)
     ]);
 
+    let isPerfectSync = true;
+
     results.forEach(result => {
         if (result.status === "rejected") {
-            console.log("Sync failed for the file:", result.reason.message);
+            console.warn("Sync failed for a file:", result.reason.message);
+            isPerfectSync = false;
         }
     });
+
+    return isPerfectSync;
 }
 
 async function syncFromUrl(url, setterFunction, key) {

@@ -3,7 +3,13 @@ import * as cachedData from "./cachedData.js";
 
 addEventListener("DOMContentLoaded", async function() {
     cacheController.loadFromStorage();
-    await cacheController.syncFromRemote();
+    let syncSuccess = await cacheController.syncFromRemote();
+
+    if (!syncSuccess) {
+        // TODO: Add notification system for the user
+        console.error("No toast notifications for user. Fix pls");
+    }
+
     printCache();
 })
 
