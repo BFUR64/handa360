@@ -23,6 +23,11 @@ export function loadFromStorage() {
     }
 }
 
+/**
+ * 
+ * @param {string} itemKey 
+ * @param {function(QuestionsData | ActionsData | LocationsData):void} setterFunction 
+ */
 function loadItemFromStorage(itemKey, setterFunction) {
     let localData = localStorage.getItem(itemKey);
 
@@ -31,6 +36,10 @@ function loadItemFromStorage(itemKey, setterFunction) {
     }
 }
 
+/**
+ * 
+ * @returns {boolean}
+ */
 export async function syncFromRemote() {
     let results = await Promise.allSettled([
         syncFromUrl(QUESTIONS_URL, cachedData.setQuestions, LOCAL_QUESTIONS_KEY),
@@ -50,6 +59,12 @@ export async function syncFromRemote() {
     return isPerfectSync;
 }
 
+/**
+ * 
+ * @param {string} url 
+ * @param {function(QuestionsData | ActionsData | LocationsData):void} setterFunction 
+ * @param {string} key 
+ */
 async function syncFromUrl(url, setterFunction, key) {
     let response = await fetch(url);
 
