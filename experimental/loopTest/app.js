@@ -16,7 +16,7 @@ addEventListener("DOMContentLoaded", async function() {
 })
 
 function printCache() {
-    console.log(cachedData.getActions());
+    console.log(cachedData.getQuestions());
     console.log(cachedData.getActions());
     console.log(cachedData.getLocations());
 }
