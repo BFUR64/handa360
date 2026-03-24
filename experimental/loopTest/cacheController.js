@@ -21,7 +21,7 @@ export function loadFromStorage() {
         loadItemFromStorage(LOCAL_LOCATIONS_KEY, cachedData.setLocations);
     }
     catch (error) {
-        let message = error instanceof Error ? error.message : "Unknown Error"; 
+        let message = error instanceof Error ? error.message : "Unknown Error";
 
         console.warn("Local storage corrupted, wiping...", message);
 
@@ -33,8 +33,8 @@ export function loadFromStorage() {
 
 /**
  * @template T
- * @param {string} itemKey 
- * @param {function(T):void} setterFunction 
+ * @param {string} itemKey
+ * @param {function(T):void} setterFunction
  */
 function loadItemFromStorage(itemKey, setterFunction) {
     let localData = localStorage.getItem(itemKey);
@@ -66,9 +66,9 @@ export async function syncFromRemote() {
 
 /**
  * @template T
- * @param {string} url 
- * @param {function(T):void} setterFunction 
- * @param {string} key 
+ * @param {string} url
+ * @param {function(T):void} setterFunction
+ * @param {string} key
  */
 async function syncFromUrl(url, setterFunction, key) {
     let response = await fetch(url);
