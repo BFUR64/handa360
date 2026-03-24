@@ -8,7 +8,7 @@ async function init() {
 
     let currentHobbies = json.hobbies.join(", ");
 
-    document.getElementById("edit").innerHTML = 
+    document.getElementById("edit").innerHTML =
         "<h1>" + json.name + "</h1>" +
         "<h2>" + json.age + "</h2>" +
         "<h3>Student: " + json.isStudent + "</h3>" +

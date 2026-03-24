@@ -5,7 +5,7 @@ addEventListener("DOMContentLoaded", function() {
 async function initQuestions() {
     let result = await fetch("./questions.json");
     let data = await result.json();
-    
+
     let html = `<div id=`;
 
     data.questions.forEach(element => {

@@ -3,7 +3,7 @@ const questionBox2 = document.getElementById("questionBox2");
 fetch("choices.json")
     .then(response => response.json())
     .then(data => {
-        // In the future change to for loop to capitalize?        
+        // In the future change to for loop to capitalize?
         data.hazards.forEach((hazard, index) => {
             const label = document.createElement("label");
 

@@ -6,7 +6,7 @@ fetch("choices.json")
         // In the future change to for loop to capitalize?
         data.locations.forEach((location, index) => {
             const label = document.createElement("label");
- 
+
             // Basically types in (wherever you put "<script src="locationParser.js"></script>"):
             // <input type="radio" name="question1" id="location" value=location>location
             const input = document.createElement("input");

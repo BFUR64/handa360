@@ -71,7 +71,7 @@ const data = {
 /*  NOTE TO GROUPMATE: open this through localhost:8000
     you can use python -m http.server 8000 in the terminal
     or use embeded json data above and delete the fetch statement and 'let data = {},but the 'data.json' will not be used and it would just end in data duplication
-*/ 
+*/
 
 let data = {};
 
