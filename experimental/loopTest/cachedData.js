@@ -1,7 +1,9 @@
+// @ts-check
+
 /**
  * @typedef {Object} QuestionsData
- * @property {String[]} location
- * @property {String[]} hazard
+ * @property {string[]} location
+ * @property {string[]} hazard
  */
 
 /**
@@ -18,57 +20,44 @@
  * @property {string[]} information
  */
 
-let questions = null;
-let actions = null;
-let locations = null;
+/** @type {QuestionsData | undefined} */
+let questions;
 
-/**
- * 
- * @returns {QuestionsData | null}
- */
+/** @type {ActionsData | undefined} */
+let actions;
+
+/** @type {LocationsData | undefined} */
+let locations;
+
+/** @returns {QuestionsData | undefined} */
 export function getQuestions() {
-    if (questions == null) return null;
+    if (questions == null) return;
     return structuredClone(questions);
 }
 
-/**
- * 
- * @returns {ActionsData | null}
- */
+/** @returns {ActionsData | undefined} */
 export function getActions() {
-    if (actions == null) return null;
+    if (actions == null) return;
     return structuredClone(actions);
 }
 
-/**
- * 
- * @returns {LocationsData | null}
- */
+/** @returns {LocationsData | undefined} */
 export function getLocations() {
-    if (locations == null) return null;
+    if (locations == null) return;
     return structuredClone(locations);
 }
 
-/**
- * 
- * @param {QuestionsData} data 
- */
+/** @param {QuestionsData} data */
 export function setQuestions(data) {
     questions = data;
 }
 
-/**
- * 
- * @param {ActionsData} data 
- */
+/** @param {ActionsData} data */
 export function setActions(data) {
     actions = data;
 }
 
-/**
- * 
- * @param {LocationsData} data 
- */
+/** @param {LocationsData} data */
 export function setLocations(data) {
     locations = data;
 }

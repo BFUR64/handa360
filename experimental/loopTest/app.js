@@ -1,3 +1,5 @@
+// @ts-check
+
 import * as cacheController from "./cacheController.js";
 import * as cachedData from "./cachedData.js";
 

@@ -1,3 +1,9 @@
+// @ts-check
+
+/** @typedef {import('./cachedData.js').QuestionsData} QuestionsData */
+/** @typedef {import('./cachedData.js').ActionsData} ActionsData */
+/** @typedef {import('./cachedData.js').LocationsData} LocationsData */
+
 import * as cachedData from "./cachedData.js";
 
 const QUESTIONS_URL = "data/questions.json";
@@ -15,7 +21,9 @@ export function loadFromStorage() {
         loadItemFromStorage(LOCAL_LOCATIONS_KEY, cachedData.setLocations);
     }
     catch (error) {
-        console.warn("Local storage corrupted, wiping...", error.message);
+        let message = error instanceof Error ? error.message : "Unknown Error"; 
+
+        console.warn("Local storage corrupted, wiping...", message);
 
         localStorage.removeItem(LOCAL_QUESTIONS_KEY);
         localStorage.removeItem(LOCAL_ACTIONS_KEY);
@@ -24,9 +32,9 @@ export function loadFromStorage() {
 }
 
 /**
- * 
+ * @template T
  * @param {string} itemKey 
- * @param {function(QuestionsData | ActionsData | LocationsData):void} setterFunction 
+ * @param {function(T):void} setterFunction 
  */
 function loadItemFromStorage(itemKey, setterFunction) {
     let localData = localStorage.getItem(itemKey);
@@ -36,10 +44,7 @@ function loadItemFromStorage(itemKey, setterFunction) {
     }
 }
 
-/**
- * 
- * @returns {boolean}
- */
+/** @returns {Promise<boolean>} */
 export async function syncFromRemote() {
     let results = await Promise.allSettled([
         syncFromUrl(QUESTIONS_URL, cachedData.setQuestions, LOCAL_QUESTIONS_KEY),
@@ -60,9 +65,9 @@ export async function syncFromRemote() {
 }
 
 /**
- * 
+ * @template T
  * @param {string} url 
- * @param {function(QuestionsData | ActionsData | LocationsData):void} setterFunction 
+ * @param {function(T):void} setterFunction 
  * @param {string} key 
  */
 async function syncFromUrl(url, setterFunction, key) {
