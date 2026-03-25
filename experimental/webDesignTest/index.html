@@ -12,6 +12,17 @@
     </header>
 
     <main>
+        <template id="assessmentForm-template">
+            <section class="question-block">
+                <h2 class="question-text"></h2>
+
+                <label class="option-label">
+                    <input type="radio" name="{{name}}" value="{{value}}">
+                    <span class="option-button"></span>
+                </label>
+            </section>
+        </template>
+
         <form id="assessmentForm">
             <section class="question-block">
                 <h2 class="question-text">Where are you?</h2>
