@@ -21,17 +21,23 @@
 
     <hr>
 
-    <main>
-        <template id="assessmentForm-template">
-            <section class="question-block">
-                <h2 class="question-text"></h2>
+    <main id="container">
 
-                <label class="option-label">
-                    <input type="radio" name="{{name}}" value="{{value}}">
-                    <span class="option-button"></span>
-                </label>
-            </section>
-        </template>
     </main>
+
+    <template id="question-template">
+        <section class="question-block">
+            <h2 class="question-text"></h2>
+        </section>
+    </template>
+
+    <template id="option-template">
+        <label class="option-label">
+            <input type="radio">
+            <span class="option-button"></span>
+        </label>
+    </template>
+
+    <script type="module" src="./app.js"></script>
 </body>
 </html>
