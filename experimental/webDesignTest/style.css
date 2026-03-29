@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     background: #2f343a;
     color: #e5e7eb;
-    user-select: none;
+    /* user-select: none; */
 }
 
 main {
