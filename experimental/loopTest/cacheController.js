@@ -1,9 +1,5 @@
 // @ts-check
 
-/** @typedef {import('./cachedData.js').QuestionsData} QuestionsData */
-/** @typedef {import('./cachedData.js').ActionsData} ActionsData */
-/** @typedef {import('./cachedData.js').LocationsData} LocationsData */
-
 import * as cachedData from "./cachedData.js";
 
 const QUESTIONS_URL = "data/questions.json";
