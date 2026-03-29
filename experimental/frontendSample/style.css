@@ -10,7 +10,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 90px);
 }
 
 header{
@@ -43,28 +43,44 @@ header{
 #assessmentForm{
     display: flex;
     flex-direction: column;
-    gap: 20px;
     width: 80dvw;
 
     fieldset{
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         gap: 10px;
+        border: none;
+        padding: 20px;
 
         .location-fieldset{
             display: flex;
             flex-direction: row;
-            gap: 10px; 
         }
         
         .hazard-fieldset{
-            display: block;
-            gap: 10px; 
+            display: flex;
         }
     }
 }
+
+            .hazard-options{
+                display: flex;
+                flex-direction: row; 
+                margin: 10px;
+                gap: 10px;
+            }
+
+            .location-text{
+                width: 70dvw;
+            }
+            .hazard-text{
+                display: flex;
+                flex-direction: row;
+                width: 33dvw;
+            }
 
 
             input[type="radio"]{
@@ -79,7 +95,6 @@ header{
                     align-items: center;
                     justify-content: center;
                     gap: 10px;
-                    width: 70dvw;
                     height: 100%;
                     padding: 10px;
                     background-color:#668597;
