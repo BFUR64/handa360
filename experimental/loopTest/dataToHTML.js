@@ -22,7 +22,7 @@ export function printQuestions() {
     if (!(formTemplateClone instanceof DocumentFragment)) return;
 
     let formBlock = formTemplateClone.querySelector(".form-block");
-    if (!formBlock) return;
+    if (!(formBlock instanceof HTMLFormElement)) return;
 
     let formButton = formTemplateClone.querySelector(".btn-submit");
     if (!formButton) return;
