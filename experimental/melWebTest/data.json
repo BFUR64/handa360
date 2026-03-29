@@ -41,7 +41,7 @@
     "locations" : [
         {
             "condition" : { "location" : "kalibo" },
-            "information" : [
+            "contacts" : [
                 "Police - 09xxxx",
                 "Fire Station - 09xxxx",
                 "Emergency - 09xxxx"
@@ -49,18 +49,18 @@
         },
         {
             "condition" : { "location" : "manila" },
-            "information" : [
-                "Police - 09xxxx",
-                "Fire Station - 09xxxx",
-                "Emergency - 09xxxx"
+            "contacts" : [
+                "Police - 0933xx",
+                "Fire Station - 09x45x",
+                "Emergency - 09x21x"
             ]
         },
         {
             "condition" : { "location" : "iloilo" },
-            "information" : [
-                "Police - 09xxxx",
-                "Fire Station - 09xxxx",
-                "Emergency - 09xxxx"
+            "contacts" : [
+                "Police - 09xxx3",
+                "Fire Station - 09xx3x",
+                "Emergency - 09x3xx"
             ]
         }
     ]
