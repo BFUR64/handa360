@@ -43,10 +43,10 @@ header {
 /* ============ */
 /* Form */
 /* ============ */
-#assessmentForm {
+.form-block {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 32px;
 }
 
 .question-block {
