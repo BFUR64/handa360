@@ -2,63 +2,49 @@
 
 import * as cachedData from "./cachedData.js";
 
-const formTemplate = document.getElementById("form-template");
-const questionTemplate = document.getElementById("question-template");
-const optionTemplate = document.getElementById("option-template");
-const container = document.getElementById("container");
+const formTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("form-template"));
+const questionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("question-template"));
+const optionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("option-template"));
+const container = /** @type {HTMLElement} */ (document.getElementById("container"));
 
 export function printQuestions() {
-    if (
-        !(formTemplate instanceof HTMLTemplateElement) ||
-        !(questionTemplate instanceof HTMLTemplateElement) ||
-        !(optionTemplate instanceof HTMLTemplateElement) ||
-        !(container instanceof HTMLElement)
-    ) return;
-
+    // TODO Replace this with the future Transformer module that guarantees Questions[]
     let questions = cachedData.getQuestions();
     if (!questions) return;
 
-    let formTemplateClone = formTemplate.content.cloneNode(true);
-    if (!(formTemplateClone instanceof DocumentFragment)) return;
+    let formTemplateClone = /** @type {DocumentFragment} */ (formTemplate.content.cloneNode(true));
 
-    let formBlock = formTemplateClone.querySelector(".form-block");
-    if (!(formBlock instanceof HTMLFormElement)) return;
+    let questionsContainer = formTemplateClone.querySelector(".questions-container");
 
-    let formButton = formTemplateClone.querySelector(".btn-submit");
-    if (!formButton) return;
+    if (!questionsContainer) throw new Error("Form template is broken");
 
     questions.forEach(question => {
-        let questionTemplateClone = questionTemplate.content.cloneNode(true);
-        if (!(questionTemplateClone instanceof DocumentFragment)) return;
+        let questionTemplateClone = /** @type {DocumentFragment} */ (questionTemplate.content.cloneNode(true));
 
         let textElement = questionTemplateClone.querySelector(".question-text");
-        if (!textElement) return;
+        let questionSelection = questionTemplateClone.querySelector(".question-block");
+
+        if (!textElement || !questionSelection) throw new Error("Question template is broken");
 
         textElement.textContent = question.text;
 
-        let questionSelection = questionTemplateClone.querySelector(".question-block");
-        if (!questionSelection) return;
-
         question.options.forEach(option => {
-            let optionTemplateClone = optionTemplate.content.cloneNode(true);
-            if (!(optionTemplateClone instanceof DocumentFragment)) return;
+            let optionTemplateClone = /** @type {DocumentFragment} */ (optionTemplate.content.cloneNode(true));
 
-            let radioInput = (optionTemplateClone.querySelector("input[type='radio']"));
-            if (!(radioInput instanceof HTMLInputElement)) return;
+            let radioInput = /** @type {HTMLInputElement} */ (optionTemplateClone.querySelector("input[type='radio']"));
+            let buttonText = optionTemplateClone.querySelector(".option-button");
+
+            if (!radioInput || !buttonText) throw new Error("Option template is broken");
 
             radioInput.value = option.value;
             radioInput.name = question.name;
-
-            let buttonText = optionTemplateClone.querySelector(".option-button");
-            if (!buttonText) return;
-
             buttonText.textContent = option.text;
 
             questionSelection.append(optionTemplateClone);
         })
 
-        formButton.before(questionTemplateClone);
+        questionsContainer.append(questionTemplateClone);
     })
 
-    container.append(formBlock);
+    container.append(formTemplateClone);
 }
