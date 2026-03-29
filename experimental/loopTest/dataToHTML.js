@@ -28,7 +28,6 @@ export function printQuestions() {
     if (!formButton) return;
 
     questions.forEach(question => {
-
         let questionTemplateClone = questionTemplate.content.cloneNode(true);
         if (!(questionTemplateClone instanceof DocumentFragment)) return;
 
