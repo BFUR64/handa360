@@ -7,7 +7,7 @@ const questionTemplate = /** @type {HTMLTemplateElement} */ (document.getElement
 const optionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("option-template"));
 const container = /** @type {HTMLElement} */ (document.getElementById("container"));
 
-export function printQuestions() {
+export function render() {
     // TODO Replace this with the future Transformer module that guarantees Questions[]
     let questions = cachedData.getQuestions();
     if (!questions) return;
