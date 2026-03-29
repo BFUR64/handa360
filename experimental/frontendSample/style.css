@@ -1,0 +1,106 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #c6c8c9;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        width: 100px;
+        height: auto;
+    }
+
+    nav{
+        display: block;
+        text-align: right;
+        word-spacing: 10px;
+
+        a{
+            color: #050602;
+            text-decoration: none;
+            
+            &:hover {
+                color: #94382c;
+            }
+        }
+    }
+}
+
+#assessmentForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80dvw;
+
+    fieldset{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+
+        .location-fieldset{
+            display: flex;
+            flex-direction: row;
+            gap: 10px; 
+        }
+        
+        .hazard-fieldset{
+            display: block;
+            gap: 10px; 
+        }
+    }
+}
+
+
+            input[type="radio"]{
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                height: 0;
+                pointer-events: none;
+
+                + span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    width: 70dvw;
+                    height: 100%;
+                    padding: 10px;
+                    background-color:#668597;
+                    color: white;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    
+                      &:hover {
+                        background-color:#06609f;
+                        color: white;
+                    }
+
+                    img{
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                }
+
+                &:checked + span {
+                    background-color: #94382c;
+                    color: white;
+                }
+            }

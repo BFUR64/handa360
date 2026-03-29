@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handa360</title>
+    <link rel="stylesheet" href = "style.css"/>
+</head>
+<body>
+<header>
+    <img src="../../logo/handa360-logo.png" alt="Handa360" class="logo"/>
+   <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+   </nav>
+</header>
+<main>
+    <form id="assessmentForm">
+        <fieldset class="location-fieldset">
+            <h2 class="question-text">Where are you?</h2>
+
+            <label for="aklan" class="location-option">
+              <input type="radio" id="aklan" name="location" value="Aklan">
+              <span>Aklan</span>
+            </label>
+            
+            <label for="capiz" class="location-option">
+              <input type="radio" id="capiz" name="location" value="Capiz">
+              <span>Capiz</span>
+            </label>
+
+            <label for="iloilo" class="location-option">
+              <input type="radio" id="iloilo" name="location" value="Iloilo">
+              <span>Iloilo</span>
+            </label>
+
+        </fieldset>
+
+        <fieldset class="hazard-fieldset">
+           <h2 class="question-text">What's the Hazard?</h2>
+           
+            <label for="earthquake" class="location-option">
+              <input type="radio" id="earthquake" name="hazard" value="Earthquake">
+              <span>Earthquake
+              <img src="././image/earthquake.png" alt="Earthquake" class="hazard-icon"/>
+              </span>
+            </label>
+            
+            <label for="flood" class="location-option">
+              <input type="radio" id="flood" name="hazard" value="Flood">
+              <span>Flood</span>
+            </label>
+
+            <label for="landslide" class="location-option">
+              <input type="radio" id="landslide" name="hazard" value="Landslide">
+              <span>Landslide</span>
+            </label>
+            
+            <label for="typhoon" class="location-option">
+              <input type="radio" id="typhoon" name="hazard" value="Typhoon">
+              <span>Typhoon</span>
+            </label>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+</main>
+</body>
+</html>
