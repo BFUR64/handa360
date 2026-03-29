@@ -15,6 +15,9 @@ async function loadInstructionsToHTML(hazardType) {
     let output = document.getElementById("output");
     let checklistTemplate = document.getElementById("checklist-template");
 
+     // Stops checklist from stacking
+    output.innerHTML = "";
+
     let response = await fetch("data.json");
 
     let data = await response.json();
