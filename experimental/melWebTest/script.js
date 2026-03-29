@@ -26,7 +26,7 @@ async function loadInstructionsToHTML(hazardType) {
             for (let instruction = 0; instruction < data.actions[action].instructions.length; instruction++) {
             // Lets you duplicate your template and show multiple checklist items.
                 let clone = checklistTemplate.content.cloneNode(true);
-                clone.querySelector("#checklist-item-text").innerText = data.actions[action].instructions[instruction];
+                clone.querySelector(".checklist-item-text").innerText = data.actions[action].instructions[instruction];
                 output.appendChild(clone);
             }
         }
