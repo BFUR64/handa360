@@ -1,4 +1,21 @@
-{
-  "location" : [ "kalibo", "manila", "iloilo" ],
-  "hazard" : [ "typhoon", "flood", "earthquake", "landslide" ]
-}
+[
+  {
+    "text" : "Where are you?",
+    "name" : "location",
+    "options" : [
+      {"value" : "kalibo", "text" : "Kalibo" },
+      {"value" : "manila", "text" : "Manila" },
+      {"value" : "iloilo", "text" : "Iloilo"}
+    ]
+  },
+  {
+    "text" : "What's the hazard?",
+    "name" : "hazard",
+    "options" : [
+      {"value" : "typhoon", "text": "Typhoon"},
+      {"value" : "flood", "text" : "Flood"},
+      {"value" : "earthquake", "text" : "Earthquake"},
+      {"value" : "landslide", "text" : "Landslide"}
+    ]
+  }
+]
