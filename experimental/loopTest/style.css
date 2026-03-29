@@ -49,6 +49,12 @@ header {
     gap: 32px;
 }
 
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
 .question-block {
     display: flex;
     flex-direction: column;
