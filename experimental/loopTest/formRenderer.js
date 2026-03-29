@@ -1,6 +1,6 @@
 // @ts-check
 
-import * as cachedData from "./cachedData.js";
+import * as normalizer from "./normalizer.js";
 
 const formTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("form-template"));
 const questionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("question-template"));
@@ -8,9 +8,7 @@ const optionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementBy
 const container = /** @type {HTMLElement} */ (document.getElementById("container"));
 
 export function render() {
-    // TODO Replace this with the future Transformer module that guarantees Questions[]
-    let questions = cachedData.getQuestions();
-    if (!questions) return;
+    let questions = normalizer.getNormalizedQuestions();
 
     let formTemplateClone = /** @type {DocumentFragment} */ (formTemplate.content.cloneNode(true));
 

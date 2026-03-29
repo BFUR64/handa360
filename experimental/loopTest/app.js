@@ -2,7 +2,7 @@
 
 import * as cacheController from "./cacheController.js";
 import * as cachedData from "./cachedData.js";
-import * as dataToHTML from "./dataToHTML.js";
+import * as formRenderer from "./formRenderer.js";
 
 addEventListener("DOMContentLoaded", async function() {
     cacheController.loadFromStorage();
@@ -13,7 +13,7 @@ addEventListener("DOMContentLoaded", async function() {
         console.error("No toast notifications for user. Fix pls");
     }
 
-    dataToHTML.printQuestions();
+    formRenderer.render();
 })
 
 function printCache() {
