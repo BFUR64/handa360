@@ -34,9 +34,8 @@
               <input type="radio" id="iloilo" name="location" value="Iloilo">
               <span class="location-text">Iloilo</span>
             </label>
-
         </fieldset>
-
+        <br><br>
         <fieldset class="hazard-fieldset">
            <h2 class="question-text">What's the Hazard?</h2>
 
@@ -72,9 +71,25 @@
             </label>
             </div>
         </fieldset>
-        <br>
-        <button type="submit">Submit</button>
+        <br><br>
+        <button type="submit" class="submit-button">Submit</button>
     </form>
+
+    <section id="result">
+      <fieldset id="reportForm">
+        <h2>Action</h2>
+        <div class="action-list">
+        
+        <span><input type="checkbox" id="action1" name="action1">
+        <label for="action1">Action 1</label></span>
+        <span><input type="checkbox" id="action2" name="action2">
+        <label for="action2">Action 2</label></span>
+        <span><input type="checkbox" id="action3" name="action3">
+        <label for="action3">Action 3</label></span>
+        </div>
+      </fieldset>
+    </section>
 </main>
+<script src="script.js"></script>
 </body>
 </html>

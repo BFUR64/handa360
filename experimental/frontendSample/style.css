@@ -8,9 +8,9 @@ body {
 
 main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 90px);
 }
 
 header{
@@ -46,18 +46,15 @@ header{
     width: 80dvw;
 
     fieldset{
-        position: relative;
+    
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 10px;
         border: none;
-        padding: 20px;
 
         .location-fieldset{
             display: flex;
-            flex-direction: row;
         }
         
         .hazard-fieldset{
@@ -69,38 +66,52 @@ header{
             .hazard-options{
                 display: flex;
                 flex-direction: row; 
-                margin: 10px;
-                gap: 10px;
+                gap: 20px;
             }
-
             .location-text{
-                width: 70dvw;
+                width: 70vw;
             }
             .hazard-text{
                 display: flex;
                 flex-direction: row;
-                width: 33dvw;
+                width: 33vw;
+                gap: 20px;
+            }
+
+            .submit-button{
+                align-self: center;
+                width: 50%;
+                padding: 10px;
+                background-color: #06609f;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background-color: #054a7a;
+                }
             }
 
 
             input[type="radio"]{
-                position: absolute;
                 opacity: 0;
                 width: 0;
                 height: 0;
                 pointer-events: none;
 
                 + span {
+                    border-radius: 5px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: 10px;
-                    height: 100%;
                     padding: 10px;
                     background-color:#668597;
                     color: white;
                     text-align: center;
                     transition: all 0.3s ease;
+
                     
                       &:hover {
                         background-color:#06609f;
@@ -119,3 +130,9 @@ header{
                     color: white;
                 }
             }
+            
+    .action-list{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
