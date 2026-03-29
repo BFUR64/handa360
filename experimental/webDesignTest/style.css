@@ -1,3 +1,6 @@
+/* ============ */
+/* General */
+/* ============ */
 * {
     box-sizing: border-box;
 }
@@ -15,6 +18,31 @@ main {
     max-width: 50vh;
 }
 
+/* ============ */
+/* Header */
+/* ============ */
+header {
+    display: flex;
+    padding: 0 20px;
+
+    img {
+        width: 100px;
+    }
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 16px;
+}
+
+/* ============ */
+/* Form */
+/* ============ */
 #assessmentForm {
     display: flex;
     flex-direction: column;
