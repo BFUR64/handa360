@@ -7,8 +7,11 @@ const questionTemplate = /** @type {HTMLTemplateElement} */ (document.getElement
 const optionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("option-template"));
 const container = /** @type {HTMLElement} */ (document.getElementById("container"));
 
+// TODO inject the `normalizedQuestions` as a parameter and let app.js control the data instead
 export function render() {
     let questions = normalizer.getNormalizedQuestions();
+
+    container.innerHTML = "";
 
     let formTemplateClone = /** @type {DocumentFragment} */ (formTemplate.content.cloneNode(true));
 
