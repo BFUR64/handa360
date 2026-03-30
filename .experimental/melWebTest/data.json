@@ -1,0 +1,67 @@
+{
+    "actions" : [
+        {
+            "condition" : { "hazard" : "typhoon" },
+            "instructions" : [
+                "Get inside a strong building",
+                "Stay away from windows and glass",
+                "Move to safest area (interior room, lower floor not prone to flooding)",
+                "Charge phone and all power banks",
+                "Turn on radio / check official updates"
+            ]
+        },
+        {
+            "condition" : { "hazard" : "flood" },
+            "instructions" : [
+                "Move to higher ground or upper floor",
+                "Stay away from rising water",
+                "Turn off electricity (if safe to do so)",
+                "Monitor official alerts"
+            ]
+        },
+        {
+            "condition" : { "hazard" : "earthquake" },
+            "instructions" : [
+                "DROP to the ground",
+                "COVER under sturdy furniture",
+                "HOLD ON until shaking stops",
+                "Stay away from glass and heavy objects"
+            ]
+        },
+        {
+            "condition" : { "hazard" : "landslide" },
+            "instructions" : [
+                "Move away from slopes and hillsides",
+                "Go to higher, stable ground",
+                "Stay alert for rumbling/cracking sounds"
+            ]
+        }
+    ],
+
+    "locations" : [
+        {
+            "condition" : { "location" : "kalibo" },
+            "contacts" : [
+                "Police - 09xxxx",
+                "Fire Station - 09xxxx",
+                "Emergency - 09xxxx"
+            ]
+        },
+        {
+            "condition" : { "location" : "manila" },
+            "contacts" : [
+                "Police - 0933xx",
+                "Fire Station - 09x45x",
+                "Emergency - 09x21x"
+            ]
+        },
+        {
+            "condition" : { "location" : "iloilo" },
+            "contacts" : [
+                "Police - 09xxx3",
+                "Fire Station - 09xx3x",
+                "Emergency - 09x3xx"
+            ]
+        }
+    ]
+}

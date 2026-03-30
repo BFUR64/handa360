@@ -1,0 +1,4 @@
+{
+  "locations" : [ "kalibo", "manila", "iloilo" ],
+  "hazards" : [ "typhoon", "flood", "earthquake", "landslide" ]
+}
