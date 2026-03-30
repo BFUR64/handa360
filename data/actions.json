@@ -34,5 +34,69 @@
             "Go to higher, stable ground",
             "Stay alert for rumbling/cracking sounds"
         ]
+    },
+    {
+        "condition" : { "hazard" : "fire" },
+        "instructions" : [
+            "Install/check smoke alarms if available",
+            "Keep fire extinguisher ready",
+            "Identify exits and practice escape plan",
+            "Do NOT overload electrical outlets",
+            "If fire starts: Get out, stay out, call for help",
+            "Crawl low under smoke to avoid inhalation"
+        ]
+    },
+    {
+        "condition" : { "hazard" : "volcanic_eruption" },
+        "instructions" : [
+            "Prepare a go-bag (water, food, flashlight, meds, masks, documents)",
+            "Keep N95 mask or cloth to protect from ash",
+            "Monitor updates from PHIVOLCS",
+            "Seal windows/doors to prevent ash from entering",
+            "Evacuate immediately if within danger zone",
+            "Avoid river valleys (lahar risk)"
+        ]
+    },
+    {
+        "condition" : { "hazard" : "storm_surge" },
+        "instructions" : [
+            "Know if your area is coastal and flood-prone",
+            "Prepare evacuation plan to higher ground",
+            "Charge phones and backup power",
+            "Secure important belongings in waterproof bags",
+            "Follow warnings from PAGASA",
+            "Evacuate early—do NOT wait for water to rise"
+        ]
+    },
+    {
+        "condition" : { "hazard" : "drought" },
+        "instructions" : [
+            "Store clean drinking water (at least 3 days supply)",
+            "Practice water conservation (limit washing, reuse water)",
+            "Avoid wasting electricity (reduces strain on resources)",
+            "Monitor advisories from NDRRMC",
+            "Prepare alternative food sources (non-perishables)"
+        ]
+    },
+    {
+        "condition" : { "hazard" : "heat_wave" },
+        "instructions" : [
+            "Drink plenty of water (even if not thirsty)",
+            "Avoid outdoor activities during peak heat (10 AM-4 PM)",
+            "Wear light, loose clothing",
+            "Stay in shaded or ventilated areas",
+            "Watch for signs of heat exhaustion (dizziness, nausea)",
+            "Check on children and elderly"
+        ]
+    },
+    {
+        "condition" : { "hazard" : "tsunami" },
+        "instructions" : [
+            "Know evacuation routes to higher ground",
+            "After strong earthquake, move inland immediately",
+            "Do NOT wait for official warning if water suddenly recedes",
+            "Stay away from coastline until declared safe",
+            "Prepare go-bag for quick evacuation"
+        ]
     }
 ]
