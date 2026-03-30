@@ -19,6 +19,7 @@ export function getNormalizedQuestions() {
         options: (Array.isArray(question.options) ? question.options : [])
             .filter(option => typeof option.value === "string" && typeof option.text === "string")
             .map(option => ({ value: option.value, text: option.text}))
+            .sort((a, b) => a.text.localeCompare(b.text))
     }));
 }
 
