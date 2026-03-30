@@ -1,39 +1,39 @@
 // @ts-check
 
-import * as normalizer from "../services/normalizer.js";
-
 const formTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("form-template"));
 const questionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("question-template"));
 const optionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("option-template"));
 const container = /** @type {HTMLElement} */ (document.getElementById("container"));
 
-// TODO inject the `normalizedQuestions` as a parameter and let app.js control the data instead
-export function render() {
-    let questions = normalizer.getNormalizedQuestions();
+/** @typedef {import("../data/cachedData.js").Question} Question */
 
+/**
+ * @param {Question[]} questions
+ */
+export function render(questions) {
     container.innerHTML = "";
 
-    let formTemplateClone = /** @type {DocumentFragment} */ (formTemplate.content.cloneNode(true));
+    const formTemplateClone = /** @type {DocumentFragment} */ (formTemplate.content.cloneNode(true));
 
-    let questionsContainer = formTemplateClone.querySelector(".questions-container");
+    const questionsContainer = formTemplateClone.querySelector(".questions-container");
 
     if (!questionsContainer) throw new Error("Form template is broken");
 
     questions.forEach(question => {
-        let questionTemplateClone = /** @type {DocumentFragment} */ (questionTemplate.content.cloneNode(true));
+        const questionTemplateClone = /** @type {DocumentFragment} */ (questionTemplate.content.cloneNode(true));
 
-        let textElement = questionTemplateClone.querySelector(".question-text");
-        let questionSelection = questionTemplateClone.querySelector(".question-block");
+        const textElement = questionTemplateClone.querySelector(".question-text");
+        const questionSelection = questionTemplateClone.querySelector(".question-block");
 
         if (!textElement || !questionSelection) throw new Error("Question template is broken");
 
         textElement.textContent = question.text;
 
         question.options.forEach(option => {
-            let optionTemplateClone = /** @type {DocumentFragment} */ (optionTemplate.content.cloneNode(true));
+            const optionTemplateClone = /** @type {DocumentFragment} */ (optionTemplate.content.cloneNode(true));
 
-            let radioInput = /** @type {HTMLInputElement} */ (optionTemplateClone.querySelector("input[type='radio']"));
-            let buttonText = optionTemplateClone.querySelector(".option-button");
+            const radioInput = /** @type {HTMLInputElement} */ (optionTemplateClone.querySelector("input[type='radio']"));
+            const buttonText = optionTemplateClone.querySelector(".option-button");
 
             if (!radioInput || !buttonText) throw new Error("Option template is broken");
 

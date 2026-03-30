@@ -1,6 +1,7 @@
 // @ts-check
 
 import * as cacheController from "./js/services/cacheController.js";
+import * as normalizer from "./js/services/normalizer.js";
 import * as formRenderer from "./js/ui/formRenderer.js";
 
 addEventListener("DOMContentLoaded", async function() {
@@ -12,5 +13,5 @@ addEventListener("DOMContentLoaded", async function() {
         console.error("No toast notifications for user. Fix pls");
     }
 
-    formRenderer.render();
+    formRenderer.render(normalizer.getNormalizedQuestions());
 })

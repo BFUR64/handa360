@@ -17,7 +17,7 @@ export function loadFromStorage() {
         loadItemFromStorage(LOCAL_LOCATIONS_KEY, cachedData.setLocations);
     }
     catch (error) {
-        let message = error instanceof Error ? error.message : "Unknown Error";
+        const message = error instanceof Error ? error.message : "Unknown Error";
 
         console.warn("Local storage corrupted, wiping...", message);
 
@@ -33,7 +33,7 @@ export function loadFromStorage() {
  * @param {function(T):void} setterFunction
  */
 function loadItemFromStorage(itemKey, setterFunction) {
-    let localData = localStorage.getItem(itemKey);
+    const localData = localStorage.getItem(itemKey);
 
     if (localData != null) {
         setterFunction(JSON.parse(localData));
@@ -42,7 +42,7 @@ function loadItemFromStorage(itemKey, setterFunction) {
 
 /** @returns {Promise<boolean>} */
 export async function syncFromRemote() {
-    let results = await Promise.allSettled([
+    const results = await Promise.allSettled([
         syncFromUrl(QUESTIONS_URL, cachedData.setQuestions, LOCAL_QUESTIONS_KEY),
         syncFromUrl(ACTIONS_URL, cachedData.setActions, LOCAL_ACTIONS_KEY),
         syncFromUrl(LOCATIONS_URL, cachedData.setLocations, LOCAL_LOCATIONS_KEY)
@@ -67,13 +67,13 @@ export async function syncFromRemote() {
  * @param {string} key
  */
 async function syncFromUrl(url, setterFunction, key) {
-    let response = await fetch(url);
+    const response = await fetch(url);
 
     if (!response.ok) {
         throw new Error(`Server said: ${response.status} ${response.statusText}`);
     }
 
-    let data = await response.json();
+    const data = await response.json();
 
     setterFunction(data);
 
