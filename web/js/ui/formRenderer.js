@@ -1,6 +1,6 @@
 // @ts-check
 
-import * as normalizer from "./normalizer.js";
+import * as normalizer from "../services/normalizer.js";
 
 const formTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("form-template"));
 const questionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("question-template"));

@@ -1,6 +1,6 @@
 // @ts-check
 
-import * as cachedData from "./cachedData.js";
+import * as cachedData from "../data/cachedData.js";
 
 const QUESTIONS_URL = "data/questions.json";
 const ACTIONS_URL = "data/actions.json";
