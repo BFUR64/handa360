@@ -145,6 +145,26 @@ header{
 #report {
     display: none;
 }
+
 #report.show{
-    display: block; 
+    display: flex;
+    flex-direction: column;
+    width: 80dvw;
+
+    fieldset{
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: none;
+
+        .location-fieldset{
+            display: flex;
+        }
+        
+        .hazard-fieldset{
+            display: flex;
+        }
+    }
 }
