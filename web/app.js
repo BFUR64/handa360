@@ -4,10 +4,13 @@ import * as cacheController from "./js/services/cacheController.js";
 import * as normalizer from "./js/services/normalizer.js";
 import * as formRenderer from "./js/ui/formRenderer.js";
 import * as formController from "./js/services/formController.js";
+import * as checklistRenderer from "./js/ui/checklistRenderer.js";
+import * as informationRender from "./js/ui/informationRenderer.js";
+import * as checklistController from "./js/services/checklistController.js";
 
 /** @typedef {import("./js/services/formController.js").UserInput} UserInput */
 
-addEventListener("DOMContentLoaded", async function() {
+addEventListener("DOMContentLoaded", async function () {
     cacheController.loadFromStorage();
     const syncSuccess = await cacheController.syncFromRemote();
 
@@ -24,10 +27,13 @@ addEventListener("DOMContentLoaded", async function() {
 
 /** @param {HTMLElement} form */
 function addFormSubmittedListener(form) {
-    form.addEventListener("formSubmitted", function(event) {
+    form.addEventListener("formSubmitted", function (event) {
         const customEvent = /** @type {CustomEvent<UserInput>} */ (event);
         const data = customEvent.detail;
 
         // TODO Add the checkListRenderer and InformationRenderer after this line
+        let checklistBlock = checklistRenderer.render(data.hazardSelected, normalizer.getNormalizedActions());
+        checklistController.addCheckedListener(checklistBlock);
+        /*informationRender.render(data.locationSelected, normalizer.getNormalizedLocations());*/
     })
 }
