@@ -1,8 +1,7 @@
 // @ts-check
 
-import * as cacheController from "./js/cacheController.js";
-import * as cachedData from "./js/cachedData.js";
-import * as formRenderer from "./js/formRenderer.js";
+import * as cacheController from "./js/services/cacheController.js";
+import * as formRenderer from "./js/ui/formRenderer.js";
 
 addEventListener("DOMContentLoaded", async function() {
     cacheController.loadFromStorage();
@@ -15,9 +14,3 @@ addEventListener("DOMContentLoaded", async function() {
 
     formRenderer.render();
 })
-
-function printCache() {
-    console.log(cachedData.getQuestions());
-    console.log(cachedData.getActions());
-    console.log(cachedData.getLocations());
-}

@@ -1,10 +1,10 @@
 // @ts-check
 
-import * as cachedData from "./cachedData.js";
+import * as cachedData from "../data/cachedData.js";
 
-/** @typedef {import("./cachedData.js").Question} Question */
-/** @typedef {import("./cachedData.js").Action} Action */
-/** @typedef {import("./cachedData.js").Location} Location */
+/** @typedef {import("../data/cachedData.js").Question} Question */
+/** @typedef {import("../data/cachedData.js").Action} Action */
+/** @typedef {import("../data/cachedData.js").Location} Location */
 
 /** @returns {Question[]} */
 export function getNormalizedQuestions() {
