@@ -62,14 +62,22 @@ header{
         }
     }
 }
+             .location-text{
+                width: 70vw;
+            }
+            .location-options-container, .hazard-options-container{
+                display: flex;
+                flex-direction: column;
+                overflow-y: auto;
+                overflow-x: hidden;
+                scrollbar-width: none;
+                height: 25dvh;
+            }
 
             .hazard-options{
                 display: flex;
                 flex-direction: row; 
                 gap: 20px;
-            }
-            .location-text{
-                width: 70vw;
             }
             .hazard-text{
                 display: flex;
