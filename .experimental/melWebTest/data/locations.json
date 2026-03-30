@@ -1,0 +1,82 @@
+[
+    {
+        "condition" : { "location" : "kalibo" },
+        "information" : [
+            "Police - 166 / (036) 262-2176",
+            "Fire Station - (036) 262-4242",
+            "MDRRMO - (036) 268-3000"
+        ]
+    },
+    {
+        "condition" : { "location" : "iloilo" },
+        "information" : [
+            "Police - (033) 337-1100",
+            "Fire Station - (033) 335-0269",
+            "Emergency - 911"
+        ]
+    },
+    {
+        "condition" : { "location" : "manila" },
+        "information" : [
+            "Police - (02) 8527-3087",
+            "Fire Station - (02) 8527-3627",
+            "Emergency - 911"
+        ]
+    },
+    {
+        "condition" : { "location" : "quezon_city" },
+        "information" : [
+            "Police - (02) 8929-1837",
+            "Fire Station - (02) 8928-8363",
+            "Emergency - 122 / 911"
+        ]
+    },
+    {
+        "condition" : { "location" : "caloocan" },
+        "information" : [
+            "Police - (02) 8361-5321",
+            "Fire Station - (02) 8288-8811",
+            "Emergency - 911"
+        ]
+    },
+    {
+        "condition" : { "location" : "sanJuan" },
+        "information" : [
+            "Police - (02) 8724-7654",
+            "Fire Station - (02) 8725-0789",
+            "Emergency - 911"
+        ]
+    },
+    {
+        "condition" : { "location" : "mandaluyong" },
+        "information" : [
+            "Police - (02) 8532-3344",
+            "Fire Station - (02) 8533-9999",
+            "Emergency - 911"
+        ]
+    },
+    {
+        "condition" : { "location" : "pasig" },
+        "information" : [
+            "Police - (02) 8643-0000",
+            "Fire Station - (02) 8641-2815",
+            "Emergency - 911"
+        ]
+    },
+    {
+        "condition" : { "location" : "marikina" },
+        "information" : [
+            "Police - (02) 8646-1631",
+            "Fire Station - (02) 8646-2424",
+            "Rescue - 161"
+        ]
+    },
+    {
+        "condition" : { "location" : "valenzuela" },
+        "information" : [
+            "Police - (02) 8292-2256",
+            "Fire Station - (02) 8292-3939",
+            "Emergency - 911"
+        ]
+    }
+]

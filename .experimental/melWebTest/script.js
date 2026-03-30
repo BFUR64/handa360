@@ -1,18 +1,30 @@
 const queryForm = document.getElementById("queryForm");
+const hazardInstructionsOutput = document.getElementById("hazard-instructions-output");
 
 queryForm.addEventListener("submit", async function(event) {
     event.preventDefault();
 
-    const answer1 = queryForm.question1.value;
-    const answer2 = queryForm.question2.value;
+    const chosenLocation = queryForm.question1.value;
+    const chosenHazard = queryForm.question2.value;
 
-    await loadInstructionsToHTML(answer1, answer2);
+    await loadInstructionsToHTML(chosenLocation, chosenHazard);
 });
 
-async function loadInstructionsToHTML(specificLocation, hazardType) {
+hazardInstructionsOutput.addEventListener("change", function (e) {
+    if (e.target.classList.contains("checklist-item-checkbox")) {
+        let item = e.target.closest(".checklist-item");
+
+        if (e.target.checked) {
+            item.classList.add("completed");
+        } else {
+            item.classList.remove("completed");
+        }
+    }
+});
+
+async function loadInstructionsToHTML(chosenLocation, chosenHazard) {
     // generate a dynamic list based on the `const data` object that relies on the
     // `hazard` variable (see below).
-    let hazardInstructionsOutput = document.getElementById("hazard-instructions-output");
     let checklistTemplate = document.getElementById("checklist-template");
 
     let locationContactsOutput = document.getElementById("location-contacts-output");
@@ -29,7 +41,7 @@ async function loadInstructionsToHTML(specificLocation, hazardType) {
     for (let location = 0; location < data.locations.length; location++) {
         let currentLocation = data.locations[location].condition.location;
 
-        if (currentLocation === specificLocation) {
+        if (currentLocation === chosenLocation) {
             for(let contact = 0; contact < data.locations[location].contacts.length; contact++) {
                 let clone = contactlistsTemplate.content.cloneNode(true);
                 clone.querySelector(".contactslist-item-text").innerText = data.locations[location].contacts[contact];
@@ -41,7 +53,7 @@ async function loadInstructionsToHTML(specificLocation, hazardType) {
     for (let action = 0; action < data.actions.length; action++) {
         let currentHazard = data.actions[action].condition.hazard;
 
-        if (currentHazard === hazardType) {
+        if (currentHazard === chosenHazard) {
             for (let instruction = 0; instruction < data.actions[action].instructions.length; instruction++) {
                 // Creates a copy of the template
                 let clone = checklistTemplate.content.cloneNode(true);
@@ -51,16 +63,6 @@ async function loadInstructionsToHTML(specificLocation, hazardType) {
 
                 // Adds the copy inside the "#hazard-instructions-output" div
                 hazardInstructionsOutput.appendChild(clone);
-
-                let addedItem = hazardInstructionsOutput.lastElementChild;
-                let checkbox = addedItem.querySelector(".checklist-item-checkbox");
-
-                // removes item after checking its box
-                checkbox.addEventListener("change", function () {
-                    if (checkbox.checked) {
-                        addedItem.remove();
-                    }
-                });
             }
         }
     }
