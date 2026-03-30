@@ -1,8 +1,8 @@
 // @ts-check
 
-import * as cacheController from "./cacheController.js";
-import * as cachedData from "./cachedData.js";
-import * as formRenderer from "./formRenderer.js";
+import * as cacheController from "./js/cacheController.js";
+import * as cachedData from "./js/cachedData.js";
+import * as formRenderer from "./js/formRenderer.js";
 
 addEventListener("DOMContentLoaded", async function() {
     cacheController.loadFromStorage();
