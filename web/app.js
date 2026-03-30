@@ -19,11 +19,15 @@ addEventListener("DOMContentLoaded", async function() {
 
     const form = formRenderer.render(normalizer.getNormalizedQuestions());
     formController.attachDispatchEvent(form);
+    addFormSubmittedListener(form);
+})
 
+/** @param {HTMLElement} form */
+function addFormSubmittedListener(form) {
     form.addEventListener("formSubmitted", function(event) {
         const customEvent = /** @type {CustomEvent<UserInput>} */ (event);
         const data = customEvent.detail;
 
         // TODO Add the checkListRenderer and InformationRenderer after this line
     })
-})
+}
