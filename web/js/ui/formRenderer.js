@@ -9,6 +9,7 @@ const container = /** @type {HTMLElement} */ (document.getElementById("container
 
 /**
  * @param {Question[]} questions
+ * @returns {HTMLElement}
  */
 export function render(questions) {
     container.innerHTML = "";
@@ -48,4 +49,9 @@ export function render(questions) {
     })
 
     container.append(formTemplateClone);
+
+    const form = container.querySelector(".form-block");
+    if (!form) throw new Error(".form-block is missing from the template");
+
+    return /** @type {HTMLElement} */ (form);
 }

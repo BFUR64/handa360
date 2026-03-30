@@ -3,15 +3,26 @@
 import * as cacheController from "./js/services/cacheController.js";
 import * as normalizer from "./js/services/normalizer.js";
 import * as formRenderer from "./js/ui/formRenderer.js";
+import * as formController from "./js/services/formController.js";
+
+/** @typedef {import("./js/services/formController.js").UserInput} UserInput */
 
 addEventListener("DOMContentLoaded", async function() {
     cacheController.loadFromStorage();
-    let syncSuccess = await cacheController.syncFromRemote();
+    const syncSuccess = await cacheController.syncFromRemote();
 
     if (!syncSuccess) {
         // TODO: Add notification system for the user
         console.error("No toast notifications for user. Fix pls");
     }
 
-    formRenderer.render(normalizer.getNormalizedQuestions());
+    const form = formRenderer.render(normalizer.getNormalizedQuestions());
+    formController.attachDispatchEvent(form);
+
+    form.addEventListener("formSubmitted", function(event) {
+        const customEvent = /** @type {CustomEvent<UserInput>} */ (event);
+        const data = customEvent.detail;
+
+        // TODO Add the checkListRenderer and InformationRenderer after this line
+    })
 })
