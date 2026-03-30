@@ -1,78 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Handa360</title>
-  <link rel="stylesheet" href="web/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <header>
+        <img src="../../logo/handa360-logo.png" alt="">
 
-  <header>
-    <img src="logo/handa360-logo.png" alt="Handa360" class="header-logo" />
-  </header>
-
-  <main>
-    <form id="assessmentForm" action="#" method="get">
-
-      <!-- QUESTION 1: Location (single-select via radio) -->
-      <div class="question-block">
-        <p class="question-text">Where are you right now?</p>
-        <div class="option-grid single-select">
-
-          <label class="option-label">
-            <input type="radio" name="location" value="kalibo" />
-            <span class="option-button">Kalibo</span>
-          </label>
-
-          <label class="option-label">
-            <input type="radio" name="location" value="malinao" />
-            <span class="option-button">Malinao</span>
-          </label>
-
-          <label class="option-label">
-            <input type="radio" name="location" value="iloilo" />
-            <span class="option-button">Iloilo</span>
-          </label>
-
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">About</li>
+                <li class="nav-item">Contact</li>
+            </ul>
         </div>
-      </div>
+    </header>
 
-      <!-- QUESTION 2: Hazard (multi-select via checkbox) -->
-      <div class="question-block">
-        <p class="question-text">What are you experiencing?</p>
-        <div class="option-grid multi-select">
+    <hr>
 
-          <label class="option-label">
-            <input type="checkbox" name="hazard" value="flooding" />
-            <span class="option-button">Flooding</span>
-          </label>
+    <main id="container">
 
-          <label class="option-label">
-            <input type="checkbox" name="hazard" value="earthquake" />
-            <span class="option-button">Earthquake</span>
-          </label>
+    </main>
 
-          <label class="option-label">
-            <input type="checkbox" name="hazard" value="fire" />
-            <span class="option-button">Fire</span>
-          </label>
+    <template id="form-template">
+        <form class="form-block">
+            <div class="questions-container"></div>
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </template>
 
-          <label class="option-label">
-            <input type="checkbox" name="hazard" value="typhoon" />
-            <span class="option-button">Typhoon</span>
-          </label>
+    <template id="question-template">
+        <section class="question-block">
+            <h2 class="question-text"></h2>
+            <div class="options-container"></div>
+        </section>
+    </template>
 
-        </div>
-      </div>
+    <template id="option-template">
+        <label class="option-label">
+            <input type="radio">
+            <span class="option-button"></span>
+        </label>
+    </template>
 
-      <div class="form-footer">
-        <p class="separator">. . . .</p>
-        <button type="submit" class="btn-submit">Submit</button>
-      </div>
-
-    </form>
-  </main>
-
+    <script type="module" src="./app.js"></script>
 </body>
 </html>
