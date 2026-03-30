@@ -53,7 +53,7 @@ async function loadInstructionsToHTML(specificLocation, hazardType) {
                 hazardInstructionsOutput.appendChild(clone);
 
                 let addedItem = hazardInstructionsOutput.lastElementChild;
-                let checkbox = addedItem.querySelector(".checklist-item-checkbox")
+                let checkbox = addedItem.querySelector(".checklist-item-checkbox");
 
                 // removes item after checking its box
                 checkbox.addEventListener("change", function () {
