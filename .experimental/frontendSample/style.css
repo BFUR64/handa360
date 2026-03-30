@@ -136,3 +136,8 @@ header{
         flex-direction: column;
         gap: 10px;
     }
+    .contact-list{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
