@@ -1,0 +1,5 @@
+@media (max-width: 480px) {
+    main {
+        max-width: 300px;
+    }
+}
