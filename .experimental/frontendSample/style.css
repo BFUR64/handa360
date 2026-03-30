@@ -141,3 +141,10 @@ header{
         flex-direction: column;
         gap: 10px;
     }
+
+#report {
+    display: none;
+}
+#report.show{
+    display: block; 
+}
