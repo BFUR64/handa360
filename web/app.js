@@ -13,6 +13,7 @@ addEventListener("DOMContentLoaded", async function() {
 
     if (!syncSuccess) {
         // TODO: Add notification system for the user
+        // TODO: Retry in the background
         console.error("No toast notifications for user. Fix pls");
     }
 
