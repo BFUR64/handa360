@@ -1,6 +1,20 @@
 .checklist-block {
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
+    gap: 32px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: baseline;
+    min-height: 56px;
+    padding: 14px 16px;
+    background: #454c53;
+    border: 1px solid #5a626a;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.18s ease, border-color 0.18s ease;
 }
 
 .checklist-item.completed {
@@ -10,7 +24,16 @@
 }
 
 .contactlist-block {
+    border: 1px solid black;
     gap: 10px;
     display: flex;
     flex-direction: column;
+}
+
+.checklist-header {
+    text-transform: capitalize;
+}
+
+.contactlist-header {
+    text-transform: capitalize;
 }

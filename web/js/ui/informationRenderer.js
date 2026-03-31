@@ -7,22 +7,24 @@ const contactlistItemTemplate = /** @type {HTMLTemplateElement} */ (document.get
 /** @typedef {import("../data/cachedData.js").Location} Location */
 
 /**
- * @param {string} locaionSelected
+ * @param {string} locationSelected
  * @param {Location[]} locations
  * @return {HTMLElement}
  */
-export function render(locaionSelected, locations) {
+export function render(locationSelected, locations) {
     const contactlist = /** @type {DocumentFragment} */ (contactlistTemplate.content.cloneNode(true));
     const contactlistBlock = /** @type {HTMLElement} */ (contactlist.querySelector(".contactlist-block"));
+    const contactlistHeader = /** @type {HTMLElement} */ (contactlist.querySelector(".contactlist-header"))
 
     locations.forEach(locationsIndex => {
         const currentLocation = locationsIndex.condition.location;
 
-        if (currentLocation === locaionSelected) {
+        if (currentLocation === locationSelected) {
             locationsIndex.information.forEach(informationLine => {
                 const contactlistItem = /** @type {DocumentFragment} */ (contactlistItemTemplate.content.cloneNode(true));
                 const contactlistText = /** @type {HTMLElement} */ (contactlistItem.querySelector(".contactlist-item-text"));
 
+                contactlistHeader.innerText = currentLocation;
                 contactlistText.innerText = informationLine;
                 contactlistBlock.append(contactlistItem);
             })
