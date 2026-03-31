@@ -9,7 +9,6 @@ import * as formRenderer from "./js/ui/formRenderer.js";
 import * as formController from "./js/services/formController.js";
 
 import * as checklistRenderer from "./js/ui/checklistRenderer.js";
-import * as checklistController from "./js/services/checklistController.js";
 
 import * as informationRenderer from "./js/ui/informationRenderer.js";
 
@@ -35,8 +34,7 @@ function addFormSubmittedListener(form) {
         const customEvent = /** @type {CustomEvent<UserInput>} */ (event);
         const data = customEvent.detail;
 
-        let checklistBlock = checklistRenderer.render(data.hazardSelected, normalizer.getNormalizedActions());
-        checklistController.addCheckedListener(checklistBlock);
+        checklistRenderer.render(data.hazardSelected, normalizer.getNormalizedActions());
 
         informationRenderer.render(data.locationSelected, normalizer.getNormalizedLocations());
 

@@ -9,7 +9,6 @@ const checklistItemTemplate = /** @type {HTMLTemplateElement} */ (document.getEl
 /**
  * @param {string} hazardSelected
  * @param {Action[]} actions
- * @return {HTMLElement}
  */
 export function render(hazardSelected, actions) {
     const checklist = /** @type {DocumentFragment} */ (checklistTemplate.content.cloneNode(true));
@@ -35,6 +34,4 @@ export function render(hazardSelected, actions) {
             container.append(checklistBlock);
         }
     })
-
-    return checklistBlock;
 }
