@@ -1,28 +1,35 @@
 // @ts-check
+
+const container = /** @type {HTMLElement} */ (document.getElementById("container"));
+const contactlistTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("contactlist-template"));
+const contactlistItemTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("contactlist-item-template"));
+
+/** @typedef {import("../data/cachedData.js").Location} Location */
+
 /**
  * @param {string} location
+ * @param {Location[]} locations
+ * @return {HTMLElement}
  */
 export function render(location, locations) {
-    // let locationContactsOutput = document.getElementById("location-contacts-output");
-    // let contactlistsTemplate = document.getElementById("contactslist-template");
+    const contactlist = /** @type {DocumentFragment} */ (contactlistTemplate.content.cloneNode(true));
+    const contactlistBlock = /** @type {HTMLElement} */ (contactlist.querySelector(".contactlist-block"));
 
-    //  // Stops checklist from stacking
-    // hazardInstructionsOutput.innerHTML = "";
+    locations.forEach(locationsIndex => {
+        const currentLocation = locationsIndex.condition.location;
 
-    // locationContactsOutput.innerHTML = "";
+        if (currentLocation === location) {
+            locationsIndex.information.forEach(informationLine => {
+                const contactlistItem = /** @type {DocumentFragment} */ (contactlistItemTemplate.content.cloneNode(true));
+                const contactlistText = /** @type {HTMLElement} */ (contactlistItem.querySelector(".contactlist-item-text"));
 
-    // let response = await fetch("data.json");
-    // let data = await response.json();
+                contactlistText.innerText = informationLine;
+                contactlistBlock.append(contactlistItem);
+            })
 
-    // for (let location = 0; location < data.locations.length; location++) {
-    //     let currentLocation = data.locations[location].condition.location;
+            container.append(contactlistBlock);
+        }
+    })
 
-    //     if (currentLocation === location) {
-    //         for(let contact = 0; contact < data.locations[location].contacts.length; contact++) {
-    //             let clone = contactlistsTemplate.content.cloneNode(true);
-    //             clone.querySelector(".contactslist-item-text").innerText = data.locations[location].contacts[contact];
-    //             locationContactsOutput.appendChild(clone);
-    //         }
-    //     }
-    // }
+    return contactlistBlock;
 }
