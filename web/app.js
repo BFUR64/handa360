@@ -39,5 +39,8 @@ function addFormSubmittedListener(form) {
         checklistController.addCheckedListener(checklistBlock);
 
         informationRenderer.render(data.locationSelected, normalizer.getNormalizedLocations());
+
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     })
 }
