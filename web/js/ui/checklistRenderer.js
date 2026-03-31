@@ -14,6 +14,7 @@ const checklistItemTemplate = /** @type {HTMLTemplateElement} */ (document.getEl
 export function render(hazardSelected, actions) {
     const checklist = /** @type {DocumentFragment} */ (checklistTemplate.content.cloneNode(true));
     const checklistBlock = /** @type {HTMLElement} */ (checklist.querySelector(".checklist-block"));
+    const checklistHeader = /** @type {HTMLElement} */ (checklist.querySelector(".checklist-header"))
 
     container.innerHTML = "";
 
@@ -25,6 +26,7 @@ export function render(hazardSelected, actions) {
                 const checklistItem = /** @type {DocumentFragment} */ (checklistItemTemplate.content.cloneNode(true));
                 const checklistText = /** @type {HTMLElement} */ (checklistItem.querySelector(".checklist-item-text"));
 
+                checklistHeader.innerText = hazardSelected;
                 checklistText.innerText = instruction;
                 checklistBlock.append(checklistItem);
             })
