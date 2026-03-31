@@ -1,33 +1,87 @@
 .checklist-block {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 20px;
 }
 
 .checklist-header {
-    text-transform: capitalize;
-    border: 1px solid black;
-    border-radius: 5px;
-    background: #6f7b88;
-    padding: 20px;
+    margin-top: 40px;
 }
 
 .checklist-item {
-    cursor: pointer;
-    font-size: 15px;
     display: flex;
-    align-items: first baseline;
-    min-height: 56px;
-    padding: 14px 16px;
+    align-items: center;
+    gap: 16px;
+
+    cursor: pointer;
+    text-align: left;
+
+    font-size: 15px;
+    padding: 20px;
+
     background: #454c53;
     border: 1px solid #5a626a;
     border-radius: 4px;
+
     font-weight: bold;
-    transition: background 0.18s ease, border-color 0.18s ease;
+    transition: color 0.33s ease, background-color 0.33s ease, text-decoration 0.33s ease;
 }
 
-.checklist-item.completed {
+.checklist-item-checkbox {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checklist-item:has(.checklist-item-checkbox:checked) {
     text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+
     color: gray;
-    opacity: 0.6;
+    background-color: rgba(69, 76, 83, 0.75);
+}
+
+.checkmark {
+    position: relative;
+    width: 25px;
+    height: 25px;
+
+    background-color: rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.35);
+
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+
+    flex-shrink: 0;
+}
+
+.checklist-item:hover .checkmark {
+    border-color: #ddd;
+}
+
+.checklist-item:hover .checkmark:after {
+    border-color: #ddd;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid rgba(255, 255, 255, 0.35);;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    display: none;
+
+    transition: border-color 0.3s;
+}
+
+.checklist-item-checkbox:checked + .checkmark:after {
+    display: block;
 }
