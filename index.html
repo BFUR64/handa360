@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <link rel="stylesheet" href="web/css/header.css">
     <link rel="stylesheet" href="web/css/form.css">
     <link rel="stylesheet" href="web/css/mobile.css">
+    <link rel="stylesheet" href="web/css/output.css">
 </head>
+
 <body>
     <header>
         <img src="assets/images/handa360-logo.png" alt="">
@@ -40,6 +43,17 @@
         </label>
     </template>
 
+    <template id="contactlist-template">
+        <section class="contactlist-block">
+        </section>
+    </template>
+
+    <template id="contactlist-item-template">
+        <label class="contactlist-item">
+            <span class="contactlist-item-text"></span>
+        </label>
+    </template>
+
     <template id="form-template">
         <form class="form-block">
             <div class="questions-container"></div>
@@ -63,4 +77,5 @@
 
     <script type="module" src="web/app.js"></script>
 </body>
+
 </html>
