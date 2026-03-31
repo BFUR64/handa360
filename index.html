@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="web/css/general.css">
     <link rel="stylesheet" href="web/css/header.css">
+    <link rel="stylesheet" href="web/css/toast.css">
     <link rel="stylesheet" href="web/css/form.css">
     <link rel="stylesheet" href="web/css/mobile.css">
     <link rel="stylesheet" href="web/css/checklist.css">
@@ -25,11 +26,21 @@
         </nav>
     </header>
 
+    <div id="toast-container" role="status">
+
+    </div>
+
     <hr>
 
     <main id="container">
 
     </main>
+
+    <template id="toast-template">
+        <div class="toast" role="status">
+
+        </div>
+    </template>
 
     <template id="checklist-template">
         <section class="checklist-block">

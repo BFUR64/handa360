@@ -1,0 +1,40 @@
+#toast-container {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color:rgb(255, 255, 255, 0.35);
+
+    border-radius: 5px;
+
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.info {
+    background: #34495e;
+}
+
+.toast.success {
+    background: #27ae60;
+}
+
+.toast.error {
+    background: #c0392b;
+}
+
+.toast.show {
+    opacity: 1;
+}
