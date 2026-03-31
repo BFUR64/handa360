@@ -162,8 +162,10 @@ header{
     width: 100dvw;
     margin: 0;
     padding: 0;
-    border: none;
-
+         
+        fieldset{
+            border: none;
+        }
 
         .location-field{
             display: flex;

@@ -4,8 +4,9 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #2f343a;
-    color: #e5e7eb;
+    background: #e2e2e2;
+    color: #212224;
+    -webkit-user-select: none;
     user-select: none;
 }
 

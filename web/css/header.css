@@ -15,4 +15,9 @@ header {
     display: flex;
     list-style: none;
     gap: 16px;
+
+    a {
+        text-decoration: none;
+        color: #212224;
+    }
 }
