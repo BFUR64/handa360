@@ -18,6 +18,8 @@ export function render(hazardSelected, actions) {
 
     container.innerHTML = "";
 
+    checklistHeader.innerText = "Checklist";
+
     actions.forEach(action => {
         const currentHazard = action.condition.hazard;
 
@@ -26,7 +28,6 @@ export function render(hazardSelected, actions) {
                 const checklistItem = /** @type {DocumentFragment} */ (checklistItemTemplate.content.cloneNode(true));
                 const checklistText = /** @type {HTMLElement} */ (checklistItem.querySelector(".checklist-item-text"));
 
-                checklistHeader.innerText = hazardSelected;
                 checklistText.innerText = instruction;
                 checklistBlock.append(checklistItem);
             })

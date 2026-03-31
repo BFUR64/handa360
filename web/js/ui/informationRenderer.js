@@ -16,6 +16,8 @@ export function render(locationSelected, locations) {
     const contactlistBlock = /** @type {HTMLElement} */ (contactlist.querySelector(".contactlist-block"));
     const contactlistHeader = /** @type {HTMLElement} */ (contactlist.querySelector(".contactlist-header"))
 
+    contactlistHeader.innerText = "Contacts";
+
     locations.forEach(locationsIndex => {
         const currentLocation = locationsIndex.condition.location;
 
@@ -24,7 +26,6 @@ export function render(locationSelected, locations) {
                 const contactlistItem = /** @type {DocumentFragment} */ (contactlistItemTemplate.content.cloneNode(true));
                 const contactlistText = /** @type {HTMLElement} */ (contactlistItem.querySelector(".contactlist-item-text"));
 
-                contactlistHeader.innerText = currentLocation;
                 contactlistText.innerText = informationLine;
                 contactlistBlock.append(contactlistItem);
             })
