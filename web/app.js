@@ -1,5 +1,7 @@
 // @ts-check
 
+import * as toastNotification from "./js/ui/toastNotification.js";
+
 import * as cacheController from "./js/services/cacheController.js";
 import * as normalizer from "./js/services/normalizer.js";
 
@@ -18,9 +20,8 @@ addEventListener("DOMContentLoaded", async function () {
     const syncSuccess = await cacheController.syncFromRemote();
 
     if (!syncSuccess) {
-        // TODO: Add notification system for the user
         // TODO: Retry in the background
-        console.error("No toast notifications for user. Fix pls");
+        toastNotification.showToast("Failed to fetch remote JSON data", "error");
     }
 
     const form = formRenderer.render(normalizer.getNormalizedQuestions());
@@ -34,7 +35,6 @@ function addFormSubmittedListener(form) {
         const customEvent = /** @type {CustomEvent<UserInput>} */ (event);
         const data = customEvent.detail;
 
-        // TODO Add the checkListRenderer and InformationRenderer after this line
         let checklistBlock = checklistRenderer.render(data.hazardSelected, normalizer.getNormalizedActions());
         checklistController.addCheckedListener(checklistBlock);
 
