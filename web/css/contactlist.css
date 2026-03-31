@@ -1,0 +1,18 @@
+.contactlist-block {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactlist-item {
+    font-size: 15px;
+}
+
+.contactlist-header {
+    margin-top: 50px;
+    text-transform: capitalize;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #6f7b88;
+    padding: 20px;
+}
