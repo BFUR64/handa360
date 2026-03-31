@@ -150,11 +150,11 @@ header{
         gap: 10px;
     }
 
-#report {
+#report,#about,#contact {
     display: none;
 }
 
-#report.show{
+#report.show,#about.show,#contact.show{
     display: flex;
     flex-direction: column;
     width: 80dvw;

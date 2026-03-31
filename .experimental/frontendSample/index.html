@@ -10,9 +10,9 @@
 <header>
     <img src="../assets/images/handa360-logo.png" alt="Handa360" class="logo"/>
    <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+    <a id="nav-home">Home</a>
+    <a id="nav-about">About</a>
+    <a id="nav-contact">Contact</a>
    </nav>
 </header>
 <main>
@@ -141,7 +141,9 @@
         <br><br>
         <button type="submit" class="submit-button">Submit</button>
     </form>
+ 
 
+  <!---------------------[ Report Section ]--------------------->
     <section id="report">
       <fieldset id="action-field">
         <h2>Action</h2>
@@ -168,7 +170,24 @@
         </div>
       </fieldset>
     </section>
-</main>
-<script src="script.js"></script>
+
+  <!---------------------[ AboutSection ]--------------------->
+    <section id="about">
+      <fieldset id="about-field">
+        <h2>About Handa360</h2>
+        <p>Handa360 is a disaster response platform that helps communities prepare for and respond to disasters.</p>
+      </fieldset>
+    </section>
+
+  <!---------------------[ ContactSection ]--------------------->  
+    <section id="contact">
+      <fieldset id="contact-field">
+        <h2>Contact Handa360</h2>
+        <p>For more information about Handa360, please contact us at contact@handa360.com</p>
+      </fieldset>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
