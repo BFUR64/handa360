@@ -1,0 +1,16 @@
+.checklist-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.checklist-item.completed {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.6;
+}
+
+.contactlist-block {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
