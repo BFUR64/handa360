@@ -7,11 +7,11 @@ const checklistItemTemplate = /** @type {HTMLTemplateElement} */ (document.getEl
 /** @typedef {import("../data/cachedData.js").Action} Action */
 
 /**
- * @param {string} hazard
+ * @param {string} hazardSelected
  * @param {Action[]} actions
  * @return {HTMLElement}
  */
-export function render(hazard, actions) {
+export function render(hazardSelected, actions) {
     const checklist = /** @type {DocumentFragment} */ (checklistTemplate.content.cloneNode(true));
     const checklistBlock = /** @type {HTMLElement} */ (checklist.querySelector(".checklist-block"));
 
@@ -20,7 +20,7 @@ export function render(hazard, actions) {
     actions.forEach(action => {
         const currentHazard = action.condition.hazard;
 
-        if (currentHazard === hazard) {
+        if (currentHazard === hazardSelected) {
             action.instructions.forEach(instruction => {
                 const checklistItem = /** @type {DocumentFragment} */ (checklistItemTemplate.content.cloneNode(true));
                 const checklistText = /** @type {HTMLElement} */ (checklistItem.querySelector(".checklist-item-text"));
