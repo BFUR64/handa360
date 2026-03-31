@@ -10,7 +10,12 @@ const LOCAL_QUESTIONS_KEY = "questions";
 const LOCAL_ACTIONS_KEY = "actions";
 const LOCAL_LOCATIONS_KEY = "locations";
 
+/**
+ * @returns {boolean}
+ */
 export function loadFromStorage() {
+    let loadSuccess = true;
+
     try {
         loadItemFromStorage(LOCAL_QUESTIONS_KEY, cachedData.setQuestions);
         loadItemFromStorage(LOCAL_ACTIONS_KEY, cachedData.setActions);
@@ -24,7 +29,11 @@ export function loadFromStorage() {
         localStorage.removeItem(LOCAL_QUESTIONS_KEY);
         localStorage.removeItem(LOCAL_ACTIONS_KEY);
         localStorage.removeItem(LOCAL_LOCATIONS_KEY);
+
+        loadSuccess = false;
     }
+
+    return loadSuccess;
 }
 
 /**

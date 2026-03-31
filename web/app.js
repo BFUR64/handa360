@@ -16,8 +16,12 @@ import * as informationRenderer from "./js/ui/informationRenderer.js";
 /** @typedef {import("./js/services/formController.js").UserInput} UserInput */
 
 addEventListener("DOMContentLoaded", async function () {
-    cacheController.loadFromStorage();
+    const loadSuccess = cacheController.loadFromStorage();
     const syncSuccess = await cacheController.syncFromRemote();
+
+    if (!loadSuccess) {
+        toastNotification.showToast("Local data corrupted. Clearing...", "error");
+    }
 
     if (!syncSuccess) {
         // TODO: Retry in the background
