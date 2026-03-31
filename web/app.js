@@ -9,7 +9,7 @@ import * as formController from "./js/services/formController.js";
 import * as checklistRenderer from "./js/ui/checklistRenderer.js";
 import * as checklistController from "./js/services/checklistController.js";
 
-import * as informationRender from "./js/ui/informationRenderer.js";
+import * as informationRenderer from "./js/ui/informationRenderer.js";
 
 /** @typedef {import("./js/services/formController.js").UserInput} UserInput */
 
@@ -37,6 +37,7 @@ function addFormSubmittedListener(form) {
         // TODO Add the checkListRenderer and InformationRenderer after this line
         let checklistBlock = checklistRenderer.render(data.hazardSelected, normalizer.getNormalizedActions());
         checklistController.addCheckedListener(checklistBlock);
-        /*informationRender.render(data.locationSelected, normalizer.getNormalizedLocations());*/
+
+        informationRenderer.render(data.locationSelected, normalizer.getNormalizedLocations());
     })
 }
