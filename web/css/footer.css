@@ -1,0 +1,13 @@
+footer {
+    display:none;
+}
+footer.show {
+    display:block;
+    background-color:var(--button-bg);
+    color: var(--text-secondary);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
