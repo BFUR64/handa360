@@ -7,17 +7,61 @@
 
     border-style: solid;
     border-width: 2px;
-    border-color: var(--contacts-border);
+    border-color: rgba(255, 255, 255, 0.35);
     border-radius: 5px;
 
     padding: 20px;
 }
 
 .contactlist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     font-size: 15px;
     text-align: left;
 }
 
+.contactlist-item-input {
+    flex: 1;
+    min-width: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 5px;
+    padding: 10px 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: inherit;
+    font: inherit;
+}
+
+.contactlist-copy-button {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 5px;
+    padding: 10px 14px;
+
+    background: #6f7b88;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.contactlist-copy-button:hover {
+    opacity: 0.9;
+}
+
 .contactlist-header {
     margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    .contactlist-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contactlist-copy-button {
+        width: 100%;
+    }
 }
