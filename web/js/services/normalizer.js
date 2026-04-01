@@ -14,14 +14,14 @@ export function getNormalizedQuestions() {
 
     return rawQuestions.map(question => ({
         text: typeof question.text === "string" ? question.text : "unknown_text",
-        name: typeof question.name === "string" ? normalizeText(question.name) : "unknown_name",
+        id: typeof question.id === "string" ? normalizeText(question.id) : "unknown_id",
 
         options: (Array.isArray(question.options) ? question.options : [])
             .filter(option =>
-                typeof option.value === "string" && typeof option.text === "string"
+                typeof option.id === "string" && typeof option.text === "string"
             )
             .map(option => ({
-                value: normalizeText(option.value), text: option.text
+                id: normalizeText(option.id), text: option.text
             }))
             .sort((a, b) => a.text.localeCompare(b.text))
     }));

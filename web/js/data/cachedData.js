@@ -2,9 +2,9 @@
 
 /**
  * @typedef {Object} Question
+ * @property {string} id
  * @property {string} text
- * @property {string} name
- * @property {{value: string, text: string}[]} options
+ * @property {{id: string, text: string}[]} options
  */
 
 /**

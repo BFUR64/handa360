@@ -38,8 +38,8 @@ export function render(questions) {
 
             if (!radioInput || !buttonText) throw new Error("Option template is broken");
 
-            radioInput.value = option.value;
-            radioInput.name = question.name;
+            radioInput.value = option.id;
+            radioInput.name = question.id;
             buttonText.textContent = option.text;
 
             questionSelection.append(optionTemplateClone);

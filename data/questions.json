@@ -1,34 +1,47 @@
 [
   {
+    "id" : "location",
     "text" : "Where are you?",
-    "name" : "location",
     "options" : [
-      { "value" : "kalibo", "text" : "Kalibo" },
-      { "value" : "iloilo", "text" : "Iloilo" },
-      { "value" : "manila", "text" : "Manila" },
-      { "value" : "quezon_city", "text" : "Quezon City" },
-      { "value" : "caloocan", "text" : "Caloocan" },
-      { "value" : "sanJuan", "text" : "San Juan" },
-      { "value" : "mandaluyong", "text" : "Mandaluyong" },
-      { "value" : "pasig", "text" : "Pasig" },
-      { "value" : "marikina", "text" : "Marikina" },
-      { "value" : "valenzuela", "text" : "Valenzuela" }
+      { "id" : "kalibo", "text" : "Kalibo" },
+      { "id" : "iloilo", "text" : "Iloilo" },
+      { "id" : "manila", "text" : "Manila" },
+      { "id" : "quezon_city", "text" : "Quezon City" },
+      { "id" : "caloocan", "text" : "Caloocan" },
+      { "id" : "sanJuan", "text" : "San Juan" },
+      { "id" : "mandaluyong", "text" : "Mandaluyong" },
+      { "id" : "pasig", "text" : "Pasig" },
+      { "id" : "marikina", "text" : "Marikina" },
+      { "id" : "valenzuela", "text" : "Valenzuela" }
     ]
   },
   {
+    "id" : "hazard",
     "text" : "What's the hazard?",
-    "name" : "hazard",
     "options" : [
-      { "value" : "typhoon", "text" : "Typhoon" },
-      { "value" : "flood", "text" : "Flood" },
-      { "value" : "earthquake", "text" : "Earthquake" },
-      { "value" : "landslide", "text" : "Landslide" },
-      { "value" : "fire", "text" : "Fire" },
-      { "value" : "volcanic_eruption", "text" : "Volcanic eruption" },
-      { "value" : "storm_surge", "text" : "Storm surge" },
-      { "value" : "drought", "text" : "Drought" },
-      { "value" : "heat_wave", "text" : "Heat wave" },
-      { "value" : "tsunami", "text" : "Tsunami" }
+      { "id" : "typhoon", "text" : "Typhoon" },
+      { "id" : "flood", "text" : "Flood" },
+      { "id" : "earthquake", "text" : "Earthquake" },
+      { "id" : "landslide", "text" : "Landslide" },
+      { "id" : "fire", "text" : "Fire" },
+      { "id" : "volcanic_eruption", "text" : "Volcanic eruption" },
+      { "id" : "storm_surge", "text" : "Storm surge" },
+      { "id" : "drought", "text" : "Drought" },
+      { "id" : "heat_wave", "text" : "Heat wave" },
+      { "id" : "tsunami", "text" : "Tsunami" }
+    ]
+  },
+  {
+    "id" : "limitations",
+    "text" : "Limitations (WIP)",
+    "options" : [
+      { "id" : "toddler", "text" : "I have a toddler" },
+      { "id" : "child", "text" : "I have a child" },
+      { "id" : "no_car", "text" : "I have no car" },
+      { "id" : "pregnant", "text" : "There is / I am the pregnant person" },
+      { "id" : "senior", "text" : "There is a senior citizen" },
+      { "id" : "disability", "text" : "Person with disability" },
+      { "id" : "chronic_illness", "text" : "Chronic illness" }
     ]
   }
 ]
