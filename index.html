@@ -36,7 +36,8 @@
 
     <hr>
 
-    <main id="container"><section class="checklist-block">
+    <main id="container">
+        <section class="checklist-block">
 
     </main>
 
@@ -67,9 +68,12 @@
     </template>
 
     <template id="contactlist-item-template">
-        <label class="contactlist-item">
-            <span class="contactlist-item-text"></span>
-        </label>
+        <div class="contactlist-item">
+            <input type="text" class="contactlist-item-input" readonly aria-label="Contact information">
+            <button type="button" class="contactlist-copy-button" aria-label="Copy contact information">
+                Copy
+            </button>
+        </div>
     </template>
 
     <template id="form-template">
