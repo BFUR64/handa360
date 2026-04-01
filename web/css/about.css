@@ -1,0 +1,6 @@
+#about-section {
+    display:none;
+}
+#about-section.show {
+    display:block;
+}

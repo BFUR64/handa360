@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="web/css/mobile.css">
     <link rel="stylesheet" href="web/css/checklist.css">
     <link rel="stylesheet" href="web/css/contactlist.css">
+    <link rel="stylesheet" href="web/css/about.css">
+    <link rel="stylesheet" href="web/css/contact.css">
 </head>
 
 <body>
@@ -23,9 +25,9 @@
 
         <nav class="nav">
             <ul class="nav-list">
-                <li class="nav-item"><a href="">Home</a></li>
-                <li class="nav-item"><a href="">About</a></li>
-                <li class="nav-item"><a href="">Contact</a></li>
+                <li class="nav-item"><a href="" id="navigate-home">Home</a></li>
+                <li class="nav-item"><a href="" id="navigate-about">About</a></li>
+                <li class="nav-item"><a href="" id="navigate-contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -97,7 +99,21 @@
         </label>
     </template>
 
+    <section id="about-section">
+        <h2>About Handa360</h2>
+        <p>Handa360 is a web application that helps you ....</p>
+        <h2>How can Handa360 help?</h2>
+        <p>Handa360 ....</p>
+    </section>
+    <section id="contact-section">
+        <h2>Contact Handa360</h2>
+        <p>Handa360 is a web application that helps you ....</p>
+        <h2>How can Handa360 help?</h2>
+        <p>Handa360 ....</p>
+    </section>
+
     <script type="module" src="web/app.js"></script>
+    <script src="web/js/ui/pageNavigation.js"></script>
 </body>
 
 </html>

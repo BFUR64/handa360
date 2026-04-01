@@ -1,0 +1,6 @@
+#contact-section {
+    display:none;
+}
+#contact-section.show {
+    display:block;
+}
