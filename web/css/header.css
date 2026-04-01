@@ -18,6 +18,6 @@ header {
 
     a {
         text-decoration: none;
-        color: #212224;
+        color: var(--text);
     }
 }

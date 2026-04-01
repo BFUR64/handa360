@@ -1,0 +1,74 @@
+:root {
+    --bg: #e2e2e2;
+    --text: #212224;
+
+    --option-bg: #e2e2e2;
+    --option-border: #5a626a;
+
+    --option-bg-hover: #7a8490;
+    --option-border-hover: #4b535b;
+
+    --option-bg-checked: #111827;
+    --option-border-checked: #7aa2ff;
+
+    --button-bg: #111827;
+    --button-border: #374151;
+
+    --button-bg-hover: #000;
+
+    --toast-success: #27ae60;
+    --toast-neutral: #34495e;
+    --toast-error: #c0392b;
+
+    --toast-border: rgb(255, 255, 255, 0.35);
+
+    --contacts-border: rgba(255, 255, 255, 0.35);
+
+    --checklist-text-checked: gray;
+    --checklist-bg-checked: rgba(69, 76, 83, 0.75);
+
+    --checkmark-border: rgba(255, 255, 255, 0.35);
+    --checkmark-border-hover: #ddd;
+    --checkmark-border-checked: #ddd;
+
+    --checkmark-check-icon: rgba(255, 255, 255, 0.35);
+}
+
+/* TODO Change to prefers-color-scheme: dark after fixing light mode? */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #2f343a;
+        --text: #e5e7eb;
+
+        --option-bg: #454c53;
+        --option-border: #5a626a;
+
+        --option-bg-hover: #7a8490;
+        --option-border-hover: #4b535b;
+
+        --option-bg-checked: #111827;
+        --option-border-checked: #7aa2ff;
+
+        --button-bg: #111827;
+        --button-border: #374151;
+
+        --button-bg-hover: #000;
+
+        --toast-success: #27ae60;
+        --toast-neutral: #34495e;
+        --toast-error: #c0392b;
+
+        --toast-border: rgb(255, 255, 255, 0.35);
+
+        --contacts-border: rgba(255, 255, 255, 0.35);
+
+        --checklist-text-checked: gray;
+        --checklist-bg-checked: rgba(69, 76, 83, 0.75);
+
+        --checkmark-border: rgba(255, 255, 255, 0.35);
+        --checkmark-border-hover: #ddd;
+        --checkmark-border-checked: #ddd;
+
+        --checkmark-check-icon: rgba(255, 255, 255, 0.35);
+    }
+}

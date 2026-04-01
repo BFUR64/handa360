@@ -19,8 +19,8 @@
     font-size: 15px;
     padding: 20px;
 
-    background: #454c53;
-    border: 1px solid #5a626a;
+    background: var(--option-bg);
+    border: 1px solid var(--option-border);
     border-radius: 4px;
 
     font-weight: bold;
@@ -38,8 +38,8 @@
     text-decoration: line-through;
     text-decoration-thickness: 1.5px;
 
-    color: gray;
-    background-color: rgba(69, 76, 83, 0.75);
+    color: var(--checklist-text-checked);
+    background-color: var(--checklist-bg-checked);
 }
 
 .checkmark {
@@ -47,9 +47,9 @@
     width: 25px;
     height: 25px;
 
-    background-color: rgba(0, 0, 0, 0);
+    /* background-color: rgba(0, 0, 0, 0); */
     border-style: solid;
-    border-color: rgba(255, 255, 255, 0.35);
+    border-color: var(--checkmark-border);
 
     display: inline-block;
     vertical-align: middle;
@@ -60,11 +60,11 @@
 }
 
 .checklist-item:hover .checkmark {
-    border-color: #ddd;
+    border-color: var(--checkmark-border-hover);
 }
 
 .checklist-item:hover .checkmark:after {
-    border-color: #ddd;
+    border-color: var(--checkmark-border-checked);
 }
 
 .checkmark:after {
@@ -74,7 +74,7 @@
     top: 2px;
     width: 5px;
     height: 10px;
-    border: solid rgba(255, 255, 255, 0.35);;
+    border: solid var(--checkmark-check-icon);
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
     display: none;

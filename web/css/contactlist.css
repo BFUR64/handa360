@@ -7,7 +7,7 @@
 
     border-style: solid;
     border-width: 2px;
-    border-color: rgba(255, 255, 255, 0.35);
+    border-color: var(--contacts-border);
     border-radius: 5px;
 
     padding: 20px;
@@ -17,15 +17,6 @@
     font-size: 15px;
     text-align: left;
 }
-
-/* .contactlist-header {
-    margin-top: 50px;
-    text-transform: capitalize;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 5px;
-    background: #6f7b88;
-    padding: 20px;
-} */
 
 .contactlist-header {
     margin-top: 0;

@@ -33,32 +33,30 @@
     align-items: center;
     min-height: 56px;
     padding: 14px 16px;
-    background: #454c53;
-    border: 1px solid #5a626a;
+    background: var(--option-bg);
+    border: 1px solid var(--option-border);
     border-radius: 4px;
     font-weight: bold;
     transition: background 0.18s ease, border-color 0.18s ease;
 }
 
 .option-label:hover .option-button {
-    border-color: #7a8490;
-    background: #4b535b;
+    border-color: var(--option--bg-hover);
+    background: var(--option-border-hover);
 }
 
 .option-label input:checked + .option-button {
-    background: #111827;
-    border-color: #7aa2ff;
-    color: #ffffff;
-    box-shadow: 0 0 0 1px #7aa2ff, 0 0 18px rgba(122, 162, 255, 0.28);
+    background: var(--option-bg-checked);
+    border-color: var(--option-border-checked);
 }
 
 .btn-submit {
     display: inline-block;
     padding: 10px 24px;
-    background: #111827;
+    background: var(--button-bg);
     transition: background 0.18s ease, border-color 0.18s ease;
-    color: #ffffff;
-    border: 1px solid #374151;
+    color: var(--text);
+    border: 1px solid var(--button-border);
     border-radius: 4px;
     font-size: 15px;
     font-weight: bold;
@@ -66,5 +64,5 @@
 }
 
 .btn-submit:hover {
-    background: #000000;
+    background: var(--button-bg-hover);
 }

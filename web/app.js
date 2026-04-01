@@ -23,6 +23,11 @@ addEventListener("DOMContentLoaded", async function () {
         toastNotification.showToast("Failed to fetch remote JSON data", "error");
     }
 
+    toastNotification.showToast("Failed to fetch remote JSON data", "success", 999999);
+    toastNotification.showToast("Failed to fetch remote JSON data", "info", 999999);
+    toastNotification.showToast("Failed to fetch remote JSON data", "error", 999999);
+
+
     const form = formRenderer.render(normalizer.getNormalizedQuestions());
     formController.attachDispatchEvent(form);
     addFormSubmittedListener(form);
