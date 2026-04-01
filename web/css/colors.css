@@ -35,7 +35,6 @@
     --checkmark-check-icon: rgba(255, 255, 255, 0.35);
 }
 
-/* TODO Change to prefers-color-scheme: dark after fixing light mode? */
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #2f343a;
