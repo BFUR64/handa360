@@ -3,11 +3,11 @@
 import * as cachedData from "../data/cachedData.js";
 
 const QUESTIONS_URL = "data/questions.json";
-const ACTIONS_URL = "data/actions.json";
+const HAZARD_INSTRUCTIONS_URL = "data/hazard_instructions.json";
 const LOCATIONS_URL = "data/locations.json";
 
 const LOCAL_QUESTIONS_KEY = "questions";
-const LOCAL_ACTIONS_KEY = "actions";
+const LOCAL_HAZARD_INSTRUCTIONS_KEY = "hazard_instructions";
 const LOCAL_LOCATIONS_KEY = "locations";
 
 /**
@@ -18,7 +18,7 @@ export function loadFromStorage() {
 
     try {
         loadItemFromStorage(LOCAL_QUESTIONS_KEY, cachedData.setQuestions);
-        loadItemFromStorage(LOCAL_ACTIONS_KEY, cachedData.setActions);
+        loadItemFromStorage(LOCAL_HAZARD_INSTRUCTIONS_KEY, cachedData.setHazardInstructions);
         loadItemFromStorage(LOCAL_LOCATIONS_KEY, cachedData.setLocations);
     }
     catch (error) {
@@ -27,7 +27,7 @@ export function loadFromStorage() {
         console.warn("Local storage corrupted, wiping...", message);
 
         localStorage.removeItem(LOCAL_QUESTIONS_KEY);
-        localStorage.removeItem(LOCAL_ACTIONS_KEY);
+        localStorage.removeItem(LOCAL_HAZARD_INSTRUCTIONS_KEY);
         localStorage.removeItem(LOCAL_LOCATIONS_KEY);
 
         loadSuccess = false;
@@ -53,7 +53,7 @@ function loadItemFromStorage(itemKey, setterFunction) {
 export async function syncFromRemote() {
     const results = await Promise.allSettled([
         syncFromUrl(QUESTIONS_URL, cachedData.setQuestions, LOCAL_QUESTIONS_KEY),
-        syncFromUrl(ACTIONS_URL, cachedData.setActions, LOCAL_ACTIONS_KEY),
+        syncFromUrl(HAZARD_INSTRUCTIONS_URL, cachedData.setHazardInstructions, LOCAL_HAZARD_INSTRUCTIONS_KEY),
         syncFromUrl(LOCATIONS_URL, cachedData.setLocations, LOCAL_LOCATIONS_KEY)
     ]);
 
@@ -79,7 +79,7 @@ async function syncFromUrl(url, setterFunction, key) {
     const response = await fetch(url);
 
     if (!response.ok) {
-        throw new Error(`Server said: ${response.status} ${response.statusText}`);
+        throw new Error(`${url} failed: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();

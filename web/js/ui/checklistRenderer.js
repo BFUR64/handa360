@@ -4,13 +4,13 @@ const container = /** @type {HTMLElement} */ (document.getElementById("container
 const checklistTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("checklist-template"));
 const checklistItemTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("checklist-item-template"));
 
-/** @typedef {import("../data/cachedData.js").Action} Action */
+/** @typedef {import("../data/cachedData.js").HazardInstructions} HazardInstructions */
 
 /**
  * @param {string} hazardSelected
- * @param {Action[]} actions
+ * @param {HazardInstructions} hazardInstructions
  */
-export function render(hazardSelected, actions) {
+export function render(hazardSelected, hazardInstructions) {
     const checklist = /** @type {DocumentFragment} */ (checklistTemplate.content.cloneNode(true));
     const checklistBlock = /** @type {HTMLElement} */ (checklist.querySelector(".checklist-block"));
     const checklistHeader = /** @type {HTMLElement} */ (checklist.querySelector(".checklist-header"))
@@ -19,19 +19,16 @@ export function render(hazardSelected, actions) {
 
     checklistHeader.innerText = "Checklist";
 
-    actions.forEach(action => {
-        const currentHazard = action.condition.hazard;
+    const instructions = hazardInstructions[hazardSelected];
+    if (instructions == null) return;
 
-        if (currentHazard === hazardSelected) {
-            action.instructions.forEach(instruction => {
-                const checklistItem = /** @type {DocumentFragment} */ (checklistItemTemplate.content.cloneNode(true));
-                const checklistText = /** @type {HTMLElement} */ (checklistItem.querySelector(".checklist-item-text"));
+    instructions.forEach(instruction => {
+        const checklistItem = /** @type {DocumentFragment} */ (checklistItemTemplate.content.cloneNode(true));
+        const checklistText = /** @type {HTMLElement} */ (checklistItem.querySelector(".checklist-item-text"));
 
-                checklistText.innerText = instruction;
-                checklistBlock.append(checklistItem);
-            })
+        checklistText.innerText = instruction;
+        checklistBlock.append(checklistItem);
+    });
 
-            container.append(checklistBlock);
-        }
-    })
+    container.append(checklistBlock);
 }

@@ -1,0 +1,72 @@
+{
+    "typhoon": [
+        "Get inside a strong building",
+        "Stay away from windows and glass",
+        "Move to safest area (interior room, lower floor not prone to flooding)",
+        "Charge phone and all power banks",
+        "Turn on radio / check official updates"
+    ],
+    "flood": [
+        "Move to higher ground or upper floor",
+        "Stay away from rising water",
+        "Turn off electricity (if safe to do so)",
+        "Monitor official alerts"
+    ],
+    "earthquake": [
+        "DROP to the ground",
+        "COVER under sturdy furniture",
+        "HOLD ON until shaking stops",
+        "Stay away from glass and heavy objects"
+    ],
+    "landslide": [
+        "Move away from slopes and hillsides",
+        "Go to higher, stable ground",
+        "Stay alert for rumbling/cracking sounds"
+    ],
+    "fire": [
+        "Install/check smoke alarms if available",
+        "Keep fire extinguisher ready",
+        "Identify exits and practice escape plan",
+        "Do NOT overload electrical outlets",
+        "If fire starts: Get out, stay out, call for help",
+        "Crawl low under smoke to avoid inhalation"
+    ],
+    "volcanic_eruption": [
+        "Prepare a go-bag (water, food, flashlight, meds, masks, documents)",
+        "Keep N95 mask or cloth to protect from ash",
+        "Monitor updates from PHIVOLCS",
+        "Seal windows/doors to prevent ash from entering",
+        "Evacuate immediately if within danger zone",
+        "Avoid river valleys (lahar risk)"
+    ],
+    "storm_surge": [
+        "Know if your area is coastal and flood-prone",
+        "Prepare evacuation plan to higher ground",
+        "Charge phones and backup power",
+        "Secure important belongings in waterproof bags",
+        "Follow warnings from PAGASA",
+        "Evacuate early—do NOT wait for water to rise"
+    ],
+    "drought": [
+        "Store clean drinking water (at least 3 days supply)",
+        "Practice water conservation (limit washing, reuse water)",
+        "Avoid wasting electricity (reduces strain on resources)",
+        "Monitor advisories from NDRRMC",
+        "Prepare alternative food sources (non-perishables)"
+    ],
+    "heat_wave": [
+        "Drink plenty of water (even if not thirsty)",
+        "Avoid outdoor activities during peak heat (10 AM-4 PM)",
+        "Wear light, loose clothing",
+        "Stay in shaded or ventilated areas",
+        "Watch for signs of heat exhaustion (dizziness, nausea)",
+        "Check on children and elderly"
+    ],
+    "tsunami": [
+        "Know evacuation routes to higher ground",
+        "After strong earthquake, move inland immediately",
+        "Do NOT wait for official warning if water suddenly recedes",
+        "Stay away from coastline until declared safe",
+        "Prepare go-bag for quick evacuation"
+    ]
+}

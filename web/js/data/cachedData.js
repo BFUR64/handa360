@@ -8,9 +8,7 @@
  */
 
 /**
- * @typedef {Object} Action
- * @property {{ hazard: string }} condition
- * @property {string[]} instructions
+ * @typedef {Object<string, string[] | undefined>} HazardInstructions
  */
 
 /**
@@ -22,8 +20,8 @@
 /** @type {Question[] | undefined} */
 let questions;
 
-/** @type {Action[] | undefined} */
-let actions;
+/** @type {HazardInstructions | undefined} */
+let hazardInstructions;
 
 /** @type {Location[] | undefined} */
 let locations;
@@ -34,10 +32,10 @@ export function getQuestions() {
     return structuredClone(questions);
 }
 
-/** @returns {Action[] | undefined} */
-export function getActions() {
-    if (actions == null) return;
-    return structuredClone(actions);
+/** @returns {HazardInstructions | undefined} */
+export function getHazardInstructions() {
+    if (hazardInstructions == null) return;
+    return structuredClone(hazardInstructions);
 }
 
 /** @returns {Location[] | undefined} */
@@ -51,9 +49,9 @@ export function setQuestions(data) {
     questions = data;
 }
 
-/** @param {Action[]} data */
-export function setActions(data) {
-    actions = data;
+/** @param {HazardInstructions} data */
+export function setHazardInstructions(data) {
+    hazardInstructions = data;
 }
 
 /** @param {Location[]} data */
