@@ -12,9 +12,7 @@
  */
 
 /**
- * @typedef {Object} Location
- * @property {{ location: string }} condition
- * @property {string[]} information
+ * @typedef {Object<string, string[] | undefined>} Contacts
  */
 
 /** @type {Question[] | undefined} */
@@ -23,8 +21,8 @@ let questions;
 /** @type {HazardInstructions | undefined} */
 let hazardInstructions;
 
-/** @type {Location[] | undefined} */
-let locations;
+/** @type {Contacts | undefined} */
+let contacts;
 
 /** @returns {Question[] | undefined} */
 export function getQuestions() {
@@ -38,10 +36,10 @@ export function getHazardInstructions() {
     return structuredClone(hazardInstructions);
 }
 
-/** @returns {Location[] | undefined} */
-export function getLocations() {
-    if (locations == null) return;
-    return structuredClone(locations);
+/** @returns {Contacts | undefined} */
+export function getContacts() {
+    if (contacts == null) return;
+    return structuredClone(contacts);
 }
 
 /** @param {Question[]} data */
@@ -54,7 +52,7 @@ export function setHazardInstructions(data) {
     hazardInstructions = data;
 }
 
-/** @param {Location[]} data */
-export function setLocations(data) {
-    locations = data;
+/** @param {Contacts} data */
+export function setContacts(data) {
+    contacts = data;
 }

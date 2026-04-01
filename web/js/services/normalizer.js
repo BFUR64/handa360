@@ -4,7 +4,7 @@ import * as cachedData from "../data/cachedData.js";
 
 /** @typedef {import("../data/cachedData.js").Question} Question */
 /** @typedef {import("../data/cachedData.js").HazardInstructions} HazardInstructions */
-/** @typedef {import("../data/cachedData.js").Location} Location */
+/** @typedef {import("../data/cachedData.js").Contacts} Contacts */
 
 /** @returns {Question[]} */
 export function getNormalizedQuestions() {
@@ -49,20 +49,26 @@ export function getNormalizedActions() {
     }, /** @type {HazardInstructions} */ ({}));
 }
 
-/** @returns {Location[]} */
-export function getNormalizedLocations() {
-    let rawLocations = cachedData.getLocations();
+/** @returns {Contacts} */
+export function getNormalizedContacts() {
+    let rawContacts = cachedData.getContacts();
 
-    rawLocations = Array.isArray(rawLocations) ? rawLocations : [];
+    if (!rawContacts || typeof rawContacts != "object" || Array.isArray(rawContacts)) return {};
 
-    return rawLocations.map(location => ({
-        condition: location.condition && typeof location.condition === "object"
-            ? { location: typeof location.condition.location === "string" ? normalizeText(location.condition.location) : "unknown_location" }
-            : { location: "unknown_location" },
+    return Object.entries(rawContacts).reduce((acc, [key, value]) => {
+        let normalizedValue = /** @type {string[]} */ ([]);
 
-        information: (Array.isArray(location.information) ? location.information : [])
-            .filter(information => typeof information === "string")
-    }));
+        if (Array.isArray(value)) {
+            normalizedValue = value.map(instruction => typeof instruction === "string" ? instruction : "undefined_contact");
+        }
+        else if (value != null) {
+            normalizedValue = [String(value)];
+        }
+
+        acc[key] = normalizedValue;
+
+        return acc;
+    }, /** @type {Contacts} */ ({}));
 }
 
 /** @param {string} text */

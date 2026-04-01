@@ -36,7 +36,7 @@ function addFormSubmittedListener(form) {
 
         checklistRenderer.render(data.hazardSelected, normalizer.getNormalizedActions());
 
-        informationRenderer.render(data.locationSelected, normalizer.getNormalizedLocations());
+        informationRenderer.render(data.locationSelected, normalizer.getNormalizedContacts());
 
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
