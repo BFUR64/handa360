@@ -16,21 +16,26 @@
 .contact-cards{
     display:flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    height: fit-content;
     gap: 16px;
+
+    span{
+        height: 100%;
+        border-left: 2px solid var(--contacts-border);
+    }
 }
 .contact-card{
     display: flex;
     align-items: center;
+    text-align: center;
     flex-direction: column;
 
-    border-radius: 50%;
     padding: 16px;
     gap: 8px;
-    margin: 16px 0;
-    width: 150px;
-    height: 150px;
+    top: 0;
+    width: 200px;
+    height: 100%;
 
     img{
         width: 50px;
@@ -40,5 +45,9 @@
     a{
         text-decoration: none;
         color: var(--option-border-checked);
+    }
+
+    p{
+        margin:0;
     }
 }
