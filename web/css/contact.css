@@ -2,5 +2,34 @@
     display:none;
 }
 #contact-section.show {
-    display:block;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.contact-cards{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.contact-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 50%;
+    padding: 16px;
+    gap: 8px;
+    margin: 16px 0;
+    width: 150px;
+    height: 150px;
+
+    img{
+        width: 50px;
+        height: 50px;
+    }
 }

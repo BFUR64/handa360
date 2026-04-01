@@ -1,5 +1,5 @@
 :root {
-    --bg: #e2e2e2;
+    --bg: #eeeded;
     --text: #212224;
     --text-secondary: #e5e7ec;
 
@@ -9,7 +9,7 @@
     --option-bg-hover: #7a8490;
     --option-border-hover: #4b535b;
 
-    --option-bg-checked: #7f1a1a;
+    --option-bg-checked: #7a2020;
     --option-border-checked: #c35353;
 
     --button-bg: #2c2e33;
@@ -46,8 +46,8 @@
         --option-bg-hover: #7a8490;
         --option-border-hover: #4b535b;
 
-        --option-bg-checked: #111827;
-        --option-border-checked: #7aa2ff;
+        --option-bg-checked:#7a2020;
+        --option-border-checked: #c35353;
 
         --button-bg: #111827;
         --button-border: #374151;

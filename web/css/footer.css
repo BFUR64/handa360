@@ -3,6 +3,7 @@ footer {
 }
 footer.show {
     display:block;
+    transition: all 0.3s ease;
     background-color:var(--button-bg);
     color: var(--text-secondary);
     text-align: center;
