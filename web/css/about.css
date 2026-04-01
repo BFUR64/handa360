@@ -2,5 +2,15 @@
     display:none;
 }
 #about-section.show {
-    display:block;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    overflow-y: auto;
+
+    h1{
+        margin:0;
+        font-size: 4rem;
+    }
 }

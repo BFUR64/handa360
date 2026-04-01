@@ -7,8 +7,37 @@ footer.show {
     background-color:var(--button-bg);
     color: var(--text-secondary);
     text-align: center;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
     left: 0;
     right: 0;
+
+    img {
+        width: 200px;
+        height: auto;
+        opacity: 0.2;
+        margin: 0;
+    }
+    hr {
+
+        margin: 20px 10px 0 10px;
+        opacity: 0.5;
+    }
+
+    a{
+        text-decoration: none;
+        color: var(--option-border-checked);
+    }
+}
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px 0 50px;
+
+    div{
+        display: block;
+        text-align: left;
+        flex: 1;
+    }
 }
