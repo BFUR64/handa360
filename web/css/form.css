@@ -43,11 +43,13 @@
 .option-label:hover .option-button {
     border-color: var(--option--bg-hover);
     background: var(--option-border-hover);
+    color: var(--text-secondary);
 }
 
 .option-label input:checked + .option-button {
     background: var(--option-bg-checked);
     border-color: var(--option-border-checked);
+    color: var(--text-secondary);
 }
 
 .btn-submit {
@@ -55,7 +57,7 @@
     padding: 10px 24px;
     background: var(--button-bg);
     transition: background 0.18s ease, border-color 0.18s ease;
-    color: var(--text);
+    color: var(--text-secondary);
     border: 1px solid var(--button-border);
     border-radius: 4px;
     font-size: 15px;
