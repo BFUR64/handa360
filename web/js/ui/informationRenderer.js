@@ -13,7 +13,6 @@ const contactlistItemTemplate = /** @type {HTMLTemplateElement} */ (document.get
  */
 export function render(locationSelected, locations) {
     // remove old contact lists (important)
-    container.querySelectorAll(".contactlist-block").forEach(el => el.remove());
 
     const contactlist = /** @type {DocumentFragment} */ (contactlistTemplate.content.cloneNode(true));
     const contactlistBlock = /** @type {HTMLElement} */ (contactlist.querySelector(".contactlist-block"));
@@ -24,11 +23,7 @@ export function render(locationSelected, locations) {
     locations.forEach(locationsIndex => {
         const currentLocation = locationsIndex.condition.location;
 
-        // safer comparison
-        if (
-            currentLocation.trim().toLowerCase() ===
-            locationSelected.trim().toLowerCase()
-        ) {
+        if (currentLocation === locationSelected) {
             locationsIndex.information.forEach(informationLine => {
                 const contactlistItem = /** @type {DocumentFragment} */ (
                     contactlistItemTemplate.content.cloneNode(true)
@@ -71,4 +66,4 @@ export function render(locationSelected, locations) {
     });
 
     return contactlistBlock;
-} 
+}
