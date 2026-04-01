@@ -12,8 +12,6 @@ const contactlistItemTemplate = /** @type {HTMLTemplateElement} */ (document.get
  * @return {HTMLElement}
  */
 export function render(locationSelected, locations) {
-    // remove old contact lists (important)
-
     const contactlist = /** @type {DocumentFragment} */ (contactlistTemplate.content.cloneNode(true));
     const contactlistBlock = /** @type {HTMLElement} */ (contactlist.querySelector(".contactlist-block"));
     const contactlistHeader = /** @type {HTMLElement} */ (contactlist.querySelector(".contactlist-header"));
