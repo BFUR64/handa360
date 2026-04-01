@@ -7,8 +7,7 @@
 
     border-style: solid;
     border-width: 2px;
-    border-color: rgba(255, 255, 255, 0.35);
-    border-radius: 5px;
+    border-color: var(--contacts-border);    border-radius: 5px;
 
     padding: 20px;
 }
