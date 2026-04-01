@@ -3,7 +3,7 @@
 import * as toastNotification from "./js/ui/toastNotification.js";
 
 import * as cacheController from "./js/services/cacheController.js";
-import * as normalizer from "./js/services/normalizer.js";
+import * as cachedData from "./js/data/cachedData.js";
 
 import * as formRenderer from "./js/ui/formRenderer.js";
 import * as formController from "./js/services/formController.js";
@@ -23,7 +23,7 @@ addEventListener("DOMContentLoaded", async function () {
         toastNotification.showToast("Failed to fetch remote JSON data", "error");
     }
 
-    const form = formRenderer.render(normalizer.getNormalizedQuestions());
+    const form = formRenderer.render(cachedData.getQuestions());
     formController.attachDispatchEvent(form);
     addFormSubmittedListener(form);
 })
@@ -34,9 +34,9 @@ function addFormSubmittedListener(form) {
         const customEvent = /** @type {CustomEvent<UserInput>} */ (event);
         const data = customEvent.detail;
 
-        checklistRenderer.render(data.hazardSelected, normalizer.getNormalizedActions());
+        checklistRenderer.render(data.hazardSelected, cachedData.getHazardInstructions());
 
-        informationRenderer.render(data.locationSelected, normalizer.getNormalizedContacts());
+        informationRenderer.render(data.locationSelected, cachedData.getContacts());
 
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;

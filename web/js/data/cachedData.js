@@ -1,5 +1,7 @@
 // @ts-check
 
+import * as normalizer from "../services/normalizer.js";
+
 /**
  * @typedef {Object} Question
  * @property {string} id
@@ -15,44 +17,41 @@
  * @typedef {Object<string, string[] | undefined>} Contacts
  */
 
-/** @type {Question[] | undefined} */
-let questions;
+/** @type {Question[]} */
+let questions = [];
 
-/** @type {HazardInstructions | undefined} */
-let hazardInstructions;
+/** @type {HazardInstructions} */
+let hazardInstructions = {};
 
-/** @type {Contacts | undefined} */
-let contacts;
+/** @type {Contacts} */
+let contacts = {};
 
-/** @returns {Question[] | undefined} */
+/** @returns {Question[]} */
 export function getQuestions() {
-    if (questions == null) return;
     return structuredClone(questions);
 }
 
-/** @returns {HazardInstructions | undefined} */
+/** @returns {HazardInstructions} */
 export function getHazardInstructions() {
-    if (hazardInstructions == null) return;
     return structuredClone(hazardInstructions);
 }
 
-/** @returns {Contacts | undefined} */
+/** @returns {Contacts} */
 export function getContacts() {
-    if (contacts == null) return;
     return structuredClone(contacts);
 }
 
 /** @param {Question[]} data */
 export function setQuestions(data) {
-    questions = data;
+    questions = normalizer.getNormalizedQuestions(data);
 }
 
 /** @param {HazardInstructions} data */
 export function setHazardInstructions(data) {
-    hazardInstructions = data;
+    hazardInstructions = normalizer.getNormalizedHazardInstructions(data);
 }
 
 /** @param {Contacts} data */
 export function setContacts(data) {
-    contacts = data;
+    contacts = normalizer.getNormalizedContacts(data);
 }

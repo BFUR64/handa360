@@ -6,11 +6,12 @@ import * as cachedData from "../data/cachedData.js";
 /** @typedef {import("../data/cachedData.js").HazardInstructions} HazardInstructions */
 /** @typedef {import("../data/cachedData.js").Contacts} Contacts */
 
-/** @returns {Question[]} */
-export function getNormalizedQuestions() {
-    let rawQuestions = cachedData.getQuestions();
-
-    rawQuestions = Array.isArray(rawQuestions) ? rawQuestions : [];
+/**
+ * @param {Question[]} rawQuestions
+ * @returns {Question[]}
+ */
+export function getNormalizedQuestions(rawQuestions) {
+    if (!Array.isArray(rawQuestions)) return [];
 
     return rawQuestions.map(question => ({
         text: typeof question.text === "string" ? question.text : "unknown_text",
@@ -27,10 +28,11 @@ export function getNormalizedQuestions() {
     }));
 }
 
-/** @returns {HazardInstructions} */
-export function getNormalizedActions() {
-    let rawHazardInstructions = cachedData.getHazardInstructions();
-
+/**
+ * @param {HazardInstructions} rawHazardInstructions
+ * @returns {HazardInstructions}
+ */
+export function getNormalizedHazardInstructions(rawHazardInstructions) {
     if (!rawHazardInstructions || typeof rawHazardInstructions != "object" || Array.isArray(rawHazardInstructions)) return {};
 
     return Object.entries(rawHazardInstructions).reduce((acc, [key, value]) => {
@@ -49,10 +51,10 @@ export function getNormalizedActions() {
     }, /** @type {HazardInstructions} */ ({}));
 }
 
-/** @returns {Contacts} */
-export function getNormalizedContacts() {
-    let rawContacts = cachedData.getContacts();
-
+/**
+ * @param {Contacts} rawContacts
+ * @returns {Contacts} */
+export function getNormalizedContacts(rawContacts) {
     if (!rawContacts || typeof rawContacts != "object" || Array.isArray(rawContacts)) return {};
 
     return Object.entries(rawContacts).reduce((acc, [key, value]) => {
