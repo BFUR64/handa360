@@ -1,6 +1,7 @@
 :root {
     --bg: #e2e2e2;
     --text: #212224;
+    --text-secondary: #e5e7ec;
 
     --option-bg: #e2e2e2;
     --option-border: #5a626a;
@@ -8,10 +9,10 @@
     --option-bg-hover: #7a8490;
     --option-border-hover: #4b535b;
 
-    --option-bg-checked: #111827;
-    --option-border-checked: #7aa2ff;
+    --option-bg-checked: #7f1a1a;
+    --option-border-checked: #c35353;
 
-    --button-bg: #111827;
+    --button-bg: #2c2e33;
     --button-border: #374151;
 
     --button-bg-hover: #000;
@@ -22,7 +23,7 @@
 
     --toast-border: rgb(255, 255, 255, 0.35);
 
-    --contacts-border: rgba(255, 255, 255, 0.35);
+    --contacts-border: rgba(131, 125, 125, 0.328);
 
     --checklist-text-checked: gray;
     --checklist-bg-checked: rgba(69, 76, 83, 0.75);
@@ -35,7 +36,7 @@
 }
 
 /* TODO Change to prefers-color-scheme: dark after fixing light mode? */
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
     :root {
         --bg: #2f343a;
         --text: #e5e7eb;
