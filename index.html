@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="web/css/mobile.css">
     <link rel="stylesheet" href="web/css/checklist.css">
     <link rel="stylesheet" href="web/css/contactlist.css">
+    <link rel="stylesheet" href="web/css/home.css">
     <link rel="stylesheet" href="web/css/about.css">
     <link rel="stylesheet" href="web/css/contact.css">
     <link rel="stylesheet" href="web/css/footer.css">
@@ -41,6 +42,7 @@
     <hr>
 
     <main id="container">
+
     </main>
 
     <template id="toast-template">
@@ -79,12 +81,19 @@
     </template>
 
     <template id="form-template">
-        <form class="form-block">
-            <div class="questions-container"></div>
-            <button type="submit" class="btn-submit">Submit</button>
-        </form>
+        <section id="home-section">
+            <h1>Handa360</h1>
+            <p>Handa360 is a web application that helps you ....</p>
+        </section>
+        <br>
+        <section id="form-section">
+            <form class="form-block">
+                <div class="questions-container"></div>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </section>
     </template>
-
+    
     <template id="question-template">
         <section class="question-block">
                 <h2 class="question-text"></h2>
@@ -98,7 +107,6 @@
             <span class="option-button"></span>
         </label>
     </template>
-
     <section id="about-section">
         <h1>About Handa360</h1>
         <p>Handa360 is a web application that helps you ....</p>
