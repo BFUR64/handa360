@@ -1,18 +1,15 @@
 header {
     display: flex;
+    align-items: center;
     padding: 0 20px;
-
-    img {
-        width: 100px;
-    }
 }
-
 .nav {
     margin-left: auto;
 }
 
 .nav-list {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 16px;
 
@@ -21,3 +18,21 @@ header {
         color: var(--text);
     }
 }
+
+.theme-toggle {
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+    cursor: pointer;
+
+    border-radius: 25px;
+    
+    &:hover{
+        background-color: var(--option-bg);
+    }
+}
+
+.logo {
+    height: auto;
+    width: 100px;
+  }

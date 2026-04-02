@@ -1,5 +1,5 @@
 :root {
-    --bg: #eeeded;
+    --bg: #f7f7f7;
     --text: #212224;
     --text-secondary: #e5e7ec;
 
@@ -35,9 +35,9 @@
     --checkmark-check-icon: #7a2020;
 }
 
-@media (prefers-color-scheme: dar) {
+@media (prefers-color-scheme: dark) {
     :root {
-        --bg: #2f343a;
+        --bg: #1e1e1e;
         --text: #e5e7eb;
 
         --option-bg: #454c53;
