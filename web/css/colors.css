@@ -23,19 +23,19 @@
 
     --toast-border: rgb(255, 255, 255, 0.35);
 
-    --contacts-border: rgba(131, 125, 125, 0.328);
+    --contacts-border: rgb(0, 0, 0);
+    --contactlist-item-border: rgb(0, 0, 0);
 
-    --checklist-text-checked: gray;
     --checklist-bg-checked: rgba(69, 76, 83, 0.75);
 
-    --checkmark-border: rgba(255, 255, 255, 0.35);
-    --checkmark-border-hover: #ddd;
+    --checkmark-border: #7a2020;
+    --checkmark-border-hover: #c7c7c7;
     --checkmark-border-checked: #ddd;
 
-    --checkmark-check-icon: rgba(255, 255, 255, 0.35);
+    --checkmark-check-icon: #7a2020;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dar) {
     :root {
         --bg: #2f343a;
         --text: #e5e7eb;

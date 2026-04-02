@@ -7,7 +7,8 @@
 
     border-style: solid;
     border-width: 2px;
-    border-color: var(--contacts-border);    border-radius: 5px;
+    border-color: var(--contacts-border);
+    border-radius: 5px;
 
     padding: 20px;
 }
@@ -25,7 +26,7 @@
     flex: 1;
     min-width: 0;
 
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid var(--contactlist-item-border);
     border-radius: 5px;
     padding: 10px 12px;
 
