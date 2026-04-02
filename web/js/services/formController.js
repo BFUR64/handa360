@@ -1,7 +1,7 @@
 // @ts-check
 
 /**
- * @typedef {{ locationSelected: string, hazardSelected: string}} UserInput
+ * @typedef {{ locationSelected: string, hazardSelected: string, specialNeedsSelected: string[]}} UserInput
  */
 
 /**
@@ -28,5 +28,10 @@ function extractFormData(form) {
     const hazardQuery = form.querySelector("input[name='hazard']:checked");
     const hazardSelected = hazardQuery instanceof HTMLInputElement ? hazardQuery.value : "";
 
-    return {locationSelected, hazardSelected};
+    const specialNeedsQuery = form.querySelectorAll("input[name='special_needs']:checked");
+    const specialNeedsSelected = Array
+                                    .from(specialNeedsQuery)
+                                    .map(el => el instanceof HTMLInputElement ? el.value : "");
+
+    return {locationSelected, hazardSelected, specialNeedsSelected};
 }
