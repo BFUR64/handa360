@@ -10,7 +10,7 @@ import * as formController from "./js/services/formController.js";
 
 import * as checklistRenderer from "./js/ui/checklistRenderer.js";
 
-import * as informationRenderer from "./js/ui/informationRenderer.js";
+import * as informationRenderer from "./js/ui/contactlistRenderer.js";
 
 /** @typedef {import("./js/services/formController.js").UserInput} UserInput */
 
