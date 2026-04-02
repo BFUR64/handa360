@@ -1,5 +1,6 @@
 # Handa360
 Handa360 is a web application that turns general disaster-preparedness instructions into a catered set of actionable items.
+
 Site: https://bfur64.github.io/handa360/
 
 ## Preview
@@ -8,6 +9,8 @@ Site: https://bfur64.github.io/handa360/
 
 ## Features
 - Creates checklists and contact list
+- Toggle between light and dark mode
+- Compatible on both desktop and mobile platforms
 
 ## Technologies Used
 - HTML
@@ -15,10 +18,10 @@ Site: https://bfur64.github.io/handa360/
 - JavaScript
 
 ## Team
+- Curt Lawrence Z. Macalacad
 - Terrance Evan I. Clark
+- Christine Joy D. Roberto
 - Mehlcon D. Casimero
-- Christine Joy
-- Curt
 
 ## About
 This project was made for a hackathon, "UPV KomsaiHack 2026: Risk Ready" under our team name, "The Vibe Coders 67".
