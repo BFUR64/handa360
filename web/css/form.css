@@ -20,7 +20,7 @@
     cursor: pointer;
 }
 
-.option-label input[type="radio"] {
+.option-label input {
     position: absolute;
     opacity: 0;
     width: 0;

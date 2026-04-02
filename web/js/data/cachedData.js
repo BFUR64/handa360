@@ -6,6 +6,7 @@ import * as normalizer from "../services/normalizer.js";
  * @typedef {Object} Question
  * @property {string} id
  * @property {string} text
+ * @property {string} selection_type
  * @property {{id: string, text: string}[]} options
  */
 

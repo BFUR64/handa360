@@ -16,6 +16,7 @@ export function getNormalizedQuestions(rawQuestions) {
     return rawQuestions.map(question => ({
         text: typeof question.text === "string" ? question.text : "unknown_text",
         id: typeof question.id === "string" ? normalizeText(question.id) : "unknown_id",
+        selection_type: typeof question.selection_type === "string" ? normalizeText(question.selection_type) : "single",
 
         options: (Array.isArray(question.options) ? question.options : [])
             .filter(option =>

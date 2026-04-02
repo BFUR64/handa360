@@ -33,13 +33,17 @@ export function render(questions) {
         question.options.forEach(option => {
             const optionTemplateClone = /** @type {DocumentFragment} */ (optionTemplate.content.cloneNode(true));
 
-            const radioInput = /** @type {HTMLInputElement} */ (optionTemplateClone.querySelector("input[type='radio']"));
+            const input = /** @type {HTMLInputElement} */ (optionTemplateClone.querySelector("input"));
             const buttonText = optionTemplateClone.querySelector(".option-button");
 
-            if (!radioInput || !buttonText) throw new Error("Option template is broken");
+            if (!input || !buttonText) throw new Error("Option template is broken");
 
-            radioInput.value = option.id;
-            radioInput.name = question.id;
+            const inputType = question.selection_type === "multiple" ? "checkbox" : "radio";
+
+            input.value = option.id;
+            input.name = question.id;
+            input.type = inputType;
+
             buttonText.textContent = option.text;
 
             questionSelection.append(optionTemplateClone);
