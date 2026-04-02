@@ -1,72 +1,72 @@
 {
     "typhoon": [
-        "Get inside a strong building",
-        "Stay away from windows and glass",
-        "Move to safest area (interior room, lower floor not prone to flooding)",
-        "Charge phone and all power banks",
-        "Turn on radio / check official updates"
+        "Inspect and repair roof leaks, loose shingles, and weak windows",
+        "Trim tree branches that could fall on your house or power lines",
+        "Clean gutters and street drains to prevent localized flooding",
+        "Prepare a 3-day emergency go-bag (food, water, meds, flashlight, radio)",
+        "Establish a family communication plan and identify the nearest evacuation center"
     ],
     "flood": [
-        "Move to higher ground or upper floor",
-        "Stay away from rising water",
-        "Turn off electricity (if safe to do so)",
-        "Monitor official alerts"
+        "Elevate heavy appliances and furniture off the ground floor",
+        "Place important documents (IDs, titles, birth certificates) in sealed waterproof bags",
+        "Identify an evacuation route to higher ground that avoids easily flooded streets",
+        "Install check valves in plumbing to prevent floodwater from backing up into drains",
+        "Check local hazard maps to understand your specific flood risk level"
     ],
     "earthquake": [
-        "DROP to the ground",
-        "COVER under sturdy furniture",
-        "HOLD ON until shaking stops",
-        "Stay away from glass and heavy objects"
+        "Secure heavy furniture, cabinets, and appliances to the wall studs",
+        "Move heavy objects to lower shelves to prevent them from falling",
+        "Identify 'safe spots' in each room (e.g., under sturdy tables) and practice Drop/Cover/Hold On",
+        "Install latches on kitchen cabinets so plates and glass don't spill out",
+        "Locate your main electrical, gas, and water shut-off valves and learn how to turn them off"
     ],
     "landslide": [
-        "Move away from slopes and hillsides",
-        "Go to higher, stable ground",
-        "Stay alert for rumbling/cracking sounds"
+        "Check local hazard maps (via DENR-MGB) to see if your home is in a landslide-prone area",
+        "Plant ground-cover vegetation on slopes near your home to prevent soil erosion",
+        "Identify warning signs around your property (cracking ground, tilted trees, or shifting fences)",
+        "Create a preemptive evacuation plan for when heavy, continuous rain is forecasted",
+        "Ensure drainage paths on your property direct water away from steep slopes"
     ],
     "fire": [
-        "Install/check smoke alarms if available",
-        "Keep fire extinguisher ready",
-        "Identify exits and practice escape plan",
-        "Do NOT overload electrical outlets",
-        "If fire starts: Get out, stay out, call for help",
-        "Crawl low under smoke to avoid inhalation"
+        "Install smoke alarms in key areas (kitchen, bedrooms) and test batteries monthly",
+        "Purchase a fire extinguisher for the kitchen and learn the PASS method (Pull, Aim, Squeeze, Sweep)",
+        "Create a family escape plan identifying two ways out of every single room",
+        "Declutter combustible materials (newspapers, rags, cardboard) from near heat sources",
+        "Inspect home electrical wiring and replace any frayed cords or overloaded extension cables"
     ],
     "volcanic_eruption": [
-        "Prepare a go-bag (water, food, flashlight, meds, masks, documents)",
-        "Keep N95 mask or cloth to protect from ash",
-        "Monitor updates from PHIVOLCS",
-        "Seal windows/doors to prevent ash from entering",
-        "Evacuate immediately if within danger zone",
-        "Avoid river valleys (lahar risk)"
+        "Stockpile N95 masks and protective goggles to guard against future ashfall",
+        "Purchase plastic sheeting and duct tape to seal windows and doors from ash",
+        "Check PHIVOLCS hazard maps to confirm your distance from the permanent danger zone",
+        "Include respiratory medications (like asthma inhalers) in your emergency go-bag",
+        "Plan an evacuation route that avoids river valleys prone to lahar flows"
     ],
     "storm_surge": [
-        "Know if your area is coastal and flood-prone",
-        "Prepare evacuation plan to higher ground",
-        "Charge phones and backup power",
-        "Secure important belongings in waterproof bags",
-        "Follow warnings from PAGASA",
-        "Evacuate early—do NOT wait for water to rise"
+        "Consult PAGASA hazard maps to verify if your coastal area is vulnerable to storm surges",
+        "Map out a fast evacuation route to a location at least 15 meters above sea level",
+        "Prepare materials (sandbags, plywood) to board up coastal-facing windows and doors",
+        "Pack a go-bag and keep it by the door for rapid deployment",
+        "Plan where to safely relocate pets and livestock away from the shoreline"
     ],
     "drought": [
-        "Store clean drinking water (at least 3 days supply)",
-        "Practice water conservation (limit washing, reuse water)",
-        "Avoid wasting electricity (reduces strain on resources)",
-        "Monitor advisories from NDRRMC",
-        "Prepare alternative food sources (non-perishables)"
+        "Install rainwater catchment barrels or large water drums for non-potable use",
+        "Fix all leaky faucets, toilets, and pipes to conserve current water supplies",
+        "Stockpile commercially bottled drinking water (at least 1 gallon per person, per day)",
+        "Transition gardens to drought-resistant landscaping to minimize watering needs",
+        "Monitor NDRRMC and local water district advisories for rationing schedules"
     ],
     "heat_wave": [
-        "Drink plenty of water (even if not thirsty)",
-        "Avoid outdoor activities during peak heat (10 AM-4 PM)",
-        "Wear light, loose clothing",
-        "Stay in shaded or ventilated areas",
-        "Watch for signs of heat exhaustion (dizziness, nausea)",
-        "Check on children and elderly"
+        "Service air conditioning units and clean electric fans to ensure they work efficiently",
+        "Install blackout curtains or window reflectors to keep the sun's heat out of the house",
+        "Stock up on oral rehydration salts (Oresol) and electrolyte drinks",
+        "Identify the coolest room in the house and set it up as a family retreat area",
+        "Learn the early medical signs of heat exhaustion and heat stroke"
     ],
     "tsunami": [
-        "Know evacuation routes to higher ground",
-        "After strong earthquake, move inland immediately",
-        "Do NOT wait for official warning if water suddenly recedes",
-        "Stay away from coastline until declared safe",
-        "Prepare go-bag for quick evacuation"
+        "Identify the highest inland point near your home or workplace",
+        "Physically walk your tsunami evacuation route to ensure it takes less than 15 minutes",
+        "Participate in community tsunami drills to familiarize yourself with the local warning sirens",
+        "Keep a grab-and-go bag easily accessible near the main exit of your home",
+        "Memorize the natural warning signs (strong earthquake, sudden receding of ocean water)"
     ]
 }
