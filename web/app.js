@@ -12,6 +12,8 @@ import * as checklistRenderer from "./js/ui/checklistRenderer.js";
 
 import * as informationRenderer from "./js/ui/contactlistRenderer.js";
 
+import * as uiHelper from "./js/ui/uiHelper.js";
+
 /** @typedef {import("./js/services/formController.js").UserInput} UserInput */
 
 addEventListener("DOMContentLoaded", async function () {
@@ -23,6 +25,7 @@ addEventListener("DOMContentLoaded", async function () {
         toastNotification.showToast("Failed to fetch remote JSON data", "error");
     }
 
+    uiHelper.clearContainer();
     const form = formRenderer.render(cachedData.getQuestions());
     formController.attachDispatchEvent(form);
     addFormSubmittedListener(form);
@@ -34,7 +37,19 @@ function addFormSubmittedListener(form) {
         const customEvent = /** @type {CustomEvent<UserInput>} */ (event);
         const data = customEvent.detail;
 
-        checklistRenderer.render(data.hazardSelected, cachedData.getHazardInstructions());
+        uiHelper.clearContainer();
+
+        const specialNeedsQuestion = cachedData.getQuestions().find(q => q.id === "special_needs");
+        const idToTextMap = Object.fromEntries(specialNeedsQuestion?.options.map(opt => [opt.id, opt.text]) ?? []);
+
+
+        data.specialNeedsSelected.forEach(specialNeed => {
+            const title = idToTextMap[specialNeed];
+
+            checklistRenderer.render(cachedData.getSpecialNeedsInstructions(), specialNeed, title);
+        });
+
+        checklistRenderer.render(cachedData.getHazardInstructions(), data.hazardSelected, "Hazard Instructions");
 
         informationRenderer.render(data.locationSelected, cachedData.getContacts());
 

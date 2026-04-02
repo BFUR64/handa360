@@ -12,8 +12,6 @@ const container = /** @type {HTMLElement} */ (document.getElementById("container
  * @returns {HTMLElement}
  */
 export function render(questions) {
-    container.innerHTML = "";
-
     const formTemplateClone = /** @type {DocumentFragment} */ (formTemplate.content.cloneNode(true));
 
     const questionsContainer = formTemplateClone.querySelector(".questions-container");

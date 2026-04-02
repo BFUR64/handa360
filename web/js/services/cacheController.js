@@ -2,13 +2,15 @@
 
 import * as cachedData from "../data/cachedData.js";
 
-const QUESTIONS_URL = "data/questions.json";
-const HAZARD_INSTRUCTIONS_URL = "data/hazard_instructions.json";
-const CONTACTS_URL = "data/contacts.json";
+const URL_QUESTIONS = "data/questions.json";
+const URL_HAZARD_INSTRUCTIONS = "data/hazard_instructions.json";
+const URL_CONTACTS = "data/contacts.json";
+const URL_SPECIAL_NEEDS_INSTRUCTIONS = "data/special_needs_instructions.json";
 
-const LOCAL_QUESTIONS_KEY = "questions";
-const LOCAL_HAZARD_INSTRUCTIONS_KEY = "hazard_instructions";
-const LOCAL_CONTACTS_KEY = "contacts";
+const KEY_QUESTIONS = "questions";
+const KEY_HAZARD_INSTRUCTIONS = "hazard_instructions";
+const KEY_CONTACTS = "contacts";
+const KEY_SPECIAL_NEEDS_INSTRUCTIONS = "special_needs_instructions";
 
 /**
  * @returns {boolean}
@@ -17,18 +19,19 @@ export function loadFromStorage() {
     let loadSuccess = true;
 
     try {
-        loadItemFromStorage(LOCAL_QUESTIONS_KEY, cachedData.setQuestions);
-        loadItemFromStorage(LOCAL_HAZARD_INSTRUCTIONS_KEY, cachedData.setHazardInstructions);
-        loadItemFromStorage(LOCAL_CONTACTS_KEY, cachedData.setContacts);
+        loadItemFromStorage(KEY_QUESTIONS, cachedData.setQuestions);
+        loadItemFromStorage(KEY_HAZARD_INSTRUCTIONS, cachedData.setHazardInstructions);
+        loadItemFromStorage(KEY_CONTACTS, cachedData.setContacts);
+        loadItemFromStorage(KEY_SPECIAL_NEEDS_INSTRUCTIONS, cachedData.setSpecialNeedsInstructions);
     }
     catch (error) {
         const message = error instanceof Error ? error.message : "Unknown Error";
 
         console.warn("Local storage corrupted, wiping...", message);
 
-        localStorage.removeItem(LOCAL_QUESTIONS_KEY);
-        localStorage.removeItem(LOCAL_HAZARD_INSTRUCTIONS_KEY);
-        localStorage.removeItem(LOCAL_CONTACTS_KEY);
+        localStorage.removeItem(KEY_QUESTIONS);
+        localStorage.removeItem(KEY_HAZARD_INSTRUCTIONS);
+        localStorage.removeItem(KEY_CONTACTS);
 
         loadSuccess = false;
     }
@@ -52,9 +55,10 @@ function loadItemFromStorage(itemKey, setterFunction) {
 /** @returns {Promise<boolean>} */
 export async function syncFromRemote() {
     const results = await Promise.allSettled([
-        syncFromUrl(QUESTIONS_URL, cachedData.setQuestions, LOCAL_QUESTIONS_KEY),
-        syncFromUrl(HAZARD_INSTRUCTIONS_URL, cachedData.setHazardInstructions, LOCAL_HAZARD_INSTRUCTIONS_KEY),
-        syncFromUrl(CONTACTS_URL, cachedData.setContacts, LOCAL_CONTACTS_KEY)
+        syncFromUrl(URL_QUESTIONS, cachedData.setQuestions, KEY_QUESTIONS),
+        syncFromUrl(URL_HAZARD_INSTRUCTIONS, cachedData.setHazardInstructions, KEY_HAZARD_INSTRUCTIONS),
+        syncFromUrl(URL_CONTACTS, cachedData.setContacts, KEY_CONTACTS),
+        syncFromUrl(URL_SPECIAL_NEEDS_INSTRUCTIONS, cachedData.setSpecialNeedsInstructions, KEY_SPECIAL_NEEDS_INSTRUCTIONS)
     ]);
 
     let isPerfectSync = true;

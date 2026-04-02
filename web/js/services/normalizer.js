@@ -5,6 +5,7 @@ import * as cachedData from "../data/cachedData.js";
 /** @typedef {import("../data/cachedData.js").Question} Question */
 /** @typedef {import("../data/cachedData.js").HazardInstructions} HazardInstructions */
 /** @typedef {import("../data/cachedData.js").Contacts} Contacts */
+/** @typedef {import("../data/cachedData.js").SpecialNeedsInstructions} SpecialNeedsInstructions */
 
 /**
  * @param {Question[]} rawQuestions
@@ -34,35 +35,35 @@ export function getNormalizedQuestions(rawQuestions) {
  * @returns {HazardInstructions}
  */
 export function getNormalizedHazardInstructions(rawHazardInstructions) {
-    if (!rawHazardInstructions || typeof rawHazardInstructions != "object" || Array.isArray(rawHazardInstructions)) return {};
-
-    return Object.entries(rawHazardInstructions).reduce((acc, [key, value]) => {
-        let normalizedValue = /** @type {string[]} */ ([]);
-
-        if (Array.isArray(value)) {
-            normalizedValue = value.map(instruction => typeof instruction === "string" ? instruction : "undefined_instruction");
-        }
-        else if (value != null) {
-            normalizedValue = [String(value)];
-        }
-
-        acc[key] = normalizedValue;
-
-        return acc;
-    }, /** @type {HazardInstructions} */ ({}));
+    return getNormalizedObjectMap(rawHazardInstructions);
 }
 
 /**
  * @param {Contacts} rawContacts
  * @returns {Contacts} */
 export function getNormalizedContacts(rawContacts) {
-    if (!rawContacts || typeof rawContacts != "object" || Array.isArray(rawContacts)) return {};
+    return getNormalizedObjectMap(rawContacts);
+}
 
-    return Object.entries(rawContacts).reduce((acc, [key, value]) => {
+/**
+ * @param {SpecialNeedsInstructions} specialNeedsInstructions
+ * @return {SpecialNeedsInstructions}
+ */
+export function getNormalizedSpecialNeedsInstructions(specialNeedsInstructions) {
+    return getNormalizedObjectMap(specialNeedsInstructions);
+}
+
+/**
+ * @param {Object<string, string[] | undefined>} objectMap
+ * @returns {Object<string, string[] | undefined>} */
+export function getNormalizedObjectMap(objectMap) {
+    if (!objectMap || typeof objectMap != "object" || Array.isArray(objectMap)) return {};
+
+    return Object.entries(objectMap).reduce((acc, [key, value]) => {
         let normalizedValue = /** @type {string[]} */ ([]);
 
         if (Array.isArray(value)) {
-            normalizedValue = value.map(instruction => typeof instruction === "string" ? instruction : "undefined_contact");
+            normalizedValue = value.map(instruction => typeof instruction === "string" ? instruction : "undefined_instruction");
         }
         else if (value != null) {
             normalizedValue = [String(value)];

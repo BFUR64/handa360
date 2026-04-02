@@ -7,19 +7,18 @@ const checklistItemTemplate = /** @type {HTMLTemplateElement} */ (document.getEl
 /** @typedef {import("../data/cachedData.js").HazardInstructions} HazardInstructions */
 
 /**
- * @param {string} hazardSelected
- * @param {HazardInstructions} hazardInstructions
+ * @param {Object<string, string[] | undefined>} objectMap
+ * @param {string} key
+ * @param {string} title
  */
-export function render(hazardSelected, hazardInstructions) {
+export function render(objectMap, key, title) {
     const checklist = /** @type {DocumentFragment} */ (checklistTemplate.content.cloneNode(true));
     const checklistBlock = /** @type {HTMLElement} */ (checklist.querySelector(".checklist-block"));
     const checklistHeader = /** @type {HTMLElement} */ (checklist.querySelector(".checklist-header"))
 
-    container.innerHTML = "";
+    checklistHeader.innerText = title;
 
-    checklistHeader.innerText = "Checklist";
-
-    const instructions = hazardInstructions[hazardSelected];
+    const instructions = objectMap[key];
     if (instructions == null) return;
 
     instructions.forEach(instruction => {

@@ -18,6 +18,10 @@ import * as normalizer from "../services/normalizer.js";
  * @typedef {Object<string, string[] | undefined>} Contacts
  */
 
+/**
+ * @typedef {Object<string, string[] | undefined>} SpecialNeedsInstructions
+ */
+
 /** @type {Question[]} */
 let questions = [];
 
@@ -26,6 +30,9 @@ let hazardInstructions = {};
 
 /** @type {Contacts} */
 let contacts = {};
+
+/** @type {SpecialNeedsInstructions} */
+let SpecialNeedsInstructions = {};
 
 /** @returns {Question[]} */
 export function getQuestions() {
@@ -42,6 +49,11 @@ export function getContacts() {
     return structuredClone(contacts);
 }
 
+/** @returns {SpecialNeedsInstructions} */
+export function getSpecialNeedsInstructions() {
+    return structuredClone(SpecialNeedsInstructions);
+}
+
 /** @param {Question[]} data */
 export function setQuestions(data) {
     questions = normalizer.getNormalizedQuestions(data);
@@ -55,4 +67,9 @@ export function setHazardInstructions(data) {
 /** @param {Contacts} data */
 export function setContacts(data) {
     contacts = normalizer.getNormalizedContacts(data);
+}
+
+/** @param {SpecialNeedsInstructions} data */
+export function setSpecialNeedsInstructions(data) {
+    SpecialNeedsInstructions = normalizer.getNormalizedSpecialNeedsInstructions(data);
 }
