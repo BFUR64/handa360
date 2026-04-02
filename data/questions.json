@@ -2,6 +2,7 @@
   {
     "id" : "location",
     "text" : "Where are you?",
+    "selection_type" : "single",
     "options" : [
       { "id" : "kalibo", "text" : "Kalibo" },
       { "id" : "iloilo", "text" : "Iloilo" },
@@ -18,6 +19,7 @@
   {
     "id" : "hazard",
     "text" : "What's the hazard?",
+    "selection_type" : "single",
     "options" : [
       { "id" : "typhoon", "text" : "Typhoon" },
       { "id" : "flood", "text" : "Flood" },
@@ -32,8 +34,9 @@
     ]
   },
   {
-    "id" : "limitations",
+    "id" : "special_needs",
     "text" : "Limitations (WIP)",
+    "selection_type" : "multiple",
     "options" : [
       { "id" : "toddler", "text" : "I have a toddler" },
       { "id" : "child", "text" : "I have a child" },

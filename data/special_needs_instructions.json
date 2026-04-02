@@ -1,0 +1,44 @@
+{
+    "toddler": [
+        "Stockpile at least a one-week supply of diapers, wet wipes, and diaper rash cream",
+        "Store extra baby formula, sterilized bottles, and ready-to-eat baby food pouches",
+        "Keep a sturdy baby carrier or sling next to your go-bag for hands-free evacuation",
+        "Pack a few small, familiar comfort items (pacifier, favorite small toy) to help soothe them during high-stress situations"
+    ],
+    "child": [
+        "Create physical identification cards with your contact info and attach them to your child's bags or clothing",
+        "Involve them in packing their own small, lightweight emergency backpack with clothes and non-perishable snacks",
+        "Practice family evacuation drills frequently as a 'game' to reduce fear and build muscle memory",
+        "Pack quiet activities (crayons, small books, cards) to keep them occupied and calm at crowded evacuation centers"
+    ],
+    "no_car": [
+        "Pack a lightweight, backpack-style go-bag instead of heavy bins to ensure you can carry it while walking",
+        "Speak with a trusted neighbor who drives to set up a mutual evacuation carpool agreement in advance",
+        "Map out and walk your pedestrian evacuation route to the nearest barangay safe zone to check for obstacles",
+        "Identify multiple public transit options or local tricycle routes that lead to safety, and keep small cash bills for fare"
+    ],
+    "pregnant": [
+        "Keep a physical copy of your maternal records, ultrasound results, and OB-GYN's contact info in a waterproof pouch",
+        "Stockpile prenatal vitamins, extra hydration packets, and maternity/postpartum pads in your go-bag",
+        "Identify a backup hospital or lying-in clinic along your evacuation route in case your primary one is inaccessible",
+        "Pack loose, comfortable clothing and sturdy, non-slip shoes for safe and comfortable movement"
+    ],
+    "senior": [
+        "Register with your local barangay office to ensure you are on their priority assistance list for evacuations",
+        "Store a backup pair of prescription reading glasses and extra hearing aid batteries in your emergency kit",
+        "Keep a printed, laminated list of all current medications, exact dosages, and emergency contacts in your wallet",
+        "Ensure mobility aids (canes, walkers) are kept right next to the bed at all times so they are easy to grab in the dark"
+    ],
+    "disability": [
+        "Register with the local barangay PWD (Persons with Disability) desk for targeted early warning and evacuation support",
+        "Build a 'personal support network' of at least three nearby friends who know how to operate any specialized equipment you use",
+        "If using critical electrical medical devices, secure a portable power station or backup battery to keep them running during outages",
+        "Label all specialized equipment (wheelchairs, communication devices) with your name, contact info, and return address"
+    ],
+    "chronic_illness": [
+        "Ask your doctor for an emergency 30-day prescription refill for all essential daily medications",
+        "Purchase insulated medical bags or cooling packs if your medication (like insulin) requires strict refrigeration",
+        "Wear a medical alert bracelet or carry a highly visible card detailing your exact condition and contraindicated treatments",
+        "Stock up on disease-specific emergency supplies (e.g., extra test strips for diabetes, backup rescue inhalers for asthma)"
+    ]
+}
