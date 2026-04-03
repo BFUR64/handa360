@@ -3,57 +3,57 @@
 const formTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("form-template"));
 const questionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("question-template"));
 const optionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("option-template"));
-const container = /** @type {HTMLElement} */ (document.getElementById("container"));
 
 /** @typedef {import("../data/cachedData.js").Question} Question */
 
 /**
  * @param {Question[]} questions
- * @returns {HTMLElement}
+ * @returns {DocumentFragment}
  */
-export function render(questions) {
-    const formTemplateClone = /** @type {DocumentFragment} */ (formTemplate.content.cloneNode(true));
+export function buildFullForm(questions) {
+    const formFragment = /** @type {DocumentFragment} */ (formTemplate.content.cloneNode(true));
+    const questionsContainer = /** @type {HTMLElement} */ (formFragment.querySelector(".questions-container"));
 
-    const questionsContainer = formTemplateClone.querySelector(".questions-container");
+    questions.forEach((question, index) => {
+        const questionFragment = renderQuestion(question);
 
-    if (!questionsContainer) throw new Error("Form template is broken");
+        const questionBlock = /** @type {HTMLElement} */ (questionFragment.querySelector(".question-block"));
 
-    questions.forEach(question => {
-        const questionTemplateClone = /** @type {DocumentFragment} */ (questionTemplate.content.cloneNode(true));
+        questionBlock.dataset.step = String(index);
 
-        const textElement = questionTemplateClone.querySelector(".question-text");
-        const questionSelection = questionTemplateClone.querySelector(".question-block");
-
-        if (!textElement || !questionSelection) throw new Error("Question template is broken");
-
-        textElement.textContent = question.text;
-
-        question.options.forEach(option => {
-            const optionTemplateClone = /** @type {DocumentFragment} */ (optionTemplate.content.cloneNode(true));
-
-            const input = /** @type {HTMLInputElement} */ (optionTemplateClone.querySelector("input"));
-            const buttonText = optionTemplateClone.querySelector(".option-button");
-
-            if (!input || !buttonText) throw new Error("Option template is broken");
-
-            const inputType = question.selection_type === "multiple" ? "checkbox" : "radio";
-
-            input.value = option.id;
-            input.name = question.id;
-            input.type = inputType;
-
-            buttonText.textContent = option.text;
-
-            questionSelection.append(optionTemplateClone);
-        })
-
-        questionsContainer.append(questionTemplateClone);
+        questionsContainer.append(questionFragment);
     })
 
-    container.append(formTemplateClone);
+    return formFragment;
+}
 
-    const form = container.querySelector(".form-block");
-    if (!form) throw new Error(".form-block is missing from the template");
+/**
+ * @param {Question} question
+ * @returns {DocumentFragment}
+ */
+function renderQuestion(question) {
+    const questionFragment = /** @type {DocumentFragment} */ (questionTemplate.content.cloneNode(true));
+    const titleElement = /** @type {HTMLElement} */ (questionFragment.querySelector(".question-text"));
+    const optionsContainer = /** @type {HTMLElement} */ (questionFragment.querySelector(".options-container"));
 
-    return /** @type {HTMLElement} */ (form);
+    titleElement.textContent = question.text;
+
+    question.options.forEach(option => {
+        const optionFragment = /** @type {DocumentFragment} */ (optionTemplate.content.cloneNode(true));
+
+        const input = /** @type {HTMLInputElement} */ (optionFragment.querySelector("input"));
+        const buttonText = /** @type {HTMLElement} */ (optionFragment.querySelector(".option-button"));
+
+        const inputType = question.selection_type === "multiple" ? "checkbox" : "radio";
+
+        input.value = option.id;
+        input.name = question.id;
+        input.type = inputType;
+
+        buttonText.textContent = option.text;
+
+        optionsContainer.append(optionFragment);
+    })
+
+    return questionFragment;
 }
