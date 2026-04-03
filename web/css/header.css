@@ -24,6 +24,10 @@ header {
     width: 40px;
     padding: 5px;
     cursor: pointer;
+    background-image: var(--theme-button);
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
 
     border-radius: 25px;
     
