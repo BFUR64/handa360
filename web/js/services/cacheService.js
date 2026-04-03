@@ -1,5 +1,24 @@
 // @ts-check
 
+/**
+ * This module manages how data is loaded and stored in the app.
+ *
+ * It connects three main parts:
+ * - Remote JSON files (source of truth)
+ * - localStorage (persistent storage between sessions)
+ * - cachedData (in-memory cache used by the app)
+ *
+ * It first attempts to load data from localStorage for faster startup.
+ * If local data is missing or corrupted, it can fetch fresh data from
+ * remote files and update both the cache and localStorage.
+ *
+ * It also includes error handling to prevent the app from breaking due
+ * to invalid or corrupted stored data by clearing and resetting storage.
+ *
+ * This improves performance, ensures data persistence, and keeps the
+ * application data consistent and up to date.
+ */
+
 import * as cachedData from "../data/cachedData.js";
 
 const URL_QUESTIONS = "data/questions.json";
