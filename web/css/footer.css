@@ -4,7 +4,7 @@ footer {
 footer.show {
     display:block;
     transition: all 0.3s ease;
-    background-color:var(--button-bg);
+    background-color:var(--footer-bg);
     color: var(--text-secondary);
     text-align: center;
     position: absolute;

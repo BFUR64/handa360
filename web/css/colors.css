@@ -33,11 +33,13 @@
     --checkmark-border-checked: #ddd;
 
     --checkmark-check-icon: #7a2020;
+
+    --footer-bg: #111827;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #1e1e1e;
+        --bg: #151515;
         --text: #e5e7eb;
 
         --option-bg: #454c53;
@@ -70,5 +72,7 @@
         --checkmark-border-checked: #ddd;
 
         --checkmark-check-icon: rgba(255, 255, 255, 0.35);
+        
+        --footer-bg: #070a12;
     }
 }

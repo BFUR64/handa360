@@ -8,10 +8,14 @@ body {
     color: var(--text);
     -webkit-user-select: none;
     user-select: none;
+    text-align: center;
 }
 
 main {
-    text-align: center;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+     /* 
     margin: 0 auto;
-    max-width: 50vh;
+   max-width: 50vh; */
 }
