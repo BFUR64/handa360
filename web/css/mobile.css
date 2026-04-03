@@ -8,16 +8,52 @@
         display: none;
     }
 
-    .contact-cards {
-       overflow-x: scroll;
-        white-space: nowrap;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        width: 100dvw;
+    .contact-container {
+        position: relative;
+        height: fit-content;
     }
+
 
     .contact-cards span{
             display: none;
+    }
+
+    .contact-cards{
+        flex-direction: column;
+        width: 100dvw;
+
+        justify-content: left;
+        margin-left: 0;
+    }
+    .contact-card{
+        flex-direction: row !important;
+        width: 90dvw !important;
+        height: 70px !important;
+        padding: 10px;
+    }
+    .contact-card-text{
+        text-align: left;
+
+        h3{
+            font-size: 16px;
+            margin: 0;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+
+    .about-section-text{
+        p{
+            font-size: 12px
+        } 
+    }
+    .use-item{
+        width: 100dvw;
+        height: 100px;
+        p{
+            font-size: 12px
+        }
     }
 
 

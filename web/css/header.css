@@ -19,10 +19,6 @@ header {
         text-decoration: none;
         color: var(--text);
     }
-    
-    a.active {
-        color: var(--option-border-checked);
-    }
 }
 
 .logo {
