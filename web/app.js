@@ -5,7 +5,6 @@ import * as toastNotification from "./js/ui/toastNotification.js";
 import * as cacheService from "./js/services/cacheService.js";
 import * as cachedData from "./js/data/cachedData.js";
 
-import * as formRenderer from "./js/ui/formRenderer.js";
 import * as formController from "./js/controllers/formController.js";
 
 import * as checklistRenderer from "./js/ui/checklistRenderer.js";
@@ -14,9 +13,13 @@ import * as informationRenderer from "./js/ui/contactlistRenderer.js";
 
 import * as uiHelper from "./js/ui/uiHelper.js";
 
+import * as navigationController from "./js/controllers/navigationController.js";
+
 /** @typedef {import("./js/controllers/formController.js").UserInput} UserInput */
 
 addEventListener("DOMContentLoaded", async function () {
+    navigationController.initNavigationListeners();
+
     cacheService.loadFromStorage();
     const syncSuccess = await cacheService.syncFromRemote();
 
