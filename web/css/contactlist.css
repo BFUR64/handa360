@@ -1,5 +1,6 @@
 .contactlist-block {
     margin-top: 40px;
+    width: 30vw;
 
     display: flex;
     flex-direction: column;

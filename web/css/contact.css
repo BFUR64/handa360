@@ -39,6 +39,7 @@
     top: 0;
     width: 200px;
     height: 100%;
+    border-radius: 12px;
 
     img {
         width: 50px;
@@ -52,5 +53,11 @@
 
     p {
         margin: 0;
+    }
+
+    &:hover{
+        box-shadow: 0 4px 12px var(--text);
+        transform: translateY(-5px);
+        transition: all 0.5s ease;
     }
 }
