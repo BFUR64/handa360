@@ -15,7 +15,7 @@ export function initNavigationListeners() {
         about.classList.remove('show');
         contact.classList.remove('show');
         footer.classList.remove('show');
-        home.style.display = 'block';
+        home.style.display = 'flex';
     });
 
     navAbout.addEventListener('click', function (e) {

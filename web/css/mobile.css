@@ -1,5 +1,50 @@
 @media (max-width: 480px) {
     main {
-        max-width: 300px;
+        /*max-width: 300px;*/
+        flex-direction: column;
+    }
+
+    #footer{
+        display: none;
+    }
+
+    .contact-cards {
+       overflow-x: scroll;
+        white-space: nowrap;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        width: 100dvw;
+    }
+
+    .contact-cards span{
+            display: none;
+    }
+
+
+    .form-template-container{
+    flex-direction: column;
+    padding: 0;
+    gap:0;
+    }
+
+    .form-container{
+        display: none;
+    }
+
+    .form-block{
+        padding-left: 20px;
+        width: 100dvw;
+        border: none;
+        height: fit-content;
+    }
+
+    .checklist-block{
+        width: 80dvw;
+        margin: 0;
+    }
+    .contactlist-block{
+        flex-direction: column;
+        width: 80dvw;
+        margin: 0;
     }
 }

@@ -1,10 +1,10 @@
 .contactlist-block {
-    margin-top: 40px;
-    width: 30vw;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    margin-top: 40px;
+    flex: 1;
 
     border-style: solid;
     border-width: 2px;
@@ -13,11 +13,12 @@
 
     padding: 20px;
     margin: 10px;
-    top: 10px;
+    top: 30px;
 }
 
 .contactlist-item {
     display: flex;
+
     align-items: center;
     gap: 10px;
 
