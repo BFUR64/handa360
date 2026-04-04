@@ -75,10 +75,8 @@
         width: 75dvw !important;
         height: fit-content !important;
 
-         h3{
-            font-size: 16px;
-            margin: 0;
-            text-align: left;
+        h3{
+            font-size: 1.3rem !important;
         }
         h4{
             font-size: 14px; 
@@ -86,6 +84,10 @@
         p{
             font-size: 12px
         }
+    }
+    .use-icon{
+        width: 25px;
+        height: 25px;
     }
 
 
