@@ -1,20 +1,20 @@
-
 .form-template-container{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    justify-self: center;
     position: relative;
-    flex: 1;
     height: 87vh;
+    width: 100%;
     top: 0;
     bottom: 0;
-    gap: 16px;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .form-container {
-    flex: 1;
     text-align: left;
+    flex:1;
 
     h1{
         font-size: 5rem;
@@ -24,7 +24,7 @@
 .form-block {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 400px;
     gap: 16px;
     height: 100%;
     padding: 20px;

@@ -2,6 +2,8 @@
     main {
         /*max-width: 300px;*/
         flex-direction: column;
+        margin-left: 30px;
+        margin-right: 30px;
     }
 
     h1{
@@ -103,18 +105,16 @@
 
     .form-block{
         padding-left: 20px;
-        width: 100dvw;
+        width: 100%;
         border: none;
         height: fit-content;
     }
 
     .checklist-block{
-        width: 80dvw;
         margin: 0;
     }
     .contactlist-block{
         flex-direction: column;
-        width: 80dvw;
         margin: 0;
     }
 }

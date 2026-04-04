@@ -13,10 +13,8 @@ body {
 
 main {
     display: flex;
-    flex-direction: row;
-    padding-left: 20px;
-    padding-right: 20px;
-     /* 
-    margin: 0 auto;
-   max-width: 50vh; */
+    flex-direction: column;
+
+    margin-left: 250px;
+    margin-right: 250px;
 }
