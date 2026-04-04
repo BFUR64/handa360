@@ -58,23 +58,35 @@
         }
     }
 
+    #about-section{
+        margin: 0 !important;
+    }
+
     .about-container{
         position: relative;
         height: fit-content;
     }
 
     .about-section-text{  
-        height: fit-content  !important; 
         p{
             font-size: 12px;
         } 
     }
     .about-section-use{
-        width: 75dvw;
-        height: fit-content  !important ; 
+        width: 100%;
+    }
+    .about-section-use-2{
+        flex-direction: column !important;;
+        div{
+            width: 90% !important;;
+        }
+    }
+    .use-content{
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
     }
     .use-item{
-        width: 75dvw !important;
+        width: 90dvw !important;
         height: fit-content !important;
 
         h3{
@@ -82,14 +94,18 @@
         }
         h4{
             font-size: 14px; 
+            margin: 0;
         }
         p{
             font-size: 12px
         }
     }
+    .use-icon-container{
+        height: 45px !important;
+    }
     .use-icon{
-        width: 25px;
-        height: 25px;
+        width: 32px !important;
+        height: 32px !important;
     }
 
 
