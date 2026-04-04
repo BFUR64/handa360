@@ -4,6 +4,10 @@
         flex-direction: column;
     }
 
+    h1{
+        font-size: 2rem !important;
+    }
+
     #footer{
         display: none;
     }
@@ -11,8 +15,13 @@
     .contact-container {
         position: relative;
         height: fit-content;
-    }
 
+        width: 90dvw;
+
+         h3{
+            font-size: 16px;
+            margin: 0;
+    }
 
     .contact-cards span{
             display: none;
@@ -27,30 +36,53 @@
     }
     .contact-card{
         flex-direction: row !important;
-        width: 90dvw !important;
+        width: 75dvw !important;
         height: 70px !important;
-        padding: 10px;
+        padding: 12px  !important;
+
+        img{
+            width: 32px;
+            height: 32px;
+            margin-left: 12px;
+            margin: 5px;
+        }
     }
     .contact-card-text{
         text-align: left;
 
-        h3{
-            font-size: 16px;
-            margin: 0;
         }
         p{
             font-size: 12px;
         }
     }
 
-    .about-section-text{
+    .about-container{
+        position: relative;
+        height: fit-content;
+    }
+
+    .about-section-text{  
+        height: fit-content  !important; 
         p{
-            font-size: 12px
+            font-size: 12px;
         } 
     }
+    .about-section-use{
+        width: 75dvw;
+        height: fit-content  !important ; 
+    }
     .use-item{
-        width: 100dvw;
-        height: 100px;
+        width: 75dvw !important;
+        height: fit-content !important;
+
+         h3{
+            font-size: 16px;
+            margin: 0;
+            text-align: left;
+        }
+        h4{
+            font-size: 14px; 
+        }
         p{
             font-size: 12px
         }
