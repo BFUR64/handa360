@@ -28,7 +28,7 @@ By selecting their specific parameters (Hazard, Location, Special Needs), our ap
 ## Key Features
 
 - **Unified Action Plans:** Instantly combines generic hazard guidelines (e.g., Typhoon) with specific special-needs protocols (e.g., Toddler) into one localized checklist.
-- **Zero-Code Updates:** Driven entirely by a decentralized data/* directory. Local leaders can update protocols or add new hazards by editing the JSON files.
+- **Zero-Code Updates:** Driven entirely by a decentralized data/* directory. Maintainers can update protocols or add new hazards by editing the JSON files.
 - **Dynamic Local Contacts:** Automatically pulls and anchors the exact emergency numbers (Barangay hotlines, DRRMOs) for the user's specific location directly at the bottom of their action plan.
 - **Ultra-Lightweight:** Uses simple, isolated dataset aggregation instead of heavy databases, ensuring near-instant load times on low-end mobile devices during critical moments.
 
