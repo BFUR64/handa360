@@ -1,9 +1,0 @@
-{
-  "questions" : [
-    {
-      "id" : "hazard",
-      "text" : "What's the WHYYY",
-      "options" : [ "typhoon", "flood", "earthquake", "landslide" ]
-    }
-  ]
-}
