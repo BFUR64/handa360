@@ -20,7 +20,7 @@
 
         width: 90dvw;
 
-         h3{
+        h3{
             font-size: 16px;
             margin: 0;
     }
@@ -36,6 +36,7 @@
         justify-content: left;
         margin-left: 0;
     }
+
     .contact-card{
         flex-direction: row !important;
         width: 75dvw !important;
@@ -49,6 +50,7 @@
             margin: 5px;
         }
     }
+
     .contact-card-text{
         text-align: left;
 
@@ -67,24 +69,28 @@
         height: fit-content;
     }
 
-    .about-section-text{  
+    .about-section-text{
         p{
             font-size: 12px;
-        } 
+        }
     }
+
     .about-section-use{
         width: 100%;
     }
+
     .about-section-use-2{
         flex-direction: column !important;;
         div{
             width: 90% !important;;
         }
     }
+
     .use-content{
         padding-bottom: 10px !important;
         padding-top: 10px !important;
     }
+
     .use-item{
         width: 90dvw !important;
         height: fit-content !important;
@@ -93,21 +99,22 @@
             font-size: 1.3rem !important;
         }
         h4{
-            font-size: 14px; 
+            font-size: 14px;
             margin: 0;
         }
         p{
             font-size: 12px
         }
     }
+
     .use-icon-container{
         height: 45px !important;
     }
+
     .use-icon{
         width: 32px !important;
         height: 32px !important;
     }
-
 
     .form-template-container{
     flex-direction: column;

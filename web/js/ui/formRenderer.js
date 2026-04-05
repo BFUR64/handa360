@@ -1,5 +1,20 @@
 // @ts-check
 
+/**
+ * @module formRenderer
+ *
+ * @description
+ * Builds the form DOM based on normalized Question data.
+ * Returns a DocumentFragment that can be appended to a container.
+ * Handles:
+ * - Creating question blocks for each Question
+ * - Creating option inputs (radio or checkbox) and labels
+ * - Assigning data-step attributes for multi-step navigation
+ *
+ * Assumptions:
+ * - DOM contains templates with ids: form-template, question-template, option-template
+ */
+
 const formTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("form-template"));
 const questionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("question-template"));
 const optionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("option-template"));
@@ -7,8 +22,10 @@ const optionTemplate = /** @type {HTMLTemplateElement} */ (document.getElementBy
 /** @typedef {import("../data/cachedData.js").Question} Question */
 
 /**
- * @param {Question[]} questions
- * @returns {DocumentFragment}
+ * Builds a full form fragment for the given questions.
+ *
+ * @param {Question[]} questions - Normalized questions
+ * @returns {DocumentFragment} Form fragment ready to insert into DOM
  */
 export function buildFullForm(questions) {
     const formFragment = /** @type {DocumentFragment} */ (formTemplate.content.cloneNode(true));
@@ -28,8 +45,10 @@ export function buildFullForm(questions) {
 }
 
 /**
- * @param {Question} question
- * @returns {DocumentFragment}
+ * Creates a DocumentFragment for a single question, including its options.
+ *
+ * @param {Question} question - Normalized question
+ * @returns {DocumentFragment} Question fragment ready to append
  */
 function renderQuestion(question) {
     const questionFragment = /** @type {DocumentFragment} */ (questionTemplate.content.cloneNode(true));

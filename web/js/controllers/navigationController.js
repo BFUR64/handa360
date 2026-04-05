@@ -1,5 +1,21 @@
 // @ts-check
 
+/**
+ * @module navigationController
+ *
+ * @description
+ * Handles navigation between page sections (Home, About, Contact).
+ * - Attaches click listeners to navigation buttons
+ * - Shows or hides corresponding sections by toggling CSS classes and container display
+ *
+ * Assumptions:
+ * - DOM contains elements with ids: navigate-home, navigate-about, navigate-contact, container, footer, about-section, contact-section
+ */
+
+/**
+ * Initializes navigation event listeners for page sections.
+ * Clicking a nav button will show the associated section and hide others.
+ */
 export function initNavigationListeners() {
     const navAbout = /** @type {HTMLElement} */ (document.getElementById('navigate-about'));
     const navContact = /** @type {HTMLElement} */ (document.getElementById('navigate-contact'));

@@ -1,5 +1,19 @@
 // @ts-check
 
+/**
+ * @module contactlistRenderer
+ *
+ * @description
+ * Renders a list of contacts for a given location into the main container.
+ * - Expects normalized Contacts map (location → array of strings)
+ * - Each line is rendered with an input field and a "copy" button
+ * - Handles copy-to-clipboard logic with fallback for unsupported browsers
+ *
+ * Assumptions:
+ * - The DOM contains templates with ids: contactlist-template, contactlist-item-template
+ * - Container element exists with id="container"
+ */
+
 const container = /** @type {HTMLElement} */ (document.getElementById("container"));
 const contactlistTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("contactlist-template"));
 const contactlistItemTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("contactlist-item-template"));
@@ -7,9 +21,11 @@ const contactlistItemTemplate = /** @type {HTMLTemplateElement} */ (document.get
 /** @typedef {import("../data/cachedData.js").Contacts} Contacts */
 
 /**
- * @param {string} locationSelected
- * @param {Contacts} contacts
- * @return {HTMLElement}
+ * Renders the contact information for a selected location.
+ *
+ * @param {string} locationSelected - Location key in the contacts map
+ * @param {Contacts} contacts - Map of location → contact lines
+ * @returns {HTMLElement} The rendered contact list block
  */
 export function render(locationSelected, contacts) {
     const contactlist = /** @type {DocumentFragment} */ (contactlistTemplate.content.cloneNode(true));

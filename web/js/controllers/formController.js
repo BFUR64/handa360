@@ -1,5 +1,27 @@
 // @ts-check
 
+/**
+ * @module formController
+ *
+ * @description
+ * Manages the main application form:
+ * - Initializes the form based on normalized Question data
+ * - Handles multi-step navigation between questions
+ * - Attaches submit events and dispatches a custom `formSubmitted` event
+ * - Extracts user input in a normalized shape (UserInput)
+ *
+ * Responsibilities:
+ * 1. `initForm(questions)` – renders the full form, wires up events, and returns
+ *    the form element.
+ * 2. Multi-step navigation – updates visible question block based on `currentIndex`.
+ * 3. Form submission – collects input values and emits `formSubmitted`.
+ *
+ * Assumptions:
+ * - Questions are already normalized
+ * - DOM contains a container element with id="container"
+ */
+
+
 import * as formRenderer from "../ui/formRenderer.js";
 
 /** @typedef {{ locationSelected: string, hazardSelected: string, specialNeedsSelected: string[]}} UserInput */
@@ -11,8 +33,10 @@ let currentIndex = 0;
 let totalQuestions = 0;
 
 /**
- * @param {Question[]} questions
- * @returns {HTMLFormElement}
+ * Initializes the form and sets up multi-step navigation and submit events.
+ *
+ * @param {Question[]} questions - Normalized questions for the form
+ * @returns {HTMLFormElement} The fully initialized form element
  */
 export function initForm(questions) {
     totalQuestions = questions.length;
@@ -87,8 +111,10 @@ function attachSubmitEvent(form) {
 }
 
 /**
+ * Extracts user input from a form into a normalized shape.
+ *
  * @param {HTMLFormElement} form
- * @returns {UserInput}
+ * @returns {UserInput} Collected form data
  */
 function extractFormData(form) {
     const formData = new FormData(form);

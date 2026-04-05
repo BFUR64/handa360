@@ -1,8 +1,9 @@
 footer {
-    display:none;
+    display: none;
 }
+
 footer.show {
-    display:block;
+    display: block;
     transition: all 0.3s ease;
     background-color:var(--footer-bg);
     color: var(--text-secondary);
@@ -27,6 +28,7 @@ footer.show {
         color: var(--option-border-checked);
     }
 }
+
 .footer-content {
     display: flex;
     flex-direction: row;

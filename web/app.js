@@ -1,5 +1,25 @@
 // @ts-check
 
+/**
+ * @module app
+ *
+ * @description
+ * Entry point for the application. Initializes:
+ * - Navigation event listeners
+ * - Cache loading and synchronization
+ * - UI rendering for the initial form
+ *
+ * Also handles form submission by:
+ * - Clearing previous UI
+ * - Rendering hazard and special needs checklists
+ * - Rendering contact information
+ * - Scrolling the page to top
+ *
+ * Essentially, this file wires together controllers, services, and UI modules
+ * into a working page. Individual modules handle their own data validation,
+ * rendering, and normalization.
+ */
+
 import * as toastNotification from "./js/ui/toastNotification.js";
 
 import * as cacheService from "./js/services/cacheService.js";
