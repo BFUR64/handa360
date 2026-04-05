@@ -24,7 +24,6 @@ addEventListener("DOMContentLoaded", async function () {
     const syncSuccess = await cacheService.syncFromRemote();
 
     if (!syncSuccess) {
-        // TODO: Retry in the background
         toastNotification.showToast("Failed to fetch remote JSON data", "error");
     }
 
