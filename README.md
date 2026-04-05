@@ -1,13 +1,20 @@
 # Handa360
-Handa360 is a web application that turns general disaster-preparedness instructions into a catered set of actionable items.
+**Consolidates 3+ fragmented disaster resources into 1 localized action plan**
+
+Handa360 web app that turns general disaster-preparedness instructions into a catered set of actionable items.
 
 Website: https://bfur64.github.io/handa360/
 
-<img width="1920" height="1080" alt="Image of the Web Application Form" src="https://github.com/user-attachments/assets/b2435d8c-e707-443a-9792-072c9f158aa8" />
-<img width="1920" height="1833" alt="Image of the Web Application Output" src="https://github.com/user-attachments/assets/96aa6180-8ea6-46cf-9052-b052f09805fa" />
+<img width="1920" height="1080" alt="User selects a location, with a continue button on the bottom" src="https://github.com/user-attachments/assets/b2435d8c-e707-443a-9792-072c9f158aa8" />
+<img width="1920" height="1833" alt="Unified action plan with local emergency contacts" src="https://github.com/user-attachments/assets/96aa6180-8ea6-46cf-9052-b052f09805fa" />
+
+## Quick Demo
+1. [Launch App](https://bfur64.github.io/handa360/)
+2. Select "Kalibo" + "Typhoon" + "Person With Disability"
+3. Get instant unified checklist with local DRRMO contacts
 
 ## The Problem: Information Fragmentation
-When preparing for an impending disaster, critical information is heavily fragmented. A family preparing for a typhoon must check the NDRRMC for general weather prep, consult a completely separate government pamphlet for child safety procedures, and manually hunt down their specific barangay's emergency contact numbers. This scattered, cross-referencing approach is inefficient and leads to critical preparation gaps.
+Critical disaster information is scattered across agencies. A family preparing for a typhoon must cross-reference NDRRMC weather guidelines, separate child-safety pamphlets, and manually hunt down barangay emergency contacts, which wasting precious preparation time.
 
 ## The Solution
 Handa360 acts as a rapid Context-Aware Assembly Engine. We eliminate the need for citizens to manually compile their own survival manuals.
@@ -21,10 +28,10 @@ By selecting their specific parameters (Hazard, Location, Special Needs), our ap
 - **Ultra-Lightweight:** Uses simple, isolated dataset aggregation instead of heavy databases, ensuring near-instant load times on low-end mobile devices during critical moments.
 
 ## Tech Stack
-- **Frontend Architecture:** Pure HTML, CSS, and Vanilla JavaScript. By eliminating framework overhead (like React or Angular), the application maintains a microscopic footprint, ensuring it loads even on 2G/3G network connections.
-- **Type Safety:** @ts-check (JSDoc TypeScript). We enforced strict type-checking across our JavaScript logic to guarantee runtime stability and prevent critical failure points without the build-time overhead of a full TypeScript compiler.
-- **Data Synchronization Engine:** Custom polling logic (cachedServices.js and cachedData.js). Instead of relying on a fragile REST API or database connection, the client seamlessly polls the local GitHub repository's data/* directory. This decouples the UI from the data layer entirely.
-- **Deployment & Hosting:** GitHub Pages. By deploying as a static site on GitHub's global CDN, we ensure high availability and resistance to traffic spikes that typically crash local government websites during a crisis.
+- **Deployment:** GitHub Pages (99.9% uptime, CDN-backed for crisis traffic spikes)
+- **Data Layer:** Zero-code text files (local leaders update protocols without developers)
+- **Frontend:** Pure HTML/CSS/JS (works on 2G networks + low-end devices)
+- **Type Safety:** JSDoc TypeScript (@ts-check for stability without build overhead)
 
 ## Project Roadmap (What's next)
 While our current build successfully parses localized data into actionable survival steps, our primary focus for Phase 2 is **True Offline Resilience.**
