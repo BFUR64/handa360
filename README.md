@@ -44,5 +44,18 @@ During a major crisis (like a typhoon or earthquake), cell towers drop. Our imme
 - **Christine Joy D. Roberto (Frontend Developer):** Spearheaded the user interface design and client-side restructuring.
 - **Curt Lawrence Z. Macalacad (Frontend Developer):** Developed the foundational UI skeleton and rapid prototypes that established the application's core design language.
 
+## AI Disclosure
+In compliance with hackathon guidelines, we disclose the following AI tool usage:
+- ChatGPT (OpenAI)
+- Google Gemini
+- Claude (Anthropic)
+
+AI assistants were used as development accelerators in the following capacities:
+1. **Code Documentation & Comments:** Assisted in writing JS Doc module explanations
+3. **Debugging & Problem Solving:** Helped troubleshoot bottlenecks in the codebase 
+4. **Ideation & Architecture Review:** Discussing how and where JS modules are separated and organized
+
+All AI-generated code was manually reviewed by team members, refactored to fit our needs, and integrated as part of our codebase.
+
 ## About
 This project was made for a hackathon, "UPV KomsaiHack 2026: Risk Ready" under our team name, "The Vibe Coders 67".
