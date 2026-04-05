@@ -1,6 +1,9 @@
 // @ts-check
 
 /**
+ * @module cacheService
+ *
+ * @description
  * This module manages how data is loaded and stored in the app.
  *
  * It connects three main parts:

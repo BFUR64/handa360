@@ -1,6 +1,35 @@
 // @ts-check
 
-import * as cachedData from "../data/cachedData.js";
+/**
+ * @module normalizer
+ *
+ * @description
+ * This module exists as a defensive normalization layer between raw external data
+ * (e.g. cachedData.js) and the rest of the application.
+ *
+ * Its primary purpose is to enforce predictable structure, types, and formatting
+ * before data is consumed elsewhere. Instead of forcing every component or consumer
+ * to perform repetitive validation and sanitization, this module centralizes that logic.
+ *
+ * In particular, it:
+ * - Ensures required fields exist and fall back to safe defaults when missing
+ * - Normalizes identifiers and enum-like values into a consistent format
+ * - Filters out malformed or incomplete entries
+ * - Converts loosely-typed or inconsistent data into stable, expected shapes
+ * - Prevents runtime errors caused by unexpected nulls, types, or structures
+ *
+ * This is used by cachedData.js (e.g. `setQuestions`, `setHazardInstructions`) to
+ * guarantee that all stored data is already normalized, allowing the rest of the
+ * application to operate under the assumption that the data is clean and reliable.
+ *
+ * Design philosophy:
+ * - Fail soft (fallbacks instead of crashes)
+ * - Normalize early (at ingestion, not at usage)
+ * - Centralize data hygiene to reduce duplication and hidden bugs
+ *
+ * Without this layer, every consumer would need to defensively check data,
+ * increasing complexity, duplication, and the likelihood of subtle inconsistencies.
+ */
 
 /** @typedef {import("../data/cachedData.js").Question} Question */
 /** @typedef {import("../data/cachedData.js").HazardInstructions} HazardInstructions */

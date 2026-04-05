@@ -1,6 +1,9 @@
 // @ts-check
 
 /**
+ * @module cachedData
+ *
+ * @description
  * This file serves as an in-memory cache for all core data used in the app,
  * including questions, hazard instructions, contacts, and special needs instructions.
  *
@@ -26,22 +29,37 @@
 import * as normalizer from "../services/normalizer.js";
 
 /**
+ * Represents a normalized question used throughout the application.
+ * This is treated as a core data structure and is expected to already
+ * be validated and normalized.
+ *
  * @typedef {Object} Question
- * @property {string} id
- * @property {string} text
- * @property {string} selection_type
- * @property {{id: string, text: string}[]} options
+ * @property {string} id - Normalized identifier (lowercase, underscore-separated)
+ * @property {string} text - Display text for the question
+ * @property {string} selection_type - Normalized selection type (e.g. "single", "multiple")
+ * @property {{id: string, text: string}[]} options - Sorted list of valid options
  */
 
 /**
+ * Map of hazard categories to their associated instruction steps.
+ * Kept as a distinct typedef for semantic clarity, even though it shares
+ * the same structure as other instruction maps.
+ *
  * @typedef {Object<string, string[] | undefined>} HazardInstructions
  */
 
 /**
+ * Map of contact categories (e.g. emergency, medical) to contact details.
+ * Separated for readability and intent, despite sharing structure with other maps.
+ *
  * @typedef {Object<string, string[] | undefined>} Contacts
  */
 
 /**
+ * Map of special needs categories to their corresponding instructions.
+ * Uses the same structure as other instruction maps but represents a
+ * different domain concept within the application.
+ *
  * @typedef {Object<string, string[] | undefined>} SpecialNeedsInstructions
  */
 
