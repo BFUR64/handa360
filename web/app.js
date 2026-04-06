@@ -50,6 +50,10 @@ addEventListener("DOMContentLoaded", async function () {
     uiHelper.clearContainer();
     const form = formController.initForm(cachedData.getQuestions());
     addFormSubmittedListener(form);
+
+    navigator.serviceWorker.register("/web/js/services/serviceWorker.js")
+        .then(() => console.log("Service worker registered"))
+        .catch(err => console.log("Service worker registration failed", err));
 })
 
 /** @param {HTMLElement} form */
