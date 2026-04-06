@@ -1,6 +1,13 @@
 // @ts-check
 /// <reference lib="webworker" />
 
+/**
+ * @module serviceWorker
+ *
+ * @description
+ * Enables offline functionality and asset caching
+ */
+
 const CACHE_NAME = "cache-v1";
 
 const BASE = "/handa360/";

@@ -8,6 +8,7 @@
  * - Navigation event listeners
  * - Cache loading and synchronization
  * - UI rendering for the initial form
+ * - Service Worker for offline registering
  *
  * Also handles form submission by:
  * - Clearing previous UI
