@@ -40,7 +40,7 @@
       { "id" : "manila", "text" : "Manila" },
       { "id" : "quezon_city", "text" : "Quezon City" },
       { "id" : "caloocan", "text" : "Caloocan" },
-      { "id" : "sanJuan", "text" : "San Juan" },
+      { "id" : "san_juan", "text" : "San Juan" },
       { "id" : "mandaluyong", "text" : "Mandaluyong" },
       { "id" : "pasig", "text" : "Pasig" },
       { "id" : "marikina", "text" : "Marikina" },
