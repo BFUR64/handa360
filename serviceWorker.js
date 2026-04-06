@@ -3,7 +3,7 @@
 
 const CACHE_NAME = "cache-v1";
 
-const BASE = "/";
+const BASE = "/handa360/";
 
 const ASSETS = [
     BASE,

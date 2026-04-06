@@ -52,7 +52,7 @@ addEventListener("DOMContentLoaded", async function () {
     addFormSubmittedListener(form);
 
     if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/serviceWorker.js")
+        navigator.serviceWorker.register("../serviceWorker.js")
             .then(() => console.log("Service worker registered"))
             .catch(err => console.log("Service worker registration failed", err));
     }
