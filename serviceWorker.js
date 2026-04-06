@@ -7,6 +7,7 @@ const BASE = "/handa360/";
 
 const ASSETS = [
     BASE,
+    BASE + "serviceWorker.js",
     BASE + "index.html",
 
     BASE + "assets/images/call.png",
@@ -32,7 +33,6 @@ const ASSETS = [
     BASE + "web/js/data/cachedData.js",
     BASE + "web/js/services/cacheService.js",
     BASE + "web/js/services/normalizer.js",
-    BASE + "web/js/services/serviceWorker.js",
 
     BASE + "web/js/ui/checklistRenderer.js",
     BASE + "web/js/ui/contactlistRenderer.js",
