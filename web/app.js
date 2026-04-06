@@ -38,6 +38,8 @@ import * as navigationController from "./js/controllers/navigationController.js"
 
 /** @typedef {import("./js/controllers/formController.js").UserInput} UserInput */
 
+// Test Commit
+
 addEventListener("DOMContentLoaded", async function () {
     navigationController.initNavigationListeners();
 
