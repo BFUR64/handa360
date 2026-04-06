@@ -3,7 +3,7 @@
 
 const CACHE_NAME = "cache-v1";
 
-const BASE = self.location.pathname.replace("service-worker.js", "");
+const BASE = "/";
 
 const ASSETS = [
     BASE,
