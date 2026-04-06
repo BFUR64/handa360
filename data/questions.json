@@ -1,22 +1,5 @@
 [
   {
-    "id" : "location",
-    "text" : "Where are you?",
-    "selection_type" : "single",
-    "options" : [
-      { "id" : "kalibo", "text" : "Kalibo" },
-      { "id" : "iloilo", "text" : "Iloilo" },
-      { "id" : "manila", "text" : "Manila" },
-      { "id" : "quezon_city", "text" : "Quezon City" },
-      { "id" : "caloocan", "text" : "Caloocan" },
-      { "id" : "sanJuan", "text" : "San Juan" },
-      { "id" : "mandaluyong", "text" : "Mandaluyong" },
-      { "id" : "pasig", "text" : "Pasig" },
-      { "id" : "marikina", "text" : "Marikina" },
-      { "id" : "valenzuela", "text" : "Valenzuela" }
-    ]
-  },
-  {
     "id" : "hazard",
     "text" : "What's the hazard?",
     "selection_type" : "single",
@@ -35,16 +18,33 @@
   },
   {
     "id" : "special_needs",
-    "text" : "Limitations (WIP)",
+    "text" : "Special Needs",
     "selection_type" : "multiple",
     "options" : [
       { "id" : "toddler", "text" : "I have a toddler" },
       { "id" : "child", "text" : "I have a child" },
       { "id" : "no_car", "text" : "I have no car" },
-      { "id" : "pregnant", "text" : "There is / I am the pregnant person" },
-      { "id" : "senior", "text" : "There is a senior citizen" },
+      { "id" : "pregnant", "text" : "Pregnant Person" },
+      { "id" : "senior", "text" : "Senior citizen" },
       { "id" : "disability", "text" : "Person with disability" },
       { "id" : "chronic_illness", "text" : "Chronic illness" }
+    ]
+  },
+  {
+    "id" : "location",
+    "text" : "Where are you?",
+    "selection_type" : "single",
+    "options" : [
+      { "id" : "kalibo", "text" : "Kalibo" },
+      { "id" : "iloilo", "text" : "Iloilo" },
+      { "id" : "manila", "text" : "Manila" },
+      { "id" : "quezon_city", "text" : "Quezon City" },
+      { "id" : "caloocan", "text" : "Caloocan" },
+      { "id" : "sanJuan", "text" : "San Juan" },
+      { "id" : "mandaluyong", "text" : "Mandaluyong" },
+      { "id" : "pasig", "text" : "Pasig" },
+      { "id" : "marikina", "text" : "Marikina" },
+      { "id" : "valenzuela", "text" : "Valenzuela" }
     ]
   }
 ]
