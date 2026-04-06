@@ -12,12 +12,12 @@ Website: <https://bfur64.github.io/handa360/>
 ## Quick Demo
 
 1. [Launch App](https://bfur64.github.io/handa360/)
-2. Select "Kalibo" + "Typhoon" + "Person With Disability"
+2. Select "Typhoon" + "Person With Disability" + "Kalibo"
 3. Get instant unified checklist with local DRRMO contacts
 
 ## The Problem: Information Fragmentation
 
-Critical disaster information is scattered across agencies. A family preparing for a typhoon must cross-reference NDRRMC weather guidelines, separate child-safety pamphlets, and manually hunt down barangay emergency contacts, which wasting precious preparation time.
+Critical disaster information is scattered across agencies. A family preparing for a typhoon must cross-reference NDRRMC weather guidelines, separate child-safety pamphlets, and manually hunt down barangay emergency contacts, which wastes precious preparation time.
 
 ## The Solution
 
@@ -38,12 +38,6 @@ By selecting their specific parameters (Hazard, Location, Special Needs), our ap
 - **Data Layer:** Zero-code text files (local leaders update protocols without developers)
 - **Frontend:** Pure HTML/CSS/JS (works on 2G networks + low-end devices)
 - **Type Safety:** JSDoc TypeScript (@ts-check for stability without build overhead)
-
-## Project Roadmap (What's next)
-
-While our current build successfully parses localized data into actionable survival steps, our primary focus for Phase 2 is **True Offline Resilience.**
-
-During a major crisis (like a typhoon or earthquake), cell towers drop. Our immediate next step is to implement Service Workers and a Progressive Web App (PWA) architecture. This will allow the application to aggressively cache the data/* directory locally on the user's device when they do have internet, ensuring the dynamic action lists and emergency contacts are fully accessible even in a total communications blackout.
 
 ## Team
 
