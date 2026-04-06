@@ -51,7 +51,7 @@ addEventListener("DOMContentLoaded", async function () {
     const form = formController.initForm(cachedData.getQuestions());
     addFormSubmittedListener(form);
 
-    navigator.serviceWorker.register("/web/js/services/serviceWorker.js")
+    navigator.serviceWorker.register("./js/services/serviceWorker.js")
         .then(() => console.log("Service worker registered"))
         .catch(err => console.log("Service worker registration failed", err));
 })
