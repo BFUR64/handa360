@@ -75,6 +75,8 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
     if (!(event instanceof FetchEvent)) return;
 
+    if (event.request.url.includes("/data/")) return;
+
     event.respondWith(
         fetch(event.request)
             .then(async response => {
