@@ -65,7 +65,7 @@
         --contacts-border: rgba(255, 255, 255, 0.35);
 
         --checklist-text-checked: gray;
-        --checklist-bg-checked: rgba(69, 76, 83, 0.75);
+        --checklist-bg-checked: #7a2020;
 
         --checkmark-border: rgba(255, 255, 255, 0.35);
         --checkmark-border-hover: #ddd;

@@ -42,17 +42,36 @@
 .contactlist-copy-button {
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 0px;
-    padding: 10px 14px;
-
-    background: #6f7b88;
-    color: inherit;
-    font: inherit;
+    padding: 10px 12px;
+    background: #26a349;
+    color: white;
     cursor: pointer;
-    white-space: nowrap;
+    font: inherit;
+    transition: background 0.2s, border-color 0.2s;
+
+    /* NEW: Prevent layout shift */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 85px; /* Ensures space for "Copied!" */
+    height: 40px;   /* Match your existing input height */
+    position: relative;
+}
+
+/* THE FIX: An invisible element that forces the button to be wide enough for "Copied!" */
+.contactlist-copy-button::after {
+    content: "Copied!";
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    display: block;
+    font-weight: bold; /* Match the font weight of your feedback text */
 }
 
 .contactlist-copy-button:hover {
-    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .contactlist-header {
