@@ -24,15 +24,23 @@
 
 import * as cachedData from "../data/cachedData.js";
 
+// URLS
 const URL_QUESTIONS = "data/questions.json";
 const URL_HAZARD_INSTRUCTIONS = "data/hazard_instructions.json";
 const URL_CONTACTS = "data/contacts.json";
 const URL_SPECIAL_NEEDS_INSTRUCTIONS = "data/special_needs_instructions.json";
 
+const URL_GOBAG_ITEM_IDS = "data/gobag_item_ids.json";
+const URL_GOBAG_ITEMS = "data/gobag_items.json";
+
+// KEYS
 const KEY_QUESTIONS = "questions";
 const KEY_HAZARD_INSTRUCTIONS = "hazard_instructions";
 const KEY_CONTACTS = "contacts";
 const KEY_SPECIAL_NEEDS_INSTRUCTIONS = "special_needs_instructions";
+
+const KEY_GOBAG_ITEM_IDS = "gobag_item_ids";
+const KEY_GOBAG_ITEMS = "gobag_items";
 
 /**
  * @returns {boolean}
@@ -45,6 +53,8 @@ export function loadFromStorage() {
         loadItemFromStorage(KEY_HAZARD_INSTRUCTIONS, cachedData.setHazardInstructions);
         loadItemFromStorage(KEY_CONTACTS, cachedData.setContacts);
         loadItemFromStorage(KEY_SPECIAL_NEEDS_INSTRUCTIONS, cachedData.setSpecialNeedsInstructions);
+        loadItemFromStorage(KEY_GOBAG_ITEM_IDS, cachedData.setGobagItemIds);
+        loadItemFromStorage(KEY_GOBAG_ITEMS, cachedData.setGobagItems);
     }
     catch (error) {
         const message = error instanceof Error ? error.message : "Unknown Error";
@@ -54,6 +64,8 @@ export function loadFromStorage() {
         localStorage.removeItem(KEY_QUESTIONS);
         localStorage.removeItem(KEY_HAZARD_INSTRUCTIONS);
         localStorage.removeItem(KEY_CONTACTS);
+        localStorage.removeItem(KEY_GOBAG_ITEMS);
+        localStorage.removeItem(KEY_GOBAG_ITEM_IDS);
 
         loadSuccess = false;
     }
@@ -80,7 +92,9 @@ export async function syncFromRemote() {
         syncFromUrl(URL_QUESTIONS, cachedData.setQuestions, KEY_QUESTIONS),
         syncFromUrl(URL_HAZARD_INSTRUCTIONS, cachedData.setHazardInstructions, KEY_HAZARD_INSTRUCTIONS),
         syncFromUrl(URL_CONTACTS, cachedData.setContacts, KEY_CONTACTS),
-        syncFromUrl(URL_SPECIAL_NEEDS_INSTRUCTIONS, cachedData.setSpecialNeedsInstructions, KEY_SPECIAL_NEEDS_INSTRUCTIONS)
+        syncFromUrl(URL_SPECIAL_NEEDS_INSTRUCTIONS, cachedData.setSpecialNeedsInstructions, KEY_SPECIAL_NEEDS_INSTRUCTIONS),
+        syncFromUrl(URL_GOBAG_ITEM_IDS, cachedData.setGobagItemIds, KEY_GOBAG_ITEM_IDS),
+        syncFromUrl(URL_GOBAG_ITEMS, cachedData.setGobagItems, KEY_GOBAG_ITEMS)
     ]);
 
     let isPerfectSync = true;

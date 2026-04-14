@@ -63,6 +63,15 @@ import * as normalizer from "../services/normalizer.js";
  * @typedef {Object<string, string[] | undefined>} SpecialNeedsInstructions
  */
 
+// TODO Add Documentation
+/** @typedef {Object<string, itemId | undefined>} GobagItemIds */
+
+// TODO Add Documentation
+/** @typedef {{text: string, image: string }} itemId */
+
+// TODO Add Documentation
+/** @typedef {Object<string, string[] | undefined>} GobagItems */
+
 /** @type {Question[]} */
 let questions = [];
 
@@ -74,6 +83,12 @@ let contacts = {};
 
 /** @type {SpecialNeedsInstructions} */
 let SpecialNeedsInstructions = {};
+
+/** @type {GobagItemIds} */
+let gobagItemIds = {};
+
+/** @type {GobagItems} */
+let gobagItems = {};
 
 /** @returns {Question[]} */
 export function getQuestions() {
@@ -95,6 +110,16 @@ export function getSpecialNeedsInstructions() {
     return structuredClone(SpecialNeedsInstructions);
 }
 
+/** @returns {GobagItemIds} */
+export function getGobagItemIds() {
+    return structuredClone(gobagItemIds);
+}
+
+/** @returns {GobagItems} */
+export function getGobagItems() {
+    return structuredClone(gobagItems);
+}
+
 /** @param {Question[]} data */
 export function setQuestions(data) {
     questions = normalizer.getNormalizedQuestions(data);
@@ -113,4 +138,16 @@ export function setContacts(data) {
 /** @param {SpecialNeedsInstructions} data */
 export function setSpecialNeedsInstructions(data) {
     SpecialNeedsInstructions = normalizer.getNormalizedSpecialNeedsInstructions(data);
+}
+
+/** @param {GobagItemIds} data */
+export function setGobagItemIds(data) {
+    // TODO Add the normalizer
+    gobagItemIds = data;
+}
+
+/** @param {GobagItems} data */
+export function setGobagItems(data) {
+    // TODO Add the normalizer
+    gobagItems = data;
 }
