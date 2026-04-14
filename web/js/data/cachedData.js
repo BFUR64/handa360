@@ -63,14 +63,25 @@ import * as normalizer from "../services/normalizer.js";
  * @typedef {Object<string, string[] | undefined>} SpecialNeedsInstructions
  */
 
-// TODO Add Documentation
-/** @typedef {Object<string, itemId | undefined>} GobagItemIds */
+/**
+* A dictionary mapping unique item identifiers to their detailed definitions.
+ * This acts as the normalized central repository for all possible go-bag items,
+ * preventing data duplication across different emergency categories.
+ * @typedef {Object<string, ItemId | undefined>} GobagItemIds
+ */
 
-// TODO Add Documentation
-/** @typedef {{text: string, image: string }} itemId */
+/**
+ * Represents the display properties and metadata of a single go-bag item.
+ * @typedef {Object} ItemId
+ * @property {string} text - The human-readable name or description of the item (e.g., "Drinking water", "Flashlight").
+ * @property {string} image - The URL or local file path to the visual representation of the item.
+ */
 
-// TODO Add Documentation
-/** @typedef {Object<string, string[] | undefined>} GobagItems */
+/**
+ * A mapping of emergency events or user profiles to their respective recommended packing lists.
+ * The arrays contain string keys that reference specific entries within the GobagItemIds map.
+ * @typedef {Object<string, string[] | undefined>} GobagItems
+ */
 
 /** @type {Question[]} */
 let questions = [];
