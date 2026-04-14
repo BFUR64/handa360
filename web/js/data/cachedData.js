@@ -153,8 +153,7 @@ export function setSpecialNeedsInstructions(data) {
 
 /** @param {GobagItemRegistry} data */
 export function setGobagItemRegistry(data) {
-    // TODO Add the normalizer
-    gobagItemRegistry = data;
+    gobagItemRegistry = normalizer.getNormalizedGobagItemRegistry(data);
 }
 
 /** @param {GobagItems} data */
