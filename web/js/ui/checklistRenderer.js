@@ -50,9 +50,10 @@ export function render(objectMap, key, title) {
     container.append(checklistBlock);
 }
 
-// TODO Add Documentation
-// TODO Holy fuck refactor this garbage into the one at the top
+// TODO Refactor in the future
 /**
+ * Returns a checklist based on the item registry and items in the gobag.
+ *
  * @param {GobagItemRegistry} gobagItemRegistry
  * @param {GobagItems} gobagItems
  * @param {string[]} ids
