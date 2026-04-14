@@ -63,6 +63,26 @@ import * as normalizer from "../services/normalizer.js";
  * @typedef {Object<string, string[] | undefined>} SpecialNeedsInstructions
  */
 
+/**
+* A dictionary mapping unique item identifiers to their detailed definitions.
+ * This acts as the normalized central repository for all possible go-bag items,
+ * preventing data duplication across different emergency categories.
+ * @typedef {Object<string, GobagItem | undefined>} GobagItemRegistry
+ */
+
+/**
+ * Represents the display properties and metadata of a single go-bag item.
+ * @typedef {Object} GobagItem
+ * @property {string} text - The human-readable name or description of the item (e.g., "Drinking water", "Flashlight").
+ * @property {string} image - The URL or local file path to the visual representation of the item.
+ */
+
+/**
+ * A mapping of emergency events or user profiles to their respective recommended packing lists.
+ * The arrays contain string keys that reference specific entries within the GobagItemIds map.
+ * @typedef {Object<string, string[] | undefined>} GobagItems
+ */
+
 /** @type {Question[]} */
 let questions = [];
 
@@ -74,6 +94,12 @@ let contacts = {};
 
 /** @type {SpecialNeedsInstructions} */
 let SpecialNeedsInstructions = {};
+
+/** @type {GobagItemRegistry} */
+let gobagItemRegistry = {};
+
+/** @type {GobagItems} */
+let gobagItems = {};
 
 /** @returns {Question[]} */
 export function getQuestions() {
@@ -95,6 +121,16 @@ export function getSpecialNeedsInstructions() {
     return structuredClone(SpecialNeedsInstructions);
 }
 
+/** @returns {GobagItemRegistry} */
+export function getGobagItemRegistry() {
+    return structuredClone(gobagItemRegistry);
+}
+
+/** @returns {GobagItems} */
+export function getGobagItems() {
+    return structuredClone(gobagItems);
+}
+
 /** @param {Question[]} data */
 export function setQuestions(data) {
     questions = normalizer.getNormalizedQuestions(data);
@@ -113,4 +149,14 @@ export function setContacts(data) {
 /** @param {SpecialNeedsInstructions} data */
 export function setSpecialNeedsInstructions(data) {
     SpecialNeedsInstructions = normalizer.getNormalizedSpecialNeedsInstructions(data);
+}
+
+/** @param {GobagItemRegistry} data */
+export function setGobagItemRegistry(data) {
+    gobagItemRegistry = normalizer.getNormalizedGobagItemRegistry(data);
+}
+
+/** @param {GobagItems} data */
+export function setGobagItems(data) {
+    gobagItems = normalizer.getNormalizedGobagItems(data);
 }

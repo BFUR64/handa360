@@ -1,0 +1,218 @@
+{
+    "water": {
+        "text": "Drinking water",
+        "image": ""
+    },
+    "water_storage": {
+        "text": "Water storage containers",
+        "image": ""
+    },
+    "water_purification_tablets": {
+        "text": "Water purification tablets",
+        "image": ""
+    },
+    "food_ready_to_eat": {
+        "text": "Ready-to-eat food",
+        "image": ""
+    },
+    "food_non_perishable": {
+        "text": "Non-perishable food",
+        "image": ""
+    },
+    "child_food": {
+        "text": "Food suitable for children",
+        "image": ""
+    },
+    "baby_food": {
+        "text": "Baby food",
+        "image": ""
+    },
+    "milk_formula": {
+        "text": "Milk formula",
+        "image": ""
+    },
+    "feeding_bottle": {
+        "text": "Feeding bottle",
+        "image": ""
+    },
+    "flashlight": {
+        "text": "Flashlight",
+        "image": ""
+    },
+    "extra_batteries": {
+        "text": "Extra batteries",
+        "image": ""
+    },
+    "power_bank": {
+        "text": "Power bank",
+        "image": ""
+    },
+    "radio": {
+        "text": "Battery-powered radio",
+        "image": ""
+    },
+    "raincoat": {
+        "text": "Raincoat",
+        "image": ""
+    },
+    "whistle": {
+        "text": "Whistle",
+        "image": ""
+    },
+    "first_aid_kit": {
+        "text": "First aid kit",
+        "image": ""
+    },
+    "hygiene_kit": {
+        "text": "Hygiene kit",
+        "image": ""
+    },
+    "baby_wipes": {
+        "text": "Baby wipes",
+        "image": ""
+    },
+    "waterproof_bag": {
+        "text": "Waterproof bag",
+        "image": ""
+    },
+    "important_documents": {
+        "text": "Important documents (IDs, records)",
+        "image": ""
+    },
+    "medical_records": {
+        "text": "Medical records",
+        "image": ""
+    },
+    "doctor_contact_info": {
+        "text": "Doctor contact information",
+        "image": ""
+    },
+    "extra_clothes": {
+        "text": "Extra clothes",
+        "image": ""
+    },
+    "blanket": {
+        "text": "Blanket",
+        "image": ""
+    },
+    "rubber_boots": {
+        "text": "Rubber boots",
+        "image": ""
+    },
+    "life_vest": {
+        "text": "Life vest",
+        "image": ""
+    },
+    "dust_mask": {
+        "text": "Dust mask",
+        "image": ""
+    },
+    "smoke_mask": {
+        "text": "Smoke mask",
+        "image": ""
+    },
+    "goggles": {
+        "text": "Protective goggles",
+        "image": ""
+    },
+    "gloves": {
+        "text": "Protective gloves",
+        "image": ""
+    },
+    "helmet": {
+        "text": "Helmet",
+        "image": ""
+    },
+    "multi_tool": {
+        "text": "Multi-tool",
+        "image": ""
+    },
+    "shovel": {
+        "text": "Shovel",
+        "image": ""
+    },
+    "fire_extinguisher_small": {
+        "text": "Small fire extinguisher",
+        "image": ""
+    },
+    "hat": {
+        "text": "Hat",
+        "image": ""
+    },
+    "oral_rehydration_salts": {
+        "text": "Oral rehydration salts",
+        "image": ""
+    },
+    "cooling_towel": {
+        "text": "Cooling towel",
+        "image": ""
+    },
+    "portable_fan": {
+        "text": "Portable fan",
+        "image": ""
+    },
+    "diapers": {
+        "text": "Diapers",
+        "image": ""
+    },
+    "small_toys": {
+        "text": "Small toys",
+        "image": ""
+    },
+    "lightweight_bag": {
+        "text": "Lightweight bag",
+        "image": ""
+    },
+    "compact_food": {
+        "text": "Compact food",
+        "image": ""
+    },
+    "comfortable_shoes": {
+        "text": "Comfortable shoes",
+        "image": ""
+    },
+    "prenatal_vitamins": {
+        "text": "Prenatal vitamins",
+        "image": ""
+    },
+    "maintenance_medications": {
+        "text": "Maintenance medications",
+        "image": ""
+    },
+    "emergency_medications": {
+        "text": "Emergency medications",
+        "image": ""
+    },
+    "reading_glasses": {
+        "text": "Reading glasses",
+        "image": ""
+    },
+    "walking_cane": {
+        "text": "Walking cane",
+        "image": ""
+    },
+    "hearing_aid_batteries": {
+        "text": "Hearing aid batteries",
+        "image": ""
+    },
+    "assistive_device": {
+        "text": "Assistive device",
+        "image": ""
+    },
+    "assistive_device_batteries": {
+        "text": "Assistive device batteries",
+        "image": ""
+    },
+    "cash_small_bills": {
+        "text": "Cash in small denominations",
+        "image": ""
+    },
+    "local_map": {
+        "text": "Physical local map",
+        "image": ""
+    },
+    "matches_lighter": {
+        "text": "Matches or lighter (waterproof container)",
+        "image": ""
+    }
+}
