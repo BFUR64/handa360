@@ -19,7 +19,7 @@ const checklistTemplate = /** @type {HTMLTemplateElement} */ (document.getElemen
 const checklistItemTemplate = /** @type {HTMLTemplateElement} */ (document.getElementById("checklist-item-template"));
 
 /** @typedef {import("../data/cachedData.js").HazardInstructions} HazardInstructions */
-/** @typedef {import("../data/cachedData.js").GobagItemIds} GobagItemIds */
+/** @typedef {import("../data/cachedData.js").GobagItemRegistry} GobagItemRegistry */
 /** @typedef {import("../data/cachedData.js").GobagItems} GobagItems */
 
 /**
@@ -53,12 +53,12 @@ export function render(objectMap, key, title) {
 // TODO Add Documentation
 // TODO Holy fuck refactor this garbage into the one at the top
 /**
- * @param {GobagItemIds} gobagItemIds
+ * @param {GobagItemRegistry} gobagItemRegistry
  * @param {GobagItems} gobagItems
  * @param {string[]} ids
  * @param {string} title
  */
-export function RenderGobag(gobagItemIds, gobagItems, ids, title) {
+export function RenderGobag(gobagItemRegistry, gobagItems, ids, title) {
     // Turns the ids (generated from the question form) into a singular deduplicated gobag
     let set = new Set();
 
@@ -83,7 +83,7 @@ export function RenderGobag(gobagItemIds, gobagItems, ids, title) {
         const checklistItem = /** @type {DocumentFragment} */ (checklistItemTemplate.content.cloneNode(true));
         const checklistText = /** @type {HTMLElement} */ (checklistItem.querySelector(".checklist-item-text"));
 
-        const itemSelected = gobagItemIds[item];
+        const itemSelected = gobagItemRegistry[item];
         if (itemSelected == null) return;
 
         checklistText.innerText = itemSelected.text;

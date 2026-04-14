@@ -83,11 +83,11 @@ function addFormSubmittedListener(form) {
 
         checklistRenderer.render(cachedData.getHazardInstructions(), data.hazardSelected, "Hazard Instructions");
 
-        checklistRenderer.RenderGobag(cachedData.getGobagItemIds(), cachedData.getGobagItems(), ids, "Gobag");
+        checklistRenderer.RenderGobag(cachedData.getGobagItemRegistry(), cachedData.getGobagItems(), ids, "Gobag");
 
         informationRenderer.render(data.locationSelected, cachedData.getContacts());
 
-        console.log(cachedData.getGobagItemIds());
+        console.log(cachedData.getGobagItemRegistry());
         console.log(cachedData.getGobagItems());
         console.log(ids);
 

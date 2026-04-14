@@ -67,12 +67,12 @@ import * as normalizer from "../services/normalizer.js";
 * A dictionary mapping unique item identifiers to their detailed definitions.
  * This acts as the normalized central repository for all possible go-bag items,
  * preventing data duplication across different emergency categories.
- * @typedef {Object<string, ItemId | undefined>} GobagItemIds
+ * @typedef {Object<string, GobagItem | undefined>} GobagItemRegistry
  */
 
 /**
  * Represents the display properties and metadata of a single go-bag item.
- * @typedef {Object} ItemId
+ * @typedef {Object} GobagItem
  * @property {string} text - The human-readable name or description of the item (e.g., "Drinking water", "Flashlight").
  * @property {string} image - The URL or local file path to the visual representation of the item.
  */
@@ -95,8 +95,8 @@ let contacts = {};
 /** @type {SpecialNeedsInstructions} */
 let SpecialNeedsInstructions = {};
 
-/** @type {GobagItemIds} */
-let gobagItemIds = {};
+/** @type {GobagItemRegistry} */
+let gobagItemRegistry = {};
 
 /** @type {GobagItems} */
 let gobagItems = {};
@@ -121,9 +121,9 @@ export function getSpecialNeedsInstructions() {
     return structuredClone(SpecialNeedsInstructions);
 }
 
-/** @returns {GobagItemIds} */
-export function getGobagItemIds() {
-    return structuredClone(gobagItemIds);
+/** @returns {GobagItemRegistry} */
+export function getGobagItemRegistry() {
+    return structuredClone(gobagItemRegistry);
 }
 
 /** @returns {GobagItems} */
@@ -151,14 +151,13 @@ export function setSpecialNeedsInstructions(data) {
     SpecialNeedsInstructions = normalizer.getNormalizedSpecialNeedsInstructions(data);
 }
 
-/** @param {GobagItemIds} data */
-export function setGobagItemIds(data) {
+/** @param {GobagItemRegistry} data */
+export function setGobagItemRegistry(data) {
     // TODO Add the normalizer
-    gobagItemIds = data;
+    gobagItemRegistry = data;
 }
 
 /** @param {GobagItems} data */
 export function setGobagItems(data) {
-    // TODO Add the normalizer
-    gobagItems = data;
+    gobagItems = normalizer.getNormalizedGobagItems(data);
 }
