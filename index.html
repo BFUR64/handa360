@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>HANDA360</title>
     <meta name="description" content="HANDA360 is an offline capable disaster-preparedness web application">
 
@@ -82,19 +82,13 @@
 
     <template id="form-template">
         <div class="form-template-container">
-            <div class="form-container">
-                <h1>Choose your concern</h1>
-                <p>Please select the option that best describes your concern</p>
-                <h2>How to use?</h2>
-                <ol>
-                    <li>Read the question carefully</li>
-                    <li>Select the option related to your location, condition, and concern.</li>
-                    <li>Click "Continue" to proceed</li>
-                </ol>
-            </div>
+
             <form class="form-block">
                 <div class="questions-container"></div>
-                <button type="button" class="btn-submit">Continue</button>
+                <div class="btn-container">
+                    <button type="button" class="btn-submit">Continue</button>
+                    <button type="button" class="btn-submit">Continue</button>
+                </div>
             </form>
         </div>
     </template>

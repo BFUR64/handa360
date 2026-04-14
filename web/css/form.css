@@ -1,37 +1,27 @@
 .form-template-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
-    justify-self: center;
-    position: relative;
-    height: 87vh;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.form-container {
-    text-align: left;
-    flex:1;
-
-    h1{
-        font-size: 5rem;
-        margin: 0;
-    }
+    /* justify-self: center; */
+    /* position: relative; */
+    /* height: 87vh; */
+    /* width: 100%; */
+    /* top: 0; */
+    /* bottom: 0; */
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px; */
 }
 
 .form-block {
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     width: 400px;
     gap: 16px;
-    height: 100%;
+    /* height: 100%;
     padding: 20px;
     padding-left: 40px;
-    border-left: 2px solid var(--text);
+    border-left: 2px solid var(--text); */
 }
 
 .questions-container {
@@ -40,22 +30,33 @@
     gap: 16px;
 }
 
-.question-block {
+/* .question-block {
     display: flex;
     flex-direction: column;
     position: relative;
     gap: 12px;
-}
-.question-text{
+} */
+/* .question-text {
     margin-top: 0px;
     margin-bottom: 10px;
     padding:0;
-}
+} */
+
+/* .quetion-text {
+    top: 0;
+} */
+
+/* .options-container {
+    height: 50dvh;
+    overflow: auto;
+} */
 
 .options-container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
+    max-height: 70dvh;
+    overflow-y: auto;
 }
 
 .option-label {
@@ -73,7 +74,7 @@
 .option-button {
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 45px;
     padding: 14px 16px;
     background: var(--option-bg);
     border: 1px solid var(--option-border);
@@ -94,8 +95,41 @@
     color: var(--text-secondary);
 }
 
+.btn-container {
+    position: fixed;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* width: 100%; */
+
+    height: 100px;
+    width: 600px;
+
+    padding: 10px 0px;
+    background-color: var(--bg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.btn-container::before {
+    content: "";
+    position: fixed;
+    top: -40px;
+    height: 40px;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    pointer-events: none;
+}
+
 .btn-submit {
-    display: inline-block;
+    /* display: inline-block; */
+    /* position: sticky;
+    bottom: 5px; */
+
     padding: 10px 24px;
     background: var(--button-bg);
     transition: background 0.18s ease, border-color 0.18s ease;
@@ -106,6 +140,7 @@
     font-weight: bold;
     cursor: pointer;
 
+    height: 50px;
 }
 
 .btn-submit:hover {
