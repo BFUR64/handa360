@@ -9,7 +9,7 @@
     border-style: solid;
     border-width: 2px;
     border-color: var(--contacts-border);
-    border-radius: 5px;
+    border-radius: 0px;
 
     padding: 20px;
     margin: 10px;
@@ -31,7 +31,7 @@
     min-width: 0;
 
     border: 1px solid var(--contactlist-item-border);
-    border-radius: 5px;
+    border-radius: 0px;
     padding: 10px 12px;
 
     background: rgba(255, 255, 255, 0.08);
@@ -41,7 +41,7 @@
 
 .contactlist-copy-button {
     border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 5px;
+    border-radius: 0px;
     padding: 10px 14px;
 
     background: #6f7b88;
