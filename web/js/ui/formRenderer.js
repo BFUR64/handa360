@@ -69,6 +69,9 @@ function renderQuestion(question) {
         if (inputType === "checkbox") {
             subtitleElement.textContent = "You May Select Multiple";
         }
+        else {
+            subtitleElement.remove();
+        }
 
         input.value = option.id;
         input.name = question.id;
