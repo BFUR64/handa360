@@ -53,6 +53,7 @@ export function buildFullForm(questions) {
 function renderQuestion(question) {
     const questionFragment = /** @type {DocumentFragment} */ (questionTemplate.content.cloneNode(true));
     const titleElement = /** @type {HTMLElement} */ (questionFragment.querySelector(".question-text"));
+    const subtitleElement = /** @type {HTMLElement} */ (questionFragment.querySelector(".subtext"));
     const optionsContainer = /** @type {HTMLElement} */ (questionFragment.querySelector(".options-container"));
 
     titleElement.textContent = question.text;
@@ -64,6 +65,10 @@ function renderQuestion(question) {
         const buttonText = /** @type {HTMLElement} */ (optionFragment.querySelector(".option-button"));
 
         const inputType = question.selection_type === "multiple" ? "checkbox" : "radio";
+
+        if (inputType === "checkbox") {
+            subtitleElement.textContent = "Select Multiple";
+        }
 
         input.value = option.id;
         input.name = question.id;
