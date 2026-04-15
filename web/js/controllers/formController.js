@@ -39,6 +39,7 @@ let totalQuestions = 0;
  * @returns {HTMLFormElement} The fully initialized form element
  */
 export function initForm(questions) {
+    currentIndex = 0;
     totalQuestions = questions.length;
 
     const formFragment = formRenderer.buildFullForm(questions);

@@ -1,0 +1,24 @@
+.back-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.back-button-submit {
+    padding: 10px 24px;
+    background: var(--button-bg);
+    transition: background 0.18s ease, border-color 0.18s ease;
+    color: var(--text-secondary);
+    border: 1px solid var(--button-border);
+    border-radius: 0px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+
+    width: 200px;
+
+    height: 50px;
+}
+
+.back-button-submit:hover {
+    background: var(--button-bg-hover);
+}

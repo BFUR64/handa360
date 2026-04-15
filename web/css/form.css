@@ -1,17 +1,13 @@
-#container {
-    display: grid;
-    grid-template-rows: 1fr 5px;
-}
-
 .form-template-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-    overflow: auto;
 }
 
 .form-block {
+    display: grid;
+    grid-template-rows: 1fr 5px;
+
     width: 400px;
     gap: 16px;
 }
@@ -76,15 +72,7 @@
 }
 
 .btn-container {
-    /* position: fixed;
-    bottom:0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    height: 100px; */
-    /* width: 600px; */
-
-    padding: 10px 0px;
+    height: 100px;
     background-color: var(--bg);
 
     display: flex;
