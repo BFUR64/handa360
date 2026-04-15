@@ -1,27 +1,19 @@
+#container {
+    display: grid;
+    grid-template-rows: 1fr 5px;
+}
+
 .form-template-container{
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
     justify-content: center;
-    /* justify-self: center; */
-    /* position: relative; */
-    /* height: 87vh; */
-    /* width: 100%; */
-    /* top: 0; */
-    /* bottom: 0; */
-    /* padding-top: 20px; */
-    /* padding-bottom: 20px; */
+
+    overflow: auto;
 }
 
 .form-block {
-    /* display: flex; */
-    /* flex-direction: column; */
     width: 400px;
     gap: 16px;
-    /* height: 100%;
-    padding: 20px;
-    padding-left: 40px;
-    border-left: 2px solid var(--text); */
 }
 
 .questions-container {
@@ -30,28 +22,12 @@
     gap: 16px;
 }
 
-/* .question-block {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    gap: 12px;
-} */
-/* .question-text {
-    margin-top: 0px;
-    margin-bottom: 10px;
-    padding:0;
-} */
-
-/* .quetion-text {
-    top: 0;
-} */
-
-/* .options-container {
-    height: 50dvh;
-    overflow: auto;
-} */
+.question-text {
+    margin-bottom: 20px;
+}
 
 .subtext {
+    margin: 5px 0 10px;
     color: rgba(255, 255, 255, 0.5);
 }
 
@@ -59,7 +35,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    max-height: 65dvh;
+    max-height: 60dvh;
     overflow-y: auto;
 }
 
@@ -100,15 +76,13 @@
 }
 
 .btn-container {
-    position: fixed;
+    /* position: fixed;
     bottom:0;
     left: 50%;
     transform: translateX(-50%);
 
-    /* width: 100%; */
-
-    height: 100px;
-    width: 600px;
+    height: 100px; */
+    /* width: 600px; */
 
     padding: 10px 0px;
     background-color: var(--bg);
@@ -121,21 +95,7 @@
     border-top: 1px solid var(--toast-border);
 }
 
-/* .btn-container::before {
-    content: "";
-    position: fixed;
-    top: -40px;
-    height: 40px;
-    width: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
-    pointer-events: none;
-} */
-
 .btn-submit {
-    /* display: inline-block; */
-    /* position: sticky;
-    bottom: 5px; */
-
     padding: 10px 24px;
     background: var(--button-bg);
     transition: background 0.18s ease, border-color 0.18s ease;
