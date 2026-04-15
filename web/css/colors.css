@@ -1,6 +1,7 @@
 :root {
     --bg: #f7f7f7;
     --text: #212224;
+    --subtext: rgba(0, 0, 0, 0.5);
     --text-secondary: #e5e7ec;
 
     --option-bg: #e2e2e2;
@@ -41,6 +42,7 @@
     :root {
         --bg: #151515;
         --text: #e5e7eb;
+        --subtext: rgba(255, 255, 255, 0.5);
 
         --option-bg: #454c53;
         --option-border: #5a626a;
