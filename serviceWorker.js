@@ -4,21 +4,19 @@
 /**
  * @module serviceWorker
  *
- * @deprecated
- * Do not use. It is being worked on for a future version
- *
  * @description
  * Enables offline functionality and asset caching
  *
  */
 
-const CACHE_NAME = "cache-v1";
+const CACHE_NAME = "cache-v1.1";
 
 const BASE = "/handa360/";
 
 const ASSETS = [
     BASE,
     BASE + "serviceWorker.js",
+    BASE + "manifest.json",
     BASE + "index.html",
 
     BASE + "assets/images/call.png",
@@ -52,48 +50,41 @@ const ASSETS = [
     BASE + "web/js/ui/uiHelper.js",
 ];
 
-// self.addEventListener("install", async event => {
-//     if (!(event instanceof ExtendableEvent)) return;
+self.addEventListener("install", async event => {
+    if (!(event instanceof ExtendableEvent)) return;
 
-//     event.waitUntil(
-//         caches.open(CACHE_NAME).then(cache => {
-//             return cache.addAll(ASSETS);
-//         })
-//     );
-// });
+    event.waitUntil(
+        caches.open(CACHE_NAME).then(cache => {
+            return cache.addAll(ASSETS);
+        })
+    );
+});
 
-// self.addEventListener("activate", event => {
-//     if (!(event instanceof ExtendableEvent)) return;
+self.addEventListener("activate", event => {
+    if (!(event instanceof ExtendableEvent)) return;
 
-//     event.waitUntil(
-//         caches.keys().then(keys => Promise.all(
-//             keys.map(key => {
-//                 if (key != CACHE_NAME) {
-//                     return caches.delete(key);
-//                 }
-//             })
-//         ))
-//     );
-// });
+    event.waitUntil(
+        caches.keys().then(keys => Promise.all(
+            keys.map(key => {
+                if (key != CACHE_NAME) {
+                    return caches.delete(key);
+                }
+            })
+        ))
+    );
+});
 
-// self.addEventListener("fetch", event => {
-//     if (!(event instanceof FetchEvent)) return;
+self.addEventListener("fetch", event => {
+    if (!(event instanceof FetchEvent)) return;
 
-//     const url = new URL(event.request.url);
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+                if (response) {
+                    return response;
+                }
 
-//     if (url.pathname.includes("/data/") || url.pathname.endsWith(".json")) return;
-
-//     event.respondWith(
-//         fetch(event.request)
-//             .then(async response => {
-//                 const cache = await caches.open(CACHE_NAME);
-//                 cache.put(event.request, response.clone());
-//                 return response;
-//             })
-//             .catch(async () => {
-//                 const cached = await caches.match(event.request);
-//                 if (cached) return cached;
-//                 return new Response("Offline", { status: 503, statusText: "Service Unavailable" });
-//         })
-//     );
-// });
+                return fetch (event.request);
+            })
+    )
+});
