@@ -1,11 +1,4 @@
 @media (max-width: 480px) {
-    main {
-        /*max-width: 300px;*/
-        flex-direction: column;
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-
     h1{
         font-size: 2rem !important;
     }
@@ -116,21 +109,8 @@
         height: 32px !important;
     }
 
-    .form-template-container{
-    flex-direction: column;
-    padding: 0;
-    gap:0;
-    }
-
     .form-container{
         display: none;
-    }
-
-    .form-block{
-        padding-left: 20px;
-        width: 100%;
-        border: none;
-        height: fit-content;
     }
 
     .checklist-block{

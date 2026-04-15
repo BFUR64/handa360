@@ -43,28 +43,29 @@ export function initForm(questions) {
 
     const formFragment = formRenderer.buildFullForm(questions);
 
-    const actionButton = /** @type {HTMLButtonElement} */ (formFragment.querySelector(".btn-submit"));
+    const actionButtons = /** @type {NodeListOf<HTMLButtonElement>} */ (formFragment.querySelectorAll(".btn-submit"));
     const formBlock = /** @type {HTMLFormElement} */ (formFragment.querySelector(".form-block"));
 
-    attachContinueEvent(actionButton);
+    attachFlowEvent(actionButtons);
+
     attachSubmitEvent(formBlock);
 
     container.append(formFragment);
 
-    updateView(actionButton);
+    updateView(actionButtons);
 
     return formBlock;
 }
 
 /**
- * @param {HTMLButtonElement} actionButton
+ * @param {NodeListOf<HTMLButtonElement>} actionButtons
  */
-function updateView(actionButton) {
+function updateView(actionButtons) {
     const allQuestions = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll(".question-block"));
 
     allQuestions.forEach(question => {
         const stepIndex = Number(question.dataset.step);
-        if (stepIndex == currentIndex) {
+        if (stepIndex === currentIndex) {
             question.classList.remove("hidden");
         }
         else {
@@ -72,29 +73,55 @@ function updateView(actionButton) {
         }
     })
 
+    const [backBtn, nextBtn] = actionButtons;
+
+    backBtn.textContent = "Previous";
+
     if (currentIndex === totalQuestions - 1) {
-        actionButton.textContent = "Submit";
-        actionButton.type = "submit";
+        backBtn.classList.remove("not-selectable");
+
+        nextBtn.textContent = "Submit";
+        nextBtn.type = "submit";
+    }
+    else if (currentIndex === 0) {
+        backBtn.classList.add("not-selectable");
+
+        nextBtn.textContent = "Next";
+        nextBtn.type = "button";
     }
     else {
-        actionButton.textContent = "Continue";
-        actionButton.type = "button";
+        backBtn.classList.remove("not-selectable");
+
+        nextBtn.textContent = "Next";
+        nextBtn.type = "button";
     }
 
     window.scrollTo(0, 0);
 }
 
 /**
- * @param {HTMLButtonElement} actionButton
+ * @param {NodeListOf<HTMLButtonElement>} actionButtons
  */
-function attachContinueEvent(actionButton) {
-    actionButton.addEventListener("click", event => {
-        if (actionButton.type === "submit") return;
+function attachFlowEvent(actionButtons) {
+    const [backBtn, nextBtn] = actionButtons;
 
-        event.preventDefault();
-        currentIndex++;
-        updateView(actionButton);
-    })
+    backBtn.addEventListener("click", event => {
+        if (currentIndex > 0) {
+            event.preventDefault();
+            currentIndex--;
+        }
+
+        updateView(actionButtons);
+    });
+
+    nextBtn.addEventListener("click", event => {
+        if (currentIndex < totalQuestions - 1) {
+            event.preventDefault();
+            currentIndex++;
+        }
+
+        updateView(actionButtons);
+    });
 }
 
 /**

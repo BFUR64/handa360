@@ -2,6 +2,18 @@
     box-sizing: border-box;
 }
 
+html {
+    scrollbar-width: none;
+}
+
+html, body {
+    overscroll-behavior: none;
+}
+
+::webkit-scrollbar {
+    display: none;
+}
+
 body {
     font-family: Cambria, serif;
     background: var(--bg);
@@ -9,12 +21,10 @@ body {
     -webkit-user-select: none;
     user-select: none;
     text-align: center;
+    overflow: auto;
 }
 
 main {
     display: flex;
     flex-direction: column;
-
-    margin-left: 250px;
-    margin-right: 250px;
 }
