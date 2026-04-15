@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Cambria, serif;
     background: var(--bg);
     color: var(--text);
     -webkit-user-select: none;

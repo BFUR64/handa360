@@ -12,7 +12,7 @@
     border-style: solid;
     border-width: 2px;
     border-color: var(--contacts-border);
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 .checklist-header {
@@ -32,7 +32,7 @@
 
     background: var(--option-bg);
     border: 1px solid var(--option-border);
-    border-radius: 4px;
+    border-radius: 0px;
 
     font-weight: bold;
     transition: color 0.33s ease, background-color 0.33s ease, text-decoration 0.33s ease;
@@ -64,7 +64,7 @@
 
     display: inline-block;
     vertical-align: middle;
-    border-radius: 4px;
+    border-radius: 0px;
     transition: border-color 0.3s;
 
     flex-shrink: 0;
