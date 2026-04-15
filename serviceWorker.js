@@ -6,15 +6,17 @@
  *
  * @description
  * Enables offline functionality and asset caching
+ *
  */
 
-const CACHE_NAME = "cache-v1";
+const CACHE_NAME = "cache-v1.1";
 
 const BASE = "/handa360/";
 
 const ASSETS = [
     BASE,
     BASE + "serviceWorker.js",
+    BASE + "manifest.json",
     BASE + "index.html",
 
     BASE + "assets/images/call.png",
@@ -75,21 +77,14 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
     if (!(event instanceof FetchEvent)) return;
 
-    const url = new URL(event.request.url);
-
-    if (url.pathname.includes("/data/") || url.pathname.endsWith(".json")) return;
-
     event.respondWith(
-        fetch(event.request)
-            .then(async response => {
-                const cache = await caches.open(CACHE_NAME);
-                cache.put(event.request, response.clone());
-                return response;
+        caches.match(event.request)
+            .then(response => {
+                if (response) {
+                    return response;
+                }
+
+                return fetch (event.request);
             })
-            .catch(async () => {
-                const cached = await caches.match(event.request);
-                if (cached) return cached;
-                return new Response("Offline", { status: 503, statusText: "Service Unavailable" });
-        })
-    );
+    )
 });

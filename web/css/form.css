@@ -78,7 +78,7 @@
     padding: 14px 16px;
     background: var(--option-bg);
     border: 1px solid var(--option-border);
-    border-radius: 4px;
+    border-radius: 0px;
     font-weight: bold;
     transition: background 0.18s ease, border-color 0.18s ease;
 }
@@ -135,7 +135,7 @@
     transition: background 0.18s ease, border-color 0.18s ease;
     color: var(--text-secondary);
     border: 1px solid var(--button-border);
-    border-radius: 4px;
+    border-radius: 0px;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;

@@ -1,0 +1,21 @@
+{
+    "name": "Handa360",
+    "short_name": "Handa360",
+    "description": "HANDA360 is an offline capable disaster-preparedness web application",
+    "start_url": "/handa360/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "assets/images/handa360-logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/handa360-logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -35,6 +35,8 @@
 /** @typedef {import("../data/cachedData.js").HazardInstructions} HazardInstructions */
 /** @typedef {import("../data/cachedData.js").Contacts} Contacts */
 /** @typedef {import("../data/cachedData.js").SpecialNeedsInstructions} SpecialNeedsInstructions */
+/** @typedef {import("../data/cachedData.js").GobagItemRegistry} GobagItemRegistry */
+/** @typedef {import("../data/cachedData.js").GobagItems} GobagItems */
 
 /**
  * @param {Question[]} rawQuestions
@@ -80,6 +82,34 @@ export function getNormalizedContacts(rawContacts) {
  */
 export function getNormalizedSpecialNeedsInstructions(specialNeedsInstructions) {
     return getNormalizedObjectMap(specialNeedsInstructions);
+}
+
+/**
+ * @param {GobagItemRegistry} gobagitemRegistry
+ * @returns {GobagItemRegistry}
+ */
+export function getNormalizedGobagItemRegistry(gobagitemRegistry) {
+    if (!gobagitemRegistry || typeof gobagitemRegistry != "object" || Array.isArray(gobagitemRegistry)) return {};
+
+
+    return Object.entries(gobagitemRegistry).reduce((acc, [id, item]) => {
+        if (item && typeof item === "object") {
+            acc[id] = {
+                text: typeof item.text === "string" ? item.text : "unknown_text",
+                image: typeof item.image === "string" ? item.image : "unknown_image"
+            }
+        }
+
+        return acc;
+    }, /** @type {GobagItemRegistry} */ ({}))
+}
+
+/**
+ * @param {GobagItems} gobagItems
+ * @returns {GobagItems}
+ */
+export function getNormalizedGobagItems(gobagItems) {
+    return getNormalizedObjectMap(gobagItems);
 }
 
 /**

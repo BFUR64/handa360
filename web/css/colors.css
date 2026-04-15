@@ -51,10 +51,10 @@
         --option-bg-checked: #7a2020;
         --option-border-checked: #c35353;
 
-        --button-bg: #111827;
+        --button-bg: #26a349;
         --button-border: #374151;
 
-        --button-bg-hover: #000;
+        --button-bg-hover: #000000;
 
         --toast-success: #27ae60;
         --toast-neutral: #34495e;
@@ -65,7 +65,7 @@
         --contacts-border: rgba(255, 255, 255, 0.35);
 
         --checklist-text-checked: gray;
-        --checklist-bg-checked: rgba(69, 76, 83, 0.75);
+        --checklist-bg-checked: #7a2020;
 
         --checkmark-border: rgba(255, 255, 255, 0.35);
         --checkmark-border-hover: #ddd;

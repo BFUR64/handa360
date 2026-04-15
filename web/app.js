@@ -77,9 +77,19 @@ function addFormSubmittedListener(form) {
             checklistRenderer.render(cachedData.getSpecialNeedsInstructions(), specialNeed, title);
         });
 
+        let ids = /** @type {string[]} */ ([]);
+        data.specialNeedsSelected.forEach(specialNeed => ids.push(specialNeed));
+        ids.push(data.hazardSelected);
+
         checklistRenderer.render(cachedData.getHazardInstructions(), data.hazardSelected, "Hazard Instructions");
 
+        checklistRenderer.RenderGobag(cachedData.getGobagItemRegistry(), cachedData.getGobagItems(), ids, "Gobag");
+
         informationRenderer.render(data.locationSelected, cachedData.getContacts());
+
+        console.log(cachedData.getGobagItemRegistry());
+        console.log(cachedData.getGobagItems());
+        console.log(ids);
 
         window.scrollTo(0, 0);
     })
