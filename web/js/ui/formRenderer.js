@@ -67,7 +67,7 @@ function renderQuestion(question) {
         const inputType = question.selection_type === "multiple" ? "checkbox" : "radio";
 
         if (inputType === "checkbox") {
-            subtitleElement.textContent = "Select Multiple";
+            subtitleElement.textContent = "You May Select Multiple";
         }
 
         input.value = option.id;
