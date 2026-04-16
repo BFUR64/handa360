@@ -36,13 +36,24 @@ const ASSETS = [
     BASE + "web/css/toast.css",
 
     BASE + "web/app.js",
+
+    // Controller Modules
+    BASE + "web/js/controllers/appController.js",
+    BASE + "web/js/controllers/backButtonController.js",
     BASE + "web/js/controllers/formController.js",
     BASE + "web/js/controllers/navigationController.js",
+    BASE + "web/js/controllers/outputController.js",
 
+
+    // Data Modules
     BASE + "web/js/data/cachedData.js",
+
+    // Services Modules
     BASE + "web/js/services/cacheService.js",
     BASE + "web/js/services/normalizer.js",
 
+    // UI Modules
+    BASE + "web/js/ui/backButtonRenderer.js",
     BASE + "web/js/ui/checklistRenderer.js",
     BASE + "web/js/ui/contactlistRenderer.js",
     BASE + "web/js/ui/formRenderer.js",
