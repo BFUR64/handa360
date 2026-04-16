@@ -1,4 +1,8 @@
 @media (max-width: 480px) {
+    main{
+        padding: 20px;
+        margin: 0;
+    }
     h1{
         font-size: 2rem !important;
     }
@@ -109,8 +113,22 @@
         height: 32px !important;
     }
 
+    .form-template-container{
+        height: fit-content;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .form-instructions{
+        display: none;
+    }
+
     .form-container{
         display: none;
+    }
+
+    .btn-container{
+        height: 60px;
     }
 
     .checklist-block{
