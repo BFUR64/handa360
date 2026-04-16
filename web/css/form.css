@@ -97,10 +97,12 @@
     width: 115px;
 
     height: 50px;
+
+    transition: opacity 0.18s ease;
 }
 
 .not-selectable {
-    background: var(--toast-neutral);
+    opacity: 0;
 }
 
 .btn-submit:hover {
