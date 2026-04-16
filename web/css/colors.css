@@ -4,6 +4,10 @@
     --subtext: rgba(0, 0, 0, 0.5);
     --text-secondary: #e5e7ec;
 
+    --previous-btn-bg: rgba(0, 0, 0, 0);
+    --previous-btn-border: rgba(0, 0, 0, 0.5);
+    --next-btn-bg: #27ae60;
+
     --option-bg: #e2e2e2;
     --option-border: #5a626a;
 
@@ -44,6 +48,10 @@
         --bg: #151515;
         --text: #e5e7eb;
         --subtext: rgba(255, 255, 255, 0.5);
+
+        --previous-btn-bg: rgba(0, 0, 0, 0.0);
+        --previous-btn-border: rgba(255, 255, 255, 0.5);
+        --next-btn-bg: #27ae60;
 
         --option-bg: #454c53;
         --option-border: #5a626a;
