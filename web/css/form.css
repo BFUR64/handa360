@@ -33,12 +33,12 @@
 .form-block {
     display: flex;
     flex-direction: column;
-    width: 400px; 
+    width: 400px;
     height: 100%;
     gap: 14px;
-    padding: 0 20px; 
-    
-    /* CRITICAL: Reserves space for the scrollbar globally so the 
+    padding: 0 20px;
+
+    /* CRITICAL: Reserves space for the scrollbar globally so the
        right edge of the buttons always matches the options boxes. */
     scrollbar-gutter: stable;
 }
@@ -110,23 +110,23 @@
     height: 100px;
     background-color: var(--bg);
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    gap: 16px; 
+    gap: 16px;
     border-top: 1px solid var(--toast-border);
-    padding: 0; 
+    padding: 0;
 }
 
 .btn-submit {
     font-family: 'Inter', sans-serif;
-    
-    /* SYMMETRY FIX: flex-basis: 0 forces buttons to ignore text length 
+
+    /* SYMMETRY FIX: flex-basis: 0 forces buttons to ignore text length
        and shrink/grow at the exact same rate. */
     flex: 1 1 0;
-    min-width: 0; 
-    
+    min-width: 0;
+
     height: 50px;
-    padding: 10px 5px; 
+    padding: 10px 5px;
     background: var(--button-bg);
     color: var(--text-secondary);
     border: 1px solid var(--button-border);
@@ -135,7 +135,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     /* Prevents long text from breaking the equal width on mobile */
     white-space: nowrap;
     overflow: hidden;
@@ -143,23 +143,15 @@
 }
 
 .btn-submit:first-child {
-    background-color: var(--secondary-bg);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: white;
+    background-color: var(--previous-btn-bg);
+    color: var(--text);
+    border-color: var(--previous-btn-border);
 }
 
 .btn-submit:last-child {
     background: #27ae60;
-    border: 1px solid #219150;
+    border: 1px solid rgba(255, 255, 255, 0.35);
     color: #ffffff;
-}
-
-.btn-submit.btn-final {
-    background: #2980b9;
-    border: 1px solid #1f6391;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
 }
 
 .btn-submit:active {
@@ -170,7 +162,7 @@
 .not-selectable {
     opacity: 0;
     pointer-events: none;
-    visibility: visible; 
+    visibility: visible;
 }
 
 .hidden {
