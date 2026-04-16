@@ -127,7 +127,6 @@
 
     height: 50px;
     padding: 10px 5px;
-    background: var(--button-bg);
     color: var(--text-secondary);
     border: 1px solid var(--button-border);
     border-radius: 0px;

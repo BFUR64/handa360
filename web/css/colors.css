@@ -17,8 +17,8 @@
     --option-bg-checked: #7a2020;
     --option-border-checked: #c35353;
 
-    --button-bg: #2c2e33;
-    --button-border: #374151;
+    --button-bg: #26a349;
+    --button-border: rgba(0, 0, 0, 0.5);
 
     --button-bg-hover: #000;
 
@@ -63,7 +63,7 @@
         --option-border-checked: #c35353;
 
         --button-bg: #26a349;
-        --button-border: #374151;
+        --button-border: rgba(255, 255, 255, 0.5);
 
         --button-bg-hover: #000000;
 
