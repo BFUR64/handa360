@@ -1,3 +1,5 @@
+// @ts-check
+
 export function initListListeners() {
     console.log('Initializing list listeners...');
 
