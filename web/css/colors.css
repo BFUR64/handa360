@@ -26,7 +26,7 @@
     --toast-neutral: #34495e;
     --toast-error: #c0392b;
 
-    --toast-border: rgb(255, 255, 255, 0.35);
+    --toast-border: rgba(0, 0, 0, 0.35);
 
     --contacts-border: rgb(0, 0, 0);
     --contactlist-item-border: rgb(0, 0, 0);
