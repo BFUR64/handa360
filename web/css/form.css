@@ -8,7 +8,7 @@
     display: grid;
     grid-template-rows: 1fr 5px;
 
-    width: 400px;
+    width: 80dvw;
     gap: 16px;
 }
 
