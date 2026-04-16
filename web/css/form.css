@@ -1,4 +1,4 @@
-.form-template-container{
+.form-template-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -6,8 +6,8 @@
 
 .form-block {
     display: grid;
-    grid-template-rows: 1fr 5px;
-
+    /* auto ensures the button container height is respected */
+    grid-template-rows: 1fr auto; 
     width: 80dvw;
     gap: 16px;
 }
@@ -25,6 +25,7 @@
 .subtext {
     margin: 5px 0 10px;
     color: var(--subtext);
+    text-align: center; /* Matches your 'You May Select Multiple' screenshot */
 }
 
 .options-container {
@@ -33,10 +34,15 @@
     gap: 16px;
     max-height: 60dvh;
     overflow-y: auto;
+    
+    /* IMPORTANT: This prevents the scrollbar from pushing the options 
+       inward, which is why they usually don't align with buttons below */
+    scrollbar-gutter: stable; 
 }
 
 .option-label {
     cursor: pointer;
+    width: 100%;
 }
 
 .option-label input {
@@ -48,6 +54,7 @@
 }
 
 .option-button {
+    font-family: Calibri;
     display: flex;
     align-items: center;
     height: 45px;
@@ -74,41 +81,76 @@
 .btn-container {
     height: 100px;
     background-color: var(--bg);
-
     display: flex;
-    justify-content: center;
+    /* Pushes buttons to the absolute left and right edges */
+    justify-content: space-between; 
     align-items: center;
-    column-gap: 30px;
-
+    gap: 16px; 
     border-top: 1px solid var(--toast-border);
+    
+    /* This padding accounts for the 'scrollbar-gutter' used above 
+       to keep the buttons perfectly flush with the boxes */
+    padding-right: var(--scrollbar-width, 0px); 
 }
 
 .btn-submit {
+    font-family: Calibri;
+    /* flex: 1 makes both buttons take up exactly 50% of the width minus the gap */
+    flex: 1; 
+    height: 50px;
     padding: 10px 24px;
     background: var(--button-bg);
-    transition: background 0.18s ease, border-color 0.18s ease;
     color: var(--text-secondary);
     border: 1px solid var(--button-border);
     border-radius: 0px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-
-    width: 115px;
-
-    height: 50px;
-
-    transition: opacity 0.18s ease;
-}
-
-.not-selectable {
-    opacity: 0;
+    transition: background 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
 }
 
 .btn-submit:hover {
     background: var(--button-bg-hover);
 }
 
+/* Logic for Step 1 vs Step 2 */
+.not-selectable {
+    /* By using opacity 0 instead of display: none, the button still 
+       exists physically, pushing the 'Next' button to the right side 
+       even when 'Previous' is invisible. */
+    opacity: 0;
+    pointer-events: none;
+    /* Ensure it still takes up space so 'Next' stays on the right */
+    visibility: visible; 
+}
+
 .hidden {
+    /* Use this only if you want the remaining button to stretch 
+       to the FULL width of the options */
     display: none;
+}
+
+/* Targets the "Previous" button */
+.btn-submit:first-child {
+    background-color: var(--secondary-bg);
+    color: white;
+}
+
+/* Keep your standard "Next" button green */
+.btn-submit:last-child {
+    background: #27ae60; /* Green */
+    border: 1px solid #219150;
+    color: #ffffff;
+}
+
+/* Specifically target the button ONLY when its text is "Submit" */
+/* Note: This requires your JS to update the 'data-action' attribute or similar, 
+   OR you can use a specific class added by your JS like .btn-final */
+
+.btn-submit.btn-final {
+    background: #2980b9; /* A strong Blue to signal completion */
+    border: 1px solid #1f6391;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }

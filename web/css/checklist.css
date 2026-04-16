@@ -20,6 +20,7 @@
 }
 
 .checklist-item {
+    font-family: Calibri;
     display: flex;
     align-items: center;
     gap: 16px;
