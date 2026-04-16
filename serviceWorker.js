@@ -19,10 +19,13 @@ const ASSETS = [
     BASE + "manifest.json",
     BASE + "index.html",
 
+    // Assets
     BASE + "assets/images/call.png",
     BASE + "assets/images/email.png",
     BASE + "assets/images/handa360-logo.png",
     BASE + "assets/images/location.png",
+
+    // CSS
     BASE + "web/css/about.css",
     BASE + "web/css/checklist.css",
     BASE + "web/css/colors.css",
@@ -33,6 +36,7 @@ const ASSETS = [
     BASE + "web/css/general.css",
     BASE + "web/css/header.css",
     BASE + "web/css/mobile.css",
+    BASE + "web/css/output.css",
     BASE + "web/css/toast.css",
 
     BASE + "web/app.js",
