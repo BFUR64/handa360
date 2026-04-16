@@ -27,7 +27,7 @@
     --contacts-border: rgb(0, 0, 0);
     --contactlist-item-border: rgb(0, 0, 0);
 
-    --checklist-bg-checked: rgba(69, 76, 83, 0.75);
+    --checklist-bg-checked: #53c362;
 
     --checkmark-border: #7a2020;
     --checkmark-border-hover: #c7c7c7;
@@ -66,8 +66,8 @@
 
         --contacts-border: rgba(255, 255, 255, 0.35);
 
-        --checklist-text-checked: gray;
-        --checklist-bg-checked: #7a2020;
+        --checklist-text-checked: rgba(255, 255, 255, 0.85);
+        --checklist-bg-checked: #368f42;
 
         --checkmark-border: rgba(255, 255, 255, 0.35);
         --checkmark-border-hover: #ddd;
