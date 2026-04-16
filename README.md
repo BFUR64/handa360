@@ -6,6 +6,15 @@ Handa360 web app that turns general disaster-preparedness instructions into a ca
 
 Website: <https://bfur64.github.io/handa360/>
 
+## Screenshots
+### Dark Mode
+<img width="1920" height="919" alt="App asks user to select a hazard, with a next button on the bottom to confirm selection" src="https://github.com/user-attachments/assets/6ae5ac22-a91c-4c2c-8c38-99f38150e2e4" />
+<img width="1920" height="919" alt="App shows a dropdown menu of a checklist of a unified action plan, a go bag checklist, and local emergency contacts" src="https://github.com/user-attachments/assets/e5a0d34b-d631-4177-ac5d-29cad0bf3a56" />
+
+### Light Mode
+<img width="1920" height="919" alt="App asks user to select a hazard, with a next button on the bottom to confirm selection" src="https://github.com/user-attachments/assets/e2346b74-c97e-42c3-9ed5-4afe76afcdfe" />
+<img width="1920" height="919" alt="App shows a dropdown menu of a checklist of a unified action plan, a go bag checklist, and local emergency contacts" src="https://github.com/user-attachments/assets/94e91f17-0dac-49ff-b063-f8102a8d9b46" />
+
 <img width="1920" height="1080" alt="User selects a location, with a continue button on the bottom" src="https://github.com/user-attachments/assets/b2435d8c-e707-443a-9792-072c9f158aa8" />
 <img width="1920" height="1833" alt="Unified action plan with local emergency contacts" src="https://github.com/user-attachments/assets/96aa6180-8ea6-46cf-9052-b052f09805fa" />
 
