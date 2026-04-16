@@ -27,6 +27,7 @@
     --contacts-border: rgb(0, 0, 0);
     --contactlist-item-border: rgb(0, 0, 0);
 
+    --checklist-text-checked: rgba(0, 0, 0, 0.85);
     --checklist-bg-checked: #53c362;
 
     --checkmark-border: #7a2020;
@@ -38,7 +39,7 @@
     --footer-bg: #111827;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: ark) {
     :root {
         --bg: #151515;
         --text: #e5e7eb;
