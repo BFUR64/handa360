@@ -15,7 +15,8 @@ html, body {
 }
 
 body {
-    font-family: Cambria, serif;
+    --main-font-family: Cambria, serif;
+    font-family: var(--main-font-family);
     background: var(--bg);
     color: var(--text);
     -webkit-user-select: none;

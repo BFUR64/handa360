@@ -24,6 +24,8 @@ import * as navigationController from "./js/controllers/navigationController.js"
 
 import * as appController from "./js/controllers/appController.js";
 
+import * as listController from "./js/controllers/listController.js";
+
 /** @typedef {import("./js/controllers/formController.js").UserInput} UserInput */
 
 addEventListener("DOMContentLoaded", async function () {
@@ -37,6 +39,7 @@ addEventListener("DOMContentLoaded", async function () {
     }
 
     appController.initForm();
+    listController.initListListeners();
 
     if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/handa360/serviceWorker.js")
