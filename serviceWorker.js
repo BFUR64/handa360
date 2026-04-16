@@ -45,6 +45,7 @@ const ASSETS = [
     BASE + "web/js/controllers/appController.js",
     BASE + "web/js/controllers/backButtonController.js",
     BASE + "web/js/controllers/formController.js",
+    BASE + "web/js/controllers/listController.js",
     BASE + "web/js/controllers/navigationController.js",
     BASE + "web/js/controllers/outputController.js",
 

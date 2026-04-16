@@ -16,8 +16,35 @@
     top: 30px;
 }
 
-.contactlist-item {
+.contactlist-block.dropdown-open .contactlist-item {
     display: flex;
+}
+
+#contactlist-toggle {
+    background: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    font-family: var(--main-font-family);
+}
+
+.contactlist-header::after {
+    content: "▼";
+    right: 20px;
+    position: absolute;
+    font-size: 16px;
+    color: var(--text);
+
+}
+.contactlist-block.dropdown-open .contactlist-header::after {
+    content: "▲";
+}
+
+.contactlist-item {
+    display: none; 
 
     align-items: center;
     gap: 10px;
@@ -49,24 +76,22 @@
     font: inherit;
     transition: background 0.2s, border-color 0.2s;
 
-    /* NEW: Prevent layout shift */
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 85px; /* Ensures space for "Copied!" */
-    height: 40px;   /* Match your existing input height */
+    min-width: 85px; 
+    height: 40px;  
     position: relative;
 }
 
-/* THE FIX: An invisible element that forces the button to be wide enough for "Copied!" */
 .contactlist-copy-button::after {
     content: "Copied!";
     height: 0;
     visibility: hidden;
     overflow: hidden;
     display: block;
-    font-weight: bold; /* Match the font weight of your feedback text */
+    font-weight: bold;
 }
 
 .contactlist-copy-button:hover {
