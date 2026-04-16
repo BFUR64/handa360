@@ -99,10 +99,6 @@
     border-color: rgba(255, 255, 255, 0.6);
 }
 
-.contactlist-header {
-    margin-top: 0;
-}
-
 @media (max-width: 600px) {
     .contactlist-item {
         flex-direction: column;
