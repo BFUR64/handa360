@@ -8,6 +8,8 @@ import * as formController from "./formController.js";
 
 import * as outputController from "./outputController.js";
 
+import * as listController from "../controllers/listController.js";
+
 /** @typedef {import("../controllers/formController.js").UserInput} UserInput */
 
 export function initForm() {
@@ -24,5 +26,7 @@ function addFormSubmittedListener(form) {
         outputController.initOutput(customEvent, () => {
             initForm();
         });
+
+        listController.initListListeners();
     })
 }

@@ -44,7 +44,7 @@
 }
 
 .checklist-item {
-    display: none; 
+    display: none;
     align-items: center;
     gap: 16px;
 
@@ -61,7 +61,6 @@
     font-weight: bold;
     transition: color 0.33s ease, background-color 0.33s ease, text-decoration 0.33s ease;
     z-index: 1;
-   
 }
 
 .checklist-item-checkbox {
