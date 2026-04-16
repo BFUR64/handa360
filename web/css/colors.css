@@ -39,7 +39,7 @@
     --footer-bg: #111827;
 }
 
-@media (prefers-color-scheme: ark) {
+@media (prefers-color-scheme: dark) {
     :root {
         --bg: #151515;
         --text: #e5e7eb;
