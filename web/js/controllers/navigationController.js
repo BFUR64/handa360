@@ -12,6 +12,8 @@
  * - DOM contains elements with ids: navigate-home, navigate-about, navigate-contact, container, footer, about-section, contact-section
  */
 
+import * as appController from "./appController.js";
+
 /**
  * Initializes navigation event listeners for page sections.
  * Clicking a nav button will show the associated section and hide others.
@@ -32,6 +34,8 @@ export function initNavigationListeners() {
         contact.classList.remove('show');
         footer.classList.remove('show');
         home.style.display = 'flex';
+
+        appController.initForm();
     });
 
     navAbout.addEventListener('click', function (e) {
