@@ -116,6 +116,9 @@
     gap: 16px;
     border-top: 1px solid var(--toast-border);
     padding: 0;
+
+    /* For IOS */
+    z-index: 1;
 }
 
 .btn-submit {
