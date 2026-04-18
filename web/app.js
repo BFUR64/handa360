@@ -35,6 +35,8 @@ addEventListener("DOMContentLoaded", async function () {
             .then(() => console.log("Service worker registered"))
             .catch(err => console.log("Service worker registration failed", err));
     }
+
+    // Test Commit
 })
 
 function syncInBackground() {
