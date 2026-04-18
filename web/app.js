@@ -10,13 +10,10 @@
  * - UI rendering for the initial form
  * - Service Worker for offline registering
  *
- *
  * Essentially, this file wires together controllers, services, and UI modules
  * into a working page. Individual modules handle their own data validation,
  * rendering, and normalization.
  */
-
-import * as toastNotification from "./js/ui/toastNotification.js";
 
 import * as cacheService from "./js/services/cacheService.js";
 
@@ -29,12 +26,7 @@ import * as appController from "./js/controllers/appController.js";
 addEventListener("DOMContentLoaded", async function () {
     navigationController.initNavigationListeners();
 
-    cacheService.loadFromStorage();
-    const syncSuccess = await cacheService.syncFromRemote();
-
-    if (!syncSuccess) {
-        toastNotification.showToast("Failed to fetch remote JSON data", "error");
-    }
+    syncInBackground();
 
     appController.initForm();
 
@@ -44,3 +36,24 @@ addEventListener("DOMContentLoaded", async function () {
             .catch(err => console.log("Service worker registration failed", err));
     }
 })
+
+function syncInBackground() {
+    cacheService.loadFromStorage();
+
+    attemptSync()
+        .then(() => console.log("Sync complete"))
+        .catch(() => console.log("Sync failed"))
+}
+
+async function attemptSync() {
+    for (let retryCount = 0; retryCount < 5; retryCount++) {
+        const syncSuccess = await cacheService.syncFromRemote();
+
+        if (syncSuccess) return true;
+
+        console.log("Attempt " + (retryCount + 1) + ": Failed to fetch remote data. Retrying in 5 seconds...")
+        await new Promise(r => setTimeout(r, 5000));
+    }
+
+    throw new Error("Sync failed");
+}
