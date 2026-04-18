@@ -23,6 +23,7 @@
 
 
 import * as formRenderer from "../ui/formRenderer.js";
+import * as toastNotification from "../ui/toastNotification.js";
 
 /** @typedef {{ locationSelected: string, hazardSelected: string, specialNeedsSelected: string[]}} UserInput */
 /** @typedef {import("../data/cachedData.js").Question} Question */
@@ -134,6 +135,11 @@ function attachSubmitEvent(form) {
 
         const data = extractFormData(form);
 
+        if (!isFormValid(data)) {
+            toastNotification.showToast("Select at least 1 input", "error");
+            return;
+        }
+
         form.dispatchEvent(new CustomEvent("formSubmitted", { detail: data }));
     })
 }
@@ -152,4 +158,13 @@ function extractFormData(form) {
         hazardSelected: String(formData.get("hazard") || ""),
         specialNeedsSelected: formData.getAll("special_needs").map(String)
     }
+}
+
+/** @param {UserInput} data */
+function isFormValid(data) {
+    return (
+        data.locationSelected !== "" ||
+        data.hazardSelected !== "" ||
+        data.specialNeedsSelected.length > 0
+    )
 }
