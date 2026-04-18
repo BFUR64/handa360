@@ -72,6 +72,8 @@ export function RenderGobag(gobagItemRegistry, gobagItems, ids, title) {
         }
     }
 
+    if (set.size === 0) return;
+
     const gobag = /** @type {string[]} */ ([...set]);
 
     const checklist = /** @type {DocumentFragment} */ (checklistTemplate.content.cloneNode(true));
