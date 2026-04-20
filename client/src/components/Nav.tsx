@@ -1,6 +1,6 @@
-import "../../css/navigation.css";
+import "../assets/css/navigation.css";
 
-export function Nav() {
+function Nav() {
     return (
         <header className="navbar-container">
             <img src="" alt="" />
@@ -13,3 +13,5 @@ export function Nav() {
         </header>
     )
 }
+
+export default Nav;

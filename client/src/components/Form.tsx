@@ -1,4 +1,4 @@
-import "../../css/form.css";
+import "../assets/css/form.css";
 
 export interface Question {
     id: string,
@@ -12,7 +12,7 @@ export interface Option {
     text: string
 }
 
-export function Form({ questions }: {questions: Question[]}) {
+function Form({ questions }: {questions: Question[]}) {
     return (
         <>
         <div className="question-form">
@@ -65,3 +65,5 @@ export function Form({ questions }: {questions: Question[]}) {
         </>
     );
 }
+
+export default Form;

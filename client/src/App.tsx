@@ -1,9 +1,9 @@
-import { Nav } from "./ts/ui/navRenderer.tsx";
-import { Form } from "./ts/ui/formRenderer.tsx";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import type { Question, Option } from "./ts/ui/formRenderer.tsx";
+import Layout from "./components/Layout";
+import Form from "./components/Form";
 
-import "./css/app.css";
+import type { Question, Option } from "./components/Form";
 
 const testingOptions: Option[] = [
     {
@@ -21,16 +21,16 @@ const testing: Question[] = [
     }
 ];
 
-export function App() {
+function App() {
     return (
-        <>
-            <div className="app-root">
-                <Nav />
-
-                <main className="main-content">
-                    <Form questions={testing} />
-                </main>
-            </div>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path="/" element={<Form questions={testing} />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
+
+export default App;
