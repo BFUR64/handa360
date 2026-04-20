@@ -1,0 +1,16 @@
+.navbar-container {
+    padding: 20px;
+
+    display: flex;
+}
+
+.navbar {
+    margin-left: auto;
+
+    display: flex;
+    gap: 8px;
+
+    a {
+        text-decoration: none;
+    }
+}

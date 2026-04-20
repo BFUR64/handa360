@@ -1,0 +1,63 @@
+.question-form {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.question-list {
+    overflow-y: auto;
+}
+
+.question {
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+
+.prompt {
+    margin: 0;
+}
+
+.selection-hint {
+    margin: 0;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+}
+
+.option {
+    position: relative;
+}
+
+.option input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.form-actions {
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 16px;
+}
+
+.form-button {
+    padding: 10px 20px;
+}
