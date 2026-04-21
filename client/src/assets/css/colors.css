@@ -5,7 +5,7 @@
     --color-surface-elevated: ; /* An overlay for the overlay */
 
     /* === Text === */
-    --color-text-primary: ; /* Main text */
+    --color-text-primary: #000000; /* Main text */
     --color-text-secondary: ; /* Subtle Text */
     --color-text-inverted: ; /* TODO Determine if needed */
 
