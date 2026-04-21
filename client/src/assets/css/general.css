@@ -1,12 +1,16 @@
 * {
     box-sizing: border-box;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+}
+
+html {
+    scrollbar-gutter: stable both-edges;
 }
 
 body {
     margin: 0;
-}
 
-::-webkit-scrollbar {
-    display: none;
+    font-family: Aptos, Arial, Helvetica, sans-serif;
+
+    background-color: var(--color-background);
 }

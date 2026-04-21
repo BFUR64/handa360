@@ -1,4 +1,5 @@
 import "../assets/css/navigation.css";
+import "../assets/css/colors.css";
 
 function Nav() {
     return (

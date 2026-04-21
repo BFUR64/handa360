@@ -6,12 +6,18 @@
 }
 
 .form {
+    width: 80dvw;
+
     display: grid;
     grid-template-rows: 1fr auto;
+
+    @media (min-width: 768px) {
+        width: 50dvw;
+    }
 }
 
 .question-list {
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .question {
@@ -34,10 +40,23 @@
     flex-direction: column;
 
     overflow-y: auto;
+
+    gap: 16px;
+    margin-top: 10px;
 }
 
 .option {
+    cursor: pointer;
     position: relative;
+
+    padding: 10px;
+
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-border);
+}
+
+.option:hover {
+    background-color: var(--color-accent-hover);
 }
 
 .option input {
@@ -60,4 +79,12 @@
 
 .form-button {
     padding: 10px 20px;
+}
+
+.allowed {
+    background-color: var(--color-success);
+}
+
+.denied {
+    background-color: var(--color-neutral);
 }

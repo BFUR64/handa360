@@ -2,6 +2,8 @@
     padding: 20px;
 
     display: flex;
+
+    border-bottom: 1px solid var(--color-border-light);
 }
 
 .navbar {

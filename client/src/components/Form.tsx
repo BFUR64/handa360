@@ -1,4 +1,5 @@
 import "../assets/css/form.css";
+import "../assets/css/colors.css";
 
 export interface Question {
     id: string,
