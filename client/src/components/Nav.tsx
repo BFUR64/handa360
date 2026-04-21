@@ -1,10 +1,12 @@
 import "../assets/css/navigation.css";
 import "../assets/css/colors.css";
 
+import favicon from "../assets/icons/favicon.svg";
+
 function Nav() {
     return (
         <header className="navbar-container">
-            <img src="" alt="" />
+            <img src={favicon} loading="lazy" alt="Handa360 Logo" />
 
             <nav className="navbar">
                 <a href="" id="home">Home</a>
