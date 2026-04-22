@@ -1,0 +1,38 @@
+.navbar-container {
+    display: flex;
+
+    border-bottom: 1px solid var(--color-border-light);
+
+    padding: 10px;
+
+    img {
+        width: 100px;
+        height: 47.7167px;
+
+        padding: 5px 10px;
+    }
+}
+
+.navbar {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    @media (min-width: 768px) {
+        gap: 16px;
+    }
+
+    a {
+        padding: 10px 5px;
+
+        color: var(--color-text-primary);
+        text-decoration: none;
+
+        @media (min-width: 768px) {
+            padding: 10px 10px;
+        }
+    }
+}
