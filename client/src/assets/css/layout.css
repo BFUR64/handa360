@@ -1,0 +1,12 @@
+.app-root {
+    height: 100dvh;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    gap: 20px;
+}
+
+.main-content {
+    min-height: 0;
+}
