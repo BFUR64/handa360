@@ -1,5 +1,14 @@
 # Handa360
 
+## 🚧 ACTIVE DEVELOPMENT NOTICE 🚧
+- **Production/Stable:** `main` (V1 Vanilla JS - Deployed at [bfur64.github.io/handa360/](https://bfur64.github.io/handa360/))
+- **Next Gen (Unstable):** `v2-dev` (Vite + React + TypeScript rewrite)
+- **Preview:** `v2` (Release candidate snapshots)
+
+**Contributors:** PRs against `main` for V1 hotfixes only. All feature work targets `v2-dev`.
+
+---
+
 **Consolidates 3+ fragmented disaster resources into 1 localized action plan**
 
 Handa360 web app that turns general disaster-preparedness instructions into a catered set of actionable items.
