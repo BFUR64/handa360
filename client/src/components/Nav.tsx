@@ -3,7 +3,7 @@ import "../assets/css/colors.css";
 
 import favicon from "../assets/icons/favicon.svg";
 
-function Nav() {
+export default function Nav() {
     return (
         <header className="navbar-container">
             <img src={favicon} loading="lazy" alt="Handa360 Logo" />
@@ -16,5 +16,3 @@ function Nav() {
         </header>
     )
 }
-
-export default Nav;

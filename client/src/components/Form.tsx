@@ -13,7 +13,7 @@ export interface Option {
     text: string
 }
 
-function Form({ questions }: {questions: Question[]}) {
+export default function Form({ questions }: {questions: Question[]}) {
     return (
         <>
         <div className="question-form">
@@ -66,5 +66,3 @@ function Form({ questions }: {questions: Question[]}) {
         </>
     );
 }
-
-export default Form;

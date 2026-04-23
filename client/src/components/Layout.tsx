@@ -3,7 +3,7 @@ import Nav from "./Nav";
 
 import "../assets/css/layout.css";
 
-function Layout() {
+export default function Layout() {
     return (
         <div className="app-root">
             <Nav />
@@ -14,5 +14,3 @@ function Layout() {
         </div>
     );
 }
-
-export default Layout;
