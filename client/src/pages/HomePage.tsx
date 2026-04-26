@@ -1,25 +1,10 @@
 import Form from "../components/Form";
 
-import type { Question, Option } from "../components/Form";
-
-const testingOptions: Option[] = [
-    {
-        id: "Bruh",
-        text: "Bruh2"
-    }
-];
-
-const testing: Question[] = [
-    {
-        id: "hello_world",
-        text: "Hello World",
-        selectionType: "single",
-        options: testingOptions
-    }
-];
+import * as cache from "../store/cache";
+// import { getQuestions } from '../store/cache';
 
 export default function HomePage() {
     return (
-        <Form questions={testing}/>
+        <Form questions={cache.getQuestions()}/>
     );
 }

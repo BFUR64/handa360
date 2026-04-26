@@ -1,17 +1,7 @@
 import "../assets/css/form.css";
 import "../assets/css/colors.css";
 
-export interface Question {
-    id: string,
-    text: string,
-    selectionType: string,
-    options: Option[]
-}
-
-export interface Option {
-    id: string,
-    text: string
-}
+import type { Question } from "../store/cache";
 
 export default function Form({ questions }: {questions: Question[]}) {
     return (
@@ -19,42 +9,21 @@ export default function Form({ questions }: {questions: Question[]}) {
         <div className="question-form">
             <form className="form">
                 <div className="question-list">
-                    <section className="question">
-                        <h2 className="prompt">What's the Hazard?</h2>
-                        <p className="selection-hint">Select Multiple</p>
-                        <div className="options">
-                            {
-                                [...Array(100)].map((_, i) => (
+                    {questions.map((question) => (
+                        <section className="question">
+                            <h2 className="prompt">{question.text}</h2>
+                            <p className="selection-hint">Select Multiple</p>
+
+                            <div className="options">
+                                {question.options.map((option) => (
                                     <label className="option">
                                         <input />
-                                        <span className="option-text">Option {i}</span>
+                                        <span className="option-text">{option.text}</span>
                                     </label>
-                                ))
-                            }
-                        </div>
-                    </section>
-                    {/* <section className="question">
-                        <h2 className="prompt">What's the Location?</h2>
-                        <div className="options">
-                            <p className="selection-hint">Select Multiple</p>
-                            <label className="option">
-                                <input />
-                                <span className="option-text">Option</span>
-                            </label>
-                            <label className="option">
-                                <input />
-                                <span className="option-text">Option</span>
-                            </label>
-                            <label className="option">
-                                <input />
-                                <span className="option-text">Option</span>
-                            </label>
-                            <label className="option">
-                                <input />
-                                <span className="option-text">Option</span>
-                            </label>
-                        </div>
-                    </section> */}
+                                ))}
+                            </div>
+                        </section>
+                    ))}
                 </div>
 
                 <div className="form-actions">
