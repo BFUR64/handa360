@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+html, body {
+    overscroll-behavior: none;
+}
+
+::webkit-scrollbar {
+    display: none;
+}
+
+body {
+    --main-font-family: Cambria, serif;
+    font-family: var(--main-font-family);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: center;
+    overflow: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20dvw;
+    margin-right: 20dvw;
+}
