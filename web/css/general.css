@@ -33,6 +33,8 @@ header {
     width: 100%;
 
     padding: 1rem 1.5rem;
+
+    border-bottom: 1px solid black;
 }
 
 header img {
@@ -140,8 +142,6 @@ header nav {
 @media (max-width: 600px) {
     header {
         padding: 0.5rem 1rem;
-
-        border-bottom: 1px solid black;
     }
 
     header img {
