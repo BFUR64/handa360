@@ -21,7 +21,7 @@ header {
     align-items: center;
 
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
 
     border-bottom: 1px solid black;
 }
@@ -36,6 +36,14 @@ header img {
     gap: 1rem;
 
     list-style: none;
+}
+
+.nav-list button {
+    appearance: none;
+    border: none;
+    background: none;
+
+    cursor: pointer;
 }
 
 .form-container {
