@@ -1,7 +1,16 @@
 * {
     font-size: 1rem;
-    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: hidden;
 }
 
 body {
@@ -12,6 +21,8 @@ body {
     gap: 1rem;
 
     height: 100dvh;
+    width: 100dvw;
+
     margin: 0;
 }
 
@@ -30,6 +41,14 @@ header img {
 
 header nav {
     margin-left: auto;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
 }
 
 .nav-list {
@@ -62,7 +81,7 @@ header nav {
 
     width: 100%;
 
-    overflow: auto;
+    overflow-y: auto;
 
     margin-bottom: 1rem;
 
@@ -103,6 +122,9 @@ header nav {
 }
 
 .btn-form {
+    appearance: none;
+    border: 1px solid black;
+
     cursor: pointer;
 
     padding: 1rem;
