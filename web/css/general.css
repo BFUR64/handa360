@@ -33,7 +33,9 @@ header img {
 .nav-list {
     display: flex;
 
-    gap: 1rem;
+    gap: 3rem;
+
+    padding: 0;
 
     list-style: none;
 }
@@ -81,7 +83,6 @@ fieldset {
     border: 1px solid black;
 
     cursor: pointer;
-
 }
 
 .option-container:has(input:focus) {
@@ -132,6 +133,10 @@ fieldset {
 
     header img {
         height: 35px;
+    }
+
+    .nav-list {
+        gap: 1rem;
     }
 
     fieldset {
