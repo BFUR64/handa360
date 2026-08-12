@@ -1,5 +1,7 @@
 // @ts-check
 
+import { Events } from "../event.js";
+
 const MAX_STEP = 3;
 const MIN_STEP = 1;
 
@@ -10,6 +12,36 @@ let formStep = 1;
  */
 export function setFormStep(value) {
     formStep = value;
+
+    document.dispatchEvent(new Event(Events.FORMSTATE_CHANGE));
+}
+
+/**
+ * @param {number} value
+ */
+export function increaseFormStep(value) {
+    if (formStep + value > MAX_STEP) {
+        formStep = MAX_STEP;
+    }
+    else {
+        formStep += value;
+    }
+
+    document.dispatchEvent(new Event(Events.FORMSTATE_CHANGE));
+}
+
+/**
+ * @param {number} value
+ */
+export function decreaseFormStep(value) {
+    if (formStep - value < MIN_STEP) {
+        formStep = MIN_STEP;
+    }
+    else {
+        formStep -= value;
+    }
+
+    document.dispatchEvent(new Event(Events.FORMSTATE_CHANGE));
 }
 
 export function getFormStep() {

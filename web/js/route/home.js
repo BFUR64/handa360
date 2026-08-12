@@ -1,11 +1,11 @@
 // @ts-check
 
-import { initFormUI } from "../ui/formUI.js";
+import { initFormController } from "../controller/formController.js";
 
 /**
  * @param {HTMLElement} root
  */
 export function initHomeRoute(root) {
     root.innerHTML = "";
-    initFormUI(root);
+    initFormController(root);
 }

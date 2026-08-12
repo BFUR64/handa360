@@ -1,88 +1,44 @@
 // @ts-check
 
 import { Events } from "../event.js";
-import { getQuestions } from "../state/cachedDatabase.js";
-
-/** @typedef {import("../state/cachedDatabase").Question} Question */
+import * as formState from "../state/formState.js";
 
 /**
- * @param {HTMLElement} root
+ * @param {HTMLButtonElement} previousButton
+ * @param {HTMLButtonElement} nextButton
  */
-export function initFormUI(root) {
-    const questions = getQuestions();
-
-    if (!questions) {
-        document.addEventListener(Events.DATABASE_CHANGE, () => {
-            initFormUI(root);
-        }, { once: true });
-
-        return;
-    }
-
-    generateForm(root, questions);
-}
-
-// TODO Replace with a controller of the following:
-// TODO 1. Create the form first
-// TODO 2. Then attempt to load the data
-// TODO 3. If data fails, use the spinner inside `fieldset`
-// TODO 4. Once database change, replace the spinner with the actual data, wiping the contents of the `fieldset` element
-/**
- * @param {HTMLElement} root
- * @param {Question[]} questions
- */
-function generateForm(root, questions) {
-    const form = document.createElement("form");
-    form.className = "form-container";
-
-    const fieldset = document.createElement("fieldset");
-    form.append(fieldset);
-
-    const legend = document.createElement("legend");
-    legend.textContent = questions[0].text;
-    legend.className = "form-title";
-    fieldset.append(legend);
-
-    questions[0].options.forEach(option => {
-        const label = document.createElement("label");
-        label.className = "option-container";
-        fieldset.append(label);
-
-        const input = document.createElement("input");
-        input.type = "checkbox";
-        input.name = questions[0].id;
-        input.value = option.id;
-        label.append(input);
-
-        const span = document.createElement("span");
-        span.className = "btn-option";
-        span.textContent = option.text;
-        label.append(span);
+export function initFormButtons(previousButton, nextButton) {
+    previousButton.addEventListener('click', () => {
+        formState.decreaseFormStep(1);
     });
 
-    generateFormButtons(form);
+    // TODO Replace with behavior for finishing
+    nextButton.addEventListener('click', () => {
+        if (formState.getFormStep() == formState.getMaxStep()) {
+            nextButton.textContent = "Placeholder";
+            return;
+        }
 
-    root.append(form);
+        formState.increaseFormStep(1);
+    })
 
-}
+    document.addEventListener(Events.FORMSTATE_CHANGE, () => {
+        if (formState.getFormStep() == formState.getMinStep()) {
+            previousButton.disabled = true;
+        }
+        else {
+            previousButton.disabled = false;
+        }
+    });
 
-/**
- * @param {HTMLElement} form
- */
-function generateFormButtons(form) {
-    const div = document.createElement("div");
-    div.className = "form-btn-container";
-    form.append(div);
+    document.addEventListener(Events.FORMSTATE_CHANGE, () => {
+        if (formState.getFormStep() == formState.getMaxStep()) {
+            nextButton.textContent = "Finish";
+        }
+        else {
+            nextButton.textContent = "Next";
+        }
+    })
 
-    const button1 = document.createElement("button");
-    button1.textContent = "Previous";
-    button1.type = "button";
-    button1.className = "btn-form";
-    div.append(button1);
-
-    const button2 = document.createElement("button");
-    button2.textContent = "Next";
-    button2.type = "button";
-    button2.className = "btn-form";
-    div.append(button2);
+    formState.setFormStep(1);
 }
