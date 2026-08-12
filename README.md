@@ -2,10 +2,9 @@
 
 ## 🚧 ACTIVE DEVELOPMENT NOTICE 🚧
 - **Production/Stable:** `main` (V1 Vanilla JS - Deployed at [bfur64.github.io/handa360/](https://bfur64.github.io/handa360/))
-- **Next Gen Development:** `v2` (Vite + React + TypeScript rewrite – continuous branch; pre‑release tags: alpha, beta, rc, final)
-- **Work-in-progress playground:** `v2-dev` (chaotic, personal – PRs not accepted here)
+- **Next Gen Development:** `v1-dev` (Refined architecture and UI design)
 
-**Contributors:** PRs against `main` for V1 hotfixes only. All feature work targets `v2`.
+**Contributors:** PRs against `main` for V1 hotfixes only. All feature work targets `v1-dev`.
 
 ---
 
