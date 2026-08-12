@@ -1,8 +1,8 @@
 // @ts-check
 
-import { initAboutRoute } from "./routes/about.js";
-import { initContactsRoute } from "./routes/contacts.js";
-import { initHomeRoute } from "./routes/home.js";
+import { initAboutRoute } from "./route/about.js";
+import { initContactsRoute } from "./route/contacts.js";
+import { initHomeRoute } from "./route/home.js";
 
 // ----- Root Element -----
 const root = /** @type {HTMLElement} */ (document.querySelector("#root"));
