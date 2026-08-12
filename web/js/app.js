@@ -35,7 +35,7 @@ async function initializeSyncService() {
     // TODO Throw toast noficiation it is syncing
     for (let attempt = 0; attempt < maxRetries && !response.ok; attempt++) {
         try {
-            await new Promise(r => setTimeout(r, 3000));
+            await new Promise(r => setTimeout(r, 3000 * attempt));
             response = await sync();
         }
         catch (err) {

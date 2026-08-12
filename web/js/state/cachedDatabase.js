@@ -1,5 +1,7 @@
 // @ts-check
 
+import { Events } from "../event.js";
+
 /**
  * @typedef {Object} Option
  * @property {string} id - Unique identifier for the option
@@ -44,32 +46,22 @@ let database = null;
  */
 export function setDatabase(data) {
     database = data;
+
+    document.dispatchEvent(new Event(Events.DATABASE_CHANGE))
 }
 
-/**
- * @returns {DisasterPreparednessData | null}
- */
 export function getDatabase() {
     return database;
 }
 
-/**
- * @returns {Question[] | undefined}
- */
 export function getQuestions() {
     return database?.questions;
 }
 
-/**
- * @returns {Instructions | undefined}
- */
 export function getInstructions() {
     return database?.instructions;
 }
 
-/**
- * @returns {GoBag | undefined}
- */
 export function getGoBag() {
     return database?.gobag;
 }
