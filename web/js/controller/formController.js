@@ -1,6 +1,6 @@
 // @ts-check
 
-import { initFormButtons } from "../ui/formUI.js";
+import { initFormUI } from "../ui/formUI.js";
 
 /**
  * @param {HTMLElement} root
@@ -20,7 +20,7 @@ export function initFormController(root) {
 
     const { previousButton, nextButton } = generateFormButtons(form);
 
-    initFormButtons(previousButton, nextButton);
+    initFormUI(previousButton, nextButton, fieldset, legend);
 }
 
 /**
