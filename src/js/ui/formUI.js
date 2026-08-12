@@ -65,9 +65,7 @@ function initFormContent(fieldset, legend) {
         const formStepZeroed = formState.getFormStep() - 1;
 
         if (!questions) {
-            console.log("Questions unavailable");
             document.addEventListener(Events.DATABASE_CHANGE, () => {
-                console.log("Database Change! Init form content...");
                 initFormContent(fieldset, legend);
             }, { once: true });
             return;
