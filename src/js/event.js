@@ -3,5 +3,5 @@
 /** @enum {string} */
 export const Events = {
     DATABASE_CHANGE: "database:change",
-    FORMSTATE_CHANGE: "formstep:change"
+    FORMSTEP_CHANGE: "formstep:change"
 }

@@ -1,7 +1,7 @@
 // @ts-check
 
 import { Events } from "../event.js";
-import * as formState from "../state/formState.js";
+import * as formState from "../state/formStep.js";
 import * as cachedDatabase from "../state/cachedDatabase.js";
 
 /** @typedef {import("../state/cachedDatabase.js").Question} Question */
@@ -38,7 +38,7 @@ function initFormButtons(previousButton, nextButton) {
         formState.increaseFormStep(1);
     })
 
-    document.addEventListener(Events.FORMSTATE_CHANGE, () => {
+    document.addEventListener(Events.FORMSTEP_CHANGE, () => {
         if (formState.getFormStep() == formState.getMinStep()) {
             previousButton.disabled = true;
         }
@@ -60,7 +60,7 @@ function initFormButtons(previousButton, nextButton) {
  * @param {HTMLElement} legend
  */
 function initFormContent(fieldset, legend) {
-    document.addEventListener(Events.FORMSTATE_CHANGE, () => {
+    document.addEventListener(Events.FORMSTEP_CHANGE, () => {
         const questions = cachedDatabase.getQuestions()
         const formStepZeroed = formState.getFormStep() - 1;
 
