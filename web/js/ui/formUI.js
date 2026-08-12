@@ -14,7 +14,7 @@ export function initFormUI(root) {
     if (!questions) {
         document.addEventListener(Events.DATABASE_CHANGE, () => {
             initFormUI(root);
-        });
+        }, { once: true });
 
         return;
     }
@@ -22,6 +22,11 @@ export function initFormUI(root) {
     generateForm(root, questions);
 }
 
+// TODO Replace with a controller of the following:
+// TODO 1. Create the form first
+// TODO 2. Then attempt to load the data
+// TODO 3. If data fails, use the spinner inside `fieldset`
+// TODO 4. Once database change, replace the spinner with the actual data, wiping the contents of the `fieldset` element
 /**
  * @param {HTMLElement} root
  * @param {Question[]} questions
