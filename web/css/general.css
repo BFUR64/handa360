@@ -132,8 +132,13 @@ fieldset {
 }
 
 @media (max-width: 600px) {
+    body {
+        gap: 0;
+    }
+
     header {
         padding: 0.5rem 1rem;
+        border: none;
     }
 
     header img {
@@ -157,6 +162,23 @@ fieldset {
     fieldset {
         height: auto;
         width: 100dvw;
+
         border: none;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}
+
+@media (max-width: 350px) {
+    header {
+        padding: 0.25rem 0.5rem;
+    }
+
+    .nav-list {
+        gap: 0.5rem;
+    }
+
+    .btn-form {
+        width: 7.5rem;
     }
 }
