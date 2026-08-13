@@ -8,9 +8,7 @@ import navigate from "../utils/navigator.js";
 /** @typedef {import("../state/cachedDatabase.js").Question} Question */
 /** @typedef {import("../state/cachedDatabase.js").Option} Option */
 
-/**
- * @typedef {Object.<string, Object.<string, boolean>>} Answers
- */
+/** @typedef {import("../app.jsx").Answers} Answers */
 
 /**
  * @param {{ answers: Answers, setAnswers: import("react").Dispatch<import("react").SetStateAction<Answers>> }} property
@@ -40,7 +38,10 @@ export default function Form ({ answers, setAnswers }) {
                         Object.fromEntries(
                             question.options.map(option => [
                                 option.id,
-                                false
+                                {
+                                    checked: false,
+                                    text: option.text
+                                }
                             ])
                         )
                     ]
@@ -107,18 +108,20 @@ function Question ({ question, answers, setAnswers }) {
                             type="checkbox"
                             name={question.id}
                             value={option.id}
-                            checked={answers[question.id]?.[option.id] ?? false}
+                            checked={answers?.[question.id]?.[option.id].checked ?? false}
                             onChange={event => {
                                 setAnswers(previous => ({
                                     ...previous,
                                     [question.id]: {
                                         ...previous[question.id],
-                                        [option.id]: event.target.checked
+                                        [option.id]: {
+                                            checked: event.target.checked,
+                                            text: option.text
+                                        }
                                     }
                                 }))
                             }}
                         />
-
                         <span className="btn-option">{option.text}</span>
                     </label>
                 ))

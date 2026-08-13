@@ -2,7 +2,7 @@
     "schemaVersion": 1,
     "questions": [
         {
-            "id": "hazard",
+            "id": "hazards",
             "text": "What's the hazard?",
             "options": [
                 { "id": "typhoon", "text": "Typhoon" },
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "id": "location",
+            "id": "locations",
             "text": "Where are you?",
             "options": [
                 { "id": "kalibo", "text": "Kalibo" },
@@ -164,7 +164,7 @@
                 "Stock up on disease-specific emergency supplies (e.g., extra test strips for diabetes, backup rescue inhalers for asthma)"
             ]
         },
-        "contacts": {
+        "locations": {
             "kalibo": [
                 "Police - 166 / (036) 262-2176",
                 "Fire Station - (036) 262-4242",

@@ -2,6 +2,7 @@
 
 import navigate from "../utils/navigator.js";
 
+// TODO Replace .png with .svg file
 export default function Nav () {
     return (
         <header>

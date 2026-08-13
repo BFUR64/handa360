@@ -2,62 +2,53 @@
 
 import * as cachedDatabase from "../state/cachedDatabase.js";
 
-/**
- * @typedef {Object.<string, Object.<string, boolean>>} Answers
- */
+/** @typedef {import("../app.jsx").Answers} Answers */
 
 /**
  * @param {{ answers: Answers }} property
  */
 export default function Result ({ answers }) {
     const instructions = cachedDatabase.getInstructions();
+    const questions = cachedDatabase.getQuestions();
 
-    if (!instructions) return;
+    if (!instructions || !questions) return;
 
-    /** @type {[string[]]} */
-    const selectedInstructions = [[]];
+    /** @type {Object.<string, string[]>} */
+    const selectedInstructions = {};
 
-    Object.entries(answers).forEach(([questionId, options]) => {
-        Object.entries(options).forEach(([optionId, bool]) => {
-            if (bool === true) {
-                if (questionId === "hazard") {
-                    selectedInstructions.push(instructions.hazards[optionId]);
-                }
-
-                if (questionId === "special_needs") {
-                    selectedInstructions.push(instructions.special_needs[optionId]);
-                }
-
-                if (questionId === "location") {
-                    selectedInstructions.push(instructions.contacts[optionId]);
-                }
+    Object.entries(answers).forEach(([questionId, questionAnswers]) => {
+        Object.entries(questionAnswers).forEach(([optionId, answerDetail]) => {
+            if (answerDetail.checked) {
+                Object.entries(instructions).forEach(([category, instructionDetail]) => {
+                    if (category == questionId) {
+                        selectedInstructions[answerDetail.text] = instructionDetail[optionId];
+                    }
+                })
             }
-        })
-    })
+        });
+    });
 
     return (
         <main>
-            {selectedInstructions.map((instructions, index) => (
-                <Container
-                    key={index}
-                    instructions={instructions}
-                />
-            ))}
+            <Container selectedInstructions={selectedInstructions}/>
         </main>
     );
 }
 
 /**
- * @param {{ instructions: string[] }} props
+ * @param {{ selectedInstructions: Object.<string, string[]> }} props
  */
-function Container ({ instructions }) {
-    return (
-        <section>
-            {instructions.map(instruction => (
-                <p key={instruction}>
-                    {instruction}
-                </p>
-            ))}
+function Container ({ selectedInstructions }) {
+    return Object.entries(selectedInstructions).map(([answerText, instructions], index) => (
+        <section key={index}>
+            <h1>{answerText}</h1>
+            {
+                instructions.map((instruction, index) => (
+                    <p key={index}>
+                        {instruction}
+                    </p>
+                ))
+            }
         </section>
-    );
+    ));
 }

@@ -19,7 +19,7 @@ import { Events } from "../event.js"
  * @typedef {Object} Instructions
  * @property {Object.<string, string[]>} hazards - Instructions grouped by hazard type
  * @property {Object.<string, string[]>} special_needs - Instructions grouped by special needs category
- * @property {Object.<string, string[]>} contacts - Emergency contacts grouped by location
+ * @property {Object.<string, string[]>} locations - Emergency contacts grouped by location
  */
 
 /**

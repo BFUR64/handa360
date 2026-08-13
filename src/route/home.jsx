@@ -2,9 +2,7 @@
 
 import Form from "../components/form.jsx";
 
-/**
- * @typedef {Object.<string, Object.<string, boolean>>} Answers
- */
+/** @typedef {import("../app.jsx").Answers} Answers */
 
 /**
  * @param {{ answers: Answers, setAnswers: import("react").Dispatch<import("react").SetStateAction<Answers>> }} property

@@ -5,9 +5,16 @@ import Nav from "./route/nav.jsx";
 import Home from "./route/home.jsx";
 import Result from "./route/result.jsx";
 
+
+/** @typedef {Object.<string, QuestionAnswers>} Answers */
+
+/** @typedef {Object.<string, AnswerDetail>} QuestionAnswers */
+
 /**
- * @typedef {Object.<string, Object.<string, boolean>>} Answers
- */
+ * @typedef {Object} AnswerDetail
+ * @property {boolean} checked
+ * @property {string} text
+*/
 
 export default function App () {
     const [path, setPath] = useState(window.location.pathname);
