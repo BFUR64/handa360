@@ -51,10 +51,12 @@ export default function Form ({ answers, setAnswers }) {
 
     return (
         <form className="form-container">
-            {questions
-                ? <Question question={questions[questionIndex]} answers={answers} setAnswers={setAnswers} />
-                : <p>Loading...</p>
-            }
+            <fieldset>
+                {questions
+                    ? <Question question={questions[questionIndex]} answers={answers} setAnswers={setAnswers} />
+                    : <p>Loading...</p>
+                }
+            </fieldset>
 
             <div className="form-btn-container">
                 { getPreviousButton(questionIndex, setQuestionIndex) }
@@ -95,7 +97,7 @@ function getNextButton(questionIndex, setQuestionIndex) {
  */
 function Question ({ question, answers, setAnswers }) {
     return (
-        <fieldset>
+        <>
             <legend className="form-title">{question.text}</legend>
 
             {
@@ -121,6 +123,6 @@ function Question ({ question, answers, setAnswers }) {
                     </label>
                 ))
             }
-        </fieldset>
+        </>
     );
 }
