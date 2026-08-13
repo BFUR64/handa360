@@ -1,8 +1,9 @@
 // @ts-check
 
 import { Events } from "../event.js";
-import * as formState from "../state/formStep.js";
+import * as formStep from "../state/formStep.js";
 import * as cachedDatabase from "../state/cachedDatabase.js";
+import * as formState from "../state/formState.js";
 
 /** @typedef {import("../state/cachedDatabase.js").Question} Question */
 
@@ -15,8 +16,9 @@ import * as cachedDatabase from "../state/cachedDatabase.js";
 export function initFormUI(previousButton, nextButton, fieldset, legend) {
     initFormButtons(previousButton, nextButton);
     initFormContent(fieldset, legend);
+    initFieldsetListener(fieldset);
 
-    formState.setFormStep(1);
+    formStep.setFormStep(1);
 }
 
 /**
@@ -25,28 +27,28 @@ export function initFormUI(previousButton, nextButton, fieldset, legend) {
  */
 function initFormButtons(previousButton, nextButton) {
     previousButton.addEventListener('click', () => {
-        formState.decreaseFormStep(1);
+        formStep.decreaseFormStep(1);
     });
 
     // TODO Replace with behavior for finishing
     nextButton.addEventListener('click', () => {
-        if (formState.getFormStep() == formState.getMaxStep()) {
+        if (formStep.getFormStep() == formStep.getMaxStep()) {
             nextButton.textContent = "Placeholder";
             return;
         }
 
-        formState.increaseFormStep(1);
+        formStep.increaseFormStep(1);
     })
 
     document.addEventListener(Events.FORMSTEP_CHANGE, () => {
-        if (formState.getFormStep() == formState.getMinStep()) {
+        if (formStep.getFormStep() == formStep.getMinStep()) {
             previousButton.disabled = true;
         }
         else {
             previousButton.disabled = false;
         }
 
-        if (formState.getFormStep() == formState.getMaxStep()) {
+        if (formStep.getFormStep() == formStep.getMaxStep()) {
             nextButton.textContent = "Finish";
         }
         else {
@@ -62,7 +64,7 @@ function initFormButtons(previousButton, nextButton) {
 function initFormContent(fieldset, legend) {
     document.addEventListener(Events.FORMSTEP_CHANGE, () => {
         const questions = cachedDatabase.getQuestions()
-        const formStepZeroed = formState.getFormStep() - 1;
+        const formStepZeroed = formStep.getFormStep() - 1;
 
         if (!questions) {
             document.addEventListener(Events.DATABASE_CHANGE, () => {
@@ -77,7 +79,7 @@ function initFormContent(fieldset, legend) {
     });
 
     const questions = cachedDatabase.getQuestions()
-    const formStepZeroed = formState.getFormStep() - 1;
+    const formStepZeroed = formStep.getFormStep() - 1;
 
     if (questions) {
         const question = questions[formStepZeroed];
@@ -116,4 +118,28 @@ function changeFormContent(question, fieldset, legend) {
         span.textContent = option.text;
         label.append(span);
     });
+}
+
+/**
+ * @param {HTMLElement} fieldset
+ */
+function initFieldsetListener(fieldset) {
+    fieldset.addEventListener('change', () => {
+        /** @type {NodeListOf<HTMLInputElement>} */
+        const inputElements = fieldset.querySelectorAll("input");
+
+        /** @type {Record<string, boolean>} */
+        const inputElementRecord = {}
+
+        inputElements.forEach(element => {
+            if (element.checked) {
+                inputElementRecord[element.id] = true;
+            }
+            else {
+                inputElementRecord[element.id] = false;
+            }
+        });
+
+        formState.setFormRecord(formStep.getFormStep(), inputElementRecord);
+    })
 }
