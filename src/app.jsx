@@ -5,8 +5,17 @@ import Nav from "./route/nav.jsx";
 import Home from "./route/home.jsx";
 import Result from "./route/result.jsx";
 
+/**
+ * @typedef {Object.<string, Object.<string, boolean>>} Answers
+ */
+
 export default function App () {
     const [path, setPath] = useState(window.location.pathname);
+
+    /** @type {Answers} */
+    const initialAnswers = {}
+
+    const [answers, setAnswers] = useState(initialAnswers);
 
     useEffect(() => {
         const handlePopState = () => {
@@ -24,7 +33,7 @@ export default function App () {
                 <>
                     <Nav />
                     <main>
-                        <Home />
+                        <Home answers={answers} setAnswers={setAnswers} />
                     </main>
                 </>
             );
@@ -33,7 +42,7 @@ export default function App () {
             return (
                 <>
                     <Nav />
-                    <Result />
+                    <Result answers={answers} />
                 </>
             );
 
@@ -62,7 +71,7 @@ export default function App () {
                 <>
                     <Nav />
                     <main>
-                        <Home />
+                        <Home answers={answers} setAnswers={setAnswers} />
                     </main>
                 </>
             );

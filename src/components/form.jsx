@@ -12,14 +12,12 @@ import navigate from "../utils/navigator.js";
  * @typedef {Object.<string, Object.<string, boolean>>} Answers
  */
 
-export default function Form () {
+/**
+ * @param {{ answers: Answers, setAnswers: import("react").Dispatch<import("react").SetStateAction<Answers>> }} property
+ */
+export default function Form ({ answers, setAnswers }) {
     const [questions, setQuestions] = useState(cachedDatabase.getQuestions());
     const [questionIndex, setQuestionIndex] = useState(0);
-
-    /** @type {Answers} */
-    const initialAnswers = {}
-
-    const [answers, setAnswers] = useState(initialAnswers);
 
     useEffect(() => {
         function handleDatabaseChange() {
@@ -59,11 +57,24 @@ export default function Form () {
             }
 
             <div className="form-btn-container">
-                <button type="button" className="btn-form" onClick={() => setQuestionIndex(i => Math.max(0, i - 1))}>Previous</button>
+                { getPreviousButton(questionIndex, setQuestionIndex) }
                 { getNextButton(questionIndex, setQuestionIndex) }
             </div>
         </form>
     );
+}
+
+/**
+ * @param {number} questionIndex
+ * @param {import("react").Dispatch<import("react").SetStateAction<number>>} setQuestionIndex
+ */
+function getPreviousButton(questionIndex, setQuestionIndex) {
+    if (questionIndex == 0) {
+        return <button disabled type="button" className="btn-form" onClick={() => setQuestionIndex(i => Math.max(0, i - 1))}>Previous</button>
+    }
+    else {
+        return <button type="button" className="btn-form" onClick={() => setQuestionIndex(i => Math.max(0, i - 1))}>Previous</button>
+    }
 }
 
 /**
