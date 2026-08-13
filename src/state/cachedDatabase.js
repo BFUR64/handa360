@@ -1,6 +1,6 @@
 // @ts-check
 
-import { Events } from "../event.js";
+import { Events } from "../event.js"
 
 /**
  * @typedef {Object} Option

@@ -1,0 +1,114 @@
+// @ts-check
+
+import { useEffect, useState } from "react";
+import * as cachedDatabase from "../state/cachedDatabase.js";
+import { Events } from "../event.js";
+
+/** @typedef {import("../state/cachedDatabase.js").Question} Question */
+/** @typedef {import("../state/cachedDatabase.js").Option} Option */
+
+/**
+ * @typedef {Object.<string, Object.<string, boolean>>} Answers
+ */
+
+export default function Form () {
+    const [questions, setQuestions] = useState(cachedDatabase.getQuestions());
+    const [questionIndex, setQuestionIndex] = useState(0);
+
+    /** @type {Answers} */
+    const initialAnswers = {}
+
+    const [answers, setAnswers] = useState(initialAnswers);
+
+    useEffect(() => {
+        function handleDatabaseChange() {
+            setQuestions(cachedDatabase.getQuestions());
+        }
+
+        document.addEventListener(Events.DATABASE_CHANGE, handleDatabaseChange);
+
+        return () => document.removeEventListener(Events.DATABASE_CHANGE, handleDatabaseChange);
+    }, []);
+
+    useEffect(() => {
+        if (!questions) return;
+
+        setAnswers(
+            Object.fromEntries(
+                questions.map(question =>
+                    [
+                        question.id,
+                        Object.fromEntries(
+                            question.options.map(option => [
+                                option.id,
+                                false
+                            ])
+                        )
+                    ]
+                )
+            )
+        );
+    }, [questions]);
+
+    return (
+        <form className="form-container">
+            {questions
+                ? <Question question={questions[questionIndex]} answers={answers} setAnswers={setAnswers} />
+                : <p>Loading...</p>
+            }
+
+            <div className="form-btn-container">
+                <button type="button" className="btn-form" onClick={() => setQuestionIndex(i => Math.max(0, i - 1))}>Previous</button>
+                { getNextButton(questionIndex, setQuestionIndex) }
+            </div>
+        </form>
+    );
+}
+
+/**
+ * @param {number} questionIndex
+ * @param {import("react").Dispatch<import("react").SetStateAction<number>>} setQuestionIndex
+ */
+function getNextButton(questionIndex, setQuestionIndex) {
+    if (questionIndex < 2) {
+        return <button type="button" className="btn-form" onClick={() => setQuestionIndex(i => Math.min(2, i + 1))}>Next</button>;
+    }
+    else {
+        return <button type="button" className="btn-form">Finish</button>;
+    }
+}
+
+/**
+ * @param {{ question: Question, answers: Answers, setAnswers: import("react").Dispatch<import("react").SetStateAction<Answers>> }} property
+ */
+function Question ({ question, answers, setAnswers }) {
+    return (
+        <fieldset>
+            <legend className="form-title">{question.text}</legend>
+
+            {
+                question.options.map(option => (
+                    <label className="option-container">
+                        <input
+                            type="checkbox"
+                            name={question.id}
+                            value={option.id}
+                            checked={answers[question.id]?.[option.id] ?? false}
+                            onChange={event => {
+                                setAnswers(previous => ({
+                                    ...previous,
+                                    [question.id]: {
+                                        ...previous[question.id],
+                                        [option.id]: event.target.checked
+                                    }
+                                }))
+                            }}
+                        />
+
+                        <span className="btn-option">{option.text}</span>
+                    </label>
+                ))
+            }
+        </fieldset>
+    );
+}

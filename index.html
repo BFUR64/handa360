@@ -1,31 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="preload" as="script" href="/src/js/app.js" fetchpriority="high">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="HANDA360 is an offline capable disaster-preparedness web application">
 
     <title>Handa360</title>
 
     <meta name="theme-color" content="#000000">
-
-    <link rel="stylesheet" href="/src/css/general.css">
-</head>
-<body>
-<header>
-    <img data-src="/handa360-logo.png" loading="lazy" decoding="async" alt="Handa360">
-    <nav>
-        <ul class="nav-list">
-            <li><button type="button" id="nav-home">Home</button></li>
-            <li><button type="button" id="nav-about">About</button></li>
-            <li><button type="button" id="nav-contacts">Contacts</button></li>
-        </ul>
-    </nav>
-</header>
-<main id="root" class="root">
-</main>
-<script src="/src/js/app.js" type="module"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
