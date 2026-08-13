@@ -135,6 +135,6 @@ function initFieldsetListener(fieldset) {
             inputElementRecord[element.value] = element.checked;
         });
 
-        formState.setFormRecord(formStep.getFormStep(), inputElementRecord);
+        formState.setFormRecord(inputElements[0].name, inputElementRecord);
     })
 }

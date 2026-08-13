@@ -1,9 +1,9 @@
 
-/** @type {Record<number, Record<string, boolean>} */
+/** @type {Record<string, Record<string, boolean>} */
 const formRecord = {}
 
 /**
- * @param {number} index
+ * @param {string} index
  * @param {Record<string, boolean>} data
  */
 export function setFormRecord(index, data) {
