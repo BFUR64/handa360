@@ -88,7 +88,7 @@ function Question ({ question, answers, setAnswers }) {
 
             {
                 question.options.map(option => (
-                    <label className="option-container">
+                    <label key={option.id} className="option-container">
                         <input
                             type="checkbox"
                             name={question.id}
