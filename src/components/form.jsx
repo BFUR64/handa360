@@ -47,7 +47,7 @@ export default function Form ({ answers, setAnswers }) {
                 )
             )
         );
-    }, [questions]);
+    }, [questions, setAnswers]);
 
     return (
         <form className="form-container">
