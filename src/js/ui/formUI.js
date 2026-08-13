@@ -132,12 +132,7 @@ function initFieldsetListener(fieldset) {
         const inputElementRecord = {}
 
         inputElements.forEach(element => {
-            if (element.checked) {
-                inputElementRecord[element.id] = true;
-            }
-            else {
-                inputElementRecord[element.id] = false;
-            }
+            inputElementRecord[element.value] = element.checked;
         });
 
         formState.setFormRecord(formStep.getFormStep(), inputElementRecord);

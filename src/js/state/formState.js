@@ -4,7 +4,7 @@ const formRecord = {}
 
 /**
  * @param {number} index
- * @param {Record<string, boolean} data
+ * @param {Record<string, boolean>} data
  */
 export function setFormRecord(index, data) {
     formRecord[index] = data;
