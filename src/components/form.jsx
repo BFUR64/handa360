@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import * as cachedDatabase from "../state/cachedDatabase.js";
 import { Events } from "../event.js";
+import navigate from "../utils/navigator.js";
 
 /** @typedef {import("../state/cachedDatabase.js").Question} Question */
 /** @typedef {import("../state/cachedDatabase.js").Option} Option */
@@ -74,7 +75,7 @@ function getNextButton(questionIndex, setQuestionIndex) {
         return <button type="button" className="btn-form" onClick={() => setQuestionIndex(i => Math.min(2, i + 1))}>Next</button>;
     }
     else {
-        return <button type="button" className="btn-form">Finish</button>;
+        return <button type="button" className="btn-form" onClick={() => navigate("/result")}>Finish</button>;
     }
 }
 

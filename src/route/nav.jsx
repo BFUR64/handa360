@@ -1,3 +1,7 @@
+// @ts-check
+
+import navigate from "../utils/navigator.js";
+
 export default function Nav () {
     return (
         <header>
@@ -11,9 +15,4 @@ export default function Nav () {
             </nav>
         </header>
     );
-}
-
-function navigate(path) {
-  window.history.pushState({}, "", path);
-  window.dispatchEvent(new PopStateEvent("popstate"));
 }

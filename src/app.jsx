@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Nav from "./route/nav.jsx";
 import Home from "./route/home.jsx";
+import Result from "./route/result.jsx";
 
 export default function App () {
     const [path, setPath] = useState(window.location.pathname);
@@ -25,6 +26,14 @@ export default function App () {
                     <main>
                         <Home />
                     </main>
+                </>
+            );
+
+        case "/result":
+            return (
+                <>
+                    <Nav />
+                    <Result />
                 </>
             );
 
