@@ -39,3 +39,10 @@ async function initializeSyncService() {
 }
 
 await initializeSyncService();
+
+// ----- Lazy Logo Loading -----
+const img = /** @type {HTMLImageElement | null} */ (document.querySelector('header img[data-src]'));
+
+if (img?.dataset?.src) {
+    img.src = img.dataset.src;
+}
