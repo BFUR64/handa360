@@ -1,5 +1,7 @@
 // @ts-check
+/// <reference types="vite/client" />
 
+import './css/result.css';
 import * as cachedDatabase from "../state/cachedDatabase.js";
 import navigate from "../utils/navigator.js";
 

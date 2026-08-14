@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Nav from "./route/nav.jsx";
 import Home from "./route/home.jsx";
 import Result from "./route/result.jsx";
+import About from "./route/about.jsx";
 
 
 /** @typedef {Object.<string, QuestionAnswers>} Answers */
@@ -55,9 +56,7 @@ export default function App () {
             return (
                 <>
                     <Nav />
-                    <main>
-                        <p>About Menu</p>
-                    </main>
+                    <About />
                 </>
             );
 

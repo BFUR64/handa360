@@ -1,0 +1,66 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+
+    border-bottom: 1px solid black;
+}
+
+header img {
+    height: 50px;
+}
+
+.nav-list {
+    display: flex;
+
+    gap: 1rem;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+.nav-list button {
+    appearance: none;
+    border: none;
+    background: none;
+
+    cursor: pointer;
+
+    padding: 1rem 2rem;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0.5rem 1rem;
+        border: none;
+    }
+
+    header img {
+        height: 35px;
+    }
+    .nav-list {
+        gap: 0.5rem;
+    }
+
+    .nav-list button {
+        padding: 0.90rem 1rem;
+    }
+}
+
+@media (max-width: 350px) {
+    header {
+        padding: 0.25rem 0.5rem;
+    }
+
+    .nav-list {
+        gap: 0.25rem;
+    }
+
+    .nav-list button {
+        padding: 0.75rem 0.5rem;
+    }
+}

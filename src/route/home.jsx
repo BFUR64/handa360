@@ -1,5 +1,7 @@
 // @ts-check
+/// <reference types="vite/client" />
 
+import './css/home.css';
 import Form from "../components/form.jsx";
 
 /** @typedef {import("../app.jsx").Answers} Answers */

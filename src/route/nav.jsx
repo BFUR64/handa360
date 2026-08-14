@@ -1,5 +1,7 @@
 // @ts-check
+/// <reference types="vite/client" />
 
+import './css/nav.css';
 import navigate from "../utils/navigator.js";
 
 // TODO Replace .png with .svg file
