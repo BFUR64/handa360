@@ -19,7 +19,7 @@ import Contact from "./route/contact.jsx";
 */
 
 export default function App () {
-    const [path, setPath] = useState(window.location.pathname);
+    const [path, setPath] = useState(getRoute());
 
     /** @type {Answers} */
     const initialAnswers = {}
@@ -28,7 +28,7 @@ export default function App () {
 
     useEffect(() => {
         const handlePopState = () => {
-            setPath(window.location.pathname);
+            setPath(getRoute());
         }
 
         window.addEventListener("popstate", handlePopState);
@@ -88,4 +88,16 @@ function Footer () {
             <p>© 2026 Handa360. All rights reserved.</p>
         </footer>
     )
+}
+
+function getRoute() {
+    const base = import.meta.env.BASE_URL;
+
+    let path = window.location.pathname;
+
+    if (path.startsWith(base)) {
+        path = path.slice(base.length);
+    }
+
+    return "/" + path.replace(/^\/+|\/+$/g, "");
 }
