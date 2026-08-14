@@ -1,6 +1,4 @@
 .main-contact {
-    height: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +28,8 @@
     width: 12rem;
 
     padding: 1rem;
+
+    border-bottom: 1px solid var(--border);
 }
 
 .contact-list a {
