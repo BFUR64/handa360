@@ -1,6 +1,9 @@
+// @ts-check
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from "vite-plugin-pwa";
+import fs from "node:fs";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -48,6 +51,16 @@ export default defineConfig({
                     }
                 ]
             }
-        })
+        }),
+    spaFallback()
   ],
 })
+
+function spaFallback() {
+    return {
+        name: "spa-fallback",
+        closeBundle() {
+            fs.copyFileSync("dist/index.html", "dist/404.html");
+        }
+    };
+}
