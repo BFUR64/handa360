@@ -7,7 +7,7 @@ import fs from "node:fs";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/Handa360/",
+  base: "/handa360/",
   plugins: [
     react(),
     VitePWA({
