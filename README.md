@@ -1,11 +1,5 @@
 # Handa360
 
-## 🚧 ACTIVE DEVELOPMENT NOTICE 🚧
-- **Production/Stable:** `main` (V1 Vanilla JS - Deployed at [bfur64.github.io/handa360/](https://bfur64.github.io/handa360/))
-- **Next Gen Development:** `v1-dev` (Refined architecture and UI design)
-
-**Contributors:** PRs against `main` for V1 hotfixes only. All feature work targets `v1-dev`.
-
 ---
 
 **Consolidates 3+ fragmented disaster resources into 1 localized action plan**
@@ -15,13 +9,15 @@ Handa360 web app that turns general disaster-preparedness instructions into a ca
 Website: <https://bfur64.github.io/handa360/>
 
 ## Screenshots
+
 ### Dark Mode
-<img width="1920" height="919" alt="App asks user to select a hazard, with a next button on the bottom to confirm selection" src="https://github.com/user-attachments/assets/6ae5ac22-a91c-4c2c-8c38-99f38150e2e4" />
-<img width="1920" height="919" alt="App shows a dropdown menu of a checklist of a unified action plan, a go bag checklist, and local emergency contacts" src="https://github.com/user-attachments/assets/e5a0d34b-d631-4177-ac5d-29cad0bf3a56" />
+<img width="1920" height="938" alt="App asks user to select a hazard, with a next button on the bottom to confirm selection" src="https://github.com/user-attachments/assets/00a1b90c-6e1a-4217-8691-1eafcd812bd9" />
+<img width="1920" height="938" alt="App shows a dropdown menu of a checklist of a unified action plan, a go bag checklist, and local emergency contacts" src="https://github.com/user-attachments/assets/406f7085-0837-4fd5-863b-512b0dfe208f" />
 
 ### Light Mode
-<img width="1920" height="919" alt="App asks user to select a hazard, with a next button on the bottom to confirm selection" src="https://github.com/user-attachments/assets/e2346b74-c97e-42c3-9ed5-4afe76afcdfe" />
-<img width="1920" height="938" alt="App shows a dropdown menu of a checklist of a unified action plan, a go bag checklist, and local emergency contacts" src="https://github.com/user-attachments/assets/a4aa92c9-a1d5-4be9-8d0f-be9ef7ab7dfd" />
+<img width="1920" height="938" alt="App asks user to select a hazard, with a next button on the bottom to confirm selection" src="https://github.com/user-attachments/assets/3340299f-c3da-4177-9404-22e4c185f7a1" />
+<img width="1920" height="938" alt="App shows a dropdown menu of a checklist of a unified action plan, a go bag checklist, and local emergency contacts" src="https://github.com/user-attachments/assets/10c22158-209e-4fbe-9dc6-a5feada69952" />
+
 
 ## Quick Demo
 
@@ -79,3 +75,5 @@ All AI-generated code was manually reviewed by team members, refactored to fit o
 ## About
 
 This project was made for a hackathon, "UPV KomsaiHack 2026: Risk Ready" under our team name, "The Vibe Coders 67".
+
+The original Hackathon release is [v1.0.0](https://github.com/BFUR64/handa360/releases/tag/v1.0.0)

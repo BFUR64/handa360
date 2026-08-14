@@ -1,0 +1,506 @@
+{
+    "schemaVersion": 1,
+    "questions": [
+        {
+            "id": "hazards",
+            "text": "What's the hazard?",
+            "options": [
+                { "id": "typhoon", "text": "Typhoon" },
+                { "id": "flood", "text": "Flood" },
+                { "id": "earthquake", "text": "Earthquake" },
+                { "id": "landslide", "text": "Landslide" },
+                { "id": "fire", "text": "Fire" },
+                { "id": "volcanic_eruption", "text": "Volcanic eruption" },
+                { "id": "storm_surge", "text": "Storm surge" },
+                { "id": "drought", "text": "Drought" },
+                { "id": "heat_wave", "text": "Heat wave" },
+                { "id": "tsunami", "text": "Tsunami" }
+            ]
+        },
+        {
+            "id": "special_needs",
+            "text": "Special Needs",
+            "options": [
+                { "id": "toddler", "text": "I have a toddler" },
+                { "id": "child", "text": "I have a child" },
+                { "id": "no_car", "text": "I have no car" },
+                { "id": "pregnant", "text": "Pregnant Person" },
+                { "id": "senior", "text": "Senior citizen" },
+                { "id": "disability", "text": "Person with disability" },
+                { "id": "chronic_illness", "text": "Chronic illness" }
+            ]
+        },
+        {
+            "id": "locations",
+            "text": "Where are you?",
+            "options": [
+                { "id": "kalibo", "text": "Kalibo" },
+                { "id": "iloilo", "text": "Iloilo" },
+                { "id": "manila", "text": "Manila" },
+                { "id": "quezon_city", "text": "Quezon City" },
+                { "id": "caloocan", "text": "Caloocan" },
+                { "id": "san_juan", "text": "San Juan" },
+                { "id": "mandaluyong", "text": "Mandaluyong" },
+                { "id": "pasig", "text": "Pasig" },
+                { "id": "marikina", "text": "Marikina" },
+                { "id": "valenzuela", "text": "Valenzuela" }
+            ]
+        }
+    ],
+    "instructions": {
+        "hazards": {
+            "typhoon": [
+                "Inspect and repair roof leaks, loose shingles, and weak windows",
+                "Trim tree branches that could fall on your house or power lines",
+                "Clean gutters and street drains to prevent localized flooding",
+                "Prepare a 3-day emergency go-bag (food, water, meds, flashlight, radio)",
+                "Establish a family communication plan and identify the nearest evacuation center"
+            ],
+            "flood": [
+                "Elevate heavy appliances and furniture off the ground floor",
+                "Place important documents (IDs, titles, birth certificates) in sealed waterproof bags",
+                "Identify an evacuation route to higher ground that avoids easily flooded streets",
+                "Install check valves in plumbing to prevent floodwater from backing up into drains",
+                "Check local hazard maps to understand your specific flood risk level"
+            ],
+            "earthquake": [
+                "Secure heavy furniture, cabinets, and appliances to the wall studs",
+                "Move heavy objects to lower shelves to prevent them from falling",
+                "Identify 'safe spots' in each room (e.g., under sturdy tables) and practice Drop/Cover/Hold On",
+                "Install latches on kitchen cabinets so plates and glass don't spill out",
+                "Locate your main electrical, gas, and water shut-off valves and learn how to turn them off"
+            ],
+            "landslide": [
+                "Check local hazard maps (via DENR-MGB) to see if your home is in a landslide-prone area",
+                "Plant ground-cover vegetation on slopes near your home to prevent soil erosion",
+                "Identify warning signs around your property (cracking ground, tilted trees, or shifting fences)",
+                "Create a preemptive evacuation plan for when heavy, continuous rain is forecasted",
+                "Ensure drainage paths on your property direct water away from steep slopes"
+            ],
+            "fire": [
+                "Install smoke alarms in key areas (kitchen, bedrooms) and test batteries monthly",
+                "Purchase a fire extinguisher for the kitchen and learn the PASS method (Pull, Aim, Squeeze, Sweep)",
+                "Create a family escape plan identifying two ways out of every single room",
+                "Declutter combustible materials (newspapers, rags, cardboard) from near heat sources",
+                "Inspect home electrical wiring and replace any frayed cords or overloaded extension cables"
+            ],
+            "volcanic_eruption": [
+                "Stockpile N95 masks and protective goggles to guard against future ashfall",
+                "Purchase plastic sheeting and duct tape to seal windows and doors from ash",
+                "Check PHIVOLCS hazard maps to confirm your distance from the permanent danger zone",
+                "Include respiratory medications (like asthma inhalers) in your emergency go-bag",
+                "Plan an evacuation route that avoids river valleys prone to lahar flows"
+            ],
+            "storm_surge": [
+                "Consult PAGASA hazard maps to verify if your coastal area is vulnerable to storm surges",
+                "Map out a fast evacuation route to a location at least 15 meters above sea level",
+                "Prepare materials (sandbags, plywood) to board up coastal-facing windows and doors",
+                "Pack a go-bag and keep it by the door for rapid deployment",
+                "Plan where to safely relocate pets and livestock away from the shoreline"
+            ],
+            "drought": [
+                "Install rainwater catchment barrels or large water drums for non-potable use",
+                "Fix all leaky faucets, toilets, and pipes to conserve current water supplies",
+                "Stockpile commercially bottled drinking water (at least 1 gallon per person, per day)",
+                "Transition gardens to drought-resistant landscaping to minimize watering needs",
+                "Monitor NDRRMC and local water district advisories for rationing schedules"
+            ],
+            "heat_wave": [
+                "Service air conditioning units and clean electric fans to ensure they work efficiently",
+                "Install blackout curtains or window reflectors to keep the sun's heat out of the house",
+                "Stock up on oral rehydration salts (Oresol) and electrolyte drinks",
+                "Identify the coolest room in the house and set it up as a family retreat area",
+                "Learn the early medical signs of heat exhaustion and heat stroke"
+            ],
+            "tsunami": [
+                "Identify the highest inland point near your home or workplace",
+                "Physically walk your tsunami evacuation route to ensure it takes less than 15 minutes",
+                "Participate in community tsunami drills to familiarize yourself with the local warning sirens",
+                "Keep a grab-and-go bag easily accessible near the main exit of your home",
+                "Memorize the natural warning signs (strong earthquake, sudden receding of ocean water)"
+            ]
+        },
+        "special_needs": {
+            "toddler": [
+                "Stockpile at least a one-week supply of diapers, wet wipes, and diaper rash cream",
+                "Store extra baby formula, sterilized bottles, and ready-to-eat baby food pouches",
+                "Keep a sturdy baby carrier or sling next to your go-bag for hands-free evacuation",
+                "Pack a few small, familiar comfort items (pacifier, favorite small toy) to help soothe them during high-stress situations"
+            ],
+            "child": [
+                "Create physical identification cards with your contact info and attach them to your child's bags or clothing",
+                "Involve them in packing their own small, lightweight emergency backpack with clothes and non-perishable snacks",
+                "Practice family evacuation drills frequently as a 'game' to reduce fear and build muscle memory",
+                "Pack quiet activities (crayons, small books, cards) to keep them occupied and calm at crowded evacuation centers"
+            ],
+            "no_car": [
+                "Pack a lightweight, backpack-style go-bag instead of heavy bins to ensure you can carry it while walking",
+                "Speak with a trusted neighbor who drives to set up a mutual evacuation carpool agreement in advance",
+                "Map out and walk your pedestrian evacuation route to the nearest barangay safe zone to check for obstacles",
+                "Identify multiple public transit options or local tricycle routes that lead to safety, and keep small cash bills for fare"
+            ],
+            "pregnant": [
+                "Keep a physical copy of your maternal records, ultrasound results, and OB-GYN's contact info in a waterproof pouch",
+                "Stockpile prenatal vitamins, extra hydration packets, and maternity/postpartum pads in your go-bag",
+                "Identify a backup hospital or lying-in clinic along your evacuation route in case your primary one is inaccessible",
+                "Pack loose, comfortable clothing and sturdy, non-slip shoes for safe and comfortable movement"
+            ],
+            "senior": [
+                "Register with your local barangay office to ensure you are on their priority assistance list for evacuations",
+                "Store a backup pair of prescription reading glasses and extra hearing aid batteries in your emergency kit",
+                "Keep a printed, laminated list of all current medications, exact dosages, and emergency contacts in your wallet",
+                "Ensure mobility aids (canes, walkers) are kept right next to the bed at all times so they are easy to grab in the dark"
+            ],
+            "disability": [
+                "Register with the local barangay PWD (Persons with Disability) desk for targeted early warning and evacuation support",
+                "Build a 'personal support network' of at least three nearby friends who know how to operate any specialized equipment you use",
+                "If using critical electrical medical devices, secure a portable power station or backup battery to keep them running during outages",
+                "Label all specialized equipment (wheelchairs, communication devices) with your name, contact info, and return address"
+            ],
+            "chronic_illness": [
+                "Ask your doctor for an emergency 30-day prescription refill for all essential daily medications",
+                "Purchase insulated medical bags or cooling packs if your medication (like insulin) requires strict refrigeration",
+                "Wear a medical alert bracelet or carry a highly visible card detailing your exact condition and contraindicated treatments",
+                "Stock up on disease-specific emergency supplies (e.g., extra test strips for diabetes, backup rescue inhalers for asthma)"
+            ]
+        },
+        "locations": {
+            "kalibo": [
+                "Police - 166 / (036) 262-2176",
+                "Fire Station - (036) 262-4242",
+                "MDRRMO - (036) 268-3000",
+                "Emergency - 911"
+            ],
+            "iloilo": [
+                "Police - (033) 337-1100",
+                "Fire Station - (033) 335-0269",
+                "Emergency - 911"
+            ],
+            "manila": [
+                "Police - (02) 8527-3087",
+                "Fire Station - (02) 8527-3627",
+                "Emergency - 911"
+            ],
+            "quezon_city": [
+                "Police - (02) 8929-1837",
+                "Fire Station - (02) 8928-8363",
+                "Emergency - 122 / 911"
+            ],
+            "caloocan": [
+                "Police - (02) 8361-5321",
+                "Fire Station - (02) 8288-8811",
+                "Emergency - 911"
+            ],
+            "san_juan": [
+                "Police - (02) 8724-7654",
+                "Fire Station - (02) 8725-0789",
+                "Emergency - 911"
+            ],
+            "mandaluyong": [
+                "Police - (02) 8532-3344",
+                "Fire Station - (02) 8533-9999",
+                "Emergency - 911"
+            ],
+            "pasig": [
+                "Police - (02) 8643-0000",
+                "Fire Station - (02) 8641-2815",
+                "Emergency - 911"
+            ],
+            "marikina": [
+                "Police - (02) 8646-1631",
+                "Fire Station - (02) 8646-2424",
+                "Rescue - 161",
+                "Emergency - 911"
+            ],
+            "valenzuela": [
+                "Police - (02) 8292-2256",
+                "Fire Station - (02) 8292-3939",
+                "Emergency - 911"
+            ]
+        }
+    },
+    "gobag": {
+        "items": {
+            "typhoon": [
+                "water",
+                "food_ready_to_eat",
+                "flashlight",
+                "extra_batteries",
+                "power_bank",
+                "radio",
+                "raincoat",
+                "whistle",
+                "first_aid_kit",
+                "hygiene_kit",
+                "waterproof_bag",
+                "important_documents",
+                "extra_clothes",
+                "blanket",
+                "cash_small_bills",
+                "local_map",
+                "matches_lighter",
+                "multi_tool"
+            ],
+            "flood": [
+                "water",
+                "food_ready_to_eat",
+                "flashlight",
+                "extra_batteries",
+                "power_bank",
+                "radio",
+                "waterproof_bag",
+                "rubber_boots",
+                "first_aid_kit",
+                "hygiene_kit",
+                "important_documents",
+                "life_vest",
+                "whistle",
+                "cash_small_bills",
+                "local_map",
+                "matches_lighter",
+                "multi_tool"
+            ],
+            "earthquake": [
+                "water",
+                "food_ready_to_eat",
+                "flashlight",
+                "extra_batteries",
+                "whistle",
+                "first_aid_kit",
+                "dust_mask",
+                "gloves",
+                "helmet",
+                "radio",
+                "power_bank",
+                "multi_tool",
+                "important_documents",
+                "cash_small_bills",
+                "local_map",
+                "matches_lighter",
+                "extra_clothes"
+            ],
+            "landslide": [
+                "water",
+                "food_ready_to_eat",
+                "flashlight",
+                "extra_batteries",
+                "whistle",
+                "first_aid_kit",
+                "radio",
+                "power_bank",
+                "shovel",
+                "gloves",
+                "helmet",
+                "important_documents",
+                "cash_small_bills",
+                "local_map",
+                "matches_lighter",
+                "multi_tool"
+            ],
+            "fire": [
+                "water",
+                "flashlight",
+                "whistle",
+                "first_aid_kit",
+                "fire_extinguisher_small",
+                "smoke_mask",
+                "important_documents",
+                "extra_clothes",
+                "power_bank",
+                "cash_small_bills",
+                "local_map",
+                "matches_lighter",
+                "multi_tool"
+            ],
+            "volcanic_eruption": [
+                "water",
+                "food_ready_to_eat",
+                "flashlight",
+                "extra_batteries",
+                "dust_mask",
+                "goggles",
+                "first_aid_kit",
+                "radio",
+                "power_bank",
+                "extra_clothes",
+                "important_documents",
+                "cash_small_bills",
+                "local_map",
+                "matches_lighter",
+                "multi_tool"
+            ],
+            "storm_surge": [
+                "water",
+                "food_ready_to_eat",
+                "flashlight",
+                "extra_batteries",
+                "power_bank",
+                "radio",
+                "life_vest",
+                "waterproof_bag",
+                "whistle",
+                "first_aid_kit",
+                "important_documents",
+                "cash_small_bills",
+                "local_map",
+                "matches_lighter",
+                "multi_tool"
+            ],
+            "drought": [
+                "water_storage",
+                "water_purification_tablets",
+                "food_non_perishable",
+                "hygiene_kit",
+                "hat",
+                "extra_clothes",
+                "important_documents",
+                "cash_small_bills"
+            ],
+            "heat_wave": [
+                "water",
+                "oral_rehydration_salts",
+                "hat",
+                "extra_clothes",
+                "cooling_towel",
+                "first_aid_kit",
+                "portable_fan",
+                "power_bank",
+                "cash_small_bills"
+            ],
+            "tsunami": [
+                "water",
+                "food_ready_to_eat",
+                "flashlight",
+                "extra_batteries",
+                "power_bank",
+                "radio",
+                "life_vest",
+                "whistle",
+                "first_aid_kit",
+                "waterproof_bag",
+                "important_documents",
+                "cash_small_bills",
+                "local_map",
+                "matches_lighter",
+                "multi_tool"
+            ],
+            "toddler": [
+                "diapers",
+                "baby_wipes",
+                "baby_food",
+                "milk_formula",
+                "feeding_bottle",
+                "extra_clothes",
+                "blanket",
+                "small_toys"
+            ],
+            "child": [
+                "child_food",
+                "water",
+                "extra_clothes",
+                "blanket",
+                "small_toys",
+                "whistle"
+            ],
+            "no_car": [
+                "lightweight_bag",
+                "compact_food",
+                "water",
+                "comfortable_shoes",
+                "raincoat",
+                "power_bank"
+            ],
+            "pregnant": [
+                "prenatal_vitamins",
+                "medical_records",
+                "extra_clothes",
+                "water",
+                "food_ready_to_eat",
+                "blanket"
+            ],
+            "senior": [
+                "maintenance_medications",
+                "medical_records",
+                "reading_glasses",
+                "walking_cane",
+                "hearing_aid_batteries",
+                "blanket",
+                "water",
+                "food_ready_to_eat"
+            ],
+            "disability": [
+                "assistive_device",
+                "assistive_device_batteries",
+                "medical_records",
+                "maintenance_medications",
+                "whistle",
+                "water",
+                "food_ready_to_eat"
+            ],
+            "chronic_illness": [
+                "maintenance_medications",
+                "emergency_medications",
+                "medical_records",
+                "doctor_contact_info",
+                "water",
+                "food_ready_to_eat"
+            ]
+        },
+        "registry": {
+            "water": "Drinking water",
+            "water_storage": "Water storage containers",
+            "water_purification_tablets": "Water purification tablets",
+            "food_ready_to_eat": "Ready-to-eat food",
+            "food_non_perishable": "Non-perishable food",
+            "child_food": "Food suitable for children",
+            "baby_food": "Baby food",
+            "milk_formula": "Milk formula",
+            "feeding_bottle": "Feeding bottle",
+            "flashlight": "Flashlight",
+            "extra_batteries": "Extra batteries",
+            "power_bank": "Power bank",
+            "radio": "Battery-powered radio",
+            "raincoat": "Raincoat",
+            "whistle": "Whistle",
+            "first_aid_kit": "First aid kit",
+            "hygiene_kit": "Hygiene kit",
+            "baby_wipes": "Baby wipes",
+            "waterproof_bag": "Waterproof bag",
+            "important_documents": "Important documents (IDs, records)",
+            "medical_records": "Medical records",
+            "doctor_contact_info": "Doctor contact information",
+            "extra_clothes": "Extra clothes",
+            "blanket": "Blanket",
+            "rubber_boots": "Rubber boots",
+            "life_vest": "Life vest",
+            "dust_mask": "Dust mask",
+            "smoke_mask": "Smoke mask",
+            "goggles": "Protective goggles",
+            "gloves": "Protective gloves",
+            "helmet": "Helmet",
+            "multi_tool": "Multi-tool",
+            "shovel": "Shovel",
+            "fire_extinguisher_small": "Small fire extinguisher",
+            "hat": "Hat",
+            "oral_rehydration_salts": "Oral rehydration salts",
+            "cooling_towel": "Cooling towel",
+            "portable_fan": "Portable fan",
+            "diapers": "Diapers",
+            "small_toys": "Small toys",
+            "lightweight_bag": "Lightweight bag",
+            "compact_food": "Compact food",
+            "comfortable_shoes": "Comfortable shoes",
+            "prenatal_vitamins": "Prenatal vitamins",
+            "maintenance_medications": "Maintenance medications",
+            "emergency_medications": "Emergency medications",
+            "reading_glasses": "Reading glasses",
+            "walking_cane": "Walking cane",
+            "hearing_aid_batteries": "Hearing aid batteries",
+            "assistive_device": "Assistive device",
+            "assistive_device_batteries": "Assistive device batteries",
+            "cash_small_bills": "Cash in small denominations",
+            "local_map": "Physical local map",
+            "matches_lighter": "Matches or lighter (waterproof container)"
+        }
+    }
+}
