@@ -9,7 +9,31 @@
 
     --hover: var(#dcdcdc);
     --active: #cccccc;
-    --checked: #dddddd;
+    --checked: #ff9999;
 
     --primary: #942121;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Surfaces: Shifted from near-black to dark charcoal */
+        --surface: #1C1E26;      /* Base background - noticeably lighter */
+        --surface-2: #262933;    /* Cards / Sidebars - clear layering */
+        --surface-3: #313542;    /* Modals / Dropdowns - distinct elevation */
+
+        /* Text: Crisp, bright, and comfortable */
+        --text: #F0F4FA;         /* Primary text - almost white with a hint of cool blue */
+        --text-secondary: #B0B8C8; /* Muted labels - still very legible */
+
+        /* Borders: Slightly more visible on lighter surfaces */
+        --border: rgba(255, 255, 255, 0.10);
+
+        /* Interactions: Lighter hover/active states */
+        --hover: #3A3F4F;
+        --active: #464C5E;
+        --checked: #7A2020;      /* Your original primary still works great */
+
+        /* Primary: Slightly lifted so it pops against the new lighter bg */
+        --primary: #ca3636;
+    }
 }

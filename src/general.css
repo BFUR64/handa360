@@ -3,6 +3,10 @@
     box-sizing: inherit;
 }
 
+*:not(a):not(:disabled) {
+    color: var(--text);
+}
+
 html {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

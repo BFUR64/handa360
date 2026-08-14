@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .contact-title {
@@ -15,10 +14,18 @@
     text-align: center;
 }
 
+.contact-information a {
+    color: var(--primary);
+}
+
 .contact-information h3 {
     margin-bottom: 0;
 }
 
 .contact-information h4 {
     margin: 0;
+}
+
+.contact-list a {
+    color: var(--primary);
 }
