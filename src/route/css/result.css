@@ -56,3 +56,10 @@ details[open] summary::after {
         width: 90dvw;
     }
 }
+
+@media (max-width: 600px) {
+    .dropdown ul {
+        padding-left: 2rem;
+        padding-right: 1rem;
+    }
+}
