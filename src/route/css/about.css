@@ -35,3 +35,30 @@
 #about-guide p {
     margin: 0.25rem 0 2rem 2rem;
 }
+
+@media (max-width: 600px) {
+    .main-about section {
+        width: auto;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 410px) {
+    .about-list {
+        flex-direction: column;
+
+        gap: 2rem;
+
+        text-align: center;
+
+        padding: 0;
+    }
+
+    #about-guide ol {
+        padding-left: 1rem;
+    }
+
+    #about-guide p {
+        margin-left: 0rem;
+    }
+}
