@@ -1,3 +1,4 @@
+/* ----- General CSS ----- */
 *, *::before, *::after {
     box-sizing: inherit;
 }
@@ -19,13 +20,11 @@ body {
     gap: 1rem;
 }
 
-main {
-    min-height: 0;
-}
-
 button, input, select, textarea {
     font-family: inherit;
 }
+
+/* ----- Nav Bar ----- */
 
 header {
     display: flex;
@@ -57,6 +56,11 @@ header img {
     background: none;
 
     cursor: pointer;
+}
+
+/* ----- Home Page ----- */
+.main-home {
+    min-height: 0;
 }
 
 .form-container {
@@ -120,7 +124,9 @@ fieldset {
     gap: 1rem;
 }
 
-.btn-form {
+/* ----- Generic ----- */
+
+.btn-generic {
     appearance: none;
     border: 1px solid black;
 
@@ -130,8 +136,57 @@ fieldset {
     width: 10rem;
 }
 
+/* ----- Results Page ----- */
+
+.main-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.dropdown {
+    width: 50dvw;
+
+    padding: 1rem;
+
+    border: 1px solid black;
+}
+
+.dropdown summary {
+    list-style: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown summary::marker {
+    content: "";
+    font-size: 1.5rem;
+}
+
+.dropdown summary::after {
+    content: "▾";
+    font-size: 1.5rem;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.dropdown ul li {
+    margin-bottom: 1rem;
+}
+
 @media (max-width: 950px) {
     fieldset {
+        width: 90dvw;
+    }
+
+    .dropdown {
         width: 90dvw;
     }
 }
@@ -153,6 +208,7 @@ fieldset {
     .root {
         height: 100%;
         min-height: 0;
+        gap: 0;
     }
 
     .form-container {
@@ -179,7 +235,7 @@ fieldset {
         gap: 0.5rem;
     }
 
-    .btn-form {
+    .btn-generic {
         width: 7.5rem;
     }
 }

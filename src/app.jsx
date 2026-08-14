@@ -39,9 +39,7 @@ export default function App () {
             return (
                 <>
                     <Nav />
-                    <main>
-                        <Home answers={answers} setAnswers={setAnswers} />
-                    </main>
+                    <Home answers={answers} setAnswers={setAnswers} />
                 </>
             );
 
@@ -67,9 +65,7 @@ export default function App () {
             return (
                 <>
                     <Nav />
-                    <main>
-                        <p>Contacts Menu</p>
-                    </main>
+                    <p>Contacts Menu</p>
                 </>
             );
 
@@ -77,9 +73,7 @@ export default function App () {
             return (
                 <>
                     <Nav />
-                    <main>
-                        <Home answers={answers} setAnswers={setAnswers} />
-                    </main>
+                    <Home answers={answers} setAnswers={setAnswers} />
                 </>
             );
     }

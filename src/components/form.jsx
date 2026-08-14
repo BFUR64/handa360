@@ -73,10 +73,10 @@ export default function Form ({ answers, setAnswers }) {
  */
 function getPreviousButton(questionIndex, setQuestionIndex) {
     if (questionIndex == 0) {
-        return <button disabled type="button" className="btn-form" onClick={() => setQuestionIndex(i => Math.max(0, i - 1))}>Previous</button>
+        return <button disabled type="button" className="btn-generic" onClick={() => setQuestionIndex(i => Math.max(0, i - 1))}>Previous</button>
     }
     else {
-        return <button type="button" className="btn-form" onClick={() => setQuestionIndex(i => Math.max(0, i - 1))}>Previous</button>
+        return <button type="button" className="btn-generic" onClick={() => setQuestionIndex(i => Math.max(0, i - 1))}>Previous</button>
     }
 }
 
@@ -86,10 +86,10 @@ function getPreviousButton(questionIndex, setQuestionIndex) {
  */
 function getNextButton(questionIndex, setQuestionIndex) {
     if (questionIndex < 2) {
-        return <button type="button" className="btn-form" onClick={() => setQuestionIndex(i => Math.min(2, i + 1))}>Next</button>;
+        return <button type="button" className="btn-generic" onClick={() => setQuestionIndex(i => Math.min(2, i + 1))}>Next</button>;
     }
     else {
-        return <button type="button" className="btn-form" onClick={() => navigate("/result")}>Finish</button>;
+        return <button type="button" className="btn-generic" onClick={() => navigate("/result")}>Finish</button>;
     }
 }
 

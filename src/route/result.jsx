@@ -1,6 +1,7 @@
 // @ts-check
 
 import * as cachedDatabase from "../state/cachedDatabase.js";
+import navigate from "../utils/navigator.js";
 
 /** @typedef {import("../app.jsx").Answers} Answers */
 
@@ -29,7 +30,8 @@ export default function Result ({ answers }) {
     });
 
     return (
-        <main>
+        <main className="main-result">
+            <button type="button" className="btn-generic" onClick={() => navigate("/")}>Return</button>
             <Container selectedInstructions={selectedInstructions}/>
         </main>
     );
@@ -40,15 +42,17 @@ export default function Result ({ answers }) {
  */
 function Container ({ selectedInstructions }) {
     return Object.entries(selectedInstructions).map(([answerText, instructions], index) => (
-        <section key={index}>
-            <h1>{answerText}</h1>
-            {
-                instructions.map((instruction, index) => (
-                    <p key={index}>
-                        {instruction}
-                    </p>
-                ))
-            }
-        </section>
+        <details key={index} className="dropdown">
+            <summary>{answerText}</summary>
+                <ul>
+                    {
+                        instructions.map((instruction, index) => (
+                            <li key={index}>
+                                {instruction}
+                            </li>
+                        ))
+                    }
+                </ul>
+        </details>
     ));
 }
