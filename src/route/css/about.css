@@ -7,7 +7,7 @@
 }
 
 .main-about section {
-    height: 100dvh;
+    min-height: 100dvh;
     width: 75dvw;
 
     border-bottom: 1px solid var(--border);
