@@ -26,6 +26,12 @@
     margin: 0;
 }
 
+.contact-list {
+    width: 12rem;
+
+    padding: 1rem;
+}
+
 .contact-list a {
     color: var(--primary);
 }

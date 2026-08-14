@@ -25,6 +25,30 @@ export default function Contact () {
                 <li><a href="https://www.linkedin.com/in/terrance-clark-b586723b5/">LinkedIn</a></li>
                 <li><a href="https://discord.com/users/285707454568988673">Discord</a></li>
             </ul>
+
+            <div className="contact-information">
+                <h3>Mehlcon D. Casimero</h3>
+                <h4>(Fullstack Integration)</h4>
+            </div>
+            <ul className="contact-list">
+                <li><a href="https://github.com/melcone">GitHub</a></li>
+            </ul>
+
+            <div className="contact-information">
+                <h3>Christine Joy D. Roberto</h3>
+                <h4>(Frontend Developer)</h4>
+            </div>
+            <ul className="contact-list">
+                <li><a href="https://github.com/KiksTin">GitHub</a></li>
+            </ul>
+
+            <div className="contact-information">
+                <h3>Curt Lawrence Z. Macalacad</h3>
+                <h4>(Frontend Developer)</h4>
+            </div>
+            <ul className="contact-list">
+                <li><a href="https://github.com/sudo-curtmac">GitHub</a></li>
+            </ul>
         </main>
     );
 }
