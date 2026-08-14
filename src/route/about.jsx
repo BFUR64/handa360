@@ -6,7 +6,7 @@ import './css/about.css';
 export default function About () {
     return (
         <main className="main-about">
-            <section>
+            <section id="about-handa360">
                 <h2>About Handa360</h2>
                 <p>
                         Handa360 is a web application that turns general disaster-preparedness
@@ -14,14 +14,14 @@ export default function About () {
                     fragmented disaster resources into one localized action plan.
                 </p>
 
-                <ol>
-                    <li>How to use</li>
-                    <li>How it can help</li>
-                    <li>Why Handa360</li>
-                </ol>
+                <ul className="about-list">
+                    <li><a href="#about-guide">How to use</a></li>
+                    <li><a href="#about-help">How it can help</a></li>
+                    <li><a href="#about-why">Why Handa360</a></li>
+                </ul>
             </section>
 
-            <section>
+            <section id="about-guide">
                 <h2>Step-by-Step Guide in using Handa360</h2>
 
                 <ol>
@@ -39,7 +39,7 @@ export default function About () {
                 </ol>
             </section>
 
-            <section>
+            <section id="about-help">
                 <h2>How can Handa360 help?</h2>
                 <p>
                         Select the options that best describe your situation and get personalized preparedness recommendations.
@@ -50,7 +50,7 @@ export default function About () {
                 </p>
             </section>
 
-            <section>
+            <section id="about-why">
                 <h2>Why Handa360?</h2>
                 <p>
                     Handa360 is a web application that turns general disaster-preparedness instructions into a catered set of

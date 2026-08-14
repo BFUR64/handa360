@@ -4,6 +4,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './general.css';
+import './colors.css';
 import App from './app.jsx';
 import { sync } from "./service/databaseService.js";
 

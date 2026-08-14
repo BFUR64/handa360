@@ -10,5 +10,28 @@
     height: 100dvh;
     width: 75dvw;
 
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--border);
+}
+
+.about-list {
+    display: flex;
+    justify-content: center;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+
+    list-style: none;
+}
+
+.about-list a {
+    color: var(--primary);
+}
+
+#about-guide li {
+    font-weight: bold;
+}
+
+#about-guide p {
+    margin: 0.25rem 0 2rem 2rem;
 }

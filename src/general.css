@@ -11,6 +11,8 @@ html {
 body {
     height: 100dvh;
     margin: 0;
+
+    background-color: var(--surface);
 }
 
 .root {
@@ -33,16 +35,25 @@ footer {
     text-align: center;
 }
 
-/* ----- Generic ----- */
-
 .btn-generic {
     appearance: none;
-    border: 1px solid black;
-
-    cursor: pointer;
 
     padding: 1rem;
     width: 10rem;
+
+    background-color: var(--surface-2);
+
+    border: 1px solid var(--border);
+
+    cursor: pointer;
+}
+
+.btn-generic:hover:not(:disabled) {
+    background-color: var(--hover);
+}
+
+.btn-generic:active:not(:disabled) {
+    background-color: var(--active);
 }
 
 @media (max-width: 600px) {

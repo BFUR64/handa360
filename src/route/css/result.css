@@ -1,5 +1,5 @@
 .main-result {
-    height: 100%;
+    height: auto;
 
     display: flex;
     flex-direction: column;
@@ -13,18 +13,20 @@
 .dropdown {
     width: 50dvw;
 
-    padding: 1rem;
+    background-color: var(--surface-3);
 
-    border: 1px solid black;
+    border: 1px solid var(--border);
 }
 
 .dropdown summary {
-    list-style: none;
-    cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 1rem;
+
+    list-style: none;
+    cursor: pointer;
 }
 
 .dropdown summary::marker {
@@ -39,6 +41,10 @@
 
 details[open] summary::after {
     transform: rotate(180deg);
+}
+
+.dropdown ul {
+    margin-top: 0;
 }
 
 .dropdown ul li {

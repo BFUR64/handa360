@@ -22,6 +22,8 @@ fieldset {
 
     gap: 1rem;
 
+    background-color: var(--surface-2);
+
     overflow-y: auto;
 }
 
@@ -33,17 +35,27 @@ fieldset {
 
     padding: 1rem;
 
-    border: 1px solid black;
+    background-color: var(--surface-3);
+
+    border: 1px solid var(--border);
 
     cursor: pointer;
+}
+
+.option-container:hover {
+    background-color: var(--hover);
 }
 
 .option-container:has(input:focus) {
     outline: auto;
 }
 
+.option-container:active {
+    background-color: var(--active);
+}
+
 .option-container:has(input:checked) {
-    background: #ddd;
+    background-color: var(--checked);
 }
 
 .option-container input {

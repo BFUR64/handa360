@@ -1,0 +1,15 @@
+:root {
+    --surface: #f0f0f0;
+    --surface-2: #f7f7f7;
+    --surface-3: white;
+
+    --text: black;
+
+    --border: rgba(0, 0, 0, 0.5);
+
+    --hover: var(#dcdcdc);
+    --active: #cccccc;
+    --checked: #dddddd;
+
+    --primary: #942121;
+}
