@@ -76,5 +76,4 @@ All AI-generated code was manually reviewed by team members, refactored to fit o
 
 This project was made for a hackathon, "UPV KomsaiHack 2026: Risk Ready" under our team name, "The Vibe Coders 67".
 
-The original Hackathon release is v1.0.0
-
+The original Hackathon release is [v1.0.0](https://github.com/BFUR64/handa360/releases/tag/v1.0.0)
