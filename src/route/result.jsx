@@ -12,9 +12,6 @@ import navigate from "../utils/navigator.js";
  */
 export default function Result ({ answers }) {
     const instructions = cachedDatabase.getInstructions();
-    const questions = cachedDatabase.getQuestions();
-
-    if (!instructions || !questions) return;
 
     /** @type {Object.<string, string[]>} */
     const selectedInstructions = {};
@@ -22,19 +19,21 @@ export default function Result ({ answers }) {
     /** @type {string[]} */
     const idsSelected = [];
 
-    Object.entries(answers).forEach(([questionId, questionAnswers]) => {
-        Object.entries(questionAnswers).forEach(([optionId, answerDetail]) => {
-            if (answerDetail.checked) {
-                idsSelected.push(optionId);
+    if (instructions) {
+        Object.entries(answers).forEach(([questionId, questionAnswers]) => {
+            Object.entries(questionAnswers).forEach(([optionId, answerDetail]) => {
+                if (answerDetail.checked) {
+                    idsSelected.push(optionId);
 
-                Object.entries(instructions).forEach(([category, instructionDetail]) => {
-                    if (category == questionId) {
-                        selectedInstructions[answerDetail.text] = instructionDetail[optionId];
-                    }
-                })
-            }
+                    Object.entries(instructions).forEach(([category, instructionDetail]) => {
+                        if (category == questionId) {
+                            selectedInstructions[answerDetail.text] = instructionDetail[optionId];
+                        }
+                    })
+                }
+            });
         });
-    });
+    }
 
     return (
         <main className="main-result">
