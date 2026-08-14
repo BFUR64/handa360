@@ -5,6 +5,7 @@ import Nav from "./route/nav.jsx";
 import Home from "./route/home.jsx";
 import Result from "./route/result.jsx";
 import About from "./route/about.jsx";
+import Contact from "./route/contact.jsx";
 
 
 /** @typedef {Object.<string, QuestionAnswers>} Answers */
@@ -49,6 +50,7 @@ export default function App () {
                 <>
                     <Nav />
                     <Result answers={answers} />
+                    <Footer />
                 </>
             );
 
@@ -57,6 +59,7 @@ export default function App () {
                 <>
                     <Nav />
                     <About />
+                    <Footer />
                 </>
             );
 
@@ -64,7 +67,8 @@ export default function App () {
             return (
                 <>
                     <Nav />
-                    <p>Contacts Menu</p>
+                    <Contact />
+                    <Footer />
                 </>
             );
 
@@ -76,4 +80,12 @@ export default function App () {
                 </>
             );
     }
+}
+
+function Footer () {
+    return (
+        <footer>
+            <p>© 2026 Handa360. All rights reserved.</p>
+        </footer>
+    )
 }

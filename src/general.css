@@ -14,6 +14,8 @@ body {
 }
 
 .root {
+    height: 100dvh;
+
     display: flex;
     flex-direction: column;
 
@@ -22,6 +24,13 @@ body {
 
 button, input, select, textarea {
     font-family: inherit;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100dvw;
+    text-align: center;
 }
 
 /* ----- Generic ----- */
