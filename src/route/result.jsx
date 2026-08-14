@@ -17,9 +17,14 @@ export default function Result ({ answers }) {
     /** @type {Object.<string, string[]>} */
     const selectedInstructions = {};
 
+    /** @type {string[]} */
+    const idsSelected = [];
+
     Object.entries(answers).forEach(([questionId, questionAnswers]) => {
         Object.entries(questionAnswers).forEach(([optionId, answerDetail]) => {
             if (answerDetail.checked) {
+                idsSelected.push(optionId);
+
                 Object.entries(instructions).forEach(([category, instructionDetail]) => {
                     if (category == questionId) {
                         selectedInstructions[answerDetail.text] = instructionDetail[optionId];
@@ -32,7 +37,8 @@ export default function Result ({ answers }) {
     return (
         <main className="main-result">
             <button type="button" className="btn-generic" onClick={() => navigate("/")}>Return</button>
-            <Container selectedInstructions={selectedInstructions}/>
+            <Instruction selectedInstructions={selectedInstructions}/>
+            <GoBag idsSelected={idsSelected}></GoBag>
         </main>
     );
 }
@@ -40,7 +46,7 @@ export default function Result ({ answers }) {
 /**
  * @param {{ selectedInstructions: Object.<string, string[]> }} props
  */
-function Container ({ selectedInstructions }) {
+function Instruction ({ selectedInstructions }) {
     return Object.entries(selectedInstructions).map(([answerText, instructions], index) => (
         <details key={index} className="dropdown">
             <summary>{answerText}</summary>
@@ -55,4 +61,47 @@ function Container ({ selectedInstructions }) {
                 </ul>
         </details>
     ));
+}
+
+/**
+ * @param {{ idsSelected: string[] }} props
+ */
+function GoBag ({ idsSelected }) {
+    const gobagDatabase = cachedDatabase.getGoBag();
+
+    if (!gobagDatabase) return;
+
+    const gobagItems = gobagDatabase.items;
+    const gobagRegistry = gobagDatabase.registry;
+
+    let gobagItemSet = new Set();
+
+    idsSelected.forEach(id => {
+        const gobagItem = gobagItems[id];
+
+        gobagItem?.forEach(item => {
+            gobagItemSet.add(item);
+        })
+    })
+
+    const gobag = [...gobagItemSet];
+
+    if (gobag.length === 0) return;
+
+    return (
+        <details className="dropdown">
+            <summary>Gobag</summary>
+            <ul>
+                {
+                    gobag.map((item, index) => {
+                        const itemSelected = gobagRegistry[item];
+
+                        return <li key={index}>
+                            {itemSelected}
+                        </li>
+                    })
+                }
+            </ul>
+        </details>
+    )
 }
