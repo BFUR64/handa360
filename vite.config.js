@@ -27,7 +27,7 @@ export default defineConfig({
                             }
                         }
                     }
-                ]
+                ],
             },
 
             manifest: {
@@ -59,7 +59,7 @@ export default defineConfig({
 function spaFallback() {
     return {
         name: "spa-fallback",
-        closeBundle() {
+        writeBundle() {
             fs.copyFileSync("dist/index.html", "dist/404.html");
         }
     };
