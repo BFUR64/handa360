@@ -2,9 +2,9 @@
 /// <reference types="vite/client" />
 
 import './css/home.css';
-import Form from "../components/form.jsx";
+import Form from "../components/Form.jsx";
 
-/** @typedef {import("../app.jsx").Answers} Answers */
+/** @typedef {import("../App.jsx").Answers} Answers */
 
 /**
  * @param {{ answers: Answers, setAnswers: import("react").Dispatch<import("react").SetStateAction<Answers>> }} property
