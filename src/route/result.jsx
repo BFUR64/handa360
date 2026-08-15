@@ -5,7 +5,7 @@ import './css/result.css';
 import * as cachedDatabase from "../state/cachedDatabase.js";
 import navigate from "../utils/navigator.js";
 
-/** @typedef {import("../app.jsx").Answers} Answers */
+/** @typedef {import("../App.jsx").Answers} Answers */
 
 /**
  * @param {{ answers: Answers }} property

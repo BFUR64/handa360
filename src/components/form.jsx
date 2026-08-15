@@ -8,7 +8,7 @@ import navigate from "../utils/navigator.js";
 /** @typedef {import("../state/cachedDatabase.js").Question} Question */
 /** @typedef {import("../state/cachedDatabase.js").Option} Option */
 
-/** @typedef {import("../app.jsx").Answers} Answers */
+/** @typedef {import("../App.jsx").Answers} Answers */
 
 /**
  * @param {{ answers: Answers, setAnswers: import("react").Dispatch<import("react").SetStateAction<Answers>> }} property
