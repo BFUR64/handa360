@@ -74,7 +74,7 @@ export default function About () {
                         <strong>Dynamic Local Contacts:</strong> Automatically pulls the exact emergency numbers for the user's selected location, such as barangay hotlines and DRRMOs.
                     </li>
                     <li>
-                        <strong>Ultra-Lightweight:</strong> Built with pure HTML, CSS, and JavaScript, with no heavy frameworks or databases. This ensures near-instant load times on low-end mobile devices and works reliably even on 2G networks.
+                        <strong>Ultra-Lightweight:</strong> Built with Vite + React + JSX with network limitations in mind. This ensures near-instant load times on low-end mobile devices and works reliably even on 2G networks.
                     </li>
                     <li>
                         <strong>Built for Crisis:</strong> Deployed on GitHub Pages with CDN-backed infrastructure, capable of handling traffic spikes during disasters. The modular architecture also makes it easy to scale and maintain.
