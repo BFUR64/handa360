@@ -14,7 +14,7 @@ const root = /** @type {HTMLElement} */ (document.getElementById('root'));
 
 createRoot(root).render(
   <StrictMode>
-    <BrowserRouter basename='/handa360'>
+    <BrowserRouter basename='/handa360/'>
         <Nav />
         <App />
     </BrowserRouter>

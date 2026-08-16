@@ -64,7 +64,6 @@ footer {
     .root {
         height: 100%;
         min-height: 0;
-        gap: 0;
     }
 }
 
