@@ -1,11 +1,11 @@
 // @ts-check
 
 import { useEffect, useState } from "react";
-import Nav from "./route/Nav.jsx";
-import Home from "./route/Home.jsx";
-import Result from "./route/Result.jsx";
-import About from "./route/About.jsx";
-import Contact from "./route/Contact.jsx";
+import Nav from "./pages/Nav.js";
+import Home from "./pages/Home.jsx";
+import Result from "./pages/Result.jsx";
+import About from "./pages/About.js";
+import Contact from "./pages/Contact.js";
 
 
 /** @typedef {Object.<string, QuestionAnswers>} Answers */

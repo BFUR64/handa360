@@ -1,9 +1,11 @@
 // @ts-check
+/// <reference types="vite/client" />
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import './css/home.css';
 import * as cachedDatabase from "../state/cachedDatabase.js";
-import { Events } from "../event.js";
-import navigate from "../utils/navigator.js";
+import { Events } from '../event.js';
+import navigate from '../utils/navigator.js';
 
 /** @typedef {import("../state/cachedDatabase.js").Question} Question */
 /** @typedef {import("../state/cachedDatabase.js").Option} Option */
@@ -13,7 +15,7 @@ import navigate from "../utils/navigator.js";
 /**
  * @param {{ answers: Answers, setAnswers: import("react").Dispatch<import("react").SetStateAction<Answers>> }} property
  */
-export default function Form ({ answers, setAnswers }) {
+export default function Home ({ answers, setAnswers }) {
     const [questions, setQuestions] = useState(cachedDatabase.getQuestions());
     const [questionIndex, setQuestionIndex] = useState(0);
 
@@ -51,21 +53,24 @@ export default function Form ({ answers, setAnswers }) {
     }, [questions, setAnswers]);
 
     return (
-        <form className="form-container">
-            <fieldset>
-                {questions
-                    ? <Question question={questions[questionIndex]} answers={answers} setAnswers={setAnswers} />
-                    : <p>Loading...</p>
-                }
-            </fieldset>
+        <main className="main-home">
+            <form className="form-container">
+                <fieldset>
+                    {questions
+                        ? <Question question={questions[questionIndex]} answers={answers} setAnswers={setAnswers} />
+                        : <p>Loading...</p>
+                    }
+                </fieldset>
 
-            <div className="form-btn-container">
-                { getPreviousButton(questionIndex, setQuestionIndex) }
-                { getNextButton(questionIndex, setQuestionIndex) }
-            </div>
-        </form>
+                <div className="form-btn-container">
+                    { getPreviousButton(questionIndex, setQuestionIndex) }
+                    { getNextButton(questionIndex, setQuestionIndex) }
+                </div>
+            </form>
+        </main>
     );
 }
+
 
 /**
  * @param {number} questionIndex
