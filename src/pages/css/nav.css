@@ -34,11 +34,11 @@ header .btn-generic {
     cursor: pointer;
 }
 
-.btn-generic:hover {
+.btn-theme:hover {
     background-color: var(--hover);
 }
 
-.btn-generic:active {
+.btn-theme:active {
     background-color: var(--active);
 }
 
