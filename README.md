@@ -46,7 +46,7 @@ By selecting their specific parameters (Hazard, Location, Special Needs), our ap
 
 - **Deployment:** GitHub Pages (99.9% uptime, CDN-backed for crisis traffic spikes)
 - **Data Layer:** Zero-code text files (local leaders update protocols without developers)
-- **Frontend:** Pure HTML/CSS/JS (works on 2G networks + low-end devices)
+- **Frontend:** React + Vite + JSX (works on 2G networks and low-end devices)
 - **Type Safety:** JSDoc TypeScript (@ts-check for stability without build overhead)
 
 ## Team
