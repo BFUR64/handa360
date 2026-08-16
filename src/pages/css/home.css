@@ -27,6 +27,14 @@ fieldset {
     overflow-y: auto;
 }
 
+.questions-wrapper {
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+}
+
 .option-container {
     width: 100%;
     position: relative;
