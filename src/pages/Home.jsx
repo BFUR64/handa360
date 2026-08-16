@@ -107,32 +107,33 @@ function Question ({ question, answers, setAnswers }) {
     return (
         <>
             <legend className="form-title">{question.text}</legend>
-
-            {
-                question.options.map(option => (
-                    <label key={option.id} className="option-container">
-                        <input
-                            type="checkbox"
-                            name={question.id}
-                            value={option.id}
-                            checked={answers?.[question.id]?.[option.id].checked ?? false}
-                            onChange={event => {
-                                setAnswers(previous => ({
-                                    ...previous,
-                                    [question.id]: {
-                                        ...previous[question.id],
-                                        [option.id]: {
-                                            checked: event.target.checked,
-                                            text: option.text
+            <div className="questions-wrapper">
+                {
+                    question.options.map(option => (
+                        <label key={option.id} className="option-container">
+                            <input
+                                type="checkbox"
+                                name={question.id}
+                                value={option.id}
+                                checked={answers?.[question.id]?.[option.id].checked ?? false}
+                                onChange={event => {
+                                    setAnswers(previous => ({
+                                        ...previous,
+                                        [question.id]: {
+                                            ...previous[question.id],
+                                            [option.id]: {
+                                                checked: event.target.checked,
+                                                text: option.text
+                                            }
                                         }
-                                    }
-                                }))
-                            }}
-                        />
-                        <span className="btn-option">{option.text}</span>
-                    </label>
-                ))
-            }
+                                    }))
+                                }}
+                            />
+                            <span className="btn-option">{option.text}</span>
+                        </label>
+                    ))
+                }
+            </div>
         </>
     );
 }

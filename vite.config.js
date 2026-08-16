@@ -8,6 +8,9 @@ import fs from "node:fs";
 // https://vite.dev/config/
 export default defineConfig({
   base: "/handa360/",
+  server: {
+    host: '0.0.0.0'
+  },
   plugins: [
     react(),
     VitePWA({
