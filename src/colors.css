@@ -1,17 +1,9 @@
 :root {
-    --surface: #f0f0f0;
-    --surface-2: #f7f7f7;
-    --surface-3: white;
+    color-scheme: light;
+}
 
-    --text: black;
-
-    --border: rgba(0, 0, 0, 0.5);
-
-    --hover: #dcdcdc;
-    --active: #cccccc;
-    --checked: #ff9999;
-
-    --primary: #942121;
+:root.dark {
+    color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,5 +22,21 @@
         --checked: #7A2020;
 
         --primary: #ca3636;
+    }
+
+    :root.light {
+        --surface: #f0f0f0;
+        --surface-2: #f7f7f7;
+        --surface-3: white;
+
+        --text: black;
+
+        --border: rgba(0, 0, 0, 0.5);
+
+        --hover: #dcdcdc;
+        --active: #cccccc;
+        --checked: #ff9999;
+
+        --primary: #942121;
     }
 }

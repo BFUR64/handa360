@@ -16,6 +16,40 @@ header .btn-generic {
     display: none;
 }
 
+.btn-theme {
+    height: 2.5rem;
+    width: 2.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    background-color: var(--surface-2);
+
+    border: 1px solid var(--border);
+    border-radius: 0.35rem;
+
+    cursor: pointer;
+}
+
+.btn-generic:hover {
+    background-color: var(--hover);
+}
+
+.btn-generic:active {
+    background-color: var(--active);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
 .nav-overlay {
     inset: 0;
     width: 100%;
@@ -92,7 +126,7 @@ header .btn-generic {
 
     position: absolute;
 
-    translate: 0 0.5rem;
+    top: 3.5rem;
     right: 0.75rem;
 
     background-color: var(--surface-2);
