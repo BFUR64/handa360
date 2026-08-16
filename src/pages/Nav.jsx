@@ -3,12 +3,24 @@
 
 import { useNavigate } from 'react-router-dom';
 import './css/nav.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { IconBulb, IconMoon } from '@tabler/icons-react';
 
 export default function Nav () {
     const navigate = useNavigate();
 
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const [theme, setTheme] = useState(() => localStorage.getItem("theme"));
+
+    useEffect(() => {
+        if (theme == null) return;
+
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(theme);
+
+        localStorage.setItem("theme", theme);
+    }, [theme]);
 
     /**
      * @param {string} path
@@ -22,6 +34,11 @@ export default function Nav () {
         <header>
             <img data-src="handa360-logo.webp" loading="lazy" decoding="async" alt="Handa360" />
             <nav>
+                {
+                    theme === "light"
+                        ? <button className="btn-theme" onClick={() => setTheme("dark")}><IconMoon /></button>
+                        : <button className="btn-theme" onClick={() => setTheme("light")}><IconBulb /></button>
+                }
                 <button
                     className="btn-generic"
                     aria-label="Toggle navigation"
