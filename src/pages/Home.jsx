@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import './css/home.css';
 import * as cachedDatabase from "../state/cachedDatabase.js";
 import { Events } from '../event.js';
-import navigate from '../utils/navigator.js';
+import { useNavigate } from 'react-router-dom';
 
 /** @typedef {import("../state/cachedDatabase.js").Question} Question */
 /** @typedef {import("../state/cachedDatabase.js").Option} Option */
@@ -18,6 +18,7 @@ import navigate from '../utils/navigator.js';
 export default function Home ({ answers, setAnswers }) {
     const [questions, setQuestions] = useState(cachedDatabase.getQuestions());
     const [questionIndex, setQuestionIndex] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         function handleDatabaseChange() {
@@ -64,7 +65,7 @@ export default function Home ({ answers, setAnswers }) {
 
                 <div className="form-btn-container">
                     { getPreviousButton(questionIndex, setQuestionIndex) }
-                    { getNextButton(questionIndex, setQuestionIndex) }
+                    { getNextButton(questionIndex, setQuestionIndex, navigate) }
                 </div>
             </form>
         </main>
@@ -88,8 +89,9 @@ function getPreviousButton(questionIndex, setQuestionIndex) {
 /**
  * @param {number} questionIndex
  * @param {import("react").Dispatch<import("react").SetStateAction<number>>} setQuestionIndex
+ * @param {import('react-router-dom').NavigateFunction} navigate
  */
-function getNextButton(questionIndex, setQuestionIndex) {
+function getNextButton(questionIndex, setQuestionIndex, navigate) {
     if (questionIndex < 2) {
         return <button type="button" className="btn-generic" onClick={() => setQuestionIndex(i => Math.min(2, i + 1))}>Next</button>;
     }
