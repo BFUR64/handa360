@@ -1,9 +1,11 @@
 // @ts-check
+/// <reference types="vite/client" />
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import './css/home.css';
 import * as cachedDatabase from "../state/cachedDatabase.js";
-import { Events } from "../event.js";
-import navigate from "../utils/navigator.js";
+import { Events } from '../event.js';
+import { useNavigate } from 'react-router-dom';
 
 /** @typedef {import("../state/cachedDatabase.js").Question} Question */
 /** @typedef {import("../state/cachedDatabase.js").Option} Option */
@@ -13,9 +15,10 @@ import navigate from "../utils/navigator.js";
 /**
  * @param {{ answers: Answers, setAnswers: import("react").Dispatch<import("react").SetStateAction<Answers>> }} property
  */
-export default function Form ({ answers, setAnswers }) {
+export default function Home ({ answers, setAnswers }) {
     const [questions, setQuestions] = useState(cachedDatabase.getQuestions());
     const [questionIndex, setQuestionIndex] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         function handleDatabaseChange() {
@@ -51,21 +54,24 @@ export default function Form ({ answers, setAnswers }) {
     }, [questions, setAnswers]);
 
     return (
-        <form className="form-container">
-            <fieldset>
-                {questions
-                    ? <Question question={questions[questionIndex]} answers={answers} setAnswers={setAnswers} />
-                    : <p>Loading...</p>
-                }
-            </fieldset>
+        <main className="main-home">
+            <form className="form-container">
+                <fieldset>
+                    {questions
+                        ? <Question question={questions[questionIndex]} answers={answers} setAnswers={setAnswers} />
+                        : <p>Loading...</p>
+                    }
+                </fieldset>
 
-            <div className="form-btn-container">
-                { getPreviousButton(questionIndex, setQuestionIndex) }
-                { getNextButton(questionIndex, setQuestionIndex) }
-            </div>
-        </form>
+                <div className="form-btn-container">
+                    { getPreviousButton(questionIndex, setQuestionIndex) }
+                    { getNextButton(questionIndex, setQuestionIndex, navigate) }
+                </div>
+            </form>
+        </main>
     );
 }
+
 
 /**
  * @param {number} questionIndex
@@ -83,8 +89,9 @@ function getPreviousButton(questionIndex, setQuestionIndex) {
 /**
  * @param {number} questionIndex
  * @param {import("react").Dispatch<import("react").SetStateAction<number>>} setQuestionIndex
+ * @param {import('react-router-dom').NavigateFunction} navigate
  */
-function getNextButton(questionIndex, setQuestionIndex) {
+function getNextButton(questionIndex, setQuestionIndex, navigate) {
     if (questionIndex < 2) {
         return <button type="button" className="btn-generic" onClick={() => setQuestionIndex(i => Math.min(2, i + 1))}>Next</button>;
     }

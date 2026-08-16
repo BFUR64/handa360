@@ -3,7 +3,7 @@
 
 import './css/result.css';
 import * as cachedDatabase from "../state/cachedDatabase.js";
-import navigate from "../utils/navigator.js";
+import { useNavigate } from 'react-router-dom';
 
 /** @typedef {import("../App.jsx").Answers} Answers */
 
@@ -12,6 +12,7 @@ import navigate from "../utils/navigator.js";
  */
 export default function Result ({ answers }) {
     const instructions = cachedDatabase.getInstructions();
+    const navigate = useNavigate();
 
     /** @type {Object.<string, string[]>} */
     const selectedInstructions = {};

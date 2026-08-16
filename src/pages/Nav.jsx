@@ -1,10 +1,12 @@
 // @ts-check
 /// <reference types="vite/client" />
 
+import { useNavigate } from 'react-router-dom';
 import './css/nav.css';
-import navigate from "../utils/navigator.js";
 
 export default function Nav () {
+    const navigate = useNavigate();
+
     return (
         <header>
             <img data-src="handa360-logo.webp" loading="lazy" decoding="async" alt="Handa360" />

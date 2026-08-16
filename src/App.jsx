@@ -1,11 +1,11 @@
 // @ts-check
 
-import { useEffect, useState } from "react";
-import Nav from "./route/Nav.jsx";
-import Home from "./route/Home.jsx";
-import Result from "./route/Result.jsx";
-import About from "./route/About.jsx";
-import Contact from "./route/Contact.jsx";
+import { useState } from "react";
+import Home from "./pages/Home.jsx";
+import Result from "./pages/Result.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
+import { Route, Routes } from "react-router-dom";
 
 
 /** @typedef {Object.<string, QuestionAnswers>} Answers */
@@ -19,67 +19,36 @@ import Contact from "./route/Contact.jsx";
 */
 
 export default function App () {
-    const [path, setPath] = useState(getRoute());
-
     /** @type {Answers} */
     const initialAnswers = {}
 
     const [answers, setAnswers] = useState(initialAnswers);
 
-    useEffect(() => {
-        const handlePopState = () => {
-            setPath(getRoute());
-        }
-
-        window.addEventListener("popstate", handlePopState);
-
-        return () => window.removeEventListener("popstate", handlePopState);
-    }, [])
-
-    switch (path) {
-        case "/":
-            return (
+    return (
+        <Routes>
+            <Route path="/" element={
+                <Home answers={answers} setAnswers={setAnswers} />
+            }></Route>
+            <Route path="/result" element={
                 <>
-                    <Nav />
-                    <Home answers={answers} setAnswers={setAnswers} />
-                </>
-            );
-
-        case "/result":
-            return (
-                <>
-                    <Nav />
                     <Result answers={answers} />
                     <Footer />
                 </>
-            );
-
-        case "/about":
-            return (
+            }></Route>
+            <Route path="/about" element={
                 <>
-                    <Nav />
                     <About />
                     <Footer />
                 </>
-            );
-
-        case "/contacts":
-            return (
+            }></Route>
+            <Route path="/contacts" element={
                 <>
-                    <Nav />
                     <Contact />
                     <Footer />
                 </>
-            );
-
-        default:
-            return (
-                <>
-                    <Nav />
-                    <Home answers={answers} setAnswers={setAnswers} />
-                </>
-            );
-    }
+            }></Route>
+        </Routes>
+    );
 }
 
 function Footer () {
@@ -88,16 +57,4 @@ function Footer () {
             <p>© 2026 Handa360. All rights reserved.</p>
         </footer>
     )
-}
-
-function getRoute() {
-    const base = import.meta.env.BASE_URL;
-
-    let path = window.location.pathname;
-
-    if (path.startsWith(base)) {
-        path = path.slice(base.length);
-    }
-
-    return "/" + path.replace(/^\/+|\/+$/g, "");
 }

@@ -7,12 +7,17 @@ import './general.css';
 import './colors.css';
 import App from './App.jsx';
 import { sync } from "./service/databaseService.js";
+import { BrowserRouter } from 'react-router-dom';
+import Nav from './pages/Nav.jsx';
 
 const root = /** @type {HTMLElement} */ (document.getElementById('root'));
 
 createRoot(root).render(
   <StrictMode>
-    <App />
+    <BrowserRouter basename='/handa360'>
+        <Nav />
+        <App />
+    </BrowserRouter>
   </StrictMode>,
 );
 
